@@ -27,14 +27,9 @@ export default function ZodiacSelector({ selectedZodiac, onSelect, title }: Zodi
               }}
               data-testid={`button-zodiac-${animal.id}`}
             >
-              <img 
-                src={animal.image} 
-                alt={animal.name}
-                className="w-10 h-10 object-cover rounded-md"
-                data-testid={`img-zodiac-${animal.id}`}
-                loading="lazy"
-                decoding="async"
-              />
+              <span className="text-2xl" role="img" aria-label={animal.name}>
+                {animal.emoji}
+              </span>
               <span className="text-xs font-medium">{animal.name}</span>
             </Button>
           ))}

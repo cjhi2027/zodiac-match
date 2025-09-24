@@ -2,7 +2,6 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { getZodiacByYear } from "@/lib/zodiac";
-import { useId } from "react";
 
 interface BirthYearInputProps {
   value: string;
@@ -14,7 +13,6 @@ export default function BirthYearInput({ value, onChange, title }: BirthYearInpu
   const currentYear = new Date().getFullYear();
   const minYear = currentYear - 100;
   const maxYear = currentYear;
-  const inputId = useId();
   
   const zodiac = value && parseInt(value) ? getZodiacByYear(parseInt(value)) : null;
 
@@ -23,7 +21,7 @@ export default function BirthYearInput({ value, onChange, title }: BirthYearInpu
       <CardContent className="p-6">
         <div className="space-y-4">
           <div>
-            <Label htmlFor={inputId} className="text-lg font-semibold" data-testid="text-title">
+            <Label htmlFor="birth-year" className="text-lg font-semibold" data-testid="text-title">
               {title}
             </Label>
             <p className="text-sm text-muted-foreground mt-1">
@@ -48,15 +46,10 @@ export default function BirthYearInput({ value, onChange, title }: BirthYearInpu
             />
             
             {zodiac && (
-              <div className="text-center p-3 bg-muted rounded-md flex items-center justify-center gap-3" data-testid="display-zodiac-result">
-                <img 
-                  src={zodiac.image} 
-                  alt={zodiac.name}
-                  className="w-10 h-10 object-cover rounded-md"
-                  data-testid={`img-zodiac-result-${zodiac.id}`}
-                  loading="lazy"
-                  decoding="async"
-                />
+              <div className="text-center p-3 bg-muted rounded-md" data-testid="display-zodiac-result">
+                <span className="text-2xl mr-2" role="img" aria-label={zodiac.name}>
+                  {zodiac.emoji}
+                </span>
                 <span className="text-lg font-medium">{zodiac.name}띠</span>
               </div>
             )}
