@@ -1,8 +1,8 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Progress } from "@/components/ui/progress";
-import { Heart, ArrowLeft } from "lucide-react";
-import { type ZodiacAnimal, getCompatibilityScore, getCompatibilityMessage } from "@/lib/zodiac";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { type ZodiacAnimal, getCompatibilityMessage, getCompatibilityScore } from "@/lib/zodiac";
+import { ArrowLeft, Heart } from "lucide-react";
+import { useEffect, useState } from "react";
 
 interface CompatibilityResultProps {
   myZodiac: ZodiacAnimal;
@@ -11,13 +11,55 @@ interface CompatibilityResultProps {
 }
 
 export default function CompatibilityResult({ myZodiac, partnerZodiac, onBack }: CompatibilityResultProps) {
-  const score = getCompatibilityScore(myZodiac, partnerZodiac);
-  const message = getCompatibilityMessage(score);
+  const finalScore = getCompatibilityScore(myZodiac, partnerZodiac);
+  const [animatedScore, setAnimatedScore] = useState(0);
+  const [progressValue, setProgressValue] = useState(0);
+  const [showMessage, setShowMessage] = useState(false);
+  const message = getCompatibilityMessage(finalScore);
+  
+  useEffect(() => {
+    const duration = 2000; // 2초 동안 애니메이션
+    const steps = 60; // 60프레임
+    const stepDuration = duration / steps;
+    const scoreIncrement = finalScore / steps;
+    const progressIncrement = finalScore / steps;
+    
+    let currentStep = 0;
+    
+    const timer = setInterval(() => {
+      currentStep++;
+      const newScore = Math.min(Math.floor(scoreIncrement * currentStep), finalScore);
+      const newProgress = Math.min(progressIncrement * currentStep, finalScore);
+      
+      setAnimatedScore(newScore);
+      setProgressValue(newProgress);
+      
+      if (currentStep >= steps) {
+        clearInterval(timer);
+        setAnimatedScore(finalScore);
+        setProgressValue(finalScore);
+        // 점수 애니메이션 완료 후 0.5초 뒤에 메시지 표시
+        setTimeout(() => {
+          setShowMessage(true);
+        }, 500);
+      }
+    }, stepDuration);
+    
+    return () => clearInterval(timer);
+  }, [finalScore]);
   
   const getScoreColor = (score: number) => {
-    if (score >= 80) return "text-green-600 dark:text-green-400";
-    if (score >= 60) return "text-yellow-600 dark:text-yellow-400";
-    return "text-red-600 dark:text-red-400";
+    if (score >= 81) return "text-blue-600 dark:text-blue-400";  // 81-100: 파란색
+    if (score >= 61) return "text-green-600 dark:text-green-400"; // 61-80: 초록색
+    if (score >= 41) return "text-yellow-600 dark:text-yellow-400"; // 41-60: 노란색
+    return "text-red-600 dark:text-red-400"; // 0-40: 빨간색
+  };
+
+  const getProgressColor = (score: number) => {
+    if (score >= 81) return "bg-blue-500";    // 81-100: 파란색
+    if (score >= 61) return "bg-green-500";   // 61-80: 초록색
+    if (score >= 41) return "bg-yellow-500";  // 41-60: 노란색
+    return "bg-red-500"; // 0-40: 빨간색
   };
 
   return (
@@ -57,19 +99,28 @@ export default function CompatibilityResult({ myZodiac, partnerZodiac, onBack }:
           {/* 점수 표시 */}
           <div className="space-y-4">
             <div className="text-center">
-              <div className={`text-6xl font-bold ${getScoreColor(score)}`} data-testid="text-compatibility-score">
-                {score}점
+              <div className={`text-6xl font-bold ${getScoreColor(animatedScore)}`} data-testid="text-compatibility-score">
+                {animatedScore}점
               </div>
-              <Progress value={score} className="mt-4" data-testid="progress-compatibility" />
+              <div className="mt-4">
+                <div className="w-full bg-gray-200 rounded-full h-3">
+                  <div 
+                    className={`h-3 rounded-full transition-all duration-100 ${getProgressColor(animatedScore)}`}
+                    style={{ width: `${progressValue}%` }}
+                  />
+                </div>
+              </div>
             </div>
             
-            <Card className="bg-muted">
-              <CardContent className="p-4">
-                <p className="text-lg leading-relaxed" data-testid="text-compatibility-message">
-                  {message}
-                </p>
-              </CardContent>
-            </Card>
+            {showMessage && (
+              <Card className="bg-muted animate-in fade-in duration-500" data-testid="compatibility-message-card">
+                <CardContent className="p-4">
+                  <p className="text-lg leading-relaxed" data-testid="text-compatibility-message">
+                    {message}
+                  </p>
+                </CardContent>
+              </Card>
+            )}
           </div>
         </CardContent>
       </Card>
