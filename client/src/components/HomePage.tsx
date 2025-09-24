@@ -1,11 +1,11 @@
-import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Heart, Calculator } from "lucide-react";
-import ZodiacSelector from "./ZodiacSelector";
-import BirthYearInput from "./BirthYearInput";
 import { type ZodiacAnimal, getZodiacByYear } from "@/lib/zodiac";
+import { Calculator, Heart } from "lucide-react";
+import { useState } from "react";
+import BirthYearInput from "./BirthYearInput";
+import ZodiacSelector from "./ZodiacSelector";
 
 interface HomePageProps {
   onCheckCompatibility: (myZodiac: ZodiacAnimal, partnerZodiac: ZodiacAnimal) => void;
@@ -56,7 +56,7 @@ export default function HomePage({ onCheckCompatibility }: HomePageProps) {
 
   return (
     <div className="min-h-screen bg-background p-4" data-testid="container-homepage">
-      <div className="max-w-4xl mx-auto space-y-8">
+      <div className="max-w-4xl mx-auto space-y-6">
         {/* 헤더 */}
         <div className="text-center space-y-4">
           <div className="flex items-center justify-center gap-3">
@@ -72,7 +72,7 @@ export default function HomePage({ onCheckCompatibility }: HomePageProps) {
         </div>
 
         {/* 입력 섹션 */}
-        <div className="grid md:grid-cols-2 gap-6">
+        <div className="space-y-6 md:grid md:grid-cols-2 md:gap-6 md:space-y-0">
           {/* 내 정보 */}
           <Card data-testid="card-my-info">
             <CardHeader>
@@ -93,14 +93,14 @@ export default function HomePage({ onCheckCompatibility }: HomePageProps) {
                   <ZodiacSelector
                     selectedZodiac={myZodiac}
                     onSelect={setMyZodiac}
-                    title="내 띠"
+                    title=""
                   />
                 </TabsContent>
                 <TabsContent value="year" className="mt-4">
                   <BirthYearInput
                     value={myBirthYear}
                     onChange={setMyBirthYear}
-                    title="내 생년"
+                    title=""
                   />
                 </TabsContent>
               </Tabs>
@@ -127,14 +127,14 @@ export default function HomePage({ onCheckCompatibility }: HomePageProps) {
                   <ZodiacSelector
                     selectedZodiac={partnerZodiac}
                     onSelect={setPartnerZodiac}
-                    title="상대방 띠"
+                    title=""
                   />
                 </TabsContent>
                 <TabsContent value="year" className="mt-4">
                   <BirthYearInput
                     value={partnerBirthYear}
                     onChange={setPartnerBirthYear}
-                    title="상대방 생년"
+                    title=""
                   />
                 </TabsContent>
               </Tabs>

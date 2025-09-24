@@ -1,6 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
 import { getZodiacByYear } from "@/lib/zodiac";
 
 interface BirthYearInputProps {
@@ -21,10 +20,7 @@ export default function BirthYearInput({ value, onChange, title }: BirthYearInpu
       <CardContent className="p-6">
         <div className="space-y-4">
           <div>
-            <Label htmlFor="birth-year" className="text-lg font-semibold" data-testid="text-title">
-              {title}
-            </Label>
-            <p className="text-sm text-muted-foreground mt-1">
+            <p className="text-sm text-muted-foreground">
               생년을 입력하면 자동으로 띠가 계산됩니다
             </p>
           </div>

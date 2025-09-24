@@ -10,17 +10,14 @@ interface ZodiacSelectorProps {
 
 export default function ZodiacSelector({ selectedZodiac, onSelect, title }: ZodiacSelectorProps) {
   return (
-    <Card data-testid="card-zodiac-selector">
-      <CardContent className="p-6">
-        <h3 className="text-lg font-semibold mb-4 text-center" data-testid="text-title">
-          {title}
-        </h3>
-        <div className="grid grid-cols-3 sm:grid-cols-4 gap-3">
+    <Card data-testid="card-zodiac-selector" className="w-full">
+      <CardContent className="p-6 overflow-hidden">
+        <div className="flex gap-3 overflow-x-auto pb-2 scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-100 max-w-full whitespace-nowrap md:grid md:grid-cols-3 md:gap-3 md:overflow-x-visible md:whitespace-normal">
           {zodiacAnimals.map((animal) => (
             <Button
               key={animal.id}
               variant={selectedZodiac?.id === animal.id ? "default" : "outline"}
-              className="h-auto py-3 flex flex-col gap-1 hover-elevate"
+              className="h-auto py-3 flex flex-col gap-1 hover-elevate min-w-[80px] flex-shrink-0"
               onClick={() => {
                 console.log(`${animal.name} selected`);
                 onSelect(animal);

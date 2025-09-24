@@ -48,9 +48,9 @@
 
   --popover-border: 240 8% 86%;
 
-  --primary: #eb1a4e;
+  --primary: 340 75% 51%;
 
-  --primary-foreground: #ffffff;
+  --primary-foreground: 0 0% 100%;
 
   --secondary: #c4c4c4;
 
@@ -166,7 +166,7 @@
 
   --popover-border: 240 6% 24%;
 
-  --primary: 9 75% 61%;
+  --primary: 340 75% 51%;
 
   --primary-foreground: 0 0% 100%;
 
@@ -324,5 +324,28 @@
   .border.active-elevate-2:not(.no-active-interaction-elevate)::after,
   .border.hover-elevate:not(.no-hover-interaction-elevate)::after {
     inset: -1px;
+  }
+
+  /* Custom scrollbar styles */
+  .scrollbar-thin {
+    scrollbar-width: thin;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar {
+    height: 6px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: hsl(var(--muted));
+    border-radius: 3px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background: hsl(var(--muted-foreground) / 0.3);
+    border-radius: 3px;
+  }
+
+  .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--muted-foreground) / 0.5);
   }
 }
