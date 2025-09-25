@@ -43,9 +43,11 @@ export default function BirthYearInput({ value, onChange, title }: BirthYearInpu
             
             {zodiac && (
               <div className="text-center p-3 bg-muted rounded-md" data-testid="display-zodiac-result">
-                <span className="text-2xl mr-2" role="img" aria-label={zodiac.name}>
-                  {zodiac.emoji}
-                </span>
+                <img 
+                  src={zodiac.image} 
+                  alt={zodiac.name}
+                  className="w-12 h-12 object-contain inline-block mr-2"
+                />
                 <span className="text-lg font-medium">{zodiac.name}띠</span>
               </div>
             )}

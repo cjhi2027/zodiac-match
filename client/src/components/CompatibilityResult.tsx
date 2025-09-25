@@ -77,7 +77,11 @@ export default function CompatibilityResult({ myZodiac, partnerZodiac, onBack }:
           <div className="flex items-center justify-center gap-8">
             <div className="text-center" data-testid="display-my-zodiac">
               <div className="text-4xl mb-2" role="img" aria-label={myZodiac.name}>
-                {myZodiac.emoji}
+                <img 
+                  src={myZodiac.image} 
+                  alt={myZodiac.name}
+                  className="w-[180px] h-[180px] object-contain mx-auto"
+                />
               </div>
               <p className="font-medium">{myZodiac.name}띠</p>
               <p className="text-sm text-muted-foreground">나</p>
@@ -89,7 +93,11 @@ export default function CompatibilityResult({ myZodiac, partnerZodiac, onBack }:
             
             <div className="text-center" data-testid="display-partner-zodiac">
               <div className="text-4xl mb-2" role="img" aria-label={partnerZodiac.name}>
-                {partnerZodiac.emoji}
+                <img 
+                  src={partnerZodiac.image} 
+                  alt={partnerZodiac.name}
+                  className="w-[180px] h-[180px] object-contain mx-auto"
+                />
               </div>
               <p className="font-medium">{partnerZodiac.name}띠</p>
               <p className="text-sm text-muted-foreground">상대방</p>

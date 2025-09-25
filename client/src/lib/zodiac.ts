@@ -1,17 +1,17 @@
 // 12간지 동물 정보
 export const zodiacAnimals = [
-  { id: 'mouse', name: '쥐', emoji: '🐭' },
-  { id: 'ox', name: '소', emoji: '🐂' },
-  { id: 'tiger', name: '호랑이', emoji: '🐅' },
-  { id: 'rabbit', name: '토끼', emoji: '🐰' },
-  { id: 'dragon', name: '용', emoji: '🐲' },
-  { id: 'snake', name: '뱀', emoji: '🐍' },
-  { id: 'horse', name: '말', emoji: '🐎' },
-  { id: 'goat', name: '양', emoji: '🐐' },
-  { id: 'monkey', name: '원숭이', emoji: '🐵' },
-  { id: 'rooster', name: '닭', emoji: '🐓' },
-  { id: 'dog', name: '개', emoji: '🐕' },
-  { id: 'pig', name: '돼지', emoji: '🐷' }
+  { id: 'mouse', name: '쥐', image: '/attached_assets/animal/animal_01.png' },
+  { id: 'ox', name: '소', image: '/attached_assets/animal/animal_02.png' },
+  { id: 'tiger', name: '호랑이', image: '/attached_assets/animal/animal_03.png' },
+  { id: 'rabbit', name: '토끼', image: '/attached_assets/animal/animal_04.png' },
+  { id: 'dragon', name: '용', image: '/attached_assets/animal/animal_05.png' },
+  { id: 'snake', name: '뱀', image: '/attached_assets/animal/animal_06.png' },
+  { id: 'horse', name: '말', image: '/attached_assets/animal/animal_07.png' },
+  { id: 'goat', name: '양', image: '/attached_assets/animal/animal_08.png' },
+  { id: 'monkey', name: '원숭이', image: '/attached_assets/animal/animal_09.png' },
+  { id: 'rooster', name: '닭', image: '/attached_assets/animal/animal_10.png' },
+  { id: 'dog', name: '개', image: '/attached_assets/animal/animal_11.png' },
+  { id: 'pig', name: '돼지', image: '/attached_assets/animal/animal_12.png' }
 ] as const;
 
 export type ZodiacAnimal = typeof zodiacAnimals[number];
