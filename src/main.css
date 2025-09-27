@@ -1,0 +1,590 @@
+/* 기본 설정 */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: #faf7f0;
+  min-height: 100vh;
+}
+
+/* 메인 컨테이너 */
+.matching-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #faf7f0;
+  min-height: 100vh;
+}
+
+/* 헤더 */
+.header {
+  margin-bottom: 40px;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.header-text {
+  text-align: center;
+  flex: 1;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  font-size: 1rem;
+  color: #666;
+  margin: 0;
+}
+
+.header-controls {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+/* 콘텐츠 래퍼 */
+.content-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin-bottom: 40px;
+  align-items: stretch;
+}
+
+/* 정보 섹션 */
+.info-section {
+  background: white;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e0e0e0;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.section-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* 탭 버튼 */
+.gender-selector {
+  display: flex;
+  margin-bottom: 24px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.gender-btn {
+  flex: 1;
+  padding: 12px;
+  border: 1px solid #e0e0e0;
+  background: white;
+  color: #666;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.gender-btn.active {
+  background: #e91e63;
+  color: white;
+  border-color: #e91e63;
+}
+
+.gender-btn-outline {
+  flex: 1;
+  padding: 12px;
+  border: 1px solid #e0e0e0;
+  background: white;
+  color: #666;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.gender-btn-outline.active {
+  background: #e91e63;
+  color: white;
+  border-color: #e91e63;
+}
+
+.gender-btn:not(.active) {
+  background: white;
+  color: #666;
+  border: 1px solid #e0e0e0;
+}
+
+.gender-btn-outline:not(.active) {
+  background: white;
+  color: #666;
+  border: 1px solid #e0e0e0;
+}
+
+/* 동물 그리드 */
+.animal-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.animal-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 12px;
+  border: 2px solid #f0f0f0;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+  background: white;
+  min-height: 100px;
+}
+
+.animal-item:hover {
+  border-color: #e91e63;
+  border-color: #f3cccc;
+  background: #fce4ec;
+}
+
+.animal-item.selected {
+  border-color: #e91e63;
+  background: #e91e63;
+}
+
+/* 선택된 아이콘 색상 반전 취소 */
+
+.animal-icon {
+  width: 54px;
+  height: 54px;
+  object-fit: contain;
+  transition: all 0.2s;
+}
+
+/* 띠 특징 문구 */
+.zodiac-feature-text {
+  margin-top: 24px;
+  padding: 15px;
+  background-color: #f8f9fa;
+  border: 1px solid #e9ecef;
+  border-radius: 8px;
+  font-size: 1.05rem;
+  color: #222;
+  text-align: center;
+  line-height: 1.5;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  animation: fadeIn 0.3s ease-in-out;
+  min-height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.zodiac-feature-text.has-content {
+  background-color: #fff3e0;
+  border: 1px solid #ffcc80;
+}
+
+/* 생년 선택 시 띠 표시 */
+.selected-zodiac-display {
+  margin-top: 20px;
+  text-align: center;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.selected-zodiac-image {
+  width: 148px;
+  height: 148px;
+  object-fit: contain;
+  margin-top: 28px;
+  margin-bottom: 22px;
+}
+
+.selected-zodiac-name {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #444;
+  margin: 0 0 24px 0;
+}
+
+.selected-zodiac-feature {
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.5;
+  margin: 0;
+  padding: 12px;
+  background-color: #f8f9fa;
+  border: 1px solid #e9ecef;
+  border-radius: 8px;
+}
+
+/* 생년 선택 드롭다운 */
+.birth-year-select {
+  width: 100%;
+  padding: 8px 16px; /* 12px에서 8px로 줄임 (약 33% 감소) */
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 1rem;
+  background: white;
+  cursor: pointer;
+  transition: all 0.2s;
+  outline: none;
+  appearance: none;
+  text-align: center;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6,9 12,15 18,9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 16px;
+  padding-right: 40px;
+  height: 40px; /* 고정 높이 추가 */
+}
+
+.birth-year-select:focus {
+  border-color: #e91e63;
+  box-shadow: 0 0 0 2px rgba(233, 30, 99, 0.2);
+}
+
+.birth-year-select:hover {
+  border-color: #e91e63;
+}
+
+/* 드롭다운 옵션 리스트 높이 제한 */
+.birth-year-select {
+  max-height: 200px; /* 드롭다운 최대 높이 제한 */
+  overflow-y: auto; /* 스크롤 가능 */
+}
+
+.birth-year-select option {
+  padding: 8px 12px;
+  font-size: 0.9rem;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+/* 드롭다운 옵션 리스트 스타일링 */
+.birth-year-select:focus {
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+/* 버튼 섹션 */
+.button-section {
+  text-align: center;
+}
+
+.compatibility-btn {
+  background: #ec9cc4;
+  color: white;
+  border: none;
+  padding: 16px 48px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background 0.2s;
+  margin-bottom: 12px;
+}
+
+.compatibility-btn:hover:not(:disabled) {
+  background: #e91e63;
+}
+
+.compatibility-btn:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+.info-text {
+  font-size: 0.9rem;
+  color: #666;
+  margin: 0;
+}
+
+/* 결과 페이지 */
+.result-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #faf7f0;
+  min-height: 100vh;
+}
+
+.result-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.result-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.result-card {
+  background: white;
+  border-radius: 12px;
+  padding: 32px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e0e0e0;
+  text-align: center;
+}
+
+.result-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  margin-bottom: 24px;
+}
+
+.result-animal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.result-animal img {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+
+.result-animal h3 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #444;
+  margin: 0 0 4px 0;
+}
+
+.result-score {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  min-width: 120px; /* 3자리 점수 표시를 위한 최소 너비 */
+}
+
+.result-score .score-icon {
+  font-size: 2rem;
+  color: #e91e63;
+}
+
+.result-score .score-number {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin: 0;
+  transition: color 0.3s ease;
+  min-width: 100px; /* 점수 표시 영역 고정 */
+  text-align: center;
+}
+
+/* 점수 색상 클래스 */
+.score-number.green {
+  color: #4caf50;
+}
+
+.score-number.blue {
+  color: #2196f3;
+}
+
+.score-number.yellow {
+  color: #ff9800;
+}
+
+.score-number.orange {
+  color: #ff5722;
+}
+
+.score-number.red {
+  color: #f44336;
+}
+
+.result-progress {
+  width: 100%;
+  height: 16px;
+  background: #f0f0f0;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 8px;
+}
+
+.result-progress-bar {
+  height: 100%;
+  border-radius: 8px;
+  transition: width 1s ease-out;
+}
+
+.result-progress-bar.green {
+  background: #4caf50;
+  transition: background-color 0.3s ease;
+}
+
+.result-progress-bar.blue {
+  background: #2196f3;
+  transition: background-color 0.3s ease;
+}
+
+.result-progress-bar.yellow {
+  background: #ff9800;
+  transition: background-color 0.3s ease;
+}
+
+.result-progress-bar.orange {
+  background: #ff5722;
+  transition: background-color 0.3s ease;
+}
+
+.result-progress-bar.red {
+  background: #f44336;
+  transition: background-color 0.3s ease;
+}
+
+/* 애니메이션 효과 */
+.fade-in {
+  opacity: 1;
+}
+
+/* 점수 카운트 애니메이션 */
+.result-score .score-number {
+  transition: all 0.1s ease-out;
+}
+
+.result-message {
+  font-size: 1.1rem;
+  color: #666;
+  background: #f8f9fa;
+  border: 1px solid #e9ecef;
+  border-radius: 8px;
+  padding: 16px;
+  margin-top: 36px;
+  margin-bottom: 36px;
+  line-height: 1.5;
+  min-height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.result-message.has-content {
+  background: #fff3e0;
+  border: 1px solid #ffcc80;
+}
+
+.back-btn {
+  background: #e91e63;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s, opacity 0.3s ease;
+}
+
+.back-btn:hover:not(:disabled) {
+  background: #c2185b;
+}
+
+.back-btn:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+  .header-content {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .header-controls {
+    order: -1;
+    align-self: flex-end;
+  }
+
+  .content-wrapper {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .matching-container {
+    padding: 16px;
+  }
+
+  .animal-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+  }
+
+  .animal-item {
+    padding: 16px 8px;
+    min-height: 80px;
+  }
+
+  .animal-icon {
+    width: 48px;
+    height: 48px;
+  }
+
+  .selected-zodiac-image {
+    width: 96px;
+    height: 96px;
+    margin-top: 28px;
+  }
+
+  .selected-zodiac-name {
+    font-size: 1.3rem;
+  }
+
+  .selected-zodiac-feature {
+    font-size: 0.9rem;
+    padding: 10px;
+  }
+
+  .result-content {
+    flex-direction: row;
+    gap: 8px;
+  }
+
+  .result-animal img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .result-animal h3 {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: #444;
+    margin: 0 0 4px 0;
+  }
+
+  .result-score .score-number {
+    font-size: 2rem;
+  }
+}
