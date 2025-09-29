@@ -51,10 +51,10 @@
             title=""
           />
           <!-- 내 생년 띠 표시 -->
-          <div v-if="getMyFinalZodiac()" class="selected-zodiac-display">
+          <div class="selected-zodiac-display">
             <img
-              :src="getMyFinalZodiac()?.image"
-              :alt="getMyFinalZodiac()?.name"
+              :src="getMyFinalZodiac()?.image || '/attached_assets/animal/animal_unknown.png'"
+              :alt="getMyFinalZodiac()?.name || 'Unknown'"
               class="selected-zodiac-image"
             />
             <h3 class="selected-zodiac-name">
@@ -121,10 +121,10 @@
             title=""
           />
           <!-- 상대방 생년 띠 표시 -->
-          <div v-if="getPartnerFinalZodiac()" class="selected-zodiac-display">
+          <div class="selected-zodiac-display">
             <img
-              :src="getPartnerFinalZodiac()?.image"
-              :alt="getPartnerFinalZodiac()?.name"
+              :src="getPartnerFinalZodiac()?.image || '/attached_assets/animal/animal_unknown.png'"
+              :alt="getPartnerFinalZodiac()?.name || 'Unknown'"
               class="selected-zodiac-image"
             />
             <h3 class="selected-zodiac-name">
@@ -197,12 +197,12 @@ const { t } = useI18n();
 
 // 내 정보
 const myZodiac = ref<ZodiacAnimal | undefined>();
-const myBirthYear = ref("2000");
+const myBirthYear = ref("");
 const myActiveIndex = ref(0);
 
 // 상대방 정보
 const partnerZodiac = ref<ZodiacAnimal | undefined>();
-const partnerBirthYear = ref("2000");
+const partnerBirthYear = ref("");
 const partnerActiveIndex = ref(0);
 
 // 내 최종 띠 계산
@@ -259,7 +259,7 @@ const handleMyTabChange = (newIndex: number) => {
   myActiveIndex.value = newIndex;
   // 탭 변경 시 다른 입력 방식의 값 초기화
   if (newIndex === 0) {
-    myBirthYear.value = "2000";
+    myBirthYear.value = "";
   } else {
     myZodiac.value = undefined;
   }
@@ -269,7 +269,7 @@ const handlePartnerTabChange = (newIndex: number) => {
   partnerActiveIndex.value = newIndex;
   // 탭 변경 시 다른 입력 방식의 값 초기화
   if (newIndex === 0) {
-    partnerBirthYear.value = "2000";
+    partnerBirthYear.value = "";
   } else {
     partnerZodiac.value = undefined;
   }

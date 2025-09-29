@@ -36,7 +36,7 @@ const yearOptions = computed(() => {
   return years;
 });
 
-const selectedYear = ref(props.value || "2000");
+const selectedYear = ref(props.value || "");
 
 const handleChange = (event: Event) => {
   const target = event.target as HTMLSelectElement;
