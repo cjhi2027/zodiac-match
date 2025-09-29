@@ -553,7 +553,7 @@ body {
   font-size: 1.2rem;
   font-weight: 600;
   color: #e91e63;
-  text-align: center;
+  text-align: left;
   margin-bottom: 1rem;
   padding: 1rem;
   background: #fff3e0;
@@ -571,7 +571,7 @@ body {
   border-radius: 0.5rem; /* 8px = 0.5rem */
   padding: 1rem;
   line-height: 1.6;
-  text-align: center;
+  text-align: left;
 }
 
 /* 버튼 영역 */

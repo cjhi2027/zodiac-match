@@ -16,6 +16,10 @@ const router = createRouter({
       component: Detail,
     },
   ],
+  scrollBehavior(to, from, savedPosition) {
+    // 페이지 전환 시 항상 최상단으로 스크롤
+    return { top: 0 }
+  }
 });
 
 export default router;
