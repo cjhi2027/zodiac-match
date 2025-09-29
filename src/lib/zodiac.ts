@@ -109,11 +109,146 @@ export function getCompatibilityScore(
   return compatibilityMatrix[index1][index2];
 }
 
-// 궁합 점수에 따른 메시지 키 반환
+// 궁합 상세 정보 타입 정의
+export interface CompatibilityDetail {
+  wittyKey: string; // 재치있고 간단한 설명 키
+  elaborationKey: string; // 부연설명 키
+  detailed: {
+    basicKey: string; // 기본 설명 키
+    cautionKey: string; // 주의할 점 키
+    dateRecommendationKey: string; // 추천 데이트 키
+  };
+}
+
+// 12개 띠별 궁합 상세 정보 (쥐띠 기준)
+export const mouseCompatibilityDetails: Record<string, CompatibilityDetail> = {
+  mouse: {
+    wittyKey: "compatibilityDetail.mouse.mouse.witty",
+    elaborationKey: "compatibilityDetail.mouse.mouse.elaboration",
+    detailed: {
+      basicKey: "compatibilityDetail.mouse.mouse.detailed.basic",
+      cautionKey: "compatibilityDetail.mouse.mouse.detailed.caution",
+      dateRecommendationKey: "compatibilityDetail.mouse.mouse.detailed.dateRecommendation"
+    }
+  },
+  ox: {
+    wittyKey: "compatibilityDetail.mouse.ox.witty",
+    elaborationKey: "compatibilityDetail.mouse.ox.elaboration",
+    detailed: {
+      basicKey: "compatibilityDetail.mouse.ox.detailed.basic",
+      cautionKey: "compatibilityDetail.mouse.ox.detailed.caution",
+      dateRecommendationKey: "compatibilityDetail.mouse.ox.detailed.dateRecommendation"
+    }
+  },
+  tiger: {
+    wittyKey: "compatibilityDetail.mouse.tiger.witty",
+    elaborationKey: "compatibilityDetail.mouse.tiger.elaboration",
+    detailed: {
+      basicKey: "compatibilityDetail.mouse.tiger.detailed.basic",
+      cautionKey: "compatibilityDetail.mouse.tiger.detailed.caution",
+      dateRecommendationKey: "compatibilityDetail.mouse.tiger.detailed.dateRecommendation"
+    }
+  },
+  rabbit: {
+    wittyKey: "compatibilityDetail.mouse.rabbit.witty",
+    elaborationKey: "compatibilityDetail.mouse.rabbit.elaboration",
+    detailed: {
+      basicKey: "compatibilityDetail.mouse.rabbit.detailed.basic",
+      cautionKey: "compatibilityDetail.mouse.rabbit.detailed.caution",
+      dateRecommendationKey: "compatibilityDetail.mouse.rabbit.detailed.dateRecommendation"
+    }
+  },
+  dragon: {
+    wittyKey: "compatibilityDetail.mouse.dragon.witty",
+    elaborationKey: "compatibilityDetail.mouse.dragon.elaboration",
+    detailed: {
+      basicKey: "compatibilityDetail.mouse.dragon.detailed.basic",
+      cautionKey: "compatibilityDetail.mouse.dragon.detailed.caution",
+      dateRecommendationKey: "compatibilityDetail.mouse.dragon.detailed.dateRecommendation"
+    }
+  },
+  snake: {
+    wittyKey: "compatibilityDetail.mouse.snake.witty",
+    elaborationKey: "compatibilityDetail.mouse.snake.elaboration",
+    detailed: {
+      basicKey: "compatibilityDetail.mouse.snake.detailed.basic",
+      cautionKey: "compatibilityDetail.mouse.snake.detailed.caution",
+      dateRecommendationKey: "compatibilityDetail.mouse.snake.detailed.dateRecommendation"
+    }
+  },
+  horse: {
+    wittyKey: "compatibilityDetail.mouse.horse.witty",
+    elaborationKey: "compatibilityDetail.mouse.horse.elaboration",
+    detailed: {
+      basicKey: "compatibilityDetail.mouse.horse.detailed.basic",
+      cautionKey: "compatibilityDetail.mouse.horse.detailed.caution",
+      dateRecommendationKey: "compatibilityDetail.mouse.horse.detailed.dateRecommendation"
+    }
+  },
+  goat: {
+    wittyKey: "compatibilityDetail.mouse.goat.witty",
+    elaborationKey: "compatibilityDetail.mouse.goat.elaboration",
+    detailed: {
+      basicKey: "compatibilityDetail.mouse.goat.detailed.basic",
+      cautionKey: "compatibilityDetail.mouse.goat.detailed.caution",
+      dateRecommendationKey: "compatibilityDetail.mouse.goat.detailed.dateRecommendation"
+    }
+  },
+  monkey: {
+    wittyKey: "compatibilityDetail.mouse.monkey.witty",
+    elaborationKey: "compatibilityDetail.mouse.monkey.elaboration",
+    detailed: {
+      basicKey: "compatibilityDetail.mouse.monkey.detailed.basic",
+      cautionKey: "compatibilityDetail.mouse.monkey.detailed.caution",
+      dateRecommendationKey: "compatibilityDetail.mouse.monkey.detailed.dateRecommendation"
+    }
+  },
+  rooster: {
+    wittyKey: "compatibilityDetail.mouse.rooster.witty",
+    elaborationKey: "compatibilityDetail.mouse.rooster.elaboration",
+    detailed: {
+      basicKey: "compatibilityDetail.mouse.rooster.detailed.basic",
+      cautionKey: "compatibilityDetail.mouse.rooster.detailed.caution",
+      dateRecommendationKey: "compatibilityDetail.mouse.rooster.detailed.dateRecommendation"
+    }
+  },
+  dog: {
+    wittyKey: "compatibilityDetail.mouse.dog.witty",
+    elaborationKey: "compatibilityDetail.mouse.dog.elaboration",
+    detailed: {
+      basicKey: "compatibilityDetail.mouse.dog.detailed.basic",
+      cautionKey: "compatibilityDetail.mouse.dog.detailed.caution",
+      dateRecommendationKey: "compatibilityDetail.mouse.dog.detailed.dateRecommendation"
+    }
+  },
+  pig: {
+    wittyKey: "compatibilityDetail.mouse.pig.witty",
+    elaborationKey: "compatibilityDetail.mouse.pig.elaboration",
+    detailed: {
+      basicKey: "compatibilityDetail.mouse.pig.detailed.basic",
+      cautionKey: "compatibilityDetail.mouse.pig.detailed.caution",
+      dateRecommendationKey: "compatibilityDetail.mouse.pig.detailed.dateRecommendation"
+    }
+  }
+};
+
+// 궁합 점수에 따른 메시지 키 반환 (기존 유지)
 export function getCompatibilityMessageKey(score: number): string {
   if (score >= 90) return "compatibility.excellent";
   if (score >= 80) return "compatibility.veryGood";
   if (score >= 70) return "compatibility.good";
   if (score >= 60) return "compatibility.fair";
   return "compatibility.poor";
+}
+
+// 두 띠의 궁합 상세 정보 가져오기
+export function getCompatibilityDetail(
+  zodiac1: ZodiacAnimal,
+  zodiac2: ZodiacAnimal
+): CompatibilityDetail | null {
+  // 현재는 쥐띠 기준으로만 구현 (추후 확장 가능)
+  if (zodiac1.id === "mouse") {
+    return mouseCompatibilityDetails[zodiac2.id] || null;
+  }
+  return null;
 }

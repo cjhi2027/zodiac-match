@@ -9,6 +9,7 @@
       :my-zodiac="myZodiac"
       :partner-zodiac="partnerZodiac"
       @back="handleBack"
+      @view-detail="handleViewDetail"
     />
   </div>
 </template>
@@ -18,6 +19,9 @@ import CompatibilityResult from "@/components/CompatibilityResult.vue";
 import HomePage from "@/components/HomePage.vue";
 import { type ZodiacAnimal } from "@/lib/zodiac";
 import { ref } from "vue";
+import { useRouter } from "vue-router";
+
+const router = useRouter();
 
 const currentView = ref<"home" | "result">("home");
 const myZodiac = ref<ZodiacAnimal | null>(null);
@@ -31,6 +35,15 @@ const handleCheckCompatibility = (my: ZodiacAnimal, partner: ZodiacAnimal) => {
 
 const handleBack = () => {
   currentView.value = "home";
+};
+
+const handleViewDetail = (my: ZodiacAnimal, partner: ZodiacAnimal) => {
+  // URL 파라미터로 띠 정보 전달
+  const params = new URLSearchParams({
+    my: my.id,
+    partner: partner.id,
+  });
+  router.push(`/detail?${params.toString()}`);
 };
 </script>
 

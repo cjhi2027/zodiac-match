@@ -39,33 +39,53 @@
         ></div>
       </div>
 
-      <!-- 궁합 메시지 -->
+      <!-- 궁합 설명 -->
       <div
-        class="result-message"
+        class="result-description"
         :class="{
           'fade-in': showMessage,
           'has-content': showMessage,
         }"
       >
-        {{ showMessage ? message : "" }}
+        <!-- 재치있고 간단한 설명 -->
+        <div v-if="compatibilityDetail" class="witty-description">
+          {{ showMessage ? $t(compatibilityDetail.wittyKey) : "" }}
+        </div>
+        
+        <!-- 부연설명 -->
+        <div v-if="compatibilityDetail" class="elaboration-description">
+          {{ showMessage ? $t(compatibilityDetail.elaborationKey) : "" }}
+        </div>
       </div>
 
-      <!-- 뒤로가기 버튼 -->
-      <button
-        @click="onBack"
-        class="back-btn"
-        :class="{ 'fade-in': showButton }"
-        :disabled="!showButton"
-      >
-        ← {{ $t("ui.checkAgain") }}
-      </button>
+      <!-- 버튼 영역 -->
+      <div class="button-area" :class="{ 'fade-in': showButton }">
+        <!-- 상세설명 보기 버튼 -->
+        <button
+          v-if="compatibilityDetail"
+          @click="onViewDetail"
+          class="detail-btn"
+          :disabled="!showButton"
+        >
+          📋 {{ $t("compatibilityDetail.viewDetail") }}
+        </button>
+        
+        <!-- 뒤로가기 버튼 -->
+        <button
+          @click="onBack"
+          class="back-btn"
+          :disabled="!showButton"
+        >
+          ← {{ $t("ui.checkAgain") }}
+        </button>
+      </div>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
 import {
-  getCompatibilityMessageKey,
+  getCompatibilityDetail,
   getCompatibilityScore,
   type ZodiacAnimal,
 } from "@/lib/zodiac";
@@ -76,6 +96,7 @@ interface Props {
   myZodiac: ZodiacAnimal;
   partnerZodiac: ZodiacAnimal;
   onBack: () => void;
+  onViewDetail?: (myZodiac: ZodiacAnimal, partnerZodiac: ZodiacAnimal) => void;
 }
 
 const props = defineProps<Props>();
@@ -89,10 +110,9 @@ const score = computed(() => {
 // 애니메이션용 점수
 const animatedScore = ref(0);
 
-// 궁합 메시지
-const message = computed(() => {
-  const messageKey = getCompatibilityMessageKey(score.value);
-  return t(messageKey);
+// 궁합 상세 정보
+const compatibilityDetail = computed(() => {
+  return getCompatibilityDetail(props.myZodiac, props.partnerZodiac);
 });
 
 // 점수에 따른 색상 (동적)
@@ -140,6 +160,13 @@ const animateScore = () => {
       }, 500); // 0.5초로 변경
     }
   }, stepTime);
+};
+
+// 상세설명 보기 핸들러
+const onViewDetail = () => {
+  if (props.onViewDetail) {
+    props.onViewDetail(props.myZodiac, props.partnerZodiac);
+  }
 };
 
 // 컴포넌트 마운트 시 애니메이션 시작
