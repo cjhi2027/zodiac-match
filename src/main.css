@@ -87,6 +87,8 @@ body {
   display: flex;
   flex-direction: column;
   height: 100%;
+  min-height: 37rem; /* 320px = 20rem, 최소 높이 지정 */
+  position: relative; /* 띠 특징 설명 박스 위치 기준 */
 }
 
 /* 섹션 제목 */
@@ -218,12 +220,12 @@ body {
 
 /* 띠 특징 설명 박스 */
 .zodiac-feature-text {
-  margin-top: 1.5rem;
+  margin-top: auto; /* 위쪽 내용을 위로 밀고 아래쪽에 배치 */
   padding: 0.9375rem;
   background-color: #f8f9fa;
   border: 1px solid #e9ecef;
   border-radius: 0.5rem; /* 8px = 0.5rem */
-  font-size: 1.05rem;
+  font-size: 1rem;
   color: #222;
   text-align: center;
   line-height: 1.5;
@@ -622,8 +624,9 @@ body {
   /* 정보 입력 섹션 (모바일) */
   .info-section {
     padding: 1rem;
-    margin-bottom: 1rem;
+    margin-bottom: 0;
     overflow-x: hidden; /* 가로 스크롤 방지 */
+    min-height: 20rem; /* 320px = 20rem, 모바일 최소 높이 지정 */
   }
 
   /* 섹션 제목 (모바일) */
@@ -639,9 +642,10 @@ body {
 
   /* 띠 특징 설명 박스 (모바일) */
   .zodiac-feature-text {
-    margin-top: 1rem;
-    padding: 0.75rem;
-    font-size: 0.95rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem; /* 위쪽 내용을 위로 밀고 아래쪽에 배치 */
+    padding: 0.5rem;
+    font-size: 1rem;
     min-height: 3rem; /* 48px = 3rem */
     background-color: #f8f9fa;
     border: 1px solid #e9ecef;
@@ -649,9 +653,10 @@ body {
 
   /* 띠 특징 설명 박스 (모바일 - 내용 있음) */
   .zodiac-feature-text.has-content {
-    background-color: #f8f9fa;
-    border: 1px solid #e9ecef;
+    background-color: #fff3e0;
+    border: 1px solid #ffcc80;
   }
+
 
 
   /* 동물 선택 그리드 (모바일) */
@@ -683,28 +688,28 @@ body {
   .animal-icon {
     width: 3.25rem; /* 40px = 2.5rem */
     height: 3.25rem; /* 40px = 2.5rem */
-    margin-bottom: 0.25rem;
+    margin-bottom: 0. 5rem;
   }
 
   /* 동물 이름 (모바일) */
   .animal-name {
-    font-size: 0.75rem; /* 12px = 0.75rem */
+    font-size: 0.9rem; /* 12px = 0.75rem */
     margin-top: 0.125rem;
     white-space: nowrap;
   }
 
   /* 선택된 띠 표시 영역 (모바일) */
   .selected-zodiac-display {
-    margin-top: 1.25rem;
+    margin-top: 1rem;
     text-align: center;
   }
 
   /* 선택된 띠 이미지 (모바일) */
   .selected-zodiac-display .selected-zodiac-image {
-    width: 6rem; /* 96px = 6rem */
-    height: 6rem; /* 96px = 6rem */
-    margin-top: 1.75rem;
-    margin-bottom: 1.375rem;
+    width: 3.5rem; /* 96px = 6rem */
+    height: 3.5rem; /* 96px = 6rem */
+    margin-top: 0;
+    margin-bottom: 0;
   }
 
   /* 선택된 띠 이름 (모바일 숨김) */

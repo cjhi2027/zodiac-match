@@ -8,8 +8,8 @@
       @click="handleSelect(animal)"
       :data-testid="`button-zodiac-${animal.id}`"
     >
-      <img :src="animal.image" :alt="animal.name" class="animal-icon" />
-      <div class="animal-name">{{ animal.name }}</div>
+      <img :src="animal.image" :alt="$t(`zodiac.${animal.id}`)" class="animal-icon" />
+      <div class="animal-name">{{ $t(`zodiac.${animal.id}`) }}</div>
     </div>
   </div>
 </template>
@@ -17,6 +17,7 @@
 <script setup lang="ts">
 import { zodiacAnimals, type ZodiacAnimal } from "@/lib/zodiac";
 import { computed } from "vue";
+import { useI18n } from "vue-i18n";
 
 interface Props {
   selectedZodiac?: ZodiacAnimal;
@@ -25,6 +26,7 @@ interface Props {
 }
 
 const props = defineProps<Props>();
+const { t } = useI18n();
 
 // 모바일에서 스크롤을 위한 동물 배열 (반복 없음)
 const displayAnimals = computed(() => {

@@ -54,15 +54,11 @@
           <div class="selected-zodiac-display">
             <img
               :src="getMyFinalZodiac()?.image || '/attached_assets/animal/animal_unknown.png'"
-              :alt="getMyFinalZodiac()?.name || 'Unknown'"
+              :alt="getMyFinalZodiac()?.id ? $t(`zodiac.${getMyFinalZodiac()?.id}`) : 'Unknown'"
               class="selected-zodiac-image"
             />
-            <h3 class="selected-zodiac-name">
-              {{
-                getMyFinalZodiac()?.id
-                  ? $t(`zodiac.${getMyFinalZodiac()?.id}`)
-                  : ""
-              }}{{ $t("ui.zodiacSuffix") }}
+            <h3 v-if="getMyFinalZodiac()?.id" class="selected-zodiac-name">
+              {{ $t(`zodiac.${getMyFinalZodiac()?.id}`) }}{{ $t("ui.zodiacSuffix") }}
             </h3>
           </div>
         </div>
@@ -124,15 +120,11 @@
           <div class="selected-zodiac-display">
             <img
               :src="getPartnerFinalZodiac()?.image || '/attached_assets/animal/animal_unknown.png'"
-              :alt="getPartnerFinalZodiac()?.name || 'Unknown'"
+              :alt="getPartnerFinalZodiac()?.id ? $t(`zodiac.${getPartnerFinalZodiac()?.id}`) : 'Unknown'"
               class="selected-zodiac-image"
             />
-            <h3 class="selected-zodiac-name">
-              {{
-                getPartnerFinalZodiac()?.id
-                  ? $t(`zodiac.${getPartnerFinalZodiac()?.id}`)
-                  : ""
-              }}{{ $t("ui.zodiacSuffix") }}
+            <h3 v-if="getPartnerFinalZodiac()?.id" class="selected-zodiac-name">
+              {{ $t(`zodiac.${getPartnerFinalZodiac()?.id}`) }}{{ $t("ui.zodiacSuffix") }}
             </h3>
           </div>
         </div>
