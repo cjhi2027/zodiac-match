@@ -51,7 +51,3 @@ watch(
   }
 );
 </script>
-
-<style scoped>
-/* 전역 스타일은 main.css에서 관리 */
-</style>

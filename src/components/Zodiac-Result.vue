@@ -48,35 +48,35 @@
         }"
       >
         <!-- 재치있고 간단한 설명 -->
-        <div v-if="compatibilityDetail" class="witty-description">
-          {{ showMessage ? $t(compatibilityDetail.wittyKey) : "" }}
+        <div
+          v-if="compatibilityDetail?.wittyKey"
+          class="witty-description"
+          :class="{ 'fade-in': showMessage }"
+        >
+          {{ $t(compatibilityDetail.wittyKey) }}
         </div>
-        
+
         <!-- 부연설명 -->
-        <div v-if="compatibilityDetail" class="elaboration-description">
-          {{ showMessage ? $t(compatibilityDetail.elaborationKey) : "" }}
+        <div
+          v-if="compatibilityDetail?.elaborationKey"
+          class="elaboration-description"
+          :class="{ 'fade-in': showMessage }"
+        >
+          {{ $t(compatibilityDetail.elaborationKey) }}
         </div>
       </div>
 
-      <!-- 버튼 영역 -->
-      <div class="button-area" :class="{ 'fade-in': showButton }">
-        <!-- 상세설명 보기 버튼 -->
-        <button
-          v-if="compatibilityDetail"
-          @click="onViewDetail"
-          class="detail-btn"
-          :disabled="!showButton"
-        >
-          📋 {{ $t("compatibilityDetail.viewDetail") }}
-        </button>
-        
-        <!-- 뒤로가기 버튼 -->
-        <button
-          @click="onBack"
-          class="back-btn"
-          :disabled="!showButton"
-        >
+      <!-- 버튼들 -->
+      <div class="result-buttons">
+        <button @click="onBack" class="back-btn">
           ← {{ $t("ui.checkAgain") }}
+        </button>
+        <button
+          v-if="compatibilityDetail?.detailed"
+          @click="() => onViewDetail(myZodiac, partnerZodiac)"
+          class="detail-btn"
+        >
+          {{ $t("compatibilityDetail.viewDetail") }}
         </button>
       </div>
     </div>
@@ -84,11 +84,7 @@
 </template>
 
 <script setup lang="ts">
-import {
-  getCompatibilityDetail,
-  getCompatibilityScore,
-  type ZodiacAnimal,
-} from "@/lib/zodiac";
+import { getCompatibilityDetail, getCompatibilityScore, type ZodiacAnimal } from "@/lib/zodiac";
 import { computed, onMounted, ref } from "vue";
 import { useI18n } from "vue-i18n";
 
@@ -96,83 +92,55 @@ interface Props {
   myZodiac: ZodiacAnimal;
   partnerZodiac: ZodiacAnimal;
   onBack: () => void;
-  onViewDetail?: (myZodiac: ZodiacAnimal, partnerZodiac: ZodiacAnimal) => void;
+  onViewDetail: (my: ZodiacAnimal, partner: ZodiacAnimal) => void;
 }
 
 const props = defineProps<Props>();
 const { t } = useI18n();
 
 // 궁합 점수 계산
-const score = computed(() => {
+const compatibilityScore = computed(() => {
   return getCompatibilityScore(props.myZodiac, props.partnerZodiac);
 });
-
-// 애니메이션용 점수
-const animatedScore = ref(0);
 
 // 궁합 상세 정보
 const compatibilityDetail = computed(() => {
   return getCompatibilityDetail(props.myZodiac, props.partnerZodiac);
 });
 
-// 점수에 따른 색상 (동적)
-const getScoreColorClass = (currentScore: number) => {
-  if (currentScore >= 90) return "blue";
-  if (currentScore >= 80) return "green";
-  if (currentScore >= 70) return "yellow";
-  if (currentScore >= 60) return "yellow";
-  return "red";
-};
-
-// 애니메이션 상태
+// 애니메이션을 위한 점수
+const animatedScore = ref(0);
 const showMessage = ref(false);
-const showButton = ref(false);
 
-// 점수 카운트 애니메이션
-const animateScore = () => {
-  const targetScore = score.value;
-  const duration = 2000; // 2초
-  const steps = 60; // 60프레임
-  const stepTime = duration / steps;
-  const increment = targetScore / steps;
-
-  let currentStep = 0;
-
-  const timer = setInterval(() => {
-    currentStep++;
-    animatedScore.value = Math.min(
-      Math.floor(increment * currentStep),
-      targetScore
-    );
-
-    if (currentStep >= steps) {
-      clearInterval(timer);
-      animatedScore.value = targetScore;
-
-      // 점수 애니메이션 완료 후 0.5초 뒤 메시지 표시
-      setTimeout(() => {
-        showMessage.value = true;
-
-        // 메시지 표시 후 버튼 표시
-        setTimeout(() => {
-          showButton.value = true;
-        }, 500);
-      }, 500); // 0.5초로 변경
-    }
-  }, stepTime);
-};
-
-// 상세설명 보기 핸들러
-const onViewDetail = () => {
-  if (props.onViewDetail) {
-    props.onViewDetail(props.myZodiac, props.partnerZodiac);
-  }
+// 점수 색상 클래스
+const getScoreColorClass = (score: number) => {
+  if (score >= 80) return "score-very-good";
+  if (score >= 60) return "score-good";
+  if (score >= 40) return "score-fair";
+  return "score-poor";
 };
 
 // 컴포넌트 마운트 시 애니메이션 시작
 onMounted(() => {
-  setTimeout(() => {
-    animateScore();
-  }, 500); // 0.5초 후 시작
+  // 점수 애니메이션
+  const duration = 1500; // 1.5초
+  const steps = 60;
+  const stepDuration = duration / steps;
+  const targetScore = compatibilityScore.value;
+
+  let currentStep = 0;
+  const timer = setInterval(() => {
+    currentStep++;
+    animatedScore.value = Math.round((targetScore * currentStep) / steps);
+    
+    if (currentStep >= steps) {
+      clearInterval(timer);
+      animatedScore.value = targetScore;
+      // 점수 애니메이션 완료 후 메시지 표시
+      setTimeout(() => {
+        showMessage.value = true;
+      }, 200);
+    }
+  }, stepDuration);
 });
 </script>

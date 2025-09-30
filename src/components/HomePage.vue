@@ -45,7 +45,7 @@
           />
         </div>
         <div v-else>
-          <BirthYearSelector
+          <ZodiacBirthYear
             :value="myBirthYear"
             :on-change="setMyBirthYear"
             title=""
@@ -111,7 +111,7 @@
           />
         </div>
         <div v-else>
-          <BirthYearSelector
+          <ZodiacBirthYear
             :value="partnerBirthYear"
             :on-change="setPartnerBirthYear"
             title=""
@@ -173,9 +173,9 @@
 import { getZodiacByYear, type ZodiacAnimal } from "@/lib/zodiac";
 import { computed, ref } from "vue";
 import { useI18n } from "vue-i18n";
-import BirthYearSelector from "./BirthYearSelector.vue";
+import ZodiacBirthYear from "./Zodiac-BirthYear.vue";
 import LanguageSelector from "./LanguageSelector.vue";
-import ZodiacSelector from "./ZodiacSelector.vue";
+import ZodiacSelector from "./Zodiac-Selector.vue";
 
 interface Props {
   onCheckCompatibility: (

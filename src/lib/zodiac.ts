@@ -1361,6 +1361,118 @@ export const dogCompatibilityDetails: Record<string, CompatibilityDetail> = {
   }
 };
 
+// 돼지띠 기준 궁합 상세 정보
+export const pigCompatibilityDetails: Record<string, CompatibilityDetail> = {
+  mouse: {
+    wittyKey: "compatibilityDetail.pig.mouse.witty",
+    elaborationKey: "compatibilityDetail.pig.mouse.elaboration",
+    detailed: {
+      basicKey: "compatibilityDetail.pig.mouse.detailed.basic",
+      cautionKey: "compatibilityDetail.pig.mouse.detailed.caution",
+      dateRecommendationKey: "compatibilityDetail.pig.mouse.detailed.dateRecommendation"
+    }
+  },
+  ox: {
+    wittyKey: "compatibilityDetail.pig.ox.witty",
+    elaborationKey: "compatibilityDetail.pig.ox.elaboration",
+    detailed: {
+      basicKey: "compatibilityDetail.pig.ox.detailed.basic",
+      cautionKey: "compatibilityDetail.pig.ox.detailed.caution",
+      dateRecommendationKey: "compatibilityDetail.pig.ox.detailed.dateRecommendation"
+    }
+  },
+  tiger: {
+    wittyKey: "compatibilityDetail.pig.tiger.witty",
+    elaborationKey: "compatibilityDetail.pig.tiger.elaboration",
+    detailed: {
+      basicKey: "compatibilityDetail.pig.tiger.detailed.basic",
+      cautionKey: "compatibilityDetail.pig.tiger.detailed.caution",
+      dateRecommendationKey: "compatibilityDetail.pig.tiger.detailed.dateRecommendation"
+    }
+  },
+  rabbit: {
+    wittyKey: "compatibilityDetail.pig.rabbit.witty",
+    elaborationKey: "compatibilityDetail.pig.rabbit.elaboration",
+    detailed: {
+      basicKey: "compatibilityDetail.pig.rabbit.detailed.basic",
+      cautionKey: "compatibilityDetail.pig.rabbit.detailed.caution",
+      dateRecommendationKey: "compatibilityDetail.pig.rabbit.detailed.dateRecommendation"
+    }
+  },
+  dragon: {
+    wittyKey: "compatibilityDetail.pig.dragon.witty",
+    elaborationKey: "compatibilityDetail.pig.dragon.elaboration",
+    detailed: {
+      basicKey: "compatibilityDetail.pig.dragon.detailed.basic",
+      cautionKey: "compatibilityDetail.pig.dragon.detailed.caution",
+      dateRecommendationKey: "compatibilityDetail.pig.dragon.detailed.dateRecommendation"
+    }
+  },
+  snake: {
+    wittyKey: "compatibilityDetail.pig.snake.witty",
+    elaborationKey: "compatibilityDetail.pig.snake.elaboration",
+    detailed: {
+      basicKey: "compatibilityDetail.pig.snake.detailed.basic",
+      cautionKey: "compatibilityDetail.pig.snake.detailed.caution",
+      dateRecommendationKey: "compatibilityDetail.pig.snake.detailed.dateRecommendation"
+    }
+  },
+  horse: {
+    wittyKey: "compatibilityDetail.pig.horse.witty",
+    elaborationKey: "compatibilityDetail.pig.horse.elaboration",
+    detailed: {
+      basicKey: "compatibilityDetail.pig.horse.detailed.basic",
+      cautionKey: "compatibilityDetail.pig.horse.detailed.caution",
+      dateRecommendationKey: "compatibilityDetail.pig.horse.detailed.dateRecommendation"
+    }
+  },
+  goat: {
+    wittyKey: "compatibilityDetail.pig.goat.witty",
+    elaborationKey: "compatibilityDetail.pig.goat.elaboration",
+    detailed: {
+      basicKey: "compatibilityDetail.pig.goat.detailed.basic",
+      cautionKey: "compatibilityDetail.pig.goat.detailed.caution",
+      dateRecommendationKey: "compatibilityDetail.pig.goat.detailed.dateRecommendation"
+    }
+  },
+  monkey: {
+    wittyKey: "compatibilityDetail.pig.monkey.witty",
+    elaborationKey: "compatibilityDetail.pig.monkey.elaboration",
+    detailed: {
+      basicKey: "compatibilityDetail.pig.monkey.detailed.basic",
+      cautionKey: "compatibilityDetail.pig.monkey.detailed.caution",
+      dateRecommendationKey: "compatibilityDetail.pig.monkey.detailed.dateRecommendation"
+    }
+  },
+  rooster: {
+    wittyKey: "compatibilityDetail.pig.rooster.witty",
+    elaborationKey: "compatibilityDetail.pig.rooster.elaboration",
+    detailed: {
+      basicKey: "compatibilityDetail.pig.rooster.detailed.basic",
+      cautionKey: "compatibilityDetail.pig.rooster.detailed.caution",
+      dateRecommendationKey: "compatibilityDetail.pig.rooster.detailed.dateRecommendation"
+    }
+  },
+  dog: {
+    wittyKey: "compatibilityDetail.pig.dog.witty",
+    elaborationKey: "compatibilityDetail.pig.dog.elaboration",
+    detailed: {
+      basicKey: "compatibilityDetail.pig.dog.detailed.basic",
+      cautionKey: "compatibilityDetail.pig.dog.detailed.caution",
+      dateRecommendationKey: "compatibilityDetail.pig.dog.detailed.dateRecommendation"
+    }
+  },
+  pig: {
+    wittyKey: "compatibilityDetail.pig.pig.witty",
+    elaborationKey: "compatibilityDetail.pig.pig.elaboration",
+    detailed: {
+      basicKey: "compatibilityDetail.pig.pig.detailed.basic",
+      cautionKey: "compatibilityDetail.pig.pig.detailed.caution",
+      dateRecommendationKey: "compatibilityDetail.pig.pig.detailed.dateRecommendation"
+    }
+  }
+};
+
 // 두 띠의 궁합 상세 정보 가져오기
 export function getCompatibilityDetail(
   zodiac1: ZodiacAnimal,
@@ -1409,6 +1521,10 @@ export function getCompatibilityDetail(
   // 개띠 기준
   if (zodiac1.id === "dog") {
     return dogCompatibilityDetails[zodiac2.id] || null;
+  }
+  // 돼지띠 기준
+  if (zodiac1.id === "pig") {
+    return pigCompatibilityDetails[zodiac2.id] || null;
   }
   return null;
 }

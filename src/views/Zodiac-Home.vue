@@ -4,7 +4,7 @@
       v-if="currentView === 'home'"
       @check-compatibility="handleCheckCompatibility"
     />
-    <CompatibilityResult
+    <ZodiacResult
       v-else-if="currentView === 'result' && myZodiac && partnerZodiac"
       :my-zodiac="myZodiac"
       :partner-zodiac="partnerZodiac"
@@ -15,7 +15,7 @@
 </template>
 
 <script setup lang="ts">
-import CompatibilityResult from "@/components/CompatibilityResult.vue";
+import ZodiacResult from "@/components/Zodiac-Result.vue";
 import HomePage from "@/components/HomePage.vue";
 import { type ZodiacAnimal } from "@/lib/zodiac";
 import { ref } from "vue";
@@ -46,7 +46,3 @@ const handleViewDetail = (my: ZodiacAnimal, partner: ZodiacAnimal) => {
   router.push(`/detail?${params.toString()}`);
 };
 </script>
-
-<style scoped>
-/* 추가 스타일이 필요한 경우 여기에 작성 */
-</style>
