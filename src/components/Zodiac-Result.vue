@@ -1,9 +1,18 @@
 <template>
-  <div class="result-container" data-testid="container-compatibility-result">
-    <!-- 헤더 -->
-    <div class="result-header">
-      <h1 class="result-title">💖 {{ $t("ui.resultTitle") }} 💖</h1>
+  <div>
+    <!-- 고정 헤더 -->
+    <div class="fixed-header">
+      <button class="header-btn" @click="goHome" title="{{ $t('ui.goHome') }}">⌂</button>
+      <div class="header-title">12간지 띠 궁합</div>
+      <select class="header-language-selector" v-model="locale" @change="changeLanguage">
+        <option value="ko">{{ $t("ui.korean") }}</option>
+        <option value="en">{{ $t("ui.english") }}</option>
+      </select>
     </div>
+
+    <div class="result-container content-with-header" data-testid="container-compatibility-result">
+      <!-- 결과 제목 -->
+      <div class="page-title">💖 {{ $t("ui.resultTitle") }} 💖</div>
 
     <!-- 결과 카드 -->
     <div class="result-card">
@@ -67,18 +76,16 @@
       </div>
 
       <!-- 버튼들 -->
-      <div class="result-buttons">
-        <button @click="onBack" class="back-btn">
-          ← {{ $t("ui.checkAgain") }}
-        </button>
+      <div class="navigation-buttons">
         <button
           v-if="compatibilityDetail?.detailed"
           @click="() => onViewDetail(myZodiac, partnerZodiac)"
-          class="detail-btn"
+          class="nav-btn result-btn"
         >
           {{ $t("compatibilityDetail.viewDetail") }}
         </button>
       </div>
+    </div>
     </div>
   </div>
 </template>
@@ -96,7 +103,7 @@ interface Props {
 }
 
 const props = defineProps<Props>();
-const { t } = useI18n();
+const { t, locale } = useI18n();
 
 // 궁합 점수 계산
 const compatibilityScore = computed(() => {
@@ -143,4 +150,14 @@ onMounted(() => {
     }
   }, stepDuration);
 });
+
+// 홈으로 이동
+const goHome = () => {
+  window.location.href = "/";
+};
+
+// 언어 변경
+const changeLanguage = () => {
+  // locale은 자동으로 반응형으로 업데이트됩니다
+};
 </script>

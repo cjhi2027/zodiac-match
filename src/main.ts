@@ -61,12 +61,13 @@ const i18n = createI18n({
         confirm: "확인"
       },
       // 새로운 UI 번역 키들
-      selectMyInfo: "내 정보 선택",
+      selectMyInfo: "내 정보",
       selectMyInfoDesc: "띠 또는 생년으로 내 정보를 선택해주세요",
-      selectPartnerInfo: "상대방 정보 선택", 
+      selectPartnerInfo: "상대방 정보", 
       selectPartnerInfoDesc: "띠 또는 생년으로 상대방 정보를 선택해주세요",
-      mySelectedInfo: "내가 선택한 정보",
-      clickToEdit: "클릭하여 수정",
+      mySelectedInfo: "내 정보",
+      clickToEdit: "변경",
+      headerTitle: "12간지 띠 궁합",
       zodiac: {
         mouse: "쥐",
         ox: "소",
@@ -1670,6 +1671,7 @@ const i18n = createI18n({
         goHome: "Go Home",
         selectPartnerInfoBtn: "Select Partner Info",
         checkCompatibilityBtn: "Check Compatibility",
+        headerTitle: "12 Zodiac Signs Compatibility",
       },
       mainHome: {
         title: "Compatibility Check Service (LoveIndex)",

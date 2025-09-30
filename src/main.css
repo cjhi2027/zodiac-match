@@ -585,7 +585,8 @@ body {
 }
 
 /* 상세설명 보기 버튼 */
-.detail-btn {
+.detail-btn,
+.result-btn {
   background: #2196f3;
   color: white;
   border: none;
@@ -598,12 +599,14 @@ body {
 }
 
 /* 상세설명 보기 버튼 호버 */
-.detail-btn:hover:not(:disabled) {
+.detail-btn:hover:not(:disabled),
+.result-btn:hover:not(:disabled) {
   background: #1976d2;
 }
 
 /* 상세설명 보기 버튼 비활성 */
-.detail-btn:disabled {
+.detail-btn:disabled,
+.result-btn:disabled {
   background: #90caf9;
   cursor: not-allowed;
   opacity: 0.5;
@@ -706,18 +709,83 @@ body {
   border: 1px solid #e0e0e0;
 }
 
+/* PC와 모바일 모두에서 공유하기 영역 하단 고정 */
+@media (min-width: 769px) {
+  .share-area {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 50rem;
+    width: 100%;
+    margin: 0;
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+    box-shadow: 0 -2px 12px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+  }
+  
+  /* PC에서 공유하기 영역이 고정되므로 컨텐츠 하단 여백 추가 */
+  .detail-container.content-with-header {
+    padding-bottom: 140px; /* 공유하기 영역 높이만큼 여백 */
+  }
+}
+
+@media (max-width: 768px) {
+  .share-area {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 0;
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+    box-shadow: 0 -2px 12px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+  }
+  
+  /* 모바일에서 공유하기 영역이 고정되므로 컨텐츠 하단 여백 추가 */
+  .detail-container.content-with-header {
+    padding-bottom: 140px; /* 공유하기 영역 높이만큼 여백 */
+  }
+}
+
 .share-title {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   font-weight: 600;
   color: #333;
   margin-bottom: 1rem;
 }
 
-.share-buttons {
+.share-buttons-row {
   display: flex;
-  justify-content: center;
-  gap: 0.75rem;
-  flex-wrap: wrap;
+  justify-content: center; /* PC에서 가운데 정렬 */
+  gap: 2rem;
+  overflow-x: auto;
+  padding: 0.5rem 0;
+  scrollbar-width: thin;
+  scrollbar-color: #ccc transparent;
+}
+
+.share-buttons-row::-webkit-scrollbar {
+  height: 4px;
+}
+
+.share-buttons-row::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.share-buttons-row::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 2px;
+}
+
+.share-buttons-row::-webkit-scrollbar-thumb:hover {
+  background: #999;
 }
 
 /* SNS 공유 버튼 */
@@ -727,6 +795,7 @@ body {
   padding: 0;
   cursor: pointer;
   transition: all 0.2s;
+  flex-shrink: 0; /* 버튼이 줄어들지 않도록 */
 }
 
 .share-btn:hover {
@@ -742,17 +811,12 @@ body {
 
 /* 공유 아이콘 이미지 */
 .share-icon-img {
-  width: 2rem;
-  height: 2rem;
+  width: 2.8rem;
+  height: 2.8rem;
   transition: all 0.2s;
 }
 
 /* 링크복사 섹션 */
-.copy-link-section {
-  margin-top: 1rem;
-  text-align: center;
-}
-
 .copy-link-btn {
   display: inline-flex;
   align-items: center;
@@ -764,6 +828,7 @@ body {
   color: #333;
   font-size: 0.9rem;
   font-weight: 500;
+  flex-shrink: 0; /* 버튼이 줄어들지 않도록 */
   cursor: pointer;
   transition: all 0.2s;
 }
@@ -828,20 +893,23 @@ body {
 
   .share-area {
     padding: 1rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.0rem;
   }
 
   .share-title {
-    font-size: 1rem;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
   }
 
-  .share-buttons {
-    gap: 0.5rem;
+  .share-buttons-row {
+    justify-content: flex-start; /* 모바일에서 왼쪽 정렬 */
+    gap: 1.25rem;
+    padding: 0.25rem 0 0.25rem 0.75rem;
   }
 
   .share-btn {
-    width: 2.5rem;
-    height: 2.5rem;
+    width: 2.8rem;
+    height: 2.8rem;
   }
 
   .share-icon {
@@ -849,8 +917,8 @@ body {
   }
 
   .share-icon-img {
-    width: 1.8rem;
-    height: 1.8rem;
+    width: 2.8rem;
+    height: 2.8rem;
   }
 
   .copy-link-btn {
@@ -1345,6 +1413,158 @@ body {
 }
 
 /* ========================================
+   고정 헤더 스타일
+   ======================================== */
+
+/* 고정 헤더 컨테이너 */
+.fixed-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(135deg, #dc3545 0%, #c82333 100%);
+  color: white;
+  padding: 1rem;
+  box-shadow: 0 2px 12px rgba(220, 53, 69, 0.3);
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* 헤더 제목 */
+.header-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  text-align: center;
+  flex: 1;
+  margin: 0 1rem;
+}
+
+/* 헤더 버튼들 */
+.header-btn {
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  backdrop-filter: blur(10px);
+}
+
+.header-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+  border-color: rgba(255, 255, 255, 0.5);
+  transform: translateY(-1px);
+}
+
+/* 헤더 언어 선택기 */
+.header-language-selector {
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.5rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  backdrop-filter: blur(10px);
+}
+
+.header-language-selector:hover {
+  background: rgba(255, 255, 255, 0.3);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.header-language-selector option {
+  background: #dc3545;
+  color: white;
+}
+
+/* 헤더로 인한 컨텐츠 여백 조정 */
+.content-with-header {
+  margin-top: 80px; /* 헤더 높이만큼 여백 */
+}
+
+/* 페이지 제목 */
+.page-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #2d3748;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  padding: 1rem 0;
+  display: none; /* 히든 처리 - 향후 사용 가능 */
+}
+
+/* 카드 헤더 */
+.card-header {
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.card-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #2d3748;
+  margin: 0 0 0.5rem 0;
+}
+
+.card-subtitle {
+  font-size: 0.9rem;
+  color: #718096;
+  margin: 0;
+  display: none; /* 히든 처리 - 향후 사용 가능 */
+}
+
+/* 모바일 반응형 */
+@media (max-width: 768px) {
+  .fixed-header {
+    padding: 0.75rem 1rem;
+  }
+  
+  .header-title {
+    font-size: 1.1rem;
+    margin: 0 0.5rem;
+  }
+  
+  .header-btn,
+  .header-language-selector {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.85rem;
+  }
+  
+  .content-with-header {
+    margin-top: 70px; /* 모바일 헤더 높이 */
+    padding-bottom: 100px; /* 하단 고정 버튼을 위한 여백 */
+  }
+  
+  /* 모바일 하단 고정 버튼 */
+  .navigation-buttons {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: white;
+    padding: 1rem;
+    border-top: 1px solid #e2e8f0;
+    box-shadow: 0 -2px 12px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+  }
+  
+  .nav-btn {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 0.75rem;
+  }
+}
+
+/* ========================================
    My-Info & Partner-Info 컴포넌트 스타일
    ======================================== */
 
@@ -1561,6 +1781,31 @@ body {
   display: flex;
   gap: 0.75rem;
   margin-top: 2rem;
+}
+
+/* PC에서도 네비게이션 버튼 하단 고정 */
+@media (min-width: 769px) {
+  .navigation-buttons {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 50rem;
+    width: 100%;
+    background: white;
+    padding: 1.5rem;
+    border-top: 1px solid #e2e8f0;
+    box-shadow: 0 -2px 12px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+    margin: 0;
+  }
+  
+  /* PC에서 컨텐츠 하단 여백 추가 */
+  .my-info-container.content-with-header,
+  .partner-info-container.content-with-header,
+  .result-container.content-with-header {
+    padding-bottom: 120px; /* 하단 고정 버튼을 위한 여백 */
+  }
 }
 
 .nav-btn {

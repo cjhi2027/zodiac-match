@@ -1,9 +1,18 @@
 <template>
-  <div class="detail-container" data-testid="container-compatibility-detail">
-    <!-- 헤더 -->
-    <div class="detail-header">
-      <h1 class="detail-title">💖 {{ $t(`zodiac.${myZodiac.id}`) }} × {{ $t(`zodiac.${partnerZodiac.id}`) }} {{ $t("compatibilityDetail.title") }} 💖</h1>
+  <div>
+    <!-- 고정 헤더 -->
+    <div class="fixed-header">
+      <button class="header-btn" @click="goHome" title="{{ $t('ui.goHome') }}">⌂</button>
+      <div class="header-title">12간지 띠 궁합</div>
+      <select class="header-language-selector" v-model="locale" @change="changeLanguage">
+        <option value="ko">{{ $t("ui.korean") }}</option>
+        <option value="en">{{ $t("ui.english") }}</option>
+      </select>
     </div>
+
+    <div class="detail-container content-with-header" data-testid="container-compatibility-detail">
+      <!-- 상세 결과 제목 -->
+      <div class="page-title">💖 {{ $t(`zodiac.${myZodiac.id}`) }} × {{ $t(`zodiac.${partnerZodiac.id}`) }} {{ $t("compatibilityDetail.title") }} 💖</div>
 
     <!-- 상세 설명 카드 -->
     <div class="detail-card">
@@ -36,8 +45,9 @@
     <div class="share-area">
       <div class="share-title">{{ $t("compatibilityDetail.shareTitle") }}</div>
       
-      <!-- SNS 아이콘들 -->
-      <div class="share-buttons">
+      <!-- 공유 버튼들 (한 줄) -->
+      <div class="share-buttons-row">
+        <!-- SNS 아이콘들 -->
         <button 
           v-for="option in shareOptions" 
           :key="option.id"
@@ -47,22 +57,15 @@
         >
           <img :src="option.icon" :alt="option.name" class="share-icon-img" />
         </button>
-      </div>
-      
-      <!-- 링크복사 버튼 -->
-      <div class="copy-link-section">
+        
+        <!-- 링크복사 버튼 -->
         <button @click="share('copy')" class="copy-link-btn">
           <span class="copy-link-icon">🔗</span>
-          <span class="copy-link-text">{{ locale === 'ko' ? '링크 복사' : 'Copy Link' }}</span>
+          <span class="copy-link-text">{{ locale === 'ko' ? '복사' : 'Copy' }}</span>
         </button>
       </div>
     </div>
 
-    <!-- 버튼 영역 -->
-    <div class="button-area">
-      <button @click="onBack" class="back-btn">
-        ← {{ $t("compatibilityDetail.backToResult") }}
-      </button>
     </div>
   </div>
 </template>
@@ -219,5 +222,15 @@ const showMoreOptions = () => {
   alert(locale.value === 'ko' 
     ? `추후 지원 예정: ${optionsText}` 
     : `Coming soon: ${optionsText}`);
+};
+
+// 홈으로 이동
+const goHome = () => {
+  window.location.href = "/";
+};
+
+// 언어 변경
+const changeLanguage = () => {
+  // locale은 자동으로 반응형으로 업데이트됩니다
 };
 </script>

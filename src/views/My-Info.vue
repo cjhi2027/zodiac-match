@@ -1,15 +1,26 @@
 <template>
-  <div class="my-info-container">
-    <!-- 헤더 -->
-    <div class="info-header">
-      <div class="info-title">{{ $t("ui.myInfo") }}</div>
-      <div class="language-selector-container">
-        <LanguageSelector />
-      </div>
+  <div>
+    <!-- 고정 헤더 -->
+    <div class="fixed-header">
+      <button class="header-btn" @click="goHome" title="{{ $t('ui.goHome') }}">⌂</button>
+      <div class="header-title">12간지 띠 궁합</div>
+      <select class="header-language-selector" v-model="locale" @change="changeLanguage">
+        <option value="ko">{{ $t("ui.korean") }}</option>
+        <option value="en">{{ $t("ui.english") }}</option>
+      </select>
     </div>
+
+    <div class="my-info-container content-with-header">
+      <!-- 페이지 제목 -->
+      <div class="page-title">{{ $t("ui.myInfo") }}</div>
 
     <!-- 내 정보 선택 카드 -->
     <div class="info-card">
+      <!-- 카드 헤더 -->
+      <div class="card-header">
+        <h2 class="card-title">내 정보</h2>
+        <p class="card-subtitle">{{ $t("ui.selectMyInfoDesc") }}</p>
+      </div>
 
       <!-- 선택 방식 탭 -->
       <div class="selection-tabs">
@@ -67,9 +78,6 @@
 
     <!-- 네비게이션 버튼 -->
     <div class="navigation-buttons">
-      <button @click="goHome" class="nav-btn home-btn">
-        {{ $t("ui.goHome") }}
-      </button>
       <button 
         @click="goToPartnerInfo" 
         class="nav-btn next-btn"
@@ -78,6 +86,7 @@
       >
         {{ $t("ui.selectPartnerInfoBtn") }}
       </button>
+    </div>
     </div>
   </div>
 </template>
@@ -92,7 +101,7 @@ import ZodiacSelector from "@/components/Zodiac-Selector.vue";
 import ZodiacBirthYear from "@/components/Zodiac-BirthYear.vue";
 
 const router = useRouter();
-const { t } = useI18n();
+const { t, locale } = useI18n();
 
 // 상태 관리
 const activeTab = ref<"zodiac" | "year">("zodiac");
@@ -137,6 +146,11 @@ const setSelectedBirthYear = (year: string) => {
 // 홈으로 이동
 const goHome = () => {
   router.push("/");
+};
+
+// 언어 변경
+const changeLanguage = () => {
+  // locale은 자동으로 반응형으로 업데이트됩니다
 };
 
 // 상대방 정보 선택으로 이동
