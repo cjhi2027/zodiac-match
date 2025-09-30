@@ -1,4 +1,5 @@
 {
+  "name": "love-index",
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
   "framework": "vite",
