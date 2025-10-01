@@ -220,16 +220,6 @@ body.body-home {
   min-width: 5rem;
 }
 
-/* 동물 이름 */
-.animal-name {
-  font-size: 0.9rem;
-  font-weight: 500;
-  color: #666;
-  margin-top: 0.125rem;
-  text-align: center;
-  white-space: nowrap;
-}
-
 /* 동물 아이템 호버 */
 .animal-item:hover {
   border-color: #e91e63;
@@ -241,11 +231,6 @@ body.body-home {
 .animal-item.selected {
   border-color: #e91e63;
   background: #e91e63;
-}
-
-/* 동물 이름 (선택된 상태) */
-.animal-item.selected .animal-name {
-  color: white;
 }
 
 /* 동물 아이콘 */
@@ -564,7 +549,7 @@ body.body-home {
   background: #f8f9fa;
   border: 1px solid #e9ecef;
   border-radius: 0.5rem; /* 8px = 0.5rem */
-  padding: 1rem;
+  padding: 0.5rem 1rem;
   line-height: 1.6;
   text-align: left;
 }
@@ -1280,10 +1265,6 @@ body.body-home {
     margin-bottom: 0.25rem;
   }
 
-  /* 동물 이름 (모바일) */
-  .animal-name {
-    font-size: 0.85rem;
-  }
 
   /* 선택된 띠 표시 영역 (모바일) */
   .selected-zodiac-display {
@@ -1778,37 +1759,172 @@ body.body-home {
 
 /* 선택된 띠 캐릭터 이미지 섹션 */
 .zodiac-character-section {
-  margin-top: 2rem;
-  margin-bottom: 2rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
   padding: 0;
-  background-color: #fff;
-  border-radius: 1rem;
   display: flex;
   justify-content: center;
   align-items: center;
+  perspective: 1200px;
 }
 
-.feature-zodiac-image {
+/* 카드 래퍼 (애니메이션 트리거) */
+.character-card-wrapper {
   width: 18rem;
-  height: 18rem;
+  height: 22rem;
+  transition: transform 0.6s ease-in-out;
+  transform-style: preserve-3d;
+}
+
+/* 뒤집기 애니메이션 적용 */
+.character-card-wrapper.flipping {
+  animation: cardFlip 0.6s ease-in-out;
+}
+
+@keyframes cardFlip {
+  0% {
+    transform: rotateY(0deg);
+  }
+  50% {
+    transform: rotateY(90deg);
+  }
+  100% {
+    transform: rotateY(0deg);
+  }
+}
+
+/* 카드 (실제 카드 모양) */
+.character-card {
+  width: 100%;
+  height: 100%;
+  background: #f8f9fa;
+  border: 1px solid #ddd;
+  border-radius: 0.75rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.10);
+  overflow: hidden;
+  position: relative;
+}
+
+/* 카드 앞면 */
+.card-front {
+  width: 100%;
+  height: 100%;
+}
+
+/* 카드 뒷면 */
+.card-back {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  position: relative;
+}
+
+/* 카드 내부 */
+.card-inner {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1.0rem;
+}
+
+/* 카드 패턴 (뒷면) */
+.card-pattern {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.1) 0px, rgba(255, 255, 255, 0.1) 10px, transparent 10px, transparent 20px),
+    repeating-linear-gradient(-45deg, rgba(255, 255, 255, 0.1) 0px, rgba(255, 255, 255, 0.1) 10px, transparent 10px, transparent 20px);
+  opacity: 0.3;
+}
+
+/* 물음표 */
+.card-question {
+  font-size: 8rem;
+  font-weight: bold;
+  color: white;
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+/* 동물 이미지 */
+.feature-zodiac-image {
+  width: 100%;
+  height: 100%;
   object-fit: contain;
+}
+
+/* 띠 이름 (카드 안) */
+.zodiac-name {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #333;
+  text-align: center;
+  margin-top: 0.5rem;
 }
 
 /* 선택된 띠 설명 섹션 */
 .zodiac-description-section {
   margin-top: 1rem;
-  padding: 1.5rem;
-  background-color: #fff3e0;
-  border-radius: 1rem;
-  border-left: 4px solid #ff9800;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
 }
 
+/* Fade-in 애니메이션 */
+.fade-in {
+  animation: fadeIn 0.5s ease-in forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 핵심 문장 (재치있는 설명) */
+.zodiac-description-section .witty-description {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #e91e63;
+  text-align: left;
+  padding: 0.75rem 1rem;
+  background: #fff3e0;
+  border: 1px solid #ffcc80;
+  border-radius: 0.5rem;
+  line-height: 1.5;
+}
+
+/* 부연 설명 */
+.zodiac-description-section .elaboration-description {
+  font-size: 1rem;
+  color: #666;
+  background: #f8f9fa;
+  border: 1px solid #e9ecef;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  line-height: 1.6;
+  text-align: left;
+}
+
+/* 기존 feature-text (fallback) */
 .feature-text {
   font-size: 1rem;
   color: #4a5568;
   margin: 0;
   line-height: 1.6;
   text-align: left;
+  font-style: italic;
 }
 
 /* 네비게이션 버튼 */
@@ -1985,13 +2101,17 @@ body.body-home {
     margin-bottom: 2rem;
   }
 
-  .feature-zodiac-image {
+  .character-card-wrapper {
     width: 14rem;
-    height: 14rem;
+    height: 17rem;
+  }
+
+  .card-question {
+    font-size: 6rem;
   }
 
   .zodiac-description-section {
-    padding: 1rem;
+    padding: 0;
   }
 
   .feature-text {

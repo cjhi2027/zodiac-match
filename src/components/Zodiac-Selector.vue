@@ -9,7 +9,6 @@
       :data-testid="`button-zodiac-${animal.id}`"
     >
       <img :src="animal.image" :alt="$t(`zodiac.${animal.id}`)" class="animal-icon" />
-      <div class="animal-name">{{ $t(`zodiac.${animal.id}`) }}</div>
     </div>
   </div>
 </template>

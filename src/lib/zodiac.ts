@@ -6,6 +6,8 @@ export const zodiacAnimals = [
     image: "/attached_assets/animal/animal_01.png",
     characterImage: "/attached_assets/animal_character/animal_character_01.png",
     featureKey: "zodiac.features.mouse",
+    wittyKey: "zodiac.witty.mouse",
+    elaborationKey: "zodiac.elaboration.mouse",
   },
   {
     id: "ox",
@@ -13,6 +15,8 @@ export const zodiacAnimals = [
     image: "/attached_assets/animal/animal_02.png",
     characterImage: "/attached_assets/animal_character/animal_character_02.png",
     featureKey: "zodiac.features.ox",
+    wittyKey: "zodiac.witty.ox",
+    elaborationKey: "zodiac.elaboration.ox",
   },
   {
     id: "tiger",
@@ -20,6 +24,8 @@ export const zodiacAnimals = [
     image: "/attached_assets/animal/animal_03.png",
     characterImage: "/attached_assets/animal_character/animal_character_03.png",
     featureKey: "zodiac.features.tiger",
+    wittyKey: "zodiac.witty.tiger",
+    elaborationKey: "zodiac.elaboration.tiger",
   },
   {
     id: "rabbit",
@@ -27,6 +33,8 @@ export const zodiacAnimals = [
     image: "/attached_assets/animal/animal_04.png",
     characterImage: "/attached_assets/animal_character/animal_character_04.png",
     featureKey: "zodiac.features.rabbit",
+    wittyKey: "zodiac.witty.rabbit",
+    elaborationKey: "zodiac.elaboration.rabbit",
   },
   {
     id: "dragon",
@@ -34,6 +42,8 @@ export const zodiacAnimals = [
     image: "/attached_assets/animal/animal_05.png",
     characterImage: "/attached_assets/animal_character/animal_character_05.png",
     featureKey: "zodiac.features.dragon",
+    wittyKey: "zodiac.witty.dragon",
+    elaborationKey: "zodiac.elaboration.dragon",
   },
   {
     id: "snake",
@@ -41,6 +51,8 @@ export const zodiacAnimals = [
     image: "/attached_assets/animal/animal_06.png",
     characterImage: "/attached_assets/animal_character/animal_character_06.png",
     featureKey: "zodiac.features.snake",
+    wittyKey: "zodiac.witty.snake",
+    elaborationKey: "zodiac.elaboration.snake",
   },
   {
     id: "horse",
@@ -48,6 +60,8 @@ export const zodiacAnimals = [
     image: "/attached_assets/animal/animal_07.png",
     characterImage: "/attached_assets/animal_character/animal_character_07.png",
     featureKey: "zodiac.features.horse",
+    wittyKey: "zodiac.witty.horse",
+    elaborationKey: "zodiac.elaboration.horse",
   },
   {
     id: "goat",
@@ -55,6 +69,8 @@ export const zodiacAnimals = [
     image: "/attached_assets/animal/animal_08.png",
     characterImage: "/attached_assets/animal_character/animal_character_08.png",
     featureKey: "zodiac.features.goat",
+    wittyKey: "zodiac.witty.goat",
+    elaborationKey: "zodiac.elaboration.goat",
   },
   {
     id: "monkey",
@@ -62,6 +78,8 @@ export const zodiacAnimals = [
     image: "/attached_assets/animal/animal_09.png",
     characterImage: "/attached_assets/animal_character/animal_character_09.png",
     featureKey: "zodiac.features.monkey",
+    wittyKey: "zodiac.witty.monkey",
+    elaborationKey: "zodiac.elaboration.monkey",
   },
   {
     id: "rooster",
@@ -69,6 +87,8 @@ export const zodiacAnimals = [
     image: "/attached_assets/animal/animal_10.png",
     characterImage: "/attached_assets/animal_character/animal_character_10.png",
     featureKey: "zodiac.features.rooster",
+    wittyKey: "zodiac.witty.rooster",
+    elaborationKey: "zodiac.elaboration.rooster",
   },
   {
     id: "dog",
@@ -76,6 +96,8 @@ export const zodiacAnimals = [
     image: "/attached_assets/animal/animal_11.png",
     characterImage: "/attached_assets/animal_character/animal_character_11.png",
     featureKey: "zodiac.features.dog",
+    wittyKey: "zodiac.witty.dog",
+    elaborationKey: "zodiac.elaboration.dog",
   },
   {
     id: "pig",
@@ -83,6 +105,8 @@ export const zodiacAnimals = [
     image: "/attached_assets/animal/animal_12.png",
     characterImage: "/attached_assets/animal_character/animal_character_12.png",
     featureKey: "zodiac.features.pig",
+    wittyKey: "zodiac.witty.pig",
+    elaborationKey: "zodiac.elaboration.pig",
   },
 ] as const;
 

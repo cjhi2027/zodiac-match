@@ -35,14 +35,47 @@
         />
       </div>
 
-      <!-- 선택된 띠 캐릭터 이미지 -->
-      <div v-if="selectedZodiac" class="zodiac-character-section">
-        <img :src="selectedZodiac.characterImage" :alt="$t(`zodiac.${selectedZodiac.id}`)" class="feature-zodiac-image" />
+      <!-- 띠 캐릭터 카드 (항상 표시) -->
+      <div class="zodiac-character-section">
+        <div class="character-card-wrapper" :class="{ flipping: isFlipping }">
+          <div class="character-card">
+            <!-- 카드 앞면 (동물 이미지 + 이름) -->
+            <div class="card-front" v-if="displayedZodiac">
+              <div class="card-inner">
+                <img 
+                  :src="displayedZodiac.characterImage" 
+                  :alt="$t(`zodiac.${displayedZodiac.id}`)" 
+                  class="feature-zodiac-image" 
+                />
+                <!-- 동물 이름 -->
+                <div class="zodiac-name">
+                  {{ $t(`zodiac.${displayedZodiac.id}`) }}
+                </div>
+              </div>
+            </div>
+            
+            <!-- 카드 뒷면 (물음표) -->
+            <div class="card-back" v-else>
+              <div class="card-inner">
+                <div class="card-pattern"></div>
+                <div class="card-question">?</div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
 
       <!-- 선택된 띠 특징 설명 -->
-      <div v-if="selectedZodiac" class="zodiac-description-section">
-        <p class="feature-text">{{ $t(selectedZodiac.featureKey) }}</p>
+      <div v-if="selectedZodiac" v-show="showDescription" class="zodiac-description-section" :class="{ 'fade-in': animateDescription }">
+        <!-- 핵심 문장 -->
+        <div class="witty-description">
+          {{ $t(selectedZodiac.wittyKey) }}
+        </div>
+        
+        <!-- 부연 설명 -->
+        <div class="elaboration-description">
+          {{ $t(selectedZodiac.elaborationKey) }}
+        </div>
       </div>
     </div>
 
@@ -64,7 +97,7 @@
     </div>
 
     <!-- 네비게이션 버튼 -->
-    <div class="navigation-buttons">
+    <div v-if="showButton" class="navigation-buttons slide-up">
       <button 
         @click="goToPartnerInfo" 
         class="nav-btn next-btn"
@@ -91,17 +124,52 @@ const { t, locale } = useI18n();
 
 // 상태 관리
 const selectedZodiac = ref<ZodiacAnimal | undefined>();
+const displayedZodiac = ref<ZodiacAnimal | undefined>();
 const selectedBirthYear = ref("");
 const showBirthYearModal = ref(false);
+const isFlipping = ref(false);
+const showDescription = ref(false);
+const showButton = ref(false);
+const animateDescription = ref(false);
 
 // 선택 완료 여부
 const hasSelection = computed(() => {
   return !!selectedZodiac.value;
 });
 
-// 띠 선택
+// 띠 선택 (카드 뒤집기 효과)
 const setSelectedZodiac = (zodiac: ZodiacAnimal) => {
   selectedZodiac.value = zodiac;
+  
+  // 기존 설명과 버튼 즉시 숨김
+  showDescription.value = false;
+  showButton.value = false;
+  animateDescription.value = false;
+  
+  // 카드 뒤집기 애니메이션 시작
+  isFlipping.value = true;
+  
+  // 0.3초 후 (90도 회전 시점) 이미지 변경
+  setTimeout(() => {
+    displayedZodiac.value = zodiac;
+  }, 300);
+  
+  // 0.6초 후 카드 뒤집기 완료, 설명 표시
+  setTimeout(() => {
+    isFlipping.value = false;
+    showDescription.value = true;
+    animateDescription.value = true;
+    
+    // 애니메이션 완료 후 클래스 제거 (0.5초 후)
+    setTimeout(() => {
+      animateDescription.value = false;
+    }, 500);
+  }, 600);
+  
+  // 1.1초 후 (카드 완료 + 0.5초) 버튼 표시 (설명은 유지)
+  setTimeout(() => {
+    showButton.value = true;
+  }, 1100);
 };
 
 // 생년 선택 처리
@@ -112,7 +180,8 @@ const handleBirthYearSelect = (year: string) => {
   if (year && parseInt(year)) {
     const zodiac = getZodiacByYear(parseInt(year));
     if (zodiac) {
-      selectedZodiac.value = zodiac;
+      // 카드 뒤집기 효과와 함께 선택
+      setSelectedZodiac(zodiac);
       // 모달 닫기
       showBirthYearModal.value = false;
     }
@@ -160,6 +229,9 @@ onMounted(() => {
     const zodiacData = zodiacAnimals.find(z => z.id === myZodiacId);
     if (zodiacData) {
       selectedZodiac.value = zodiacData;
+      displayedZodiac.value = zodiacData; // 초기 로드 시 애니메이션 없이 표시
+      showDescription.value = true; // 초기 로드 시 설명 표시
+      showButton.value = true; // 초기 로드 시 버튼 표시
       if (myYearParam) {
         selectedBirthYear.value = myYearParam;
       }
