@@ -74,14 +74,14 @@ body.body-home {
 
 /* 헤더 타이틀 (중앙) */
 .header-title {
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   font-weight: 600;
   text-align: center;
   flex: 1; /* 남은 공간 모두 차지 */
-  margin: 0 1rem;
+  margin: 0;
 }
 
-/* 헤더 버튼 (홈 버튼) */
+/* 헤더 버튼 (홈 버튼) - 왼쪽 영역 */
 .header-btn {
   background: none;
   border: none;
@@ -93,6 +93,10 @@ body.body-home {
   cursor: pointer;
   transition: all 0.2s ease;
   backdrop-filter: blur(10px); /* 흐림 효과 */
+  flex: 0 0 5rem; /* 고정 너비 80px - 언어 선택과 동일 */
+  display: flex;
+  justify-content: left;
+  align-items: center;
 }
 
 /* 헤더 버튼 호버 효과 */
@@ -100,7 +104,7 @@ body.body-home {
   background: rgba(255, 255, 255, 0.3); /* 반투명 흰색 배경 */
 }
 
-/* 헤더 언어 선택기 */
+/* 헤더 언어 선택기 - 오른쪽 영역 */
 .header-language-selector {
   background: none;
   border: none;
@@ -111,6 +115,7 @@ body.body-home {
   cursor: pointer;
   transition: all 0.2s ease;
   backdrop-filter: blur(10px);
+  flex: 0 0 5rem; /* 고정 너비 80px - 홈 버튼과 동일 */
 }
 
 /* 헤더 언어 선택기 호버 효과 */
@@ -405,7 +410,7 @@ body.body-home {
 
 /* 내 정보 요약 (Partner-Info에서 내 정보 표시) */
 .my-info-summary {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); /* 보라색 그라데이션 */
+  background: linear-gradient(135deg, #ff6b9d 0%, #c94b7e 100%); /* 핑크-레드 그라데이션 */
   border-radius: 0.75rem;
   padding: 1rem;
   margin-top: 0;
@@ -425,7 +430,7 @@ body.body-home {
 
 /* 클릭 가능한 내 정보 요약 호버 효과 */
 .my-info-summary.clickable:hover {
-  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+  box-shadow: 0 4px 12px rgba(233, 30, 99, 0.3);
 }
 
 /* 요약 제목 ("내 정보") */
@@ -462,7 +467,7 @@ body.body-home {
 .summary-edit-hint {
   font-size: 0.9rem;
   text-decoration: underline;
-  opacity: 0.8;
+  opacity: 1;
   margin-left: auto; /* 오른쪽 정렬 */
   margin-right: 0.5rem;
 }
@@ -544,14 +549,29 @@ body.body-home {
   width: 100%; /* 그리드 셀 전체 너비 */
 }
 
-/* 동물 아이템 호버 효과 */
+/* 동물 아이템 호버 효과 - 기본 (내 정보) */
 .animal-item:hover {
   background: #fce4ec; /* 연한 핑크색 */
 }
 
-/* 선택된 동물 아이템 */
+/* 상대방 정보 페이지 - 동물 아이템 호버 효과 (푸른 톤) */
+.partner-info-container .animal-item:hover {
+  background: #e3f2fd; /* 연한 하늘색 */
+}
+
+/* 선택된 동물 아이템 - 기본 */
 .animal-item.selected {
   background: #e91e63; /* 핑크색 */
+}
+
+/* 내 정보 페이지 - 선택된 동물 아이템 (핑크 톤) */
+.my-info-container .animal-item.selected {
+  background: #e91e63; /* 진한 핑크색 */
+}
+
+/* 상대방 정보 페이지 - 선택된 동물 아이템 (푸른 톤) */
+.partner-info-container .animal-item.selected {
+  background: #4a90e2; /* 진한 파란색 */
 }
 
 /* 동물 아이콘 */
@@ -607,7 +627,7 @@ body.body-home {
   background: #f8f9fa;
   border: 1px solid #ddd;
   border-radius: 0.75rem;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.10);
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
   overflow: hidden;
   position: relative;
 }
@@ -619,10 +639,25 @@ body.body-home {
   height: 100%;
 }
 
-/* 카드 뒷면 (물음표 표시) */
+/* 카드 앞면 (동물 이미지 표시) */
+.card-front {
+  background: white; /* 흰색 배경 */
+}
+
+/* 카드 뒷면 (물음표 표시) - 기본 */
 .card-back {
-  background: linear-gradient(135deg, #d6d8db 0%, #6c757d 100%); /* 밝은 그레이에서 어두운 그레이로 그라데이션 */
+  background: #ffb4b4; /* 연한 핑크색 단색 */
   position: relative;
+}
+
+/* 내 정보 페이지 - 카드 뒷면 (핑크 톤) */
+.my-info-container .card-back {
+  background: #ffb4b4; /* 연한 핑크색 */
+}
+
+/* 상대방 정보 페이지 - 카드 뒷면 (푸른 톤) */
+.partner-info-container .card-back {
+  background: #b4d4ff; /* 연한 하늘색 */
 }
 
 /* 카드 내부 컨텐츠 */
@@ -644,9 +679,9 @@ body.body-home {
   right: 0;
   bottom: 0;
   background-image: 
-    repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.1) 0px, rgba(255, 255, 255, 0.1) 10px, transparent 10px, transparent 20px),
-    repeating-linear-gradient(-45deg, rgba(255, 255, 255, 0.1) 0px, rgba(255, 255, 255, 0.1) 10px, transparent 10px, transparent 20px);
-  opacity: 0.3;
+    repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.3) 0px, rgba(255, 255, 255, 0.3) 10px, transparent 10px, transparent 20px),
+    repeating-linear-gradient(-45deg, rgba(255, 255, 255, 0.3) 0px, rgba(255, 255, 255, 0.3) 10px, transparent 10px, transparent 20px);
+  opacity: 0.5;
 }
 
 /* 카드 뒷면 물음표 */
@@ -654,7 +689,7 @@ body.body-home {
   font-size: 8rem;
   font-weight: bold;
   color: white;
-  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-shadow: 2px 2px 8px rgba(220, 53, 69, 0.3);
   z-index: 1;
 }
 
@@ -670,7 +705,6 @@ body.body-home {
   font-weight: 600;
   color: #333;
   text-align: center;
-  margin-top: 0.5rem;
 }
 
 /* 띠 설명 섹션 */
@@ -681,7 +715,7 @@ body.body-home {
   gap: 0; /* 간격 없음 - 두 박스가 붙어있음 */
 }
 
-/* 재치있는 설명 (핵심 문장) */
+/* 재치있는 설명 (핵심 문장) - 기본 (내 정보) */
 .zodiac-description-section .witty-description {
   font-size: 1.1rem;
   font-weight: 600;
@@ -692,6 +726,13 @@ body.body-home {
   border: 1px solid #ffcc80;
   border-radius: 0.5rem;
   line-height: 1.5;
+}
+
+/* 상대방 정보 페이지 - 재치있는 설명 (푸른 톤) */
+.partner-info-container .zodiac-description-section .witty-description {
+  color: #4a90e2; /* 파란색 */
+  background: #e3f2fd; /* 연한 하늘색 배경 */
+  border: 1px solid #90caf9; /* 하늘색 테두리 */
 }
 
 /* 부연 설명 */
@@ -752,7 +793,7 @@ body.body-home {
 /* 네비게이션 버튼 (My-Info, Partner-Info 화면) */
 .my-info-container .nav-btn,
 .partner-info-container .nav-btn {
-  animation: slide-up-button 0.2s ease-out; /* 슬라이드 업 애니메이션 */
+  animation: slide-up-button 0.3s ease-out; /* 슬라이드 업 애니메이션 */
 }
 
 /* 결과 화면 버튼 (초기 숨김) */
@@ -763,7 +804,7 @@ body.body-home {
 
 /* 결과 화면 버튼 (표시) */
 .result-container .nav-btn.visible {
-  animation: slide-up-button 0.2s ease-out forwards;
+  animation: slide-up-button 0.3s ease-out forwards;
 }
 
 /* 버튼 슬라이드 업 키프레임 */
@@ -928,7 +969,7 @@ body.body-home {
   height: 100%;
   border-radius: 0.5rem;
   background: #e91e63; /* 핑크색 */
-  transition: width 1s ease-out; /* 부드러운 너비 애니메이션 */
+  transition: none; /* transition 제거 - JavaScript가 직접 제어 */
 }
 
 /* 결과 설명 영역 */
@@ -943,8 +984,8 @@ body.body-home {
   font-weight: 600;
   color: #e91e63;
   text-align: left;
-  margin-bottom: 1rem;
-  padding: 1rem;
+  margin-bottom: 0.5rem;
+  padding: 0.75rem 1rem;
   background: #fff3e0;
   border: 1px solid #ffcc80;
   border-radius: 0.5rem;
@@ -987,7 +1028,7 @@ body.body-home {
   align-items: center;
   flex-wrap: wrap;
   transition: opacity 0.3s ease;
-  animation: slide-up-button 0.2s ease-out; /* 슬라이드 업 애니메이션 추가 */
+  animation: slide-up-button 0.3s ease-out; /* 슬라이드 업 애니메이션 추가 */
 }
 
 /* 상세보기 버튼 */
@@ -1044,14 +1085,14 @@ body.body-home {
   font-size: 1.3rem;
   font-weight: bold;
   color: #e91e63;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
   padding: 0.75rem;
   border-bottom: 2px solid #e91e63; /* 하단 테두리 */
   cursor: pointer; /* 클릭 가능 표시 */
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #fef5f8; /* 연한 핑크 배경 */
+  background: none;
   border-radius: 0.5rem 0.5rem 0 0; /* 상단 모서리만 둥글게 */
   transition: background 0.3s ease;
   user-select: none; /* 텍스트 선택 방지 */
@@ -1080,7 +1121,7 @@ body.body-home {
   color: #333;
   line-height: 1.7;
   text-align: justify; /* 양쪽 정렬 */
-  padding: 1rem;
+  padding: 0.5rem 0.5rem;
   background: none;
   border-radius: 0.5rem;
   border: none;
@@ -1280,14 +1321,14 @@ body.body-home {
 
 /* 페이드인 애니메이션 클래스 */
 .fade-in {
-  animation: fadeIn 0.5s ease-in forwards;
+  animation: fadeIn 0.3s ease-in forwards;
 }
 
 /* 페이드인 키프레임 */
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(-10px); /* 위에서 시작 */
+    transform: translateY(10px); /* 위에서 시작 */
   }
   to {
     opacity: 1;
@@ -1310,7 +1351,7 @@ body.body-home {
   
   /* 헤더 타이틀 (모바일) */
 .header-title {
-    font-size: 1.2rem; /* 작은 폰트 */
+    font-size: 1.3rem; /* 작은 폰트 */
     margin: 0 0.5rem;
   }
   
@@ -1490,7 +1531,7 @@ body.body-home {
 
   /* 동물 아이템 (모바일) */
   .animal-item {
-    padding: 0.5rem 0.75rem;
+    padding: 0.5rem 0.625rem;
     min-height: 4rem;
     min-width: 3.5rem;
     width: auto; /* PC의 width: 100% 덮어쓰기 */
@@ -1592,8 +1633,8 @@ body.body-home {
 
   /* 섹션 내용 (모바일) */
   .section-content {
-    font-size: 0.95rem;
-    padding: 0.75rem;
+    font-size: 1rem;
+    padding: 0.5rem 0.5rem;
   }
 
 

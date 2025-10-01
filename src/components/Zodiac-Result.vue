@@ -134,10 +134,10 @@ onMounted(() => {
   // 약간의 지연 후 애니메이션 시작 (DOM 렌더링 완료 대기)
   setTimeout(() => {
     // 점수 애니메이션
-    const duration = 2000; // 2초
+    const targetScore = compatibilityScore.value;
+    const duration = targetScore * 20; // 10점당 0.2초 (200ms) - 40점=0.8초, 80점=1.6초, 100점=2초
     const steps = 60;
     const stepDuration = duration / steps;
-    const targetScore = compatibilityScore.value;
 
     let currentStep = 0;
     const timer = setInterval(() => {
@@ -149,19 +149,14 @@ onMounted(() => {
         animatedScore.value = targetScore;
         console.log('점수 애니메이션 완료!', animatedScore.value);
         
-        // 순차적 등장 애니메이션
-        // 1. 점수 애니메이션 완료 후 0.5초 뒤 설명 표시 (witty + elaboration 동시)
-        setTimeout(() => {
-          showWitty.value = true;
-          showElaboration.value = true;
-          console.log('설명 표시 시작!', { witty: showWitty.value, elaboration: showElaboration.value });
-        }, 500);
+        // 점수 완료 후 바로 설명 표시
+        showWitty.value = true;
+        showElaboration.value = true;
+        console.log('설명 표시 시작!', { witty: showWitty.value, elaboration: showElaboration.value });
         
-        // 2. 설명 애니메이션 완료 후 (0.5초) + 추가 대기 (0.5초) 후 버튼 활성화
-        setTimeout(() => {
-          showButton.value = true;
-          console.log('버튼 활성화!', showButton.value);
-        }, 1500); // 500ms (대기) + 500ms (설명 애니메이션) + 500ms (추가 대기)
+        // 바로 버튼 활성화
+        showButton.value = true;
+        console.log('버튼 활성화!', showButton.value);
       }
     }, stepDuration);
   }, 100); // 100ms 지연

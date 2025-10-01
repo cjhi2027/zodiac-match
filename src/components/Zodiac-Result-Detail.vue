@@ -31,16 +31,11 @@
             :alt="$t(`zodiac.${partnerZodiac.id}`)"
           />
           <h3>{{ $t(`zodiac.${partnerZodiac.id}`) }}</h3>
-        </div>
-      </div>
-
-      <!-- 점수 표시 -->
-      <div class="score-display">
-        <div class="score-number">
-          {{ compatibilityScore }}
-        </div>
       </div>
     </div>
+
+    <!-- 점수 표시 제거 -->
+  </div>
 
     <!-- 상세 설명 카드 -->
     <div class="detail-card">
