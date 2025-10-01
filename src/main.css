@@ -262,7 +262,6 @@ body.body-home {
   margin-top: 2rem;
   margin-bottom: 2rem;
   text-align: center;
-  padding: 1rem;
   background: none;
   border-radius: 0.75rem;
 }
@@ -348,6 +347,7 @@ body.body-home {
 .privacy-section {
   text-align: center;
   margin-top: 1rem;
+  margin-bottom: 1rem;
   padding-top: 1.5rem;
   border-top: 1px solid #f0f0f0; /* 구분선 */
 }
@@ -1469,8 +1469,8 @@ body.body-home {
 
   /* 공유 아이콘 이미지 (모바일) */
   .share-icon-img {
-    width: 2.8rem;
-    height: 2.8rem;
+    width: 2.4rem;
+    height: 2.4rem;
   }
 
   /* 모달 컨텐츠 (모바일) */
