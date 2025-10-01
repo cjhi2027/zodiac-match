@@ -3,7 +3,7 @@
     <!-- 고정 헤더 -->
     <div class="fixed-header">
       <div class="header-content-wrapper">
-        <button class="header-btn" @click="goHome" :title="$t('ui.goHome')">⌂</button>
+        <button class="header-btn" @click="goToHome" :title="$t('ui.goHome')">⌂</button>
         <div class="header-title">{{ $t("headerTitle") }}</div>
         <select class="header-language-selector" v-model="locale" @change="changeLanguage">
           <option value="ko">{{ $t("ui.korean") }}</option>
@@ -16,28 +16,63 @@
       <!-- 상세 결과 제목 -->
       <div class="page-title">{{ $t(`zodiac.${myZodiac.id}`) }} × {{ $t(`zodiac.${partnerZodiac.id}`) }} {{ $t("compatibilityDetail.title") }}</div>
 
+    <!-- 궁합 결과 요약 카드 -->
+    <div class="result-card">
+      <!-- 선택된 띠들 -->
+      <div class="result-content">
+        <div class="result-animal">
+          <img :src="myZodiac.characterImage" :alt="$t(`zodiac.${myZodiac.id}`)" />
+          <h3>{{ $t(`zodiac.${myZodiac.id}`) }}</h3>
+        </div>
+        <div class="score-icon">💖</div>
+        <div class="result-animal">
+          <img
+            :src="partnerZodiac.characterImage"
+            :alt="$t(`zodiac.${partnerZodiac.id}`)"
+          />
+          <h3>{{ $t(`zodiac.${partnerZodiac.id}`) }}</h3>
+        </div>
+      </div>
+
+      <!-- 점수 표시 -->
+      <div class="score-display">
+        <div class="score-number">
+          {{ compatibilityScore }}
+        </div>
+      </div>
+    </div>
+
     <!-- 상세 설명 카드 -->
     <div class="detail-card">
       <!-- 기본 설명 -->
       <div class="detail-section">
-        <h2 class="section-title">📋 {{ $t("compatibilityDetail.basicDescription") }}</h2>
-        <div class="section-content">
+        <h2 class="section-title" @click="toggleSection('basic')" :class="{ active: sections.basic }">
+          <span>📋 {{ $t("compatibilityDetail.basicDescription") }}</span>
+          <span class="toggle-icon">{{ sections.basic ? '▲' : '▼' }}</span>
+        </h2>
+        <div v-show="sections.basic" class="section-content">
           {{ compatibilityDetail ? $t(compatibilityDetail.detailed.basicKey) : "" }}
         </div>
       </div>
 
       <!-- 주의할 점 -->
       <div class="detail-section">
-        <h2 class="section-title">⚠️ {{ $t("compatibilityDetail.cautionPoints") }}</h2>
-        <div class="section-content">
+        <h2 class="section-title" @click="toggleSection('caution')" :class="{ active: sections.caution }">
+          <span>⚠️ {{ $t("compatibilityDetail.cautionPoints") }}</span>
+          <span class="toggle-icon">{{ sections.caution ? '▲' : '▼' }}</span>
+        </h2>
+        <div v-show="sections.caution" class="section-content">
           {{ compatibilityDetail ? $t(compatibilityDetail.detailed.cautionKey) : "" }}
         </div>
       </div>
 
       <!-- 추천 데이트 -->
       <div class="detail-section">
-        <h2 class="section-title">💕 {{ $t("compatibilityDetail.dateRecommendation") }}</h2>
-        <div class="section-content">
+        <h2 class="section-title" @click="toggleSection('date')" :class="{ active: sections.date }">
+          <span>💕 {{ $t("compatibilityDetail.dateRecommendation") }}</span>
+          <span class="toggle-icon">{{ sections.date ? '▲' : '▼' }}</span>
+        </h2>
+        <div v-show="sections.date" class="section-content">
           {{ compatibilityDetail ? $t(compatibilityDetail.detailed.dateRecommendationKey) : "" }}
         </div>
       </div>
@@ -68,6 +103,16 @@
       </div>
     </div>
 
+    <!-- 하단 버튼 영역 -->
+    <div class="button-area" style="margin-top: 2rem;">
+      <button @click="goToMyInfo" class="nav-btn back-btn">
+        {{ locale === 'ko' ? '다시 하기' : 'Try Again' }}
+      </button>
+      <button @click="goToHome" class="nav-btn result-btn">
+        {{ locale === 'ko' ? '다른 궁합 보기' : 'Other Matches' }}
+      </button>
+    </div>
+
     </div>
 
     <!-- 토스트 메시지 -->
@@ -78,7 +123,7 @@
 </template>
 
 <script setup lang="ts">
-import { getCompatibilityDetail, type ZodiacAnimal } from "@/lib/zodiac";
+import { getCompatibilityDetail, getCompatibilityScore, type ZodiacAnimal } from "@/lib/zodiac";
 import { computed, ref, onMounted } from "vue";
 import { useI18n } from "vue-i18n";
 
@@ -115,6 +160,18 @@ interface ShareOption {
 const props = defineProps<Props>();
 const { t, locale } = useI18n();
 
+// 아코디언 섹션 상태 (기본 설명만 펼쳐진 상태)
+const sections = ref({
+  basic: true,
+  caution: false,
+  date: false
+});
+
+// 섹션 토글 함수
+const toggleSection = (section: 'basic' | 'caution' | 'date') => {
+  sections.value[section] = !sections.value[section];
+};
+
 // 토스트 메시지
 const toastMessage = ref('');
 let toastTimeout: number | null = null;
@@ -137,6 +194,11 @@ const showToast = (message: string) => {
 // 궁합 상세 정보
 const compatibilityDetail = computed(() => {
   return getCompatibilityDetail(props.myZodiac, props.partnerZodiac);
+});
+
+// 궁합 점수 계산
+const compatibilityScore = computed(() => {
+  return getCompatibilityScore(props.myZodiac, props.partnerZodiac);
 });
 
 // 언어별 공유 옵션
@@ -252,8 +314,13 @@ const showMoreOptions = () => {
 };
 
 // 홈으로 이동
-const goHome = () => {
+const goToHome = () => {
   window.location.href = "/";
+};
+
+// 내 정보 화면으로 이동 (미선택 상태)
+const goToMyInfo = () => {
+  window.location.href = "/zodiac/my-info";
 };
 
 // 언어 변경

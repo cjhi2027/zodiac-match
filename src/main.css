@@ -868,7 +868,7 @@ body.body-home {
   width: 12rem;
   height: 12rem;
   object-fit: contain;
-  margin-top: 1rem;
+  margin-top: 0;
   margin-bottom: 0;
 }
 
@@ -1039,14 +1039,39 @@ body.body-home {
   margin-bottom: 0;
 }
 
-/* 섹션 제목 */
+/* 섹션 제목 (클릭 가능한 아코디언) */
 .section-title {
   font-size: 1.3rem;
   font-weight: bold;
   color: #e91e63;
   margin-bottom: 1rem;
-  padding-bottom: 0.5rem;
+  padding: 0.75rem;
   border-bottom: 2px solid #e91e63; /* 하단 테두리 */
+  cursor: pointer; /* 클릭 가능 표시 */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fef5f8; /* 연한 핑크 배경 */
+  border-radius: 0.5rem 0.5rem 0 0; /* 상단 모서리만 둥글게 */
+  transition: background 0.3s ease;
+  user-select: none; /* 텍스트 선택 방지 */
+}
+
+/* 섹션 제목 호버 효과 */
+.section-title:hover {
+  background: #fce4ec; /* 더 진한 핑크 */
+}
+
+/* 섹션이 열렸을 때 제목 스타일 */
+.section-title.active {
+  border-radius: 0.5rem 0.5rem 0 0; /* 열렸을 때는 하단 모서리를 각지게 */
+}
+
+/* 토글 아이콘 */
+.toggle-icon {
+  font-size: 0.9rem;
+  color: #e91e63;
+  transition: transform 0.3s ease;
 }
 
 /* 섹션 내용 */
@@ -1556,7 +1581,13 @@ body.body-home {
   /* ===== 상세 화면 (모바일) ===== */
   /* 섹션 제목 (모바일) */
   .section-title {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
+    padding: 0.6rem;
+  }
+
+  /* 토글 아이콘 (모바일) */
+  .toggle-icon {
+    font-size: 0.8rem;
   }
 
   /* 섹션 내용 (모바일) */
