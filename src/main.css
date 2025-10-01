@@ -16,6 +16,10 @@ body {
   overflow-x: hidden; /* 가로 스크롤 방지 */
 }
 
+#app {
+  overflow-x: hidden; /* 전환 애니메이션 시 가로 스크롤 방지 */
+}
+
 /* 메인 홈 전용 body 스타일 */
 body.body-home {
   margin-top: 0;
@@ -169,14 +173,39 @@ body.body-home {
 
 /* 동물 선택 그리드 */
 .animal-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 0.75rem; /* 12px = 0.75rem */
+  display: flex;
+  flex-direction: row;
+  gap: 0.75rem;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 0.5rem 0;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  white-space: nowrap;
+  scrollbar-width: thin;
+  scrollbar-color: #ccc transparent;
+}
+
+.animal-grid::-webkit-scrollbar {
+  height: 6px;
+}
+
+.animal-grid::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.animal-grid::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 3px;
+}
+
+.animal-grid::-webkit-scrollbar-thumb:hover {
+  background: #999;
 }
 
 /* 동물 선택 아이템 */
 .animal-item {
-  display: flex;
+  display: inline-flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -187,6 +216,8 @@ body.body-home {
   transition: all 0.2s;
   background: white;
   min-height: 6.25rem;
+  flex-shrink: 0;
+  min-width: 5rem;
 }
 
 /* 동물 이름 */
@@ -196,6 +227,7 @@ body.body-home {
   color: #666;
   margin-top: 0.125rem;
   text-align: center;
+  white-space: nowrap;
 }
 
 /* 동물 아이템 호버 */
@@ -426,8 +458,8 @@ body.body-home {
 
 /* 결과 동물 이미지 */
 .result-animal img {
-  width: 8rem; /* 120px = 7.5rem */
-  height: 8rem; /* 120px = 7.5rem */
+  width: 12rem; /* 120px = 7.5rem */
+  height: 12rem; /* 120px = 7.5rem */
   object-fit: contain;
   margin-top: 1rem;
   margin-bottom: 0;
@@ -1231,41 +1263,26 @@ body.body-home {
 
   /* 동물 선택 그리드 (모바일) */
   .animal-grid {
-    display: flex;
-    flex-direction: row;
-    gap: 0.5rem; /* 8px = 0.5rem */
-    overflow-x: auto;
-    overflow-y: hidden;
-    padding: 0.5rem 0;
-    scroll-behavior: smooth;
-    -webkit-overflow-scrolling: touch;
-    white-space: nowrap;
+    gap: 0.5rem;
   }
 
   /* 동물 선택 아이템 (모바일) */
   .animal-item {
-    padding: 0.5rem 0.75rem; /* 12px 8px = 0.75rem 0.5rem */
-    min-height: 4.5rem; /* 72px = 4.5rem */
-    flex-shrink: 0;
-    min-width: 3.5rem; /* 56px = 3.5rem */
-    display: inline-flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    padding: 0.5rem 0.75rem;
+    min-height: 4.5rem;
+    min-width: 3.5rem;
   }
 
   /* 동물 아이콘 (모바일) */
   .animal-icon {
-    width: 3.25rem; /* 40px = 2.5rem */
-    height: 3.25rem; /* 40px = 2.5rem */
-    margin-bottom: 0. 5rem;
+    width: 3.25rem;
+    height: 3.25rem;
+    margin-bottom: 0.5rem;
   }
 
   /* 동물 이름 (모바일) */
   .animal-name {
-    font-size: 0.9rem; /* 12px = 0.75rem */
-    margin-top: 0.125rem;
-    white-space: nowrap;
+    font-size: 0.85rem;
   }
 
   /* 선택된 띠 표시 영역 (모바일) */
@@ -1302,14 +1319,15 @@ body.body-home {
 
   /* 결과 동물 이미지 (모바일) */
   .result-animal img {
-    width: 6rem;
-    height: 6rem;
+    width: 7.2rem;
+    height: 7.2rem;
   }
 
  /* 동물 사이 하트  (모바일) */
  .score-icon {
    font-size: 3rem;
- }
+   margin: 0 0.5rem;
+  }
  
   /* 결과 동물 이름 (모바일) */
   .result-animal h3 {
@@ -1326,7 +1344,7 @@ body.body-home {
 
   /* 결과 점수 숫자 (모바일) */
   .score-number {
-    font-size: 3rem;
+    font-size: 2.4rem;
   }
 
 
@@ -1441,13 +1459,18 @@ body.body-home {
 .card-header {
   margin-bottom: 1.5rem;
   text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .card-title {
   font-size: 1.25rem;
   font-weight: 600;
   color: #2d3748;
-  margin: 0 0 0.5rem 0;
+  margin: 0;
+  flex: 1;
+  text-align: left;
 }
 
 .card-subtitle {
@@ -1455,6 +1478,34 @@ body.body-home {
   color: #718096;
   margin: 0;
   display: none; /* 히든 처리 - 향후 사용 가능 */
+}
+
+/* 띠를 몰라요 버튼 */
+.dont-know-zodiac-btn {
+  background: transparent;
+  border: 1px solid #e2e8f0;
+  color: #666;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.dont-know-zodiac-btn:hover {
+  background: #f7fafc;
+  border-color: #cbd5e0;
+  color: #4a5568;
+}
+
+/* 생년 선택 모달 */
+.birth-year-modal {
+  max-width: 400px;
+}
+
+.birth-year-modal .modal-body {
+  padding: 1.5rem;
 }
 
 /* 모바일 반응형 */
@@ -1616,7 +1667,7 @@ body.body-home {
   backdrop-filter: blur(0px);
 
   position: relative;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .info-card::before {
@@ -1681,7 +1732,7 @@ body.body-home {
 
 /* 선택 내용 */
 .selection-content {
-  min-height: 300px;
+  min-height: 0;
 }
 
 /* 선택된 띠 표시 */
@@ -1714,21 +1765,39 @@ body.body-home {
   line-height: 1.4;
 }
 
-/* 선택된 띠 특징 섹션 */
-.selected-feature-section {
-  margin-top: 1.5rem;
-  padding: 1rem;
-  background-color: #f7fafc;
+/* 선택된 띠 캐릭터 이미지 섹션 */
+.zodiac-character-section {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  padding: 0;
+  background-color: #fff;
   border-radius: 1rem;
-  border-left: 4px solid #667eea;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.feature-zodiac-image {
+  width: 18rem;
+  height: 18rem;
+  object-fit: contain;
+}
+
+/* 선택된 띠 설명 섹션 */
+.zodiac-description-section {
+  margin-top: 1rem;
+  padding: 1.5rem;
+  background-color: #fff3e0;
+  border-radius: 1rem;
+  border-left: 4px solid #ff9800;
 }
 
 .feature-text {
-  font-size: 0.9rem;
+  font-size: 1rem;
   color: #4a5568;
   margin: 0;
-  line-height: 1.5;
-  font-style: italic;
+  line-height: 1.6;
+  text-align: left;
 }
 
 /* 네비게이션 버튼 */
@@ -1861,7 +1930,16 @@ body.body-home {
   }
 
   .card-title {
-    font-size: 1.25rem;
+    font-size: 1.1rem;
+  }
+
+  .dont-know-zodiac-btn {
+    font-size: 0.85rem;
+    padding: 0.4rem 0.75rem;
+  }
+
+  .birth-year-modal {
+    max-width: 90%;
   }
 
   .navigation-buttons {
@@ -1888,6 +1966,24 @@ body.body-home {
 
   .selected-name {
     font-size: 1.1rem;
+  }
+
+  .zodiac-character-section {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .feature-zodiac-image {
+    width: 14rem;
+    height: 14rem;
+  }
+
+  .zodiac-description-section {
+    padding: 1rem;
+  }
+
+  .feature-text {
+    font-size: 0.9rem;
   }
 }
 
@@ -1929,6 +2025,62 @@ body.body-home {
 .nav-btn:disabled:hover {
   transform: none !important;
   box-shadow: none !important;
+}
+
+/* ========================================
+   화면 전환 애니메이션
+   ======================================== */
+
+/* 왼쪽으로 슬라이드 (앞으로 진행) */
+.slide-left-enter-active,
+.slide-left-leave-active {
+  transition: all 0.15s ease-out;
+}
+
+.slide-left-enter-from {
+  opacity: 0;
+  transform: translateX(100%);
+}
+
+.slide-left-enter-to {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.slide-left-leave-from {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.slide-left-leave-to {
+  opacity: 0;
+  transform: translateX(-30%);
+}
+
+/* 오른쪽으로 슬라이드 (뒤로 가기) */
+.slide-right-enter-active,
+.slide-right-leave-active {
+  transition: all 0.15s ease-out;
+}
+
+.slide-right-enter-from {
+  opacity: 0;
+  transform: translateX(-100%);
+}
+
+.slide-right-enter-to {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.slide-right-leave-from {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.slide-right-leave-to {
+  opacity: 0;
+  transform: translateX(30%);
 }
 
 /* ========================================

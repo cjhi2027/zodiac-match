@@ -19,13 +19,13 @@
       <!-- 선택된 띠들 -->
       <div class="result-content">
         <div class="result-animal">
-          <img :src="myZodiac.image" :alt="$t(`zodiac.${myZodiac.id}`)" />
+          <img :src="myZodiac.characterImage" :alt="$t(`zodiac.${myZodiac.id}`)" />
           <h3>{{ $t(`zodiac.${myZodiac.id}`) }}</h3>
         </div>
         <div class="score-icon">💖</div>
         <div class="result-animal">
           <img
-            :src="partnerZodiac.image"
+            :src="partnerZodiac.characterImage"
             :alt="$t(`zodiac.${partnerZodiac.id}`)"
           />
           <h3>{{ $t(`zodiac.${partnerZodiac.id}`) }}</h3>

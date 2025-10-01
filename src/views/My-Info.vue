@@ -19,29 +19,13 @@
       <!-- 카드 헤더 -->
       <div class="card-header">
         <h2 class="card-title">{{ $t("ui.myInfo") }}</h2>
-        <p class="card-subtitle">{{ $t("ui.selectMyInfoDesc") }}</p>
-      </div>
-
-      <!-- 선택 방식 탭 -->
-      <div class="selection-tabs">
-        <button
-          class="tab-btn"
-          :class="{ active: activeTab === 'zodiac' }"
-          @click="setActiveTab('zodiac')"
-        >
-          {{ $t("ui.zodiacSelect") }}
-        </button>
-        <button
-          class="tab-btn"
-          :class="{ active: activeTab === 'year' }"
-          @click="setActiveTab('year')"
-        >
-          {{ $t("ui.birthYearSelect") }}
+        <button @click="showBirthYearModal = true" class="dont-know-zodiac-btn">
+          {{ locale === 'ko' ? '띠를 몰라요' : "Don't know my zodiac" }}
         </button>
       </div>
 
-      <!-- 띠 선택 -->
-      <div v-if="activeTab === 'zodiac'" class="selection-content">
+      <!-- 띠 선택 (항상 표시) -->
+      <div class="selection-content">
         <ZodiacSelector
           :selected-zodiac="selectedZodiac"
           :on-select="setSelectedZodiac"
@@ -49,35 +33,36 @@
         />
       </div>
 
-      <!-- 생년 선택 -->
-      <div v-else class="selection-content">
-        <ZodiacBirthYear
-          :value="selectedBirthYear"
-          :on-change="setSelectedBirthYear"
-          title=""
-        />
-        <!-- 선택된 띠 표시 -->
-        <div v-if="finalZodiac" class="selected-display">
-          <img
-            :src="finalZodiac.image"
-            :alt="$t(`zodiac.${finalZodiac.id}`)"
-            class="selected-image"
-          />
-          <h3 class="selected-name">
-            {{ $t(`zodiac.${finalZodiac.id}`) }}{{ $t("ui.zodiacSuffix") }}
-          </h3>
-          <p class="selected-feature">{{ $t(finalZodiac.featureKey) }}</p>
-        </div>
+      <!-- 선택된 띠 캐릭터 이미지 -->
+      <div v-if="selectedZodiac" class="zodiac-character-section">
+        <img :src="selectedZodiac.characterImage" :alt="$t(`zodiac.${selectedZodiac.id}`)" class="feature-zodiac-image" />
       </div>
 
-      <!-- 선택된 띠 특징 (띠 선택 탭에서) -->
-      <div v-if="activeTab === 'zodiac' && selectedZodiac" class="selected-feature-section">
+      <!-- 선택된 띠 특징 설명 -->
+      <div v-if="selectedZodiac" class="zodiac-description-section">
         <p class="feature-text">{{ $t(selectedZodiac.featureKey) }}</p>
       </div>
     </div>
 
-    <!-- 네비게이션 버튼 -->
-    <div class="navigation-buttons">
+    <!-- 생년 선택 모달 -->
+    <div v-if="showBirthYearModal" class="modal-overlay" @click="showBirthYearModal = false">
+      <div class="modal-content birth-year-modal" @click.stop>
+        <div class="modal-header">
+          <h3>{{ locale === 'ko' ? '생년 선택' : 'Select Birth Year' }}</h3>
+          <button @click="showBirthYearModal = false" class="close-btn">×</button>
+        </div>
+        <div class="modal-body">
+          <ZodiacBirthYear
+            :value="selectedBirthYear"
+            :on-change="handleBirthYearSelect"
+            title=""
+          />
+        </div>
+      </div>
+    </div>
+
+      <!-- 네비게이션 버튼 -->
+      <div class="navigation-buttons">
       <button 
         @click="goToPartnerInfo" 
         class="nav-btn next-btn"
@@ -103,52 +88,34 @@ import ZodiacBirthYear from "@/components/Zodiac-BirthYear.vue";
 const router = useRouter();
 const { t, locale } = useI18n();
 
-// 컴포넌트 마운트 시 저장된 언어 설정 불러오기
-onMounted(() => {
-  const savedLocale = localStorage.getItem('zodiac-locale');
-  if (savedLocale && (savedLocale === 'ko' || savedLocale === 'en')) {
-    locale.value = savedLocale as 'ko' | 'en';
-  }
-});
-
 // 상태 관리
-const activeTab = ref<"zodiac" | "year">("zodiac");
 const selectedZodiac = ref<ZodiacAnimal | undefined>();
 const selectedBirthYear = ref("");
-
-// 최종 선택된 띠 계산
-const finalZodiac = computed(() => {
-  if (activeTab.value === "zodiac") return selectedZodiac.value;
-  if (activeTab.value === "year" && selectedBirthYear.value && parseInt(selectedBirthYear.value)) {
-    return getZodiacByYear(parseInt(selectedBirthYear.value));
-  }
-  return undefined;
-});
+const showBirthYearModal = ref(false);
 
 // 선택 완료 여부
 const hasSelection = computed(() => {
-  return !!finalZodiac.value;
+  return !!selectedZodiac.value;
 });
-
-// 탭 변경
-const setActiveTab = (tab: "zodiac" | "year") => {
-  activeTab.value = tab;
-  // 탭 변경 시 다른 입력 방식의 값 초기화
-  if (tab === "zodiac") {
-    selectedBirthYear.value = "";
-  } else {
-    selectedZodiac.value = undefined;
-  }
-};
 
 // 띠 선택
 const setSelectedZodiac = (zodiac: ZodiacAnimal) => {
   selectedZodiac.value = zodiac;
 };
 
-// 생년 선택
-const setSelectedBirthYear = (year: string) => {
+// 생년 선택 처리
+const handleBirthYearSelect = (year: string) => {
   selectedBirthYear.value = year;
+  
+  // 생년으로 띠 계산하여 자동 선택
+  if (year && parseInt(year)) {
+    const zodiac = getZodiacByYear(parseInt(year));
+    if (zodiac) {
+      selectedZodiac.value = zodiac;
+      // 모달 닫기
+      showBirthYearModal.value = false;
+    }
+  }
 };
 
 // 홈으로 이동
@@ -164,37 +131,34 @@ const changeLanguage = () => {
 
 // 상대방 정보 선택으로 이동
 const goToPartnerInfo = () => {
-  if (finalZodiac.value) {
+  if (selectedZodiac.value) {
     // 선택된 내 정보를 URL 파라미터로 전달
     const params = new URLSearchParams({
-      my: finalZodiac.value.id,
-      myTab: activeTab.value,
-      myYear: selectedBirthYear.value
+      my: selectedZodiac.value.id,
+      myYear: selectedBirthYear.value || ""
     });
     router.push(`/zodiac/partner-info?${params.toString()}`);
   }
 };
 
-// 띠 ID로 띠 정보 찾기
-const findZodiacById = (id: string): ZodiacAnimal | null => {
-  return zodiacAnimals.find(z => z.id === id) || null;
-};
-
-// 컴포넌트 마운트 시 URL 파라미터에서 기존 선택 정보 복원
+// 컴포넌트 마운트 시 초기화
 onMounted(() => {
+  // 저장된 언어 설정 불러오기
+  const savedLocale = localStorage.getItem('zodiac-locale');
+  if (savedLocale && (savedLocale === 'ko' || savedLocale === 'en')) {
+    locale.value = savedLocale as 'ko' | 'en';
+  }
+  
+  // URL 파라미터에서 기존 선택 정보 복원
   const urlParams = new URLSearchParams(window.location.search);
   const myZodiacId = urlParams.get("my");
-  const myTabParam = urlParams.get("myTab");
   const myYearParam = urlParams.get("myYear");
   
   if (myZodiacId) {
-    const zodiacData = findZodiacById(myZodiacId);
+    const zodiacData = zodiacAnimals.find(z => z.id === myZodiacId);
     if (zodiacData) {
-      if (myTabParam === "zodiac") {
-        activeTab.value = "zodiac";
-        selectedZodiac.value = zodiacData;
-      } else if (myTabParam === "year" && myYearParam) {
-        activeTab.value = "year";
+      selectedZodiac.value = zodiacData;
+      if (myYearParam) {
         selectedBirthYear.value = myYearParam;
       }
     }
