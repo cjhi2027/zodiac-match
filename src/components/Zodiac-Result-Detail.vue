@@ -93,7 +93,7 @@
         <!-- 링크복사 버튼 -->
         <button @click="share('copy')" class="copy-link-btn">
           <span class="copy-link-icon">🔗</span>
-          <span class="copy-link-text">{{ locale === 'ko' ? '복사하기' : 'Copy' }}</span>
+          <span class="copy-link-text">{{ locale === 'ko' ? '복사' : 'Copy' }}</span>
         </button>
       </div>
     </div>
