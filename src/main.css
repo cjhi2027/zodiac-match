@@ -1432,7 +1432,7 @@ body.body-home {
   color: white;
   padding: 0 1rem;
   border-radius: 0.5rem;
-  font-size: 3rem;
+  font-size: 2.6rem;
   font-weight: 500;
   cursor: pointer;
   transition: all 0.2s ease;
@@ -1519,7 +1519,7 @@ body.body-home {
   
   .header-btn {
     padding: 0 1rem;
-    font-size: 2.4rem;
+    font-size: 2rem;
   }
   
   .header-language-selector {
@@ -1820,6 +1820,18 @@ body.body-home {
   cursor: pointer;
   transition: all 0.2s ease;
   text-align: center;
+  animation: slide-up-button 0.4s ease-out;
+}
+
+@keyframes slide-up-button {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .home-btn {
@@ -1960,9 +1972,50 @@ body.body-home {
   opacity: 0;
   cursor: not-allowed;
   transform: none !important;
+  animation: none; /* 비활성화 시 애니메이션 제거 */
 }
 
 .nav-btn:disabled:hover {
   transform: none !important;
   box-shadow: none !important;
+}
+
+/* ========================================
+   토스트 메시지 스타일
+   ======================================== */
+
+.toast-message {
+  position: fixed;
+  bottom: 5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.85);
+  color: white;
+  padding: 1rem 1.5rem;
+  border-radius: 0.5rem;
+  font-size: 0.95rem;
+  z-index: 10000;
+  animation: toast-slide-up 0.3s ease-out;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  max-width: 90%;
+  text-align: center;
+}
+
+@keyframes toast-slide-up {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .toast-message {
+    bottom: 3rem;
+    padding: 0.875rem 1.25rem;
+    font-size: 0.9rem;
+  }
 }

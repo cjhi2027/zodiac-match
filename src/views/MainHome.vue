@@ -104,6 +104,11 @@
         </div>
       </div>
     </div>
+
+    <!-- 토스트 메시지 -->
+    <div v-if="toastMessage" class="toast-message">
+      {{ toastMessage }}
+    </div>
   </div>
 </template>
 
@@ -122,6 +127,25 @@ interface ShareOption {
 const router = useRouter();
 const { t, locale } = useI18n();
 const showPrivacyModal = ref(false);
+
+// 토스트 메시지
+const toastMessage = ref('');
+let toastTimeout: number | null = null;
+
+// 토스트 메시지 표시 함수
+const showToast = (message: string) => {
+  toastMessage.value = message;
+  
+  // 이전 타이머가 있으면 취소
+  if (toastTimeout) {
+    clearTimeout(toastTimeout);
+  }
+  
+  // 3초 후 자동으로 사라짐
+  toastTimeout = window.setTimeout(() => {
+    toastMessage.value = '';
+  }, 3000);
+};
 
 // 메인 홈 전용 body 스타일 적용
 onMounted(() => {
@@ -188,9 +212,9 @@ const share = (platform: string) => {
   switch (platform) {
     case 'kakao':
       copyToClipboard(message);
-      alert(locale.value === 'ko' 
-        ? '카카오톡에 붙여넣기 할 수 있도록 클립보드에 복사되었습니다!\n카카오톡에서 친구에게 메시지를 보내보세요.' 
-        : 'Copied to clipboard for KakaoTalk!\nYou can now paste it in KakaoTalk to send to friends.');
+      showToast(locale.value === 'ko' 
+        ? '카카오톡에 붙여넣기 할 수 있도록 복사되었습니다!' 
+        : 'Copied to clipboard for KakaoTalk!');
       break;
 
     case 'facebook':
@@ -199,7 +223,7 @@ const share = (platform: string) => {
 
     case 'instagram':
       copyToClipboard(message);
-      alert(locale.value === 'ko' ? '인스타그램에 붙여넣기 할 수 있도록 클립보드에 복사되었습니다!' : 'Copied to clipboard for Instagram!');
+      showToast(locale.value === 'ko' ? '인스타그램에 붙여넣기 할 수 있도록 복사되었습니다!' : 'Copied to clipboard for Instagram!');
       break;
 
     case 'twitter':
@@ -212,7 +236,7 @@ const share = (platform: string) => {
 
     case 'copy':
       copyToClipboard(url);
-      alert(locale.value === 'ko' ? '링크가 클립보드에 복사되었습니다!' : 'Link copied to clipboard!');
+      showToast(locale.value === 'ko' ? '링크가 클립보드에 복사되었습니다!' : 'Link copied to clipboard!');
       break;
   }
 };
