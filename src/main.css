@@ -1275,9 +1275,9 @@ body.body-home {
 
   /* 동물 아이콘 (모바일) */
   .animal-icon {
-    width: 3.25rem;
-    height: 3.25rem;
-    margin-bottom: 0.5rem;
+    width: 2.8rem;
+    height: 2.8rem;
+    margin-bottom: 0.25rem;
   }
 
   /* 동물 이름 (모바일) */
@@ -1374,13 +1374,23 @@ body.body-home {
   right: 0;
   background: linear-gradient(135deg, #dc3545 0%, #c82333 100%);
   color: white;
-  padding: 1rem;
   box-shadow: 0 2px 12px rgba(220, 53, 69, 0.3);
   z-index: 1000;
+  height: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  will-change: transform;
+}
+
+/* 헤더 내부 컨텐츠 영역 */
+.header-content-wrapper {
+  max-width: 768px;
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 4rem;
+  padding: 0 0rem;
 }
 
 /* 헤더 제목 */
@@ -1441,7 +1451,7 @@ body.body-home {
 
 /* 헤더로 인한 컨텐츠 여백 조정 */
 .content-with-header {
-  margin-top: 80px; /* 헤더 높이만큼 여백 */
+  margin-top: 0px; /* 헤더 높이만큼 여백 */
 }
 
 /* 페이지 제목 */
@@ -1520,7 +1530,7 @@ body.body-home {
   }
   
   .header-btn {
-    padding: 0 1rem;
+    padding: 0 0.5rem;
     font-size: 2rem;
   }
   
@@ -1530,7 +1540,7 @@ body.body-home {
   }
 
   .content-with-header {
-    margin-top: 70px; /* 모바일 헤더 높이 */
+    margin-top: 0px; /* 모바일 헤더 높이 */
     padding-bottom: 100px; /* 하단 고정 버튼을 위한 여백 */
   }
   
@@ -1544,7 +1554,8 @@ body.body-home {
     padding: 1rem;
     /*border-top: 1px solid #e2e8f0;*/
     /*box-shadow: 0 -2px 12px rgba(0, 0, 0, 0.1);*/
-    /*z-index: 100;*/
+    z-index: 200;
+    will-change: transform;
   }
   
   .nav-btn {
@@ -1682,7 +1693,7 @@ body.body-home {
 
 .card-header {
   text-align: center;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 .card-title {
@@ -1819,8 +1830,9 @@ body.body-home {
     padding: 1rem 1rem 1.5rem 1rem;
     /*border-top: 1px solid #e2e8f0;*/
     /*box-shadow: 0 -2px 12px rgba(0, 0, 0, 0.1);*/
-    /*z-index: 100;*/
+    z-index: 200;
     margin: 0;
+    will-change: transform;
   }
   
   /* PC에서 컨텐츠 하단 여백 추가 */
@@ -1841,7 +1853,7 @@ body.body-home {
   cursor: pointer;
   transition: all 0.2s ease;
   text-align: center;
-  animation: slide-up-button 0.4s ease-out;
+  animation: slide-up-button 0.2s ease-out;
 }
 
 @keyframes slide-up-button {
@@ -2025,62 +2037,6 @@ body.body-home {
 .nav-btn:disabled:hover {
   transform: none !important;
   box-shadow: none !important;
-}
-
-/* ========================================
-   화면 전환 애니메이션
-   ======================================== */
-
-/* 왼쪽으로 슬라이드 (앞으로 진행) */
-.slide-left-enter-active,
-.slide-left-leave-active {
-  transition: all 0.15s ease-out;
-}
-
-.slide-left-enter-from {
-  opacity: 0;
-  transform: translateX(100%);
-}
-
-.slide-left-enter-to {
-  opacity: 1;
-  transform: translateX(0);
-}
-
-.slide-left-leave-from {
-  opacity: 1;
-  transform: translateX(0);
-}
-
-.slide-left-leave-to {
-  opacity: 0;
-  transform: translateX(-30%);
-}
-
-/* 오른쪽으로 슬라이드 (뒤로 가기) */
-.slide-right-enter-active,
-.slide-right-leave-active {
-  transition: all 0.15s ease-out;
-}
-
-.slide-right-enter-from {
-  opacity: 0;
-  transform: translateX(-100%);
-}
-
-.slide-right-enter-to {
-  opacity: 1;
-  transform: translateX(0);
-}
-
-.slide-right-leave-from {
-  opacity: 1;
-  transform: translateX(0);
-}
-
-.slide-right-leave-to {
-  opacity: 0;
-  transform: translateX(30%);
 }
 
 /* ========================================

@@ -2,12 +2,14 @@
   <div>
     <!-- 고정 헤더 -->
     <div class="fixed-header">
-      <button class="header-btn" @click="goHome" title="{{ $t('ui.goHome') }}">⌂</button>
-      <div class="header-title">{{ $t("headerTitle") }}</div>
-      <select class="header-language-selector" v-model="locale" @change="changeLanguage">
-        <option value="ko">{{ $t("ui.korean") }}</option>
-        <option value="en">{{ $t("ui.english") }}</option>
-      </select>
+      <div class="header-content-wrapper">
+        <button class="header-btn" @click="goHome" :title="$t('ui.goHome')">⌂</button>
+        <div class="header-title">{{ $t("headerTitle") }}</div>
+        <select class="header-language-selector" v-model="locale" @change="changeLanguage">
+          <option value="ko">{{ $t("ui.korean") }}</option>
+          <option value="en">{{ $t("ui.english") }}</option>
+        </select>
+      </div>
     </div>
 
     <div class="detail-container content-with-header" data-testid="container-compatibility-detail">

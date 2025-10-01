@@ -2,12 +2,14 @@
   <div>
     <!-- 고정 헤더 -->
     <div class="fixed-header">
-      <button class="header-btn" @click="goHome" title="{{ $t('ui.goHome') }}">⌂</button>
-      <div class="header-title">{{ $t("headerTitle") }}</div>
-      <select class="header-language-selector" v-model="locale" @change="changeLanguage">
-        <option value="ko">{{ $t("ui.korean") }}</option>
-        <option value="en">{{ $t("ui.english") }}</option>
-      </select>
+      <div class="header-content-wrapper">
+        <button class="header-btn" @click="goHome" :title="$t('ui.goHome')">⌂</button>
+        <div class="header-title">{{ $t("headerTitle") }}</div>
+        <select class="header-language-selector" v-model="locale" @change="changeLanguage">
+          <option value="ko">{{ $t("ui.korean") }}</option>
+          <option value="en">{{ $t("ui.english") }}</option>
+        </select>
+      </div>
     </div>
 
     <div class="my-info-container content-with-header">
@@ -61,8 +63,8 @@
       </div>
     </div>
 
-      <!-- 네비게이션 버튼 -->
-      <div class="navigation-buttons">
+    <!-- 네비게이션 버튼 -->
+    <div class="navigation-buttons">
       <button 
         @click="goToPartnerInfo" 
         class="nav-btn next-btn"
@@ -81,7 +83,6 @@ import { ref, computed, onMounted } from "vue";
 import { useRouter } from "vue-router";
 import { useI18n } from "vue-i18n";
 import { getZodiacByYear, zodiacAnimals, type ZodiacAnimal } from "@/lib/zodiac";
-import LanguageSelector from "@/components/LanguageSelector.vue";
 import ZodiacSelector from "@/components/Zodiac-Selector.vue";
 import ZodiacBirthYear from "@/components/Zodiac-BirthYear.vue";
 
@@ -140,6 +141,7 @@ const goToPartnerInfo = () => {
     router.push(`/zodiac/partner-info?${params.toString()}`);
   }
 };
+
 
 // 컴포넌트 마운트 시 초기화
 onMounted(() => {
