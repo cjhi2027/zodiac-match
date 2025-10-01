@@ -3,7 +3,7 @@
     <!-- 고정 헤더 -->
     <div class="fixed-header">
       <button class="header-btn" @click="goHome" title="{{ $t('ui.goHome') }}">⌂</button>
-      <div class="header-title">12간지 띠 궁합</div>
+      <div class="header-title">{{ $t("headerTitle") }}</div>
       <select class="header-language-selector" v-model="locale" @change="changeLanguage">
         <option value="ko">{{ $t("ui.korean") }}</option>
         <option value="en">{{ $t("ui.english") }}</option>
@@ -77,7 +77,7 @@
 
 <script setup lang="ts">
 import { getCompatibilityDetail, type ZodiacAnimal } from "@/lib/zodiac";
-import { computed, ref } from "vue";
+import { computed, ref, onMounted } from "vue";
 import { useI18n } from "vue-i18n";
 
 // Kakao SDK 타입 정의
@@ -156,9 +156,9 @@ const shareOptions = computed<ShareOption[]>(() => {
   }
 });
 
-// 현재 페이지 URL
+// 현재 페이지 URL (detail을 result로 변경)
 const currentUrl = computed(() => {
-  return window.location.href;
+  return window.location.href.replace('/zodiac/detail', '/zodiac/result');
 });
 
 // 공유 메시지 생성
@@ -167,9 +167,9 @@ const shareMessage = computed(() => {
   const partnerZodiacName = t(`zodiac.${props.partnerZodiac.id}`);
   
   if (locale.value === 'ko') {
-    return `${myZodiacName} × ${partnerZodiacName} 궁합 상세 분석을 확인해보세요! 💕\n\n${currentUrl.value}`;
+    return `${myZodiacName} × ${partnerZodiacName} 우리의 궁합 결과를 확인해보세요! 💕\n\n${currentUrl.value}`;
   } else {
-    return `Check out the detailed compatibility analysis between ${myZodiacName} and ${partnerZodiacName}! 💕\n\n${currentUrl.value}`;
+    return `Check out our compatibility result between ${myZodiacName} and ${partnerZodiacName}! 💕\n\n${currentUrl.value}`;
   }
 });
 
@@ -216,7 +216,8 @@ const share = (platform: string) => {
 
     case 'copy':
       copyToClipboard(url);
-      showToast(locale.value === 'ko' ? '링크가 클립보드에 복사되었습니다!' : 'Link copied to clipboard!');
+      // 브라우저 자체 토스트가 표시되므로 우리 토스트는 생략
+      // showToast(locale.value === 'ko' ? '복사 완료!' : 'Copied!');
       break;
   }
 };
@@ -255,6 +256,15 @@ const goHome = () => {
 
 // 언어 변경
 const changeLanguage = () => {
-  // locale은 자동으로 반응형으로 업데이트됩니다
+  // localStorage에 언어 설정 저장
+  localStorage.setItem('zodiac-locale', locale.value);
 };
+
+// 컴포넌트 마운트 시 저장된 언어 설정 불러오기
+onMounted(() => {
+  const savedLocale = localStorage.getItem('zodiac-locale');
+  if (savedLocale && (savedLocale === 'ko' || savedLocale === 'en')) {
+    locale.value = savedLocale as 'ko' | 'en';
+  }
+});
 </script>

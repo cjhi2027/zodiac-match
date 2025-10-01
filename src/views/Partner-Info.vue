@@ -3,7 +3,7 @@
     <!-- 고정 헤더 -->
     <div class="fixed-header">
       <button class="header-btn" @click="goHome" title="{{ $t('ui.goHome') }}">⌂</button>
-      <div class="header-title">12간지 띠 궁합</div>
+      <div class="header-title">{{ $t("headerTitle") }}</div>
       <select class="header-language-selector" v-model="locale" @change="changeLanguage">
         <option value="ko">{{ $t("ui.korean") }}</option>
         <option value="en">{{ $t("ui.english") }}</option>
@@ -16,7 +16,7 @@
 
     <!-- 내 정보 요약 (클릭 가능) -->
     <div class="my-info-summary clickable" @click="goToMyInfo">
-      <div class="summary-title">내 정보</div>
+      <div class="summary-title">{{ $t("ui.myInfo") }}</div>
       <div class="summary-content">
         <img
           :src="myZodiac?.image"
@@ -24,7 +24,7 @@
           class="summary-image"
         />
         <span class="summary-name">{{ $t(`zodiac.${myZodiac?.id}`) }}{{ $t("ui.zodiacSuffix") }}</span>
-        <span class="summary-edit-hint">변경</span>
+        <span class="summary-edit-hint">{{ $t("clickToEdit") }}</span>
       </div>
     </div>
 
@@ -32,7 +32,7 @@
     <div class="info-card">
       <!-- 카드 헤더 -->
       <div class="card-header">
-        <h2 class="card-title">상대방 정보</h2>
+        <h2 class="card-title">{{ $t("ui.partnerInfo") }}</h2>
         <p class="card-subtitle">{{ $t("ui.selectPartnerInfoDesc") }}</p>
       </div>
 
@@ -143,6 +143,12 @@ const hasSelection = computed(() => {
 
 // 컴포넌트 마운트 시 내 정보 로드
 onMounted(() => {
+  // 저장된 언어 설정 불러오기
+  const savedLocale = localStorage.getItem('zodiac-locale');
+  if (savedLocale && (savedLocale === 'ko' || savedLocale === 'en')) {
+    locale.value = savedLocale as 'ko' | 'en';
+  }
+  
   const urlParams = new URLSearchParams(window.location.search);
   const myZodiacId = urlParams.get("my");
   myTab.value = urlParams.get("myTab") || "";
@@ -190,7 +196,8 @@ const goHome = () => {
 
 // 언어 변경
 const changeLanguage = () => {
-  // locale은 자동으로 반응형으로 업데이트됩니다
+  // localStorage에 언어 설정 저장
+  localStorage.setItem('zodiac-locale', locale.value);
 };
 
 // 내 정보 선택으로 이동 (내 정보도 함께 전달)

@@ -3,7 +3,7 @@
     <!-- 고정 헤더 -->
     <div class="fixed-header">
       <button class="header-btn" @click="goHome" title="{{ $t('ui.goHome') }}">⌂</button>
-      <div class="header-title">12간지 띠 궁합</div>
+      <div class="header-title">{{ $t("headerTitle") }}</div>
       <select class="header-language-selector" v-model="locale" @change="changeLanguage">
         <option value="ko">{{ $t("ui.korean") }}</option>
         <option value="en">{{ $t("ui.english") }}</option>
@@ -34,7 +34,7 @@
 
       <!-- 점수 표시 -->
       <div class="score-display">
-        <div class="score-number" :class="getScoreColorClass(animatedScore)">
+        <div class="score-number">
           {{ animatedScore }}
         </div>
       </div>
@@ -43,7 +43,6 @@
       <div class="result-progress">
         <div
           class="result-progress-bar animating"
-          :class="getScoreColorClass(animatedScore)"
           :style="{ width: `${animatedScore}%` }"
         ></div>
       </div>
@@ -124,16 +123,14 @@ const showWitty = ref(false);
 const showElaboration = ref(false);
 const showButton = ref(false);
 
-// 점수 색상 클래스
-const getScoreColorClass = (score: number) => {
-  if (score >= 80) return "score-very-good";
-  if (score >= 60) return "score-good";
-  if (score >= 40) return "score-fair";
-  return "score-poor";
-};
-
 // 컴포넌트 마운트 시 애니메이션 시작
 onMounted(() => {
+  // 저장된 언어 설정 불러오기
+  const savedLocale = localStorage.getItem('zodiac-locale');
+  if (savedLocale && (savedLocale === 'ko' || savedLocale === 'en')) {
+    locale.value = savedLocale as 'ko' | 'en';
+  }
+  
   console.log('애니메이션 시작!', { targetScore: compatibilityScore.value });
   
   // 초기값 설정
@@ -187,6 +184,7 @@ const goHome = () => {
 
 // 언어 변경
 const changeLanguage = () => {
-  // locale은 자동으로 반응형으로 업데이트됩니다
+  // localStorage에 언어 설정 저장
+  localStorage.setItem('zodiac-locale', locale.value);
 };
 </script>

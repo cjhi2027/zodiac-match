@@ -17,6 +17,7 @@
           <div class="menu-icon">🐭</div>
           <div class="menu-text">
             <div class="menu-title">{{ $t("mainHome.zodiac.title") }}</div>
+            <div class="menu-subtitle">{{ $t("mainHome.zodiac.subtitle") }}</div>
           </div>
         </div>
       </div>
@@ -27,6 +28,7 @@
           <div class="menu-icon">⭐</div>
           <div class="menu-text">
             <div class="menu-title">{{ $t("mainHome.constellation.title") }}</div>
+            <div class="menu-subtitle">{{ $t("mainHome.constellation.subtitle") }}</div>
           </div>
         </div>
         <div class="coming-soon">{{ $t("mainHome.comingSoon") }}</div>
@@ -38,6 +40,7 @@
           <div class="menu-icon">🩸</div>
           <div class="menu-text">
             <div class="menu-title">{{ $t("mainHome.bloodType.title") }}</div>
+            <div class="menu-subtitle">{{ $t("mainHome.bloodType.subtitle") }}</div>
           </div>
         </div>
         <div class="coming-soon">{{ $t("mainHome.comingSoon") }}</div>
@@ -49,6 +52,7 @@
           <div class="menu-icon">🔤</div>
           <div class="menu-text">
             <div class="menu-title">{{ $t("mainHome.mbti.title") }}</div>
+            <div class="menu-subtitle">{{ $t("mainHome.mbti.subtitle") }}</div>
           </div>
         </div>
         <div class="coming-soon">{{ $t("mainHome.comingSoon") }}</div>
@@ -150,6 +154,12 @@ const showToast = (message: string) => {
 // 메인 홈 전용 body 스타일 적용
 onMounted(() => {
   document.body.classList.add('body-home');
+  
+  // 저장된 언어 설정 불러오기
+  const savedLocale = localStorage.getItem('zodiac-locale');
+  if (savedLocale && (savedLocale === 'ko' || savedLocale === 'en')) {
+    locale.value = savedLocale as 'ko' | 'en';
+  }
 });
 
 onUnmounted(() => {
@@ -236,7 +246,8 @@ const share = (platform: string) => {
 
     case 'copy':
       copyToClipboard(url);
-      showToast(locale.value === 'ko' ? '링크가 클립보드에 복사되었습니다!' : 'Link copied to clipboard!');
+      // 브라우저 자체 토스트가 표시되므로 우리 토스트는 생략
+      // showToast(locale.value === 'ko' ? '복사 완료!' : 'Copied!');
       break;
   }
 };

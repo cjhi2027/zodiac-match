@@ -21,6 +21,8 @@ const selectedLanguage = ref(locale.value);
 const handleLanguageChange = (event: Event) => {
   const target = event.target as HTMLSelectElement;
   locale.value = target.value;
+  // localStorage에 언어 설정 저장
+  localStorage.setItem('zodiac-locale', locale.value);
 };
 
 // 언어 변경 시 selectedLanguage 동기화

@@ -471,35 +471,7 @@ body.body-home {
   font-size: 3rem;
   font-weight: bold;
   color: #e91e63;
-  transition: color 0.3s ease;
   text-align: center;
-}
-
-
-
-/* 점수 색상 (녹색) */
-.score-number.green {
-  color: #4caf50;
-}
-
-/* 점수 색상 (파란색) */
-.score-number.blue {
-  color: #2196f3;
-}
-
-/* 점수 색상 (노란색) */
-.score-number.yellow {
-  color: #ff9800;
-}
-
-/* 점수 색상 (주황색) */
-.score-number.orange {
-  color: #ff5722;
-}
-
-/* 점수 색상 (빨간색) */
-.score-number.red {
-  color: #f44336;
 }
 
 
@@ -518,37 +490,8 @@ body.body-home {
 .result-progress-bar {
   height: 100%;
   border-radius: 0.5rem; /* 8px = 0.5rem */
+  background: #e91e63;
   transition: width 1s ease-out;
-}
-
-/* 진행 바 색상 (녹색) */
-.result-progress-bar.green {
-  background: #4caf50;
-  transition: background-color 0.3s ease;
-}
-
-/* 진행 바 색상 (파란색) */
-.result-progress-bar.blue {
-  background: #2196f3;
-  transition: background-color 0.3s ease;
-}
-
-/* 진행 바 색상 (노란색) */
-.result-progress-bar.yellow {
-  background: #ff9800;
-  transition: background-color 0.3s ease;
-}
-
-/* 진행 바 색상 (주황색) */
-.result-progress-bar.orange {
-  background: #ff5722;
-  transition: background-color 0.3s ease;
-}
-
-/* 진행 바 색상 (빨간색) */
-.result-progress-bar.red {
-  background: #f44336;
-  transition: background-color 0.3s ease;
 }
 
 /* 페이드인 애니메이션 */
@@ -916,7 +859,7 @@ body.body-home {
 }
 
 .main-title {
-  font-size: 2rem;
+  font-size: 2.4rem;
   font-weight: bold;
   color: #333;
   text-align: center;
@@ -993,8 +936,10 @@ body.body-home {
 }
 
 .menu-subtitle {
-  font-size: 0.9rem;
-  color: #666;
+  font-size: 0.85rem;
+  color: #718096;
+  margin-top: 0.25rem;
+  line-height: 1.4;
 }
 
 .coming-soon {
@@ -1047,11 +992,12 @@ body.body-home {
 
 .modal-content {
   background: white;
-  border-radius: 1rem;
-  max-width: 90%;
+  border-radius: 0.75rem;
+  max-width: 600px;
   max-height: 90%;
   overflow: hidden;
   box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.3);
+  width: 90%;
 }
 
 .modal-header {
@@ -1125,7 +1071,7 @@ body.body-home {
   }
 
   .main-title {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
   }
 
   .main-subtitle {
@@ -1152,8 +1098,13 @@ body.body-home {
     font-size: 1.1rem;
   }
 
+  .menu-subtitle {
+    font-size: 0.8rem;
+  }
+
   .modal-content {
     margin: 1rem;
+    width: calc(100% - 2rem);
   }
 
   .modal-header,
@@ -1642,6 +1593,7 @@ body.body-home {
 
 .summary-edit-hint {
   font-size: 0.9rem;
+  text-decoration: underline;
   opacity: 0.8;
   margin-left: auto;
   margin-right: 0.5rem;
@@ -1957,14 +1909,13 @@ body.body-home {
 
 /* 점수바 애니메이션 */
 .result-progress-bar {
-  transition: width 0.1s linear !important;
+  transition: width 0.1s linear;
   transform-origin: left;
-  width: 0% !important; /* 초기값 설정 */
 }
 
 /* 점수바 애니메이션 활성화 */
 .result-progress-bar.animating {
-  transition: width 0.1s linear !important;
+  transition: width 0.1s linear;
 }
 
 /* 버튼 비활성화 상태 */

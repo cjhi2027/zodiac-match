@@ -40,32 +40,30 @@ const i18n = createI18n({
         checkCompatibilityBtn: "궁합 확인하기",
       },
       mainHome: {
-        title: "궁합 확인 서비스 (LoveIndex)",
-        subtitle: "여러분들의 커플 매칭도를 확인해보세요",
+        title: "우리 어울릴까요?",
+        subtitle: " 띠, 별자리, 혈액형, MBTI로 확인해보세요!",
         zodiac: {
-          title: "12간지로 보기"
+          title: "띠 궁합",
+          subtitle: "12띠로 보는 연애 궁합"
         },
         constellation: {
-          title: "별자리로 보기"
+          title: "별자리 궁합",
+          subtitle: "별자리로 알아보는 사랑 지수"
         },
         bloodType: {
-          title: "혈액형으로 보기"
+          title: "혈액형 궁합",
+          subtitle: "혈액형별 연애 스타일"
         },
         mbti: {
-          title: "MBTI로 보기"
+          title: "MBTI 궁합",
+          subtitle: "MBTI로 보는 커플 케미"
         },
         comingSoon: "준비중",
         privacyPolicy: "개인정보보호방침",
         privacyTitle: "개인정보보호방침",
-        privacyContent: "본 서비스는 사용자의 개인정보를 저장하지 않습니다. 모든 궁합 분석은 브라우저에서만 처리되며, 서버로 전송되지 않습니다.",
+        privacyContent: "본 서비스는 사용자의 개인정보를 일체 수집하거나 저장하지 않습니다.\n궁합 분석 과정은 모두 사용자의 브라우저 내에서 안전하게 처리되며, 어떠한 정보도 서버로 전송되거나 외부와 공유되지 않습니다.\n따라서 이용 과정에서 개인정보 유출이나 기록 저장에 대한 우려가 전혀 없으며, 사용자는 안심하고 서비스를 이용하실 수 있습니다.",
         confirm: "확인"
       },
-      // 새로운 UI 번역 키들
-      selectMyInfo: "내 정보",
-      selectMyInfoDesc: "띠 또는 생년으로 내 정보를 선택해주세요",
-      selectPartnerInfo: "상대방 정보", 
-      selectPartnerInfoDesc: "띠 또는 생년으로 상대방 정보를 선택해주세요",
-      mySelectedInfo: "내 정보",
       clickToEdit: "변경",
       headerTitle: "12간지 띠 궁합",
       zodiac: {
@@ -1671,36 +1669,34 @@ const i18n = createI18n({
         goHome: "Go Home",
         selectPartnerInfoBtn: "Select Partner Info",
         checkCompatibilityBtn: "Check Compatibility",
-        headerTitle: "12 Zodiac Signs Compatibility",
       },
       mainHome: {
-        title: "Compatibility Check Service (LoveIndex)",
-        subtitle: "Check your couple compatibility!",
+        title: "Are We a Match?",
+        subtitle: "Check with Zodiac, Stars, Blood Type, &     MBTI!",
         zodiac: {
-          title: "Chinese Zodiac"
+          title: "Zodiac Animals",
+          subtitle: "Love match by Chinese Zodiac signs"
         },
         constellation: {
-          title: "Western Zodiac"
+          title: "Western Zodiac",
+          subtitle: "Love match by star signs"
         },
         bloodType: {
-          title: "Blood Type"
+          title: "Blood Type",
+          subtitle: "Love match by blood type"
         },
         mbti: {
-          title: "MBTI"
+          title: "MBTI Match",
+          subtitle: "Love match by 16 personalities"
         },
         comingSoon: "Coming Soon",
         privacyPolicy: "Privacy Policy",
         privacyTitle: "Privacy Policy",
-        privacyContent: "This service does not store any personal information. All compatibility analysis is processed only in the browser and is not transmitted to any server.",
+        privacyContent: "This service does not collect, store, or track any personal information from users.\nAll compatibility analysis is processed securely within your browser, and no data is ever transmitted to a server or shared externally.\nYou can use the service with full confidence, knowing that there is no risk of personal data leakage or record keeping.",
         confirm: "Confirm"
       },
-      // 새로운 UI 번역 키들 (영어)
-      selectMyInfo: "Select My Info",
-      selectMyInfoDesc: "Select your info by zodiac or birth year",
-      selectPartnerInfo: "Select Partner Info",
-      selectPartnerInfoDesc: "Select partner's info by zodiac or birth year", 
-      mySelectedInfo: "My Selected Info",
-      clickToEdit: "Click to edit",
+      clickToEdit: "Edit",
+      headerTitle: "Zodiac Animals",
       zodiac: {
         mouse: "Rat",
         ox: "Ox",

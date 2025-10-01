@@ -3,7 +3,7 @@
     <!-- 고정 헤더 -->
     <div class="fixed-header">
       <button class="header-btn" @click="goHome" title="{{ $t('ui.goHome') }}">⌂</button>
-      <div class="header-title">12간지 띠 궁합</div>
+      <div class="header-title">{{ $t("headerTitle") }}</div>
       <select class="header-language-selector" v-model="locale" @change="changeLanguage">
         <option value="ko">{{ $t("ui.korean") }}</option>
         <option value="en">{{ $t("ui.english") }}</option>
@@ -18,7 +18,7 @@
     <div class="info-card">
       <!-- 카드 헤더 -->
       <div class="card-header">
-        <h2 class="card-title">내 정보</h2>
+        <h2 class="card-title">{{ $t("ui.myInfo") }}</h2>
         <p class="card-subtitle">{{ $t("ui.selectMyInfoDesc") }}</p>
       </div>
 
@@ -103,6 +103,14 @@ import ZodiacBirthYear from "@/components/Zodiac-BirthYear.vue";
 const router = useRouter();
 const { t, locale } = useI18n();
 
+// 컴포넌트 마운트 시 저장된 언어 설정 불러오기
+onMounted(() => {
+  const savedLocale = localStorage.getItem('zodiac-locale');
+  if (savedLocale && (savedLocale === 'ko' || savedLocale === 'en')) {
+    locale.value = savedLocale as 'ko' | 'en';
+  }
+});
+
 // 상태 관리
 const activeTab = ref<"zodiac" | "year">("zodiac");
 const selectedZodiac = ref<ZodiacAnimal | undefined>();
@@ -150,7 +158,8 @@ const goHome = () => {
 
 // 언어 변경
 const changeLanguage = () => {
-  // locale은 자동으로 반응형으로 업데이트됩니다
+  // localStorage에 언어 설정 저장
+  localStorage.setItem('zodiac-locale', locale.value);
 };
 
 // 상대방 정보 선택으로 이동
