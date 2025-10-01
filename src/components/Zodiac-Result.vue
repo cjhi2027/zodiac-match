@@ -22,7 +22,7 @@
           <img :src="myZodiac.image" :alt="$t(`zodiac.${myZodiac.id}`)" />
           <h3>{{ $t(`zodiac.${myZodiac.id}`) }}</h3>
         </div>
-
+        <div class="score-icon">💖</div>
         <div class="result-animal">
           <img
             :src="partnerZodiac.image"
@@ -34,7 +34,6 @@
 
       <!-- 점수 표시 -->
       <div class="score-display">
-        <div class="score-icon">💖</div>
         <div class="score-number" :class="getScoreColorClass(animatedScore)">
           {{ animatedScore }}
         </div>

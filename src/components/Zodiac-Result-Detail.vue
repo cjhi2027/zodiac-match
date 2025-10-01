@@ -45,7 +45,7 @@
     <div class="share-area">
       <div class="share-title">{{ $t("compatibilityDetail.shareTitle") }}</div>
       
-      <!-- 공유 버튼들 (한 줄) -->
+      <!-- 공유 버튼들 -->
       <div class="share-buttons-row">
         <!-- SNS 아이콘들 -->
         <button 
@@ -61,7 +61,7 @@
         <!-- 링크복사 버튼 -->
         <button @click="share('copy')" class="copy-link-btn">
           <span class="copy-link-icon">🔗</span>
-          <span class="copy-link-text">{{ locale === 'ko' ? '복사' : 'Copy' }}</span>
+          <span class="copy-link-text">{{ locale === 'ko' ? '복사하기' : 'Copy' }}</span>
         </button>
       </div>
     </div>
