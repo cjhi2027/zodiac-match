@@ -51,7 +51,7 @@
 
       <!-- 띠 캐릭터 카드 (항상 표시) -->
       <div class="zodiac-character-section">
-        <div class="character-card-wrapper" :class="{ flipping: isFlipping }">
+        <div class="character-card-wrapper" :class="{ 'flipping-first': isFlipping && isFirstSelection, 'flipping': isFlipping && !isFirstSelection, 'card-unselected': !displayedZodiac }">
           <div class="character-card">
             <!-- 카드 앞면 (동물 이미지 + 이름) -->
             <div class="card-front" v-if="displayedZodiac">
@@ -142,6 +142,7 @@ const displayedZodiac = ref<ZodiacAnimal | undefined>();
 const selectedBirthYear = ref("");
 const showBirthYearModal = ref(false);
 const isFlipping = ref(false);
+const isFirstSelection = ref(true); // 첫 선택 여부 추적
 const showDescription = ref(false);
 const showButton = ref(false);
 const animateDescription = ref(false);
@@ -187,6 +188,7 @@ onMounted(() => {
     if (partnerData) {
       selectedZodiac.value = partnerData;
       displayedZodiac.value = partnerData; // 초기 로드 시 애니메이션 없이 표시
+      isFirstSelection.value = false; // 이미 선택된 상태
       showDescription.value = true; // 초기 로드 시 설명 표시
       showButton.value = true; // 초기 로드 시 버튼 표시
     }
@@ -201,6 +203,14 @@ const setSelectedZodiac = (zodiac: ZodiacAnimal) => {
   showDescription.value = false;
   showButton.value = false;
   animateDescription.value = false;
+  
+  // 첫 선택인지 확인 (displayedZodiac가 없으면 첫 선택)
+  const wasFirstSelection = !displayedZodiac.value;
+  if (wasFirstSelection) {
+    isFirstSelection.value = true;
+  } else {
+    isFirstSelection.value = false;
+  }
   
   // 카드 뒤집기 애니메이션 시작
   isFlipping.value = true;

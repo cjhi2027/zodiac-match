@@ -187,7 +187,7 @@ body.body-home {
   box-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.1); /* 부드러운 그림자 */
   border: 2px solid transparent;
   cursor: pointer;
-  transition: all 0.3s; /* 부드러운 전환 효과 */
+  transition: all 0.2s; /* 부드러운 전환 효과 */
   position: relative;
 }
 
@@ -454,6 +454,7 @@ body.body-home {
   width: 2.5rem;
   height: 2.5rem;
   border-radius: 50%; /* 원형 */
+  background-color: white;
   border: 2px solid rgba(255, 255, 255, 0.3);
 }
 
@@ -602,21 +603,46 @@ body.body-home {
   transform-style: preserve-3d; /* 3D 변환 유지 */
 }
 
-/* 뒤집기 애니메이션 적용 클래스 */
+/* 선택되지 않은 카드 (뒷면만 보일 때) - 크기 1.5배 + 위치 아래로 */
+.character-card-wrapper.card-unselected {
+  transform: scale(1.5);
+  margin-top: 8rem;
+  margin-bottom: 8rem; /* 아래 요소와의 간격 확보 */
+}
+
+/* 첫 선택 시 뒤집기 애니메이션 (크기 변화 포함) */
+.character-card-wrapper.flipping-first {
+  animation: cardFlipFirst 0.6s ease-in-out;
+}
+
+/* 재선택 시 뒤집기 애니메이션 (크기 변화 없이 회전만) */
 .character-card-wrapper.flipping {
   animation: cardFlip 0.6s ease-in-out;
 }
 
-/* 카드 뒤집기 키프레임 */
-@keyframes cardFlip {
+/* 첫 선택: 크기 1.5배에서 1배로 축소하며 회전 */
+@keyframes cardFlipFirst {
   0% {
-    transform: rotateY(0deg); /* 시작 (앞면) */
+    transform: scale(1.5) rotateY(0deg); /* 시작 (뒷면, 큰 크기) */
   }
   50% {
-    transform: rotateY(90deg); /* 중간 (옆면) */
+    transform: scale(1.25) rotateY(90deg); /* 중간 (옆면, 크기 줄어듦) */
   }
   100% {
-    transform: rotateY(0deg); /* 끝 (앞면) */
+    transform: scale(1) rotateY(0deg); /* 끝 (앞면, 원래 크기) */
+  }
+}
+
+/* 재선택: 원래 크기에서 회전만 */
+@keyframes cardFlip {
+  0% {
+    transform: scale(1) rotateY(0deg); /* 시작 (앞면) */
+  }
+  50% {
+    transform: scale(1) rotateY(90deg); /* 중간 (옆면) */
+  }
+  100% {
+    transform: scale(1) rotateY(0deg); /* 끝 (앞면) */
   }
 }
 
@@ -793,7 +819,7 @@ body.body-home {
 /* 네비게이션 버튼 (My-Info, Partner-Info 화면) */
 .my-info-container .nav-btn,
 .partner-info-container .nav-btn {
-  animation: slide-up-button 0.3s ease-out; /* 슬라이드 업 애니메이션 */
+  animation: slide-up-button 0.2s ease-out; /* 슬라이드 업 애니메이션 */
 }
 
 /* 결과 화면 버튼 (초기 숨김) */
@@ -804,7 +830,7 @@ body.body-home {
 
 /* 결과 화면 버튼 (표시) */
 .result-container .nav-btn.visible {
-  animation: slide-up-button 0.3s ease-out forwards;
+  animation: slide-up-button 0.2s ease-out forwards;
 }
 
 /* 버튼 슬라이드 업 키프레임 */
@@ -943,7 +969,7 @@ body.body-home {
   justify-content: center;
   margin: 0 0 1rem 0;
   font-weight: bold;
-  transition: color 0.3s ease;
+  transition: color 0.2s ease;
 }
 
 /* 점수 숫자 */
@@ -1027,8 +1053,8 @@ body.body-home {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  transition: opacity 0.3s ease;
-  animation: slide-up-button 0.3s ease-out; /* 슬라이드 업 애니메이션 추가 */
+  transition: opacity 0.2s ease;
+  animation: slide-up-button 0.2s ease-out; /* 슬라이드 업 애니메이션 추가 */
 }
 
 /* 상세보기 버튼 */
@@ -1041,7 +1067,7 @@ body.body-home {
   font-weight: 500;
   border-radius: 0.5rem;
   cursor: pointer;
-  transition: background 0.2s, opacity 0.3s ease;
+  transition: background 0.2s, opacity 0.2s ease;
 }
 
 /* 상세보기 버튼 호버 효과 */
@@ -1094,7 +1120,7 @@ body.body-home {
   align-items: center;
   background: none;
   border-radius: 0.5rem 0.5rem 0 0; /* 상단 모서리만 둥글게 */
-  transition: background 0.3s ease;
+  transition: background 0.2s ease;
   user-select: none; /* 텍스트 선택 방지 */
 }
 
@@ -1112,7 +1138,7 @@ body.body-home {
 .toggle-icon {
   font-size: 0.9rem;
   color: #e91e63;
-  transition: transform 0.3s ease;
+  transition: transform 0.2s ease;
 }
 
 /* 섹션 내용 */
@@ -1295,7 +1321,7 @@ body.body-home {
   border-radius: 0.5rem;
   font-size: 0.95rem;
   z-index: 10000; /* 최상위 */
-  animation: toast-slide-up 0.3s ease-out;
+  animation: toast-slide-up 0.2s ease-out;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
   max-width: 90%;
     text-align: center;
@@ -1321,7 +1347,7 @@ body.body-home {
 
 /* 페이드인 애니메이션 클래스 */
 .fade-in {
-  animation: fadeIn 0.3s ease-in forwards;
+  animation: fadeIn 0.2s ease-in forwards;
 }
 
 /* 페이드인 키프레임 */
@@ -1555,6 +1581,12 @@ body.body-home {
   .character-card-wrapper {
     width: 12rem; /* 작은 카드 */
     height: 14rem;
+  }
+
+  /* 선택되지 않은 카드 (모바일) */
+  .character-card-wrapper.card-unselected {
+    margin-top: 10rem; /* 모바일은 더 많이 이동 */
+    margin-bottom: 12rem;
   }
 
   /* 카드 물음표 (모바일) */
