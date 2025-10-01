@@ -380,8 +380,8 @@ body.body-home {
 .result-container,
 .detail-container {
   max-width: 50rem; /* 800px 최대 너비 */
-  margin: 0 auto;
-  padding: 1.25rem;
+  margin: 0 auto 5rem auto; /* 하단 여백 추가 */
+  padding: 1rem 0.5rem;
   background-color: none;
 }
 
@@ -787,8 +787,8 @@ body.body-home {
     left: 50%;
     transform: translateX(-50%); /* 가운데 정렬 */
     max-width: 50rem;
-  width: 100%;
-    background: none;
+    width: 100%;
+    background: #fffef5;
     padding: 1rem 1rem 1.5rem 1rem;
     z-index: 200; /* 다른 요소 위에 표시 */
     margin: 0;
@@ -1493,7 +1493,8 @@ body.body-home {
   .partner-info-container,
   .result-container,
   .detail-container {
-  padding: 1rem;
+    padding: 1rem 0.5rem;
+    margin-bottom: 2rem; /* 하단 여백 추가 */
   }
 
   /* 페이지 제목 (모바일) */
@@ -1585,7 +1586,7 @@ body.body-home {
 
   /* 선택되지 않은 카드 (모바일) */
   .character-card-wrapper.card-unselected {
-    margin-top: 10rem; /* 모바일은 더 많이 이동 */
+    margin-top: 8rem;
     margin-bottom: 12rem;
   }
 
@@ -1605,13 +1606,13 @@ body.body-home {
     bottom: 0;
     left: 0;
     right: 0;
-    background: none;
     padding: 1rem;
     z-index: 200;
     will-change: transform;
     flex-direction: row;
     gap: 0.5rem;
     flex-wrap: wrap;
+    background: #fffef5;
   }
 
   /* 네비게이션 버튼 (모바일) */
