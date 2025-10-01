@@ -14,7 +14,7 @@
 
     <div class="detail-container content-with-header" data-testid="container-compatibility-detail">
       <!-- 상세 결과 제목 -->
-      <div class="page-title">💖 {{ $t(`zodiac.${myZodiac.id}`) }} × {{ $t(`zodiac.${partnerZodiac.id}`) }} {{ $t("compatibilityDetail.title") }} 💖</div>
+      <div class="page-title">{{ $t(`zodiac.${myZodiac.id}`) }} × {{ $t(`zodiac.${partnerZodiac.id}`) }} {{ $t("compatibilityDetail.title") }}</div>
 
     <!-- 상세 설명 카드 -->
     <div class="detail-card">

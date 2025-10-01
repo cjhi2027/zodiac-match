@@ -166,7 +166,7 @@ const setSelectedZodiac = (zodiac: ZodiacAnimal) => {
     }, 500);
   }, 600);
   
-  // 1.1초 후 (카드 완료 + 0.5초) 버튼 표시 (설명은 유지)
+  // 1.1초 후 (카드 완료 0.6초 + 애니메이션 0.5초) 버튼 슬라이드 업
   setTimeout(() => {
     showButton.value = true;
   }, 1100);

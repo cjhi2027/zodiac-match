@@ -14,7 +14,7 @@
 
     <div class="result-container content-with-header" data-testid="container-compatibility-result">
       <!-- 결과 제목 -->
-      <div class="page-title">💖 {{ $t("ui.resultTitle") }} 💖</div>
+      <div class="page-title">{{ $t("ui.resultTitle") }}</div>
 
     <!-- 결과 카드 -->
     <div class="result-card">
@@ -50,18 +50,11 @@
       </div>
 
       <!-- 궁합 설명 -->
-      <div
-        class="result-description"
-        :class="{
-          'fade-in': true,
-          'visible': showWitty,
-          'has-content': showWitty,
-        }"
-      >
+      <div class="result-description">
         <!-- 재치있고 간단한 설명 -->
         <div
           v-if="compatibilityDetail?.wittyKey"
-          class="witty-description fade-in"
+          class="witty-description"
           :class="{ 'visible': showWitty }"
         >
           {{ $t(compatibilityDetail.wittyKey) }}
@@ -70,7 +63,7 @@
         <!-- 부연설명 -->
         <div
           v-if="compatibilityDetail?.elaborationKey"
-          class="elaboration-description fade-in"
+          class="elaboration-description"
           :class="{ 'visible': showElaboration }"
         >
           {{ $t(compatibilityDetail.elaborationKey) }}
@@ -157,23 +150,18 @@ onMounted(() => {
         console.log('점수 애니메이션 완료!', animatedScore.value);
         
         // 순차적 등장 애니메이션
-        // 1. 점수 애니메이션 완료 후 0.5초 뒤 witty 표시
+        // 1. 점수 애니메이션 완료 후 0.5초 뒤 설명 표시 (witty + elaboration 동시)
         setTimeout(() => {
           showWitty.value = true;
-          console.log('Witty 표시!', showWitty.value);
+          showElaboration.value = true;
+          console.log('설명 표시 시작!', { witty: showWitty.value, elaboration: showElaboration.value });
         }, 500);
         
-        // 2. witty 표시 후 0.5초 뒤 요약문 표시
-        setTimeout(() => {
-          showElaboration.value = true;
-          console.log('Elaboration 표시!', showElaboration.value);
-        }, 1000);
-        
-        // 3. 요약문 표시 후 0.5초 뒤 버튼 활성화
+        // 2. 설명 애니메이션 완료 후 (0.5초) + 추가 대기 (0.5초) 후 버튼 활성화
         setTimeout(() => {
           showButton.value = true;
           console.log('버튼 활성화!', showButton.value);
-        }, 1500);
+        }, 1500); // 500ms (대기) + 500ms (설명 애니메이션) + 500ms (추가 대기)
       }
     }, stepDuration);
   }, 100); // 100ms 지연
