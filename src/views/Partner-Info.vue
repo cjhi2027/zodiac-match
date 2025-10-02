@@ -51,7 +51,7 @@
 
       <!-- 띠 캐릭터 카드 (항상 표시) -->
       <div class="zodiac-character-section">
-        <div class="character-card-wrapper" :class="{ 'flipping-first': isFlipping && isFirstSelection, 'flipping': isFlipping && !isFirstSelection, 'card-unselected': !displayedZodiac }">
+        <div class="character-card-wrapper" :class="{ 'flipping-first': isFlipping && isFirstSelection, 'flipping': isFlipping && !isFirstSelection, 'card-unselected': !displayedZodiac, 'card-back-entering': !displayedZodiac && isInitialLoad }">
           <div class="character-card">
             <!-- 카드 앞면 (동물 이미지 + 이름) -->
             <div class="card-front" v-if="displayedZodiac">
@@ -146,6 +146,7 @@ const isFirstSelection = ref(true); // 첫 선택 여부 추적
 const showDescription = ref(false);
 const showButton = ref(false);
 const animateDescription = ref(false);
+const isInitialLoad = ref(true); // 초기 로드 여부 (카드 등장 애니메이션용)
 
 // 내 정보 (URL 파라미터에서 가져옴)
 const myZodiac = ref<ZodiacAnimal | null>(null);
@@ -191,8 +192,14 @@ onMounted(() => {
       isFirstSelection.value = false; // 이미 선택된 상태
       showDescription.value = true; // 초기 로드 시 설명 표시
       showButton.value = true; // 초기 로드 시 버튼 표시
+      isInitialLoad.value = false; // 이미 선택된 경우 초기 애니메이션 스킵
     }
   }
+  
+  // 초기 카드 등장 애니메이션 완료 후 (0.3초 대기 + 1초 애니메이션 + 0.3초 물음표)
+  setTimeout(() => {
+    isInitialLoad.value = false;
+  }, 1300);
 });
 
 // 띠 선택 (카드 뒤집기 효과)

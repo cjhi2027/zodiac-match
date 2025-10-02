@@ -149,14 +149,16 @@ onMounted(() => {
         animatedScore.value = targetScore;
         console.log('점수 애니메이션 완료!', animatedScore.value);
         
-        // 점수 완료 후 바로 설명 표시
+        // 점수 완료 후 재치있는 설명 + 부연설명 동시에 표시
         showWitty.value = true;
         showElaboration.value = true;
         console.log('설명 표시 시작!', { witty: showWitty.value, elaboration: showElaboration.value });
         
-        // 바로 버튼 활성화
-        showButton.value = true;
-        console.log('버튼 활성화!', showButton.value);
+        // 설명 애니메이션(0.5초) 완료 후 버튼 활성화
+        setTimeout(() => {
+          showButton.value = true;
+          console.log('버튼 활성화!', showButton.value);
+        }, 600); // 애니메이션 시간 0.5초 + 여유 0.1초
       }
     }, stepDuration);
   }, 100); // 100ms 지연

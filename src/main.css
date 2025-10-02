@@ -145,8 +145,8 @@ body.body-home {
 
 /* 홈 헤더 영역 */
 .main-header {
-  margin-top: 3rem;
-  margin-bottom: 3rem;
+  margin-top: 1rem;
+  margin-bottom: 4rem;
 }
 
 /* 메인 타이틀 */
@@ -170,6 +170,7 @@ body.body-home {
 .language-selector-container {
   display: flex;
   justify-content: right; /* 오른쪽 정렬 */
+  margin-bottom: 1.5rem; /* 타이틀과 간격 */
 }
 
 /* 메뉴 카드 그리드 */
@@ -182,9 +183,9 @@ body.body-home {
 /* 메뉴 카드 (띠 궁합, 별자리 등) */
 .menu-card {
   background: white;
-  border-radius: 1rem;
+  border-radius: 0.75rem;
   padding: 1rem;
-  box-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.1); /* 부드러운 그림자 */
+  box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.1); /* 부드러운 그림자 */
   border: 2px solid transparent;
   cursor: pointer;
   transition: all 0.2s; /* 부드러운 전환 효과 */
@@ -259,7 +260,7 @@ body.body-home {
 
 /* 공유하기 영역 (홈 화면) */
 .share-area {
-  margin-top: 2rem;
+  margin-top: 4rem;
   margin-bottom: 2rem;
   text-align: center;
   background: none;
@@ -476,7 +477,7 @@ body.body-home {
 /* 정보 입력 카드 */
 .info-card {
   background: none;
-  border-radius: 1rem;
+  border-radius: 0;
   padding: 0;
   margin-top: 1rem;
   margin-bottom: 2rem;
@@ -646,6 +647,28 @@ body.body-home {
   }
 }
 
+/* 트럼프 뒷면 카드 등장 애니메이션 */
+.character-card-wrapper.card-back-entering {
+  animation: cardBackEntrance 1.0s ease-out forwards;
+}
+
+@keyframes cardBackEntrance {
+  0% {
+    transform: scale(0.1);
+    opacity: 0;
+  }
+  30% {
+    /* 0.3초 대기 (1.0초의 30%) */
+    transform: scale(0.1);
+    opacity: 0;
+  }
+  100% {
+    /* 0.3~1.3초: 페이드인 + 확대 동시 진행 (1초 동안) */
+    transform: scale(1.5);
+    opacity: 1;
+  }
+}
+
 /* 카드 자체 */
 .character-card {
   width: 100%;
@@ -717,6 +740,24 @@ body.body-home {
   color: white;
   text-shadow: 2px 2px 8px rgba(220, 53, 69, 0.3);
   z-index: 1;
+}
+
+/* 카드 등장 시 물음표만 지연 페이드인 */
+.card-back-entering .card-question {
+  animation: questionFadeIn 0.3s ease-in forwards;
+  animation-delay: 1.0s;
+  opacity: 0;
+}
+
+@keyframes questionFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 /* 띠 캐릭터 이미지 */
@@ -910,7 +951,7 @@ body.body-home {
 /* 결과 카드 */
 .result-card {
   background: none;
-  border-radius: 0.75rem;
+  border-radius: 0;
   padding: 0;
   text-align: center;
 }
@@ -1091,7 +1132,7 @@ body.body-home {
 /* 상세 카드 */
 .detail-card {
   background: none;
-  border-radius: 0.75rem;
+  border-radius: 0;
   padding: 0;
   margin-bottom: 2rem;
 }
@@ -1231,7 +1272,7 @@ body.body-home {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.5rem;
+  padding: 1rem 2rem;
   border-bottom: 1px solid #e9ecef;
 }
 
@@ -1264,9 +1305,10 @@ body.body-home {
 
 /* 모달 본문 */
 .modal-body {
-  padding: 1.5rem;
+  padding: 2rem;
   line-height: 1.6;
   color: #666;
+  text-align: center;
 }
 
 /* 모달 푸터 */
@@ -1295,12 +1337,63 @@ body.body-home {
 
 /* 생년 선택 모달 (좁은 너비) */
 .birth-year-modal {
-  max-width: 400px;
+  max-width: 450px;
+  width: 90%;
 }
 
 /* 생년 선택 모달 본문 */
-.birth-year-modal .modal-body {
-  padding: 1.5rem;
+/*.birth-year-modal .modal-body {
+  padding: 2rem 2rem;
+  text-align: center;
+}*/
+
+/* 생년 선택 드롭다운 */
+.birth-year-select {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #333;
+  background: linear-gradient(to bottom, #ffffff, #f8f9fa);
+  border: 2px solid #ddd;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23666' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 1.2rem;
+  padding-right: 3rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* 생년 선택 드롭다운 포커스 */
+.birth-year-select:focus {
+  outline: none;
+  border-color: #8b5cf6;
+  box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1), 0 4px 12px rgba(0, 0, 0, 0.12);
+  background: white;
+}
+
+/* 생년 선택 드롭다운 호버 */
+.birth-year-select:hover {
+  border-color: #aaa;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+/* 생년 선택 드롭다운 옵션 */
+.birth-year-select option {
+  padding: 0.75rem;
+  font-size: 1rem;
+  color: #333;
+  background: white;
+}
+
+/* 생년 선택 드롭다운 비활성화 옵션 (placeholder) */
+.birth-year-select option:disabled {
+  color: #999;
+  font-style: italic;
 }
 
 
@@ -1407,8 +1500,8 @@ body.body-home {
 
   /* 홈 헤더 (모바일) */
   .main-header {
-    margin-top: 2rem;
-    margin-bottom: 3rem;
+    margin-top: 1rem;
+    margin-bottom: 4rem;
   }
 
   /* 메인 타이틀 (모바일) */
@@ -1476,11 +1569,27 @@ body.body-home {
     width: calc(100% - 2rem); /* 양쪽 여백 */
   }
 
-  /* 모달 헤더/본문/푸터 (모바일) */
-  .modal-header,
+  /* 모달 헤더 (모바일) */
+  .modal-header {
+    padding: 1rem 1.5rem; /* 작은 패딩 PC는 1rem 2rem*/
+  }
+
+  /* 모달 본문/푸터 (모바일) */  
   .modal-body,
   .modal-footer {
-    padding: 1rem; /* 작은 패딩 */
+    padding: 1.5rem 1.5rem; /* 작은 패딩 PC는 2rem 2rem*/
+  }
+
+  /* 생년 선택 모달 (모바일) */
+  .birth-year-modal {
+    max-width: 95%;
+  }
+
+  /* 생년 선택 드롭다운 (모바일) */
+  .birth-year-select {
+    padding: 0.875rem 1.25rem;
+    font-size: 1rem;
+    padding-right: 2.5rem;
   }
 
 
@@ -1490,7 +1599,7 @@ body.body-home {
   .partner-info-container,
   .result-container,
   .detail-container {
-    padding: 1rem 0.5rem;
+    padding: 0.5rem 0.5rem;
     margin-bottom: 2rem; /* 하단 여백 추가 */
   }
 

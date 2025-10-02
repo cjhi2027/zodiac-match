@@ -2,11 +2,11 @@
   <div class="main-home">
     <!-- 헤더 -->
     <div class="main-header">
-      <div class="main-title">{{ $t("mainHome.title") }}</div>
-      <div class="main-subtitle">{{ $t("mainHome.subtitle") }}</div>
       <div class="language-selector-container">
         <LanguageSelector />
       </div>
+      <div class="main-title">{{ $t("mainHome.title") }}</div>
+      <div class="main-subtitle">{{ $t("mainHome.subtitle") }}</div>
     </div>
 
     <!-- 메뉴 카드들 -->
