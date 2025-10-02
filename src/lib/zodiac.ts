@@ -8,6 +8,8 @@ export const zodiacAnimals = [
     featureKey: "zodiac.features.mouse",
     wittyKey: "zodiac.witty.mouse",
     elaborationKey: "zodiac.elaboration.mouse",
+    giftKey: "zodiac.gift.mouse",
+    giftDetailKey: "zodiac.giftDetail.mouse",
   },
   {
     id: "ox",
@@ -17,6 +19,8 @@ export const zodiacAnimals = [
     featureKey: "zodiac.features.ox",
     wittyKey: "zodiac.witty.ox",
     elaborationKey: "zodiac.elaboration.ox",
+    giftKey: "zodiac.gift.ox",
+    giftDetailKey: "zodiac.giftDetail.ox",
   },
   {
     id: "tiger",
@@ -26,6 +30,8 @@ export const zodiacAnimals = [
     featureKey: "zodiac.features.tiger",
     wittyKey: "zodiac.witty.tiger",
     elaborationKey: "zodiac.elaboration.tiger",
+    giftKey: "zodiac.gift.tiger",
+    giftDetailKey: "zodiac.giftDetail.tiger",
   },
   {
     id: "rabbit",
@@ -35,6 +41,8 @@ export const zodiacAnimals = [
     featureKey: "zodiac.features.rabbit",
     wittyKey: "zodiac.witty.rabbit",
     elaborationKey: "zodiac.elaboration.rabbit",
+    giftKey: "zodiac.gift.rabbit",
+    giftDetailKey: "zodiac.giftDetail.rabbit",
   },
   {
     id: "dragon",
@@ -44,6 +52,8 @@ export const zodiacAnimals = [
     featureKey: "zodiac.features.dragon",
     wittyKey: "zodiac.witty.dragon",
     elaborationKey: "zodiac.elaboration.dragon",
+    giftKey: "zodiac.gift.dragon",
+    giftDetailKey: "zodiac.giftDetail.dragon",
   },
   {
     id: "snake",
@@ -53,6 +63,8 @@ export const zodiacAnimals = [
     featureKey: "zodiac.features.snake",
     wittyKey: "zodiac.witty.snake",
     elaborationKey: "zodiac.elaboration.snake",
+    giftKey: "zodiac.gift.snake",
+    giftDetailKey: "zodiac.giftDetail.snake",
   },
   {
     id: "horse",
@@ -62,6 +74,8 @@ export const zodiacAnimals = [
     featureKey: "zodiac.features.horse",
     wittyKey: "zodiac.witty.horse",
     elaborationKey: "zodiac.elaboration.horse",
+    giftKey: "zodiac.gift.horse",
+    giftDetailKey: "zodiac.giftDetail.horse",
   },
   {
     id: "goat",
@@ -71,6 +85,8 @@ export const zodiacAnimals = [
     featureKey: "zodiac.features.goat",
     wittyKey: "zodiac.witty.goat",
     elaborationKey: "zodiac.elaboration.goat",
+    giftKey: "zodiac.gift.goat",
+    giftDetailKey: "zodiac.giftDetail.goat",
   },
   {
     id: "monkey",
@@ -80,6 +96,8 @@ export const zodiacAnimals = [
     featureKey: "zodiac.features.monkey",
     wittyKey: "zodiac.witty.monkey",
     elaborationKey: "zodiac.elaboration.monkey",
+    giftKey: "zodiac.gift.monkey",
+    giftDetailKey: "zodiac.giftDetail.monkey",
   },
   {
     id: "rooster",
@@ -89,6 +107,8 @@ export const zodiacAnimals = [
     featureKey: "zodiac.features.rooster",
     wittyKey: "zodiac.witty.rooster",
     elaborationKey: "zodiac.elaboration.rooster",
+    giftKey: "zodiac.gift.rooster",
+    giftDetailKey: "zodiac.giftDetail.rooster",
   },
   {
     id: "dog",
@@ -98,6 +118,8 @@ export const zodiacAnimals = [
     featureKey: "zodiac.features.dog",
     wittyKey: "zodiac.witty.dog",
     elaborationKey: "zodiac.elaboration.dog",
+    giftKey: "zodiac.gift.dog",
+    giftDetailKey: "zodiac.giftDetail.dog",
   },
   {
     id: "pig",
@@ -107,6 +129,8 @@ export const zodiacAnimals = [
     featureKey: "zodiac.features.pig",
     wittyKey: "zodiac.witty.pig",
     elaborationKey: "zodiac.elaboration.pig",
+    giftKey: "zodiac.gift.pig",
+    giftDetailKey: "zodiac.giftDetail.pig",
   },
 ] as const;
 
@@ -150,9 +174,18 @@ export interface CompatibilityDetail {
   wittyKey: string; // 재치있고 간단한 설명 키
   elaborationKey: string; // 부연설명 키
   detailed: {
-    basicKey: string; // 기본 설명 키
-    cautionKey: string; // 주의할 점 키
-    dateRecommendationKey: string; // 추천 데이트 키
+    basic: {
+      summaryKey: string; // 기본 설명 요약 키
+      descriptionKey: string; // 기본 설명 상세 키
+    };
+    caution: {
+      summaryKey: string; // 주의할 점 요약 키
+      descriptionKey: string; // 주의할 점 상세 키
+    };
+    dateRecommendation: {
+      summaryKey: string; // 추천 데이트 요약 키
+      descriptionKey: string; // 추천 데이트 상세 키
+    };
   };
 }
 
@@ -162,108 +195,216 @@ export const mouseCompatibilityDetails: Record<string, CompatibilityDetail> = {
     wittyKey: "compatibilityDetail.mouse.mouse.witty",
     elaborationKey: "compatibilityDetail.mouse.mouse.elaboration",
     detailed: {
-      basicKey: "compatibilityDetail.mouse.mouse.detailed.basic",
-      cautionKey: "compatibilityDetail.mouse.mouse.detailed.caution",
-      dateRecommendationKey: "compatibilityDetail.mouse.mouse.detailed.dateRecommendation"
+      basic: {
+        summaryKey: "compatibilityDetail.mouse.mouse.detailed.basic.summary",
+        descriptionKey: "compatibilityDetail.mouse.mouse.detailed.basic.description"
+      },
+      caution: {
+        summaryKey: "compatibilityDetail.mouse.mouse.detailed.caution.summary",
+        descriptionKey: "compatibilityDetail.mouse.mouse.detailed.caution.description"
+      },
+      dateRecommendation: {
+        summaryKey: "compatibilityDetail.mouse.mouse.detailed.dateRecommendation.summary",
+        descriptionKey: "compatibilityDetail.mouse.mouse.detailed.dateRecommendation.description"
+      }
     }
   },
   ox: {
     wittyKey: "compatibilityDetail.mouse.ox.witty",
     elaborationKey: "compatibilityDetail.mouse.ox.elaboration",
     detailed: {
-      basicKey: "compatibilityDetail.mouse.ox.detailed.basic",
-      cautionKey: "compatibilityDetail.mouse.ox.detailed.caution",
-      dateRecommendationKey: "compatibilityDetail.mouse.ox.detailed.dateRecommendation"
+      basic: {
+        summaryKey: "compatibilityDetail.mouse.ox.detailed.basic.summary",
+        descriptionKey: "compatibilityDetail.mouse.ox.detailed.basic.description"
+      },
+      caution: {
+        summaryKey: "compatibilityDetail.mouse.ox.detailed.caution.summary",
+        descriptionKey: "compatibilityDetail.mouse.ox.detailed.caution.description"
+      },
+      dateRecommendation: {
+        summaryKey: "compatibilityDetail.mouse.ox.detailed.dateRecommendation.summary",
+        descriptionKey: "compatibilityDetail.mouse.ox.detailed.dateRecommendation.description"
+      }
     }
   },
   tiger: {
     wittyKey: "compatibilityDetail.mouse.tiger.witty",
     elaborationKey: "compatibilityDetail.mouse.tiger.elaboration",
     detailed: {
-      basicKey: "compatibilityDetail.mouse.tiger.detailed.basic",
-      cautionKey: "compatibilityDetail.mouse.tiger.detailed.caution",
-      dateRecommendationKey: "compatibilityDetail.mouse.tiger.detailed.dateRecommendation"
+      basic: {
+        summaryKey: "compatibilityDetail.mouse.tiger.detailed.basic.summary",
+        descriptionKey: "compatibilityDetail.mouse.tiger.detailed.basic.description"
+      },
+      caution: {
+        summaryKey: "compatibilityDetail.mouse.tiger.detailed.caution.summary",
+        descriptionKey: "compatibilityDetail.mouse.tiger.detailed.caution.description"
+      },
+      dateRecommendation: {
+        summaryKey: "compatibilityDetail.mouse.tiger.detailed.dateRecommendation.summary",
+        descriptionKey: "compatibilityDetail.mouse.tiger.detailed.dateRecommendation.description"
+      }
     }
   },
   rabbit: {
     wittyKey: "compatibilityDetail.mouse.rabbit.witty",
     elaborationKey: "compatibilityDetail.mouse.rabbit.elaboration",
     detailed: {
-      basicKey: "compatibilityDetail.mouse.rabbit.detailed.basic",
-      cautionKey: "compatibilityDetail.mouse.rabbit.detailed.caution",
-      dateRecommendationKey: "compatibilityDetail.mouse.rabbit.detailed.dateRecommendation"
+      basic: {
+        summaryKey: "compatibilityDetail.mouse.rabbit.detailed.basic.summary",
+        descriptionKey: "compatibilityDetail.mouse.rabbit.detailed.basic.description"
+      },
+      caution: {
+        summaryKey: "compatibilityDetail.mouse.rabbit.detailed.caution.summary",
+        descriptionKey: "compatibilityDetail.mouse.rabbit.detailed.caution.description"
+      },
+      dateRecommendation: {
+        summaryKey: "compatibilityDetail.mouse.rabbit.detailed.dateRecommendation.summary",
+        descriptionKey: "compatibilityDetail.mouse.rabbit.detailed.dateRecommendation.description"
+      }
     }
   },
   dragon: {
     wittyKey: "compatibilityDetail.mouse.dragon.witty",
     elaborationKey: "compatibilityDetail.mouse.dragon.elaboration",
     detailed: {
-      basicKey: "compatibilityDetail.mouse.dragon.detailed.basic",
-      cautionKey: "compatibilityDetail.mouse.dragon.detailed.caution",
-      dateRecommendationKey: "compatibilityDetail.mouse.dragon.detailed.dateRecommendation"
+      basic: {
+        summaryKey: "compatibilityDetail.mouse.dragon.detailed.basic.summary",
+        descriptionKey: "compatibilityDetail.mouse.dragon.detailed.basic.description"
+      },
+      caution: {
+        summaryKey: "compatibilityDetail.mouse.dragon.detailed.caution.summary",
+        descriptionKey: "compatibilityDetail.mouse.dragon.detailed.caution.description"
+      },
+      dateRecommendation: {
+        summaryKey: "compatibilityDetail.mouse.dragon.detailed.dateRecommendation.summary",
+        descriptionKey: "compatibilityDetail.mouse.dragon.detailed.dateRecommendation.description"
+      }
     }
   },
   snake: {
     wittyKey: "compatibilityDetail.mouse.snake.witty",
     elaborationKey: "compatibilityDetail.mouse.snake.elaboration",
     detailed: {
-      basicKey: "compatibilityDetail.mouse.snake.detailed.basic",
-      cautionKey: "compatibilityDetail.mouse.snake.detailed.caution",
-      dateRecommendationKey: "compatibilityDetail.mouse.snake.detailed.dateRecommendation"
+      basic: {
+        summaryKey: "compatibilityDetail.mouse.snake.detailed.basic.summary",
+        descriptionKey: "compatibilityDetail.mouse.snake.detailed.basic.description"
+      },
+      caution: {
+        summaryKey: "compatibilityDetail.mouse.snake.detailed.caution.summary",
+        descriptionKey: "compatibilityDetail.mouse.snake.detailed.caution.description"
+      },
+      dateRecommendation: {
+        summaryKey: "compatibilityDetail.mouse.snake.detailed.dateRecommendation.summary",
+        descriptionKey: "compatibilityDetail.mouse.snake.detailed.dateRecommendation.description"
+      }
     }
   },
   horse: {
     wittyKey: "compatibilityDetail.mouse.horse.witty",
     elaborationKey: "compatibilityDetail.mouse.horse.elaboration",
     detailed: {
-      basicKey: "compatibilityDetail.mouse.horse.detailed.basic",
-      cautionKey: "compatibilityDetail.mouse.horse.detailed.caution",
-      dateRecommendationKey: "compatibilityDetail.mouse.horse.detailed.dateRecommendation"
+      basic: {
+        summaryKey: "compatibilityDetail.mouse.horse.detailed.basic.summary",
+        descriptionKey: "compatibilityDetail.mouse.horse.detailed.basic.description"
+      },
+      caution: {
+        summaryKey: "compatibilityDetail.mouse.horse.detailed.caution.summary",
+        descriptionKey: "compatibilityDetail.mouse.horse.detailed.caution.description"
+      },
+      dateRecommendation: {
+        summaryKey: "compatibilityDetail.mouse.horse.detailed.dateRecommendation.summary",
+        descriptionKey: "compatibilityDetail.mouse.horse.detailed.dateRecommendation.description"
+      }
     }
   },
   goat: {
     wittyKey: "compatibilityDetail.mouse.goat.witty",
     elaborationKey: "compatibilityDetail.mouse.goat.elaboration",
     detailed: {
-      basicKey: "compatibilityDetail.mouse.goat.detailed.basic",
-      cautionKey: "compatibilityDetail.mouse.goat.detailed.caution",
-      dateRecommendationKey: "compatibilityDetail.mouse.goat.detailed.dateRecommendation"
+      basic: {
+        summaryKey: "compatibilityDetail.mouse.goat.detailed.basic.summary",
+        descriptionKey: "compatibilityDetail.mouse.goat.detailed.basic.description"
+      },
+      caution: {
+        summaryKey: "compatibilityDetail.mouse.goat.detailed.caution.summary",
+        descriptionKey: "compatibilityDetail.mouse.goat.detailed.caution.description"
+      },
+      dateRecommendation: {
+        summaryKey: "compatibilityDetail.mouse.goat.detailed.dateRecommendation.summary",
+        descriptionKey: "compatibilityDetail.mouse.goat.detailed.dateRecommendation.description"
+      }
     }
   },
   monkey: {
     wittyKey: "compatibilityDetail.mouse.monkey.witty",
     elaborationKey: "compatibilityDetail.mouse.monkey.elaboration",
     detailed: {
-      basicKey: "compatibilityDetail.mouse.monkey.detailed.basic",
-      cautionKey: "compatibilityDetail.mouse.monkey.detailed.caution",
-      dateRecommendationKey: "compatibilityDetail.mouse.monkey.detailed.dateRecommendation"
+      basic: {
+        summaryKey: "compatibilityDetail.mouse.monkey.detailed.basic.summary",
+        descriptionKey: "compatibilityDetail.mouse.monkey.detailed.basic.description"
+      },
+      caution: {
+        summaryKey: "compatibilityDetail.mouse.monkey.detailed.caution.summary",
+        descriptionKey: "compatibilityDetail.mouse.monkey.detailed.caution.description"
+      },
+      dateRecommendation: {
+        summaryKey: "compatibilityDetail.mouse.monkey.detailed.dateRecommendation.summary",
+        descriptionKey: "compatibilityDetail.mouse.monkey.detailed.dateRecommendation.description"
+      }
     }
   },
   rooster: {
     wittyKey: "compatibilityDetail.mouse.rooster.witty",
     elaborationKey: "compatibilityDetail.mouse.rooster.elaboration",
     detailed: {
-      basicKey: "compatibilityDetail.mouse.rooster.detailed.basic",
-      cautionKey: "compatibilityDetail.mouse.rooster.detailed.caution",
-      dateRecommendationKey: "compatibilityDetail.mouse.rooster.detailed.dateRecommendation"
+      basic: {
+        summaryKey: "compatibilityDetail.mouse.rooster.detailed.basic.summary",
+        descriptionKey: "compatibilityDetail.mouse.rooster.detailed.basic.description"
+      },
+      caution: {
+        summaryKey: "compatibilityDetail.mouse.rooster.detailed.caution.summary",
+        descriptionKey: "compatibilityDetail.mouse.rooster.detailed.caution.description"
+      },
+      dateRecommendation: {
+        summaryKey: "compatibilityDetail.mouse.rooster.detailed.dateRecommendation.summary",
+        descriptionKey: "compatibilityDetail.mouse.rooster.detailed.dateRecommendation.description"
+      }
     }
   },
   dog: {
     wittyKey: "compatibilityDetail.mouse.dog.witty",
     elaborationKey: "compatibilityDetail.mouse.dog.elaboration",
     detailed: {
-      basicKey: "compatibilityDetail.mouse.dog.detailed.basic",
-      cautionKey: "compatibilityDetail.mouse.dog.detailed.caution",
-      dateRecommendationKey: "compatibilityDetail.mouse.dog.detailed.dateRecommendation"
+      basic: {
+        summaryKey: "compatibilityDetail.mouse.dog.detailed.basic.summary",
+        descriptionKey: "compatibilityDetail.mouse.dog.detailed.basic.description"
+      },
+      caution: {
+        summaryKey: "compatibilityDetail.mouse.dog.detailed.caution.summary",
+        descriptionKey: "compatibilityDetail.mouse.dog.detailed.caution.description"
+      },
+      dateRecommendation: {
+        summaryKey: "compatibilityDetail.mouse.dog.detailed.dateRecommendation.summary",
+        descriptionKey: "compatibilityDetail.mouse.dog.detailed.dateRecommendation.description"
+      }
     }
   },
   pig: {
     wittyKey: "compatibilityDetail.mouse.pig.witty",
     elaborationKey: "compatibilityDetail.mouse.pig.elaboration",
     detailed: {
-      basicKey: "compatibilityDetail.mouse.pig.detailed.basic",
-      cautionKey: "compatibilityDetail.mouse.pig.detailed.caution",
-      dateRecommendationKey: "compatibilityDetail.mouse.pig.detailed.dateRecommendation"
+      basic: {
+        summaryKey: "compatibilityDetail.mouse.pig.detailed.basic.summary",
+        descriptionKey: "compatibilityDetail.mouse.pig.detailed.basic.description"
+      },
+      caution: {
+        summaryKey: "compatibilityDetail.mouse.pig.detailed.caution.summary",
+        descriptionKey: "compatibilityDetail.mouse.pig.detailed.caution.description"
+      },
+      dateRecommendation: {
+        summaryKey: "compatibilityDetail.mouse.pig.detailed.dateRecommendation.summary",
+        descriptionKey: "compatibilityDetail.mouse.pig.detailed.dateRecommendation.description"
+      }
     }
   }
 };
@@ -279,112 +420,202 @@ export function getCompatibilityMessageKey(score: number): string {
 
 // 소띠 기준 궁합 상세 정보
 export const oxCompatibilityDetails: Record<string, CompatibilityDetail> = {
-  mouse: {
-    wittyKey: "compatibilityDetail.ox.mouse.witty",
-    elaborationKey: "compatibilityDetail.ox.mouse.elaboration",
-    detailed: {
-      basicKey: "compatibilityDetail.ox.mouse.detailed.basic",
-      cautionKey: "compatibilityDetail.ox.mouse.detailed.caution",
-      dateRecommendationKey: "compatibilityDetail.ox.mouse.detailed.dateRecommendation"
-    }
-  },
   ox: {
     wittyKey: "compatibilityDetail.ox.ox.witty",
     elaborationKey: "compatibilityDetail.ox.ox.elaboration",
     detailed: {
-      basicKey: "compatibilityDetail.ox.ox.detailed.basic",
-      cautionKey: "compatibilityDetail.ox.ox.detailed.caution",
-      dateRecommendationKey: "compatibilityDetail.ox.ox.detailed.dateRecommendation"
+      basic: {
+        summaryKey: "compatibilityDetail.ox.ox.detailed.basic.summary",
+        descriptionKey: "compatibilityDetail.ox.ox.detailed.basic.description"
+      },
+      caution: {
+        summaryKey: "compatibilityDetail.ox.ox.detailed.caution.summary",
+        descriptionKey: "compatibilityDetail.ox.ox.detailed.caution.description"
+      },
+      dateRecommendation: {
+        summaryKey: "compatibilityDetail.ox.ox.detailed.dateRecommendation.summary",
+        descriptionKey: "compatibilityDetail.ox.ox.detailed.dateRecommendation.description"
+      }
     }
   },
   tiger: {
     wittyKey: "compatibilityDetail.ox.tiger.witty",
     elaborationKey: "compatibilityDetail.ox.tiger.elaboration",
     detailed: {
-      basicKey: "compatibilityDetail.ox.tiger.detailed.basic",
-      cautionKey: "compatibilityDetail.ox.tiger.detailed.caution",
-      dateRecommendationKey: "compatibilityDetail.ox.tiger.detailed.dateRecommendation"
+      basic: {
+        summaryKey: "compatibilityDetail.ox.tiger.detailed.basic.summary",
+        descriptionKey: "compatibilityDetail.ox.tiger.detailed.basic.description"
+      },
+      caution: {
+        summaryKey: "compatibilityDetail.ox.tiger.detailed.caution.summary",
+        descriptionKey: "compatibilityDetail.ox.tiger.detailed.caution.description"
+      },
+      dateRecommendation: {
+        summaryKey: "compatibilityDetail.ox.tiger.detailed.dateRecommendation.summary",
+        descriptionKey: "compatibilityDetail.ox.tiger.detailed.dateRecommendation.description"
+      }
     }
   },
   rabbit: {
     wittyKey: "compatibilityDetail.ox.rabbit.witty",
     elaborationKey: "compatibilityDetail.ox.rabbit.elaboration",
     detailed: {
-      basicKey: "compatibilityDetail.ox.rabbit.detailed.basic",
-      cautionKey: "compatibilityDetail.ox.rabbit.detailed.caution",
-      dateRecommendationKey: "compatibilityDetail.ox.rabbit.detailed.dateRecommendation"
+      basic: {
+        summaryKey: "compatibilityDetail.ox.rabbit.detailed.basic.summary",
+        descriptionKey: "compatibilityDetail.ox.rabbit.detailed.basic.description"
+      },
+      caution: {
+        summaryKey: "compatibilityDetail.ox.rabbit.detailed.caution.summary",
+        descriptionKey: "compatibilityDetail.ox.rabbit.detailed.caution.description"
+      },
+      dateRecommendation: {
+        summaryKey: "compatibilityDetail.ox.rabbit.detailed.dateRecommendation.summary",
+        descriptionKey: "compatibilityDetail.ox.rabbit.detailed.dateRecommendation.description"
+      }
     }
   },
   dragon: {
     wittyKey: "compatibilityDetail.ox.dragon.witty",
     elaborationKey: "compatibilityDetail.ox.dragon.elaboration",
     detailed: {
-      basicKey: "compatibilityDetail.ox.dragon.detailed.basic",
-      cautionKey: "compatibilityDetail.ox.dragon.detailed.caution",
-      dateRecommendationKey: "compatibilityDetail.ox.dragon.detailed.dateRecommendation"
+      basic: {
+        summaryKey: "compatibilityDetail.ox.dragon.detailed.basic.summary",
+        descriptionKey: "compatibilityDetail.ox.dragon.detailed.basic.description"
+      },
+      caution: {
+        summaryKey: "compatibilityDetail.ox.dragon.detailed.caution.summary",
+        descriptionKey: "compatibilityDetail.ox.dragon.detailed.caution.description"
+      },
+      dateRecommendation: {
+        summaryKey: "compatibilityDetail.ox.dragon.detailed.dateRecommendation.summary",
+        descriptionKey: "compatibilityDetail.ox.dragon.detailed.dateRecommendation.description"
+      }
     }
   },
   snake: {
     wittyKey: "compatibilityDetail.ox.snake.witty",
     elaborationKey: "compatibilityDetail.ox.snake.elaboration",
     detailed: {
-      basicKey: "compatibilityDetail.ox.snake.detailed.basic",
-      cautionKey: "compatibilityDetail.ox.snake.detailed.caution",
-      dateRecommendationKey: "compatibilityDetail.ox.snake.detailed.dateRecommendation"
+      basic: {
+        summaryKey: "compatibilityDetail.ox.snake.detailed.basic.summary",
+        descriptionKey: "compatibilityDetail.ox.snake.detailed.basic.description"
+      },
+      caution: {
+        summaryKey: "compatibilityDetail.ox.snake.detailed.caution.summary",
+        descriptionKey: "compatibilityDetail.ox.snake.detailed.caution.description"
+      },
+      dateRecommendation: {
+        summaryKey: "compatibilityDetail.ox.snake.detailed.dateRecommendation.summary",
+        descriptionKey: "compatibilityDetail.ox.snake.detailed.dateRecommendation.description"
+      }
     }
   },
   horse: {
     wittyKey: "compatibilityDetail.ox.horse.witty",
     elaborationKey: "compatibilityDetail.ox.horse.elaboration",
     detailed: {
-      basicKey: "compatibilityDetail.ox.horse.detailed.basic",
-      cautionKey: "compatibilityDetail.ox.horse.detailed.caution",
-      dateRecommendationKey: "compatibilityDetail.ox.horse.detailed.dateRecommendation"
+      basic: {
+        summaryKey: "compatibilityDetail.ox.horse.detailed.basic.summary",
+        descriptionKey: "compatibilityDetail.ox.horse.detailed.basic.description"
+      },
+      caution: {
+        summaryKey: "compatibilityDetail.ox.horse.detailed.caution.summary",
+        descriptionKey: "compatibilityDetail.ox.horse.detailed.caution.description"
+      },
+      dateRecommendation: {
+        summaryKey: "compatibilityDetail.ox.horse.detailed.dateRecommendation.summary",
+        descriptionKey: "compatibilityDetail.ox.horse.detailed.dateRecommendation.description"
+      }
     }
   },
   goat: {
     wittyKey: "compatibilityDetail.ox.goat.witty",
     elaborationKey: "compatibilityDetail.ox.goat.elaboration",
     detailed: {
-      basicKey: "compatibilityDetail.ox.goat.detailed.basic",
-      cautionKey: "compatibilityDetail.ox.goat.detailed.caution",
-      dateRecommendationKey: "compatibilityDetail.ox.goat.detailed.dateRecommendation"
+      basic: {
+        summaryKey: "compatibilityDetail.ox.goat.detailed.basic.summary",
+        descriptionKey: "compatibilityDetail.ox.goat.detailed.basic.description"
+      },
+      caution: {
+        summaryKey: "compatibilityDetail.ox.goat.detailed.caution.summary",
+        descriptionKey: "compatibilityDetail.ox.goat.detailed.caution.description"
+      },
+      dateRecommendation: {
+        summaryKey: "compatibilityDetail.ox.goat.detailed.dateRecommendation.summary",
+        descriptionKey: "compatibilityDetail.ox.goat.detailed.dateRecommendation.description"
+      }
     }
   },
   monkey: {
     wittyKey: "compatibilityDetail.ox.monkey.witty",
     elaborationKey: "compatibilityDetail.ox.monkey.elaboration",
     detailed: {
-      basicKey: "compatibilityDetail.ox.monkey.detailed.basic",
-      cautionKey: "compatibilityDetail.ox.monkey.detailed.caution",
-      dateRecommendationKey: "compatibilityDetail.ox.monkey.detailed.dateRecommendation"
+      basic: {
+        summaryKey: "compatibilityDetail.ox.monkey.detailed.basic.summary",
+        descriptionKey: "compatibilityDetail.ox.monkey.detailed.basic.description"
+      },
+      caution: {
+        summaryKey: "compatibilityDetail.ox.monkey.detailed.caution.summary",
+        descriptionKey: "compatibilityDetail.ox.monkey.detailed.caution.description"
+      },
+      dateRecommendation: {
+        summaryKey: "compatibilityDetail.ox.monkey.detailed.dateRecommendation.summary",
+        descriptionKey: "compatibilityDetail.ox.monkey.detailed.dateRecommendation.description"
+      }
     }
   },
   rooster: {
     wittyKey: "compatibilityDetail.ox.rooster.witty",
     elaborationKey: "compatibilityDetail.ox.rooster.elaboration",
     detailed: {
-      basicKey: "compatibilityDetail.ox.rooster.detailed.basic",
-      cautionKey: "compatibilityDetail.ox.rooster.detailed.caution",
-      dateRecommendationKey: "compatibilityDetail.ox.rooster.detailed.dateRecommendation"
+      basic: {
+        summaryKey: "compatibilityDetail.ox.rooster.detailed.basic.summary",
+        descriptionKey: "compatibilityDetail.ox.rooster.detailed.basic.description"
+      },
+      caution: {
+        summaryKey: "compatibilityDetail.ox.rooster.detailed.caution.summary",
+        descriptionKey: "compatibilityDetail.ox.rooster.detailed.caution.description"
+      },
+      dateRecommendation: {
+        summaryKey: "compatibilityDetail.ox.rooster.detailed.dateRecommendation.summary",
+        descriptionKey: "compatibilityDetail.ox.rooster.detailed.dateRecommendation.description"
+      }
     }
   },
   dog: {
     wittyKey: "compatibilityDetail.ox.dog.witty",
     elaborationKey: "compatibilityDetail.ox.dog.elaboration",
     detailed: {
-      basicKey: "compatibilityDetail.ox.dog.detailed.basic",
-      cautionKey: "compatibilityDetail.ox.dog.detailed.caution",
-      dateRecommendationKey: "compatibilityDetail.ox.dog.detailed.dateRecommendation"
+      basic: {
+        summaryKey: "compatibilityDetail.ox.dog.detailed.basic.summary",
+        descriptionKey: "compatibilityDetail.ox.dog.detailed.basic.description"
+      },
+      caution: {
+        summaryKey: "compatibilityDetail.ox.dog.detailed.caution.summary",
+        descriptionKey: "compatibilityDetail.ox.dog.detailed.caution.description"
+      },
+      dateRecommendation: {
+        summaryKey: "compatibilityDetail.ox.dog.detailed.dateRecommendation.summary",
+        descriptionKey: "compatibilityDetail.ox.dog.detailed.dateRecommendation.description"
+      }
     }
   },
   pig: {
     wittyKey: "compatibilityDetail.ox.pig.witty",
     elaborationKey: "compatibilityDetail.ox.pig.elaboration",
     detailed: {
-      basicKey: "compatibilityDetail.ox.pig.detailed.basic",
-      cautionKey: "compatibilityDetail.ox.pig.detailed.caution",
-      dateRecommendationKey: "compatibilityDetail.ox.pig.detailed.dateRecommendation"
+      basic: {
+        summaryKey: "compatibilityDetail.ox.pig.detailed.basic.summary",
+        descriptionKey: "compatibilityDetail.ox.pig.detailed.basic.description"
+      },
+      caution: {
+        summaryKey: "compatibilityDetail.ox.pig.detailed.caution.summary",
+        descriptionKey: "compatibilityDetail.ox.pig.detailed.caution.description"
+      },
+      dateRecommendation: {
+        summaryKey: "compatibilityDetail.ox.pig.detailed.dateRecommendation.summary",
+        descriptionKey: "compatibilityDetail.ox.pig.detailed.dateRecommendation.description"
+      }
     }
   }
 };
@@ -395,108 +626,216 @@ export const tigerCompatibilityDetails: Record<string, CompatibilityDetail> = {
     wittyKey: "compatibilityDetail.tiger.mouse.witty",
     elaborationKey: "compatibilityDetail.tiger.mouse.elaboration",
     detailed: {
-      basicKey: "compatibilityDetail.tiger.mouse.detailed.basic",
-      cautionKey: "compatibilityDetail.tiger.mouse.detailed.caution",
-      dateRecommendationKey: "compatibilityDetail.tiger.mouse.detailed.dateRecommendation"
+      basic: {
+        summaryKey: "compatibilityDetail.tiger.mouse.detailed.basic.summary",
+        descriptionKey: "compatibilityDetail.tiger.mouse.detailed.basic.description"
+      },
+      caution: {
+        summaryKey: "compatibilityDetail.tiger.mouse.detailed.caution.summary",
+        descriptionKey: "compatibilityDetail.tiger.mouse.detailed.caution.description"
+      },
+      dateRecommendation: {
+        summaryKey: "compatibilityDetail.tiger.mouse.detailed.dateRecommendation.summary",
+        descriptionKey: "compatibilityDetail.tiger.mouse.detailed.dateRecommendation.description"
+      }
     }
   },
   ox: {
     wittyKey: "compatibilityDetail.tiger.ox.witty",
     elaborationKey: "compatibilityDetail.tiger.ox.elaboration",
     detailed: {
-      basicKey: "compatibilityDetail.tiger.ox.detailed.basic",
-      cautionKey: "compatibilityDetail.tiger.ox.detailed.caution",
-      dateRecommendationKey: "compatibilityDetail.tiger.ox.detailed.dateRecommendation"
+      basic: {
+        summaryKey: "compatibilityDetail.tiger.ox.detailed.basic.summary",
+        descriptionKey: "compatibilityDetail.tiger.ox.detailed.basic.description"
+      },
+      caution: {
+        summaryKey: "compatibilityDetail.tiger.ox.detailed.caution.summary",
+        descriptionKey: "compatibilityDetail.tiger.ox.detailed.caution.description"
+      },
+      dateRecommendation: {
+        summaryKey: "compatibilityDetail.tiger.ox.detailed.dateRecommendation.summary",
+        descriptionKey: "compatibilityDetail.tiger.ox.detailed.dateRecommendation.description"
+      }
     }
   },
   tiger: {
     wittyKey: "compatibilityDetail.tiger.tiger.witty",
     elaborationKey: "compatibilityDetail.tiger.tiger.elaboration",
     detailed: {
-      basicKey: "compatibilityDetail.tiger.tiger.detailed.basic",
-      cautionKey: "compatibilityDetail.tiger.tiger.detailed.caution",
-      dateRecommendationKey: "compatibilityDetail.tiger.tiger.detailed.dateRecommendation"
+      basic: {
+        summaryKey: "compatibilityDetail.tiger.tiger.detailed.basic.summary",
+        descriptionKey: "compatibilityDetail.tiger.tiger.detailed.basic.description"
+      },
+      caution: {
+        summaryKey: "compatibilityDetail.tiger.tiger.detailed.caution.summary",
+        descriptionKey: "compatibilityDetail.tiger.tiger.detailed.caution.description"
+      },
+      dateRecommendation: {
+        summaryKey: "compatibilityDetail.tiger.tiger.detailed.dateRecommendation.summary",
+        descriptionKey: "compatibilityDetail.tiger.tiger.detailed.dateRecommendation.description"
+      }
     }
   },
   rabbit: {
     wittyKey: "compatibilityDetail.tiger.rabbit.witty",
     elaborationKey: "compatibilityDetail.tiger.rabbit.elaboration",
     detailed: {
-      basicKey: "compatibilityDetail.tiger.rabbit.detailed.basic",
-      cautionKey: "compatibilityDetail.tiger.rabbit.detailed.caution",
-      dateRecommendationKey: "compatibilityDetail.tiger.rabbit.detailed.dateRecommendation"
+      basic: {
+        summaryKey: "compatibilityDetail.tiger.rabbit.detailed.basic.summary",
+        descriptionKey: "compatibilityDetail.tiger.rabbit.detailed.basic.description"
+      },
+      caution: {
+        summaryKey: "compatibilityDetail.tiger.rabbit.detailed.caution.summary",
+        descriptionKey: "compatibilityDetail.tiger.rabbit.detailed.caution.description"
+      },
+      dateRecommendation: {
+        summaryKey: "compatibilityDetail.tiger.rabbit.detailed.dateRecommendation.summary",
+        descriptionKey: "compatibilityDetail.tiger.rabbit.detailed.dateRecommendation.description"
+      }
     }
   },
   dragon: {
     wittyKey: "compatibilityDetail.tiger.dragon.witty",
     elaborationKey: "compatibilityDetail.tiger.dragon.elaboration",
     detailed: {
-      basicKey: "compatibilityDetail.tiger.dragon.detailed.basic",
-      cautionKey: "compatibilityDetail.tiger.dragon.detailed.caution",
-      dateRecommendationKey: "compatibilityDetail.tiger.dragon.detailed.dateRecommendation"
+      basic: {
+        summaryKey: "compatibilityDetail.tiger.dragon.detailed.basic.summary",
+        descriptionKey: "compatibilityDetail.tiger.dragon.detailed.basic.description"
+      },
+      caution: {
+        summaryKey: "compatibilityDetail.tiger.dragon.detailed.caution.summary",
+        descriptionKey: "compatibilityDetail.tiger.dragon.detailed.caution.description"
+      },
+      dateRecommendation: {
+        summaryKey: "compatibilityDetail.tiger.dragon.detailed.dateRecommendation.summary",
+        descriptionKey: "compatibilityDetail.tiger.dragon.detailed.dateRecommendation.description"
+      }
     }
   },
   snake: {
     wittyKey: "compatibilityDetail.tiger.snake.witty",
     elaborationKey: "compatibilityDetail.tiger.snake.elaboration",
     detailed: {
-      basicKey: "compatibilityDetail.tiger.snake.detailed.basic",
-      cautionKey: "compatibilityDetail.tiger.snake.detailed.caution",
-      dateRecommendationKey: "compatibilityDetail.tiger.snake.detailed.dateRecommendation"
+      basic: {
+        summaryKey: "compatibilityDetail.tiger.snake.detailed.basic.summary",
+        descriptionKey: "compatibilityDetail.tiger.snake.detailed.basic.description"
+      },
+      caution: {
+        summaryKey: "compatibilityDetail.tiger.snake.detailed.caution.summary",
+        descriptionKey: "compatibilityDetail.tiger.snake.detailed.caution.description"
+      },
+      dateRecommendation: {
+        summaryKey: "compatibilityDetail.tiger.snake.detailed.dateRecommendation.summary",
+        descriptionKey: "compatibilityDetail.tiger.snake.detailed.dateRecommendation.description"
+      }
     }
   },
   horse: {
     wittyKey: "compatibilityDetail.tiger.horse.witty",
     elaborationKey: "compatibilityDetail.tiger.horse.elaboration",
     detailed: {
-      basicKey: "compatibilityDetail.tiger.horse.detailed.basic",
-      cautionKey: "compatibilityDetail.tiger.horse.detailed.caution",
-      dateRecommendationKey: "compatibilityDetail.tiger.horse.detailed.dateRecommendation"
+      basic: {
+        summaryKey: "compatibilityDetail.tiger.horse.detailed.basic.summary",
+        descriptionKey: "compatibilityDetail.tiger.horse.detailed.basic.description"
+      },
+      caution: {
+        summaryKey: "compatibilityDetail.tiger.horse.detailed.caution.summary",
+        descriptionKey: "compatibilityDetail.tiger.horse.detailed.caution.description"
+      },
+      dateRecommendation: {
+        summaryKey: "compatibilityDetail.tiger.horse.detailed.dateRecommendation.summary",
+        descriptionKey: "compatibilityDetail.tiger.horse.detailed.dateRecommendation.description"
+      }
     }
   },
   goat: {
     wittyKey: "compatibilityDetail.tiger.goat.witty",
     elaborationKey: "compatibilityDetail.tiger.goat.elaboration",
     detailed: {
-      basicKey: "compatibilityDetail.tiger.goat.detailed.basic",
-      cautionKey: "compatibilityDetail.tiger.goat.detailed.caution",
-      dateRecommendationKey: "compatibilityDetail.tiger.goat.detailed.dateRecommendation"
+      basic: {
+        summaryKey: "compatibilityDetail.tiger.goat.detailed.basic.summary",
+        descriptionKey: "compatibilityDetail.tiger.goat.detailed.basic.description"
+      },
+      caution: {
+        summaryKey: "compatibilityDetail.tiger.goat.detailed.caution.summary",
+        descriptionKey: "compatibilityDetail.tiger.goat.detailed.caution.description"
+      },
+      dateRecommendation: {
+        summaryKey: "compatibilityDetail.tiger.goat.detailed.dateRecommendation.summary",
+        descriptionKey: "compatibilityDetail.tiger.goat.detailed.dateRecommendation.description"
+      }
     }
   },
   monkey: {
     wittyKey: "compatibilityDetail.tiger.monkey.witty",
     elaborationKey: "compatibilityDetail.tiger.monkey.elaboration",
     detailed: {
-      basicKey: "compatibilityDetail.tiger.monkey.detailed.basic",
-      cautionKey: "compatibilityDetail.tiger.monkey.detailed.caution",
-      dateRecommendationKey: "compatibilityDetail.tiger.monkey.detailed.dateRecommendation"
+      basic: {
+        summaryKey: "compatibilityDetail.tiger.monkey.detailed.basic.summary",
+        descriptionKey: "compatibilityDetail.tiger.monkey.detailed.basic.description"
+      },
+      caution: {
+        summaryKey: "compatibilityDetail.tiger.monkey.detailed.caution.summary",
+        descriptionKey: "compatibilityDetail.tiger.monkey.detailed.caution.description"
+      },
+      dateRecommendation: {
+        summaryKey: "compatibilityDetail.tiger.monkey.detailed.dateRecommendation.summary",
+        descriptionKey: "compatibilityDetail.tiger.monkey.detailed.dateRecommendation.description"
+      }
     }
   },
   rooster: {
     wittyKey: "compatibilityDetail.tiger.rooster.witty",
     elaborationKey: "compatibilityDetail.tiger.rooster.elaboration",
     detailed: {
-      basicKey: "compatibilityDetail.tiger.rooster.detailed.basic",
-      cautionKey: "compatibilityDetail.tiger.rooster.detailed.caution",
-      dateRecommendationKey: "compatibilityDetail.tiger.rooster.detailed.dateRecommendation"
+      basic: {
+        summaryKey: "compatibilityDetail.tiger.rooster.detailed.basic.summary",
+        descriptionKey: "compatibilityDetail.tiger.rooster.detailed.basic.description"
+      },
+      caution: {
+        summaryKey: "compatibilityDetail.tiger.rooster.detailed.caution.summary",
+        descriptionKey: "compatibilityDetail.tiger.rooster.detailed.caution.description"
+      },
+      dateRecommendation: {
+        summaryKey: "compatibilityDetail.tiger.rooster.detailed.dateRecommendation.summary",
+        descriptionKey: "compatibilityDetail.tiger.rooster.detailed.dateRecommendation.description"
+      }
     }
   },
   dog: {
     wittyKey: "compatibilityDetail.tiger.dog.witty",
     elaborationKey: "compatibilityDetail.tiger.dog.elaboration",
     detailed: {
-      basicKey: "compatibilityDetail.tiger.dog.detailed.basic",
-      cautionKey: "compatibilityDetail.tiger.dog.detailed.caution",
-      dateRecommendationKey: "compatibilityDetail.tiger.dog.detailed.dateRecommendation"
+      basic: {
+        summaryKey: "compatibilityDetail.tiger.dog.detailed.basic.summary",
+        descriptionKey: "compatibilityDetail.tiger.dog.detailed.basic.description"
+      },
+      caution: {
+        summaryKey: "compatibilityDetail.tiger.dog.detailed.caution.summary",
+        descriptionKey: "compatibilityDetail.tiger.dog.detailed.caution.description"
+      },
+      dateRecommendation: {
+        summaryKey: "compatibilityDetail.tiger.dog.detailed.dateRecommendation.summary",
+        descriptionKey: "compatibilityDetail.tiger.dog.detailed.dateRecommendation.description"
+      }
     }
   },
   pig: {
     wittyKey: "compatibilityDetail.tiger.pig.witty",
     elaborationKey: "compatibilityDetail.tiger.pig.elaboration",
     detailed: {
-      basicKey: "compatibilityDetail.tiger.pig.detailed.basic",
-      cautionKey: "compatibilityDetail.tiger.pig.detailed.caution",
-      dateRecommendationKey: "compatibilityDetail.tiger.pig.detailed.dateRecommendation"
+      basic: {
+        summaryKey: "compatibilityDetail.tiger.pig.detailed.basic.summary",
+        descriptionKey: "compatibilityDetail.tiger.pig.detailed.basic.description"
+      },
+      caution: {
+        summaryKey: "compatibilityDetail.tiger.pig.detailed.caution.summary",
+        descriptionKey: "compatibilityDetail.tiger.pig.detailed.caution.description"
+      },
+      dateRecommendation: {
+        summaryKey: "compatibilityDetail.tiger.pig.detailed.dateRecommendation.summary",
+        descriptionKey: "compatibilityDetail.tiger.pig.detailed.dateRecommendation.description"
+      }
     }
   }
 };
@@ -507,108 +846,216 @@ export const rabbitCompatibilityDetails: Record<string, CompatibilityDetail> = {
     wittyKey: "compatibilityDetail.rabbit.mouse.witty",
     elaborationKey: "compatibilityDetail.rabbit.mouse.elaboration",
     detailed: {
-      basicKey: "compatibilityDetail.rabbit.mouse.detailed.basic",
-      cautionKey: "compatibilityDetail.rabbit.mouse.detailed.caution",
-      dateRecommendationKey: "compatibilityDetail.rabbit.mouse.detailed.dateRecommendation"
+      basic: {
+        summaryKey: "compatibilityDetail.rabbit.mouse.detailed.basic.summary",
+        descriptionKey: "compatibilityDetail.rabbit.mouse.detailed.basic.description"
+      },
+      caution: {
+        summaryKey: "compatibilityDetail.rabbit.mouse.detailed.caution.summary",
+        descriptionKey: "compatibilityDetail.rabbit.mouse.detailed.caution.description"
+      },
+      dateRecommendation: {
+        summaryKey: "compatibilityDetail.rabbit.mouse.detailed.dateRecommendation.summary",
+        descriptionKey: "compatibilityDetail.rabbit.mouse.detailed.dateRecommendation.description"
+      }
     }
   },
   ox: {
     wittyKey: "compatibilityDetail.rabbit.ox.witty",
     elaborationKey: "compatibilityDetail.rabbit.ox.elaboration",
     detailed: {
-      basicKey: "compatibilityDetail.rabbit.ox.detailed.basic",
-      cautionKey: "compatibilityDetail.rabbit.ox.detailed.caution",
-      dateRecommendationKey: "compatibilityDetail.rabbit.ox.detailed.dateRecommendation"
+      basic: {
+        summaryKey: "compatibilityDetail.rabbit.ox.detailed.basic.summary",
+        descriptionKey: "compatibilityDetail.rabbit.ox.detailed.basic.description"
+      },
+      caution: {
+        summaryKey: "compatibilityDetail.rabbit.ox.detailed.caution.summary",
+        descriptionKey: "compatibilityDetail.rabbit.ox.detailed.caution.description"
+      },
+      dateRecommendation: {
+        summaryKey: "compatibilityDetail.rabbit.ox.detailed.dateRecommendation.summary",
+        descriptionKey: "compatibilityDetail.rabbit.ox.detailed.dateRecommendation.description"
+      }
     }
   },
   tiger: {
     wittyKey: "compatibilityDetail.rabbit.tiger.witty",
     elaborationKey: "compatibilityDetail.rabbit.tiger.elaboration",
     detailed: {
-      basicKey: "compatibilityDetail.rabbit.tiger.detailed.basic",
-      cautionKey: "compatibilityDetail.rabbit.tiger.detailed.caution",
-      dateRecommendationKey: "compatibilityDetail.rabbit.tiger.detailed.dateRecommendation"
+      basic: {
+        summaryKey: "compatibilityDetail.rabbit.tiger.detailed.basic.summary",
+        descriptionKey: "compatibilityDetail.rabbit.tiger.detailed.basic.description"
+      },
+      caution: {
+        summaryKey: "compatibilityDetail.rabbit.tiger.detailed.caution.summary",
+        descriptionKey: "compatibilityDetail.rabbit.tiger.detailed.caution.description"
+      },
+      dateRecommendation: {
+        summaryKey: "compatibilityDetail.rabbit.tiger.detailed.dateRecommendation.summary",
+        descriptionKey: "compatibilityDetail.rabbit.tiger.detailed.dateRecommendation.description"
+      }
     }
   },
   rabbit: {
     wittyKey: "compatibilityDetail.rabbit.rabbit.witty",
     elaborationKey: "compatibilityDetail.rabbit.rabbit.elaboration",
     detailed: {
-      basicKey: "compatibilityDetail.rabbit.rabbit.detailed.basic",
-      cautionKey: "compatibilityDetail.rabbit.rabbit.detailed.caution",
-      dateRecommendationKey: "compatibilityDetail.rabbit.rabbit.detailed.dateRecommendation"
+      basic: {
+        summaryKey: "compatibilityDetail.rabbit.rabbit.detailed.basic.summary",
+        descriptionKey: "compatibilityDetail.rabbit.rabbit.detailed.basic.description"
+      },
+      caution: {
+        summaryKey: "compatibilityDetail.rabbit.rabbit.detailed.caution.summary",
+        descriptionKey: "compatibilityDetail.rabbit.rabbit.detailed.caution.description"
+      },
+      dateRecommendation: {
+        summaryKey: "compatibilityDetail.rabbit.rabbit.detailed.dateRecommendation.summary",
+        descriptionKey: "compatibilityDetail.rabbit.rabbit.detailed.dateRecommendation.description"
+      }
     }
   },
   dragon: {
     wittyKey: "compatibilityDetail.rabbit.dragon.witty",
     elaborationKey: "compatibilityDetail.rabbit.dragon.elaboration",
     detailed: {
-      basicKey: "compatibilityDetail.rabbit.dragon.detailed.basic",
-      cautionKey: "compatibilityDetail.rabbit.dragon.detailed.caution",
-      dateRecommendationKey: "compatibilityDetail.rabbit.dragon.detailed.dateRecommendation"
+      basic: {
+        summaryKey: "compatibilityDetail.rabbit.dragon.detailed.basic.summary",
+        descriptionKey: "compatibilityDetail.rabbit.dragon.detailed.basic.description"
+      },
+      caution: {
+        summaryKey: "compatibilityDetail.rabbit.dragon.detailed.caution.summary",
+        descriptionKey: "compatibilityDetail.rabbit.dragon.detailed.caution.description"
+      },
+      dateRecommendation: {
+        summaryKey: "compatibilityDetail.rabbit.dragon.detailed.dateRecommendation.summary",
+        descriptionKey: "compatibilityDetail.rabbit.dragon.detailed.dateRecommendation.description"
+      }
     }
   },
   snake: {
     wittyKey: "compatibilityDetail.rabbit.snake.witty",
     elaborationKey: "compatibilityDetail.rabbit.snake.elaboration",
     detailed: {
-      basicKey: "compatibilityDetail.rabbit.snake.detailed.basic",
-      cautionKey: "compatibilityDetail.rabbit.snake.detailed.caution",
-      dateRecommendationKey: "compatibilityDetail.rabbit.snake.detailed.dateRecommendation"
+      basic: {
+        summaryKey: "compatibilityDetail.rabbit.snake.detailed.basic.summary",
+        descriptionKey: "compatibilityDetail.rabbit.snake.detailed.basic.description"
+      },
+      caution: {
+        summaryKey: "compatibilityDetail.rabbit.snake.detailed.caution.summary",
+        descriptionKey: "compatibilityDetail.rabbit.snake.detailed.caution.description"
+      },
+      dateRecommendation: {
+        summaryKey: "compatibilityDetail.rabbit.snake.detailed.dateRecommendation.summary",
+        descriptionKey: "compatibilityDetail.rabbit.snake.detailed.dateRecommendation.description"
+      }
     }
   },
   horse: {
     wittyKey: "compatibilityDetail.rabbit.horse.witty",
     elaborationKey: "compatibilityDetail.rabbit.horse.elaboration",
     detailed: {
-      basicKey: "compatibilityDetail.rabbit.horse.detailed.basic",
-      cautionKey: "compatibilityDetail.rabbit.horse.detailed.caution",
-      dateRecommendationKey: "compatibilityDetail.rabbit.horse.detailed.dateRecommendation"
+      basic: {
+        summaryKey: "compatibilityDetail.rabbit.horse.detailed.basic.summary",
+        descriptionKey: "compatibilityDetail.rabbit.horse.detailed.basic.description"
+      },
+      caution: {
+        summaryKey: "compatibilityDetail.rabbit.horse.detailed.caution.summary",
+        descriptionKey: "compatibilityDetail.rabbit.horse.detailed.caution.description"
+      },
+      dateRecommendation: {
+        summaryKey: "compatibilityDetail.rabbit.horse.detailed.dateRecommendation.summary",
+        descriptionKey: "compatibilityDetail.rabbit.horse.detailed.dateRecommendation.description"
+      }
     }
   },
   goat: {
     wittyKey: "compatibilityDetail.rabbit.goat.witty",
     elaborationKey: "compatibilityDetail.rabbit.goat.elaboration",
     detailed: {
-      basicKey: "compatibilityDetail.rabbit.goat.detailed.basic",
-      cautionKey: "compatibilityDetail.rabbit.goat.detailed.caution",
-      dateRecommendationKey: "compatibilityDetail.rabbit.goat.detailed.dateRecommendation"
+      basic: {
+        summaryKey: "compatibilityDetail.rabbit.goat.detailed.basic.summary",
+        descriptionKey: "compatibilityDetail.rabbit.goat.detailed.basic.description"
+      },
+      caution: {
+        summaryKey: "compatibilityDetail.rabbit.goat.detailed.caution.summary",
+        descriptionKey: "compatibilityDetail.rabbit.goat.detailed.caution.description"
+      },
+      dateRecommendation: {
+        summaryKey: "compatibilityDetail.rabbit.goat.detailed.dateRecommendation.summary",
+        descriptionKey: "compatibilityDetail.rabbit.goat.detailed.dateRecommendation.description"
+      }
     }
   },
   monkey: {
     wittyKey: "compatibilityDetail.rabbit.monkey.witty",
     elaborationKey: "compatibilityDetail.rabbit.monkey.elaboration",
     detailed: {
-      basicKey: "compatibilityDetail.rabbit.monkey.detailed.basic",
-      cautionKey: "compatibilityDetail.rabbit.monkey.detailed.caution",
-      dateRecommendationKey: "compatibilityDetail.rabbit.monkey.detailed.dateRecommendation"
+      basic: {
+        summaryKey: "compatibilityDetail.rabbit.monkey.detailed.basic.summary",
+        descriptionKey: "compatibilityDetail.rabbit.monkey.detailed.basic.description"
+      },
+      caution: {
+        summaryKey: "compatibilityDetail.rabbit.monkey.detailed.caution.summary",
+        descriptionKey: "compatibilityDetail.rabbit.monkey.detailed.caution.description"
+      },
+      dateRecommendation: {
+        summaryKey: "compatibilityDetail.rabbit.monkey.detailed.dateRecommendation.summary",
+        descriptionKey: "compatibilityDetail.rabbit.monkey.detailed.dateRecommendation.description"
+      }
     }
   },
   rooster: {
     wittyKey: "compatibilityDetail.rabbit.rooster.witty",
     elaborationKey: "compatibilityDetail.rabbit.rooster.elaboration",
     detailed: {
-      basicKey: "compatibilityDetail.rabbit.rooster.detailed.basic",
-      cautionKey: "compatibilityDetail.rabbit.rooster.detailed.caution",
-      dateRecommendationKey: "compatibilityDetail.rabbit.rooster.detailed.dateRecommendation"
+      basic: {
+        summaryKey: "compatibilityDetail.rabbit.rooster.detailed.basic.summary",
+        descriptionKey: "compatibilityDetail.rabbit.rooster.detailed.basic.description"
+      },
+      caution: {
+        summaryKey: "compatibilityDetail.rabbit.rooster.detailed.caution.summary",
+        descriptionKey: "compatibilityDetail.rabbit.rooster.detailed.caution.description"
+      },
+      dateRecommendation: {
+        summaryKey: "compatibilityDetail.rabbit.rooster.detailed.dateRecommendation.summary",
+        descriptionKey: "compatibilityDetail.rabbit.rooster.detailed.dateRecommendation.description"
+      }
     }
   },
   dog: {
     wittyKey: "compatibilityDetail.rabbit.dog.witty",
     elaborationKey: "compatibilityDetail.rabbit.dog.elaboration",
     detailed: {
-      basicKey: "compatibilityDetail.rabbit.dog.detailed.basic",
-      cautionKey: "compatibilityDetail.rabbit.dog.detailed.caution",
-      dateRecommendationKey: "compatibilityDetail.rabbit.dog.detailed.dateRecommendation"
+      basic: {
+        summaryKey: "compatibilityDetail.rabbit.dog.detailed.basic.summary",
+        descriptionKey: "compatibilityDetail.rabbit.dog.detailed.basic.description"
+      },
+      caution: {
+        summaryKey: "compatibilityDetail.rabbit.dog.detailed.caution.summary",
+        descriptionKey: "compatibilityDetail.rabbit.dog.detailed.caution.description"
+      },
+      dateRecommendation: {
+        summaryKey: "compatibilityDetail.rabbit.dog.detailed.dateRecommendation.summary",
+        descriptionKey: "compatibilityDetail.rabbit.dog.detailed.dateRecommendation.description"
+      }
     }
   },
   pig: {
     wittyKey: "compatibilityDetail.rabbit.pig.witty",
     elaborationKey: "compatibilityDetail.rabbit.pig.elaboration",
     detailed: {
-      basicKey: "compatibilityDetail.rabbit.pig.detailed.basic",
-      cautionKey: "compatibilityDetail.rabbit.pig.detailed.caution",
-      dateRecommendationKey: "compatibilityDetail.rabbit.pig.detailed.dateRecommendation"
+      basic: {
+        summaryKey: "compatibilityDetail.rabbit.pig.detailed.basic.summary",
+        descriptionKey: "compatibilityDetail.rabbit.pig.detailed.basic.description"
+      },
+      caution: {
+        summaryKey: "compatibilityDetail.rabbit.pig.detailed.caution.summary",
+        descriptionKey: "compatibilityDetail.rabbit.pig.detailed.caution.description"
+      },
+      dateRecommendation: {
+        summaryKey: "compatibilityDetail.rabbit.pig.detailed.dateRecommendation.summary",
+        descriptionKey: "compatibilityDetail.rabbit.pig.detailed.dateRecommendation.description"
+      }
     }
   }
 };
@@ -619,108 +1066,216 @@ export const dragonCompatibilityDetails: Record<string, CompatibilityDetail> = {
     wittyKey: "compatibilityDetail.dragon.mouse.witty",
     elaborationKey: "compatibilityDetail.dragon.mouse.elaboration",
     detailed: {
-      basicKey: "compatibilityDetail.dragon.mouse.detailed.basic",
-      cautionKey: "compatibilityDetail.dragon.mouse.detailed.caution",
-      dateRecommendationKey: "compatibilityDetail.dragon.mouse.detailed.dateRecommendation"
+      basic: {
+        summaryKey: "compatibilityDetail.dragon.mouse.detailed.basic.summary",
+        descriptionKey: "compatibilityDetail.dragon.mouse.detailed.basic.description"
+      },
+      caution: {
+        summaryKey: "compatibilityDetail.dragon.mouse.detailed.caution.summary",
+        descriptionKey: "compatibilityDetail.dragon.mouse.detailed.caution.description"
+      },
+      dateRecommendation: {
+        summaryKey: "compatibilityDetail.dragon.mouse.detailed.dateRecommendation.summary",
+        descriptionKey: "compatibilityDetail.dragon.mouse.detailed.dateRecommendation.description"
+      }
     }
   },
   ox: {
     wittyKey: "compatibilityDetail.dragon.ox.witty",
     elaborationKey: "compatibilityDetail.dragon.ox.elaboration",
     detailed: {
-      basicKey: "compatibilityDetail.dragon.ox.detailed.basic",
-      cautionKey: "compatibilityDetail.dragon.ox.detailed.caution",
-      dateRecommendationKey: "compatibilityDetail.dragon.ox.detailed.dateRecommendation"
+      basic: {
+        summaryKey: "compatibilityDetail.dragon.ox.detailed.basic.summary",
+        descriptionKey: "compatibilityDetail.dragon.ox.detailed.basic.description"
+      },
+      caution: {
+        summaryKey: "compatibilityDetail.dragon.ox.detailed.caution.summary",
+        descriptionKey: "compatibilityDetail.dragon.ox.detailed.caution.description"
+      },
+      dateRecommendation: {
+        summaryKey: "compatibilityDetail.dragon.ox.detailed.dateRecommendation.summary",
+        descriptionKey: "compatibilityDetail.dragon.ox.detailed.dateRecommendation.description"
+      }
     }
   },
   tiger: {
     wittyKey: "compatibilityDetail.dragon.tiger.witty",
     elaborationKey: "compatibilityDetail.dragon.tiger.elaboration",
     detailed: {
-      basicKey: "compatibilityDetail.dragon.tiger.detailed.basic",
-      cautionKey: "compatibilityDetail.dragon.tiger.detailed.caution",
-      dateRecommendationKey: "compatibilityDetail.dragon.tiger.detailed.dateRecommendation"
+      basic: {
+        summaryKey: "compatibilityDetail.dragon.tiger.detailed.basic.summary",
+        descriptionKey: "compatibilityDetail.dragon.tiger.detailed.basic.description"
+      },
+      caution: {
+        summaryKey: "compatibilityDetail.dragon.tiger.detailed.caution.summary",
+        descriptionKey: "compatibilityDetail.dragon.tiger.detailed.caution.description"
+      },
+      dateRecommendation: {
+        summaryKey: "compatibilityDetail.dragon.tiger.detailed.dateRecommendation.summary",
+        descriptionKey: "compatibilityDetail.dragon.tiger.detailed.dateRecommendation.description"
+      }
     }
   },
   rabbit: {
     wittyKey: "compatibilityDetail.dragon.rabbit.witty",
     elaborationKey: "compatibilityDetail.dragon.rabbit.elaboration",
     detailed: {
-      basicKey: "compatibilityDetail.dragon.rabbit.detailed.basic",
-      cautionKey: "compatibilityDetail.dragon.rabbit.detailed.caution",
-      dateRecommendationKey: "compatibilityDetail.dragon.rabbit.detailed.dateRecommendation"
+      basic: {
+        summaryKey: "compatibilityDetail.dragon.rabbit.detailed.basic.summary",
+        descriptionKey: "compatibilityDetail.dragon.rabbit.detailed.basic.description"
+      },
+      caution: {
+        summaryKey: "compatibilityDetail.dragon.rabbit.detailed.caution.summary",
+        descriptionKey: "compatibilityDetail.dragon.rabbit.detailed.caution.description"
+      },
+      dateRecommendation: {
+        summaryKey: "compatibilityDetail.dragon.rabbit.detailed.dateRecommendation.summary",
+        descriptionKey: "compatibilityDetail.dragon.rabbit.detailed.dateRecommendation.description"
+      }
     }
   },
   dragon: {
     wittyKey: "compatibilityDetail.dragon.dragon.witty",
     elaborationKey: "compatibilityDetail.dragon.dragon.elaboration",
     detailed: {
-      basicKey: "compatibilityDetail.dragon.dragon.detailed.basic",
-      cautionKey: "compatibilityDetail.dragon.dragon.detailed.caution",
-      dateRecommendationKey: "compatibilityDetail.dragon.dragon.detailed.dateRecommendation"
+      basic: {
+        summaryKey: "compatibilityDetail.dragon.dragon.detailed.basic.summary",
+        descriptionKey: "compatibilityDetail.dragon.dragon.detailed.basic.description"
+      },
+      caution: {
+        summaryKey: "compatibilityDetail.dragon.dragon.detailed.caution.summary",
+        descriptionKey: "compatibilityDetail.dragon.dragon.detailed.caution.description"
+      },
+      dateRecommendation: {
+        summaryKey: "compatibilityDetail.dragon.dragon.detailed.dateRecommendation.summary",
+        descriptionKey: "compatibilityDetail.dragon.dragon.detailed.dateRecommendation.description"
+      }
     }
   },
   snake: {
     wittyKey: "compatibilityDetail.dragon.snake.witty",
     elaborationKey: "compatibilityDetail.dragon.snake.elaboration",
     detailed: {
-      basicKey: "compatibilityDetail.dragon.snake.detailed.basic",
-      cautionKey: "compatibilityDetail.dragon.snake.detailed.caution",
-      dateRecommendationKey: "compatibilityDetail.dragon.snake.detailed.dateRecommendation"
+      basic: {
+        summaryKey: "compatibilityDetail.dragon.snake.detailed.basic.summary",
+        descriptionKey: "compatibilityDetail.dragon.snake.detailed.basic.description"
+      },
+      caution: {
+        summaryKey: "compatibilityDetail.dragon.snake.detailed.caution.summary",
+        descriptionKey: "compatibilityDetail.dragon.snake.detailed.caution.description"
+      },
+      dateRecommendation: {
+        summaryKey: "compatibilityDetail.dragon.snake.detailed.dateRecommendation.summary",
+        descriptionKey: "compatibilityDetail.dragon.snake.detailed.dateRecommendation.description"
+      }
     }
   },
   horse: {
     wittyKey: "compatibilityDetail.dragon.horse.witty",
     elaborationKey: "compatibilityDetail.dragon.horse.elaboration",
     detailed: {
-      basicKey: "compatibilityDetail.dragon.horse.detailed.basic",
-      cautionKey: "compatibilityDetail.dragon.horse.detailed.caution",
-      dateRecommendationKey: "compatibilityDetail.dragon.horse.detailed.dateRecommendation"
+      basic: {
+        summaryKey: "compatibilityDetail.dragon.horse.detailed.basic.summary",
+        descriptionKey: "compatibilityDetail.dragon.horse.detailed.basic.description"
+      },
+      caution: {
+        summaryKey: "compatibilityDetail.dragon.horse.detailed.caution.summary",
+        descriptionKey: "compatibilityDetail.dragon.horse.detailed.caution.description"
+      },
+      dateRecommendation: {
+        summaryKey: "compatibilityDetail.dragon.horse.detailed.dateRecommendation.summary",
+        descriptionKey: "compatibilityDetail.dragon.horse.detailed.dateRecommendation.description"
+      }
     }
   },
   goat: {
     wittyKey: "compatibilityDetail.dragon.goat.witty",
     elaborationKey: "compatibilityDetail.dragon.goat.elaboration",
     detailed: {
-      basicKey: "compatibilityDetail.dragon.goat.detailed.basic",
-      cautionKey: "compatibilityDetail.dragon.goat.detailed.caution",
-      dateRecommendationKey: "compatibilityDetail.dragon.goat.detailed.dateRecommendation"
+      basic: {
+        summaryKey: "compatibilityDetail.dragon.goat.detailed.basic.summary",
+        descriptionKey: "compatibilityDetail.dragon.goat.detailed.basic.description"
+      },
+      caution: {
+        summaryKey: "compatibilityDetail.dragon.goat.detailed.caution.summary",
+        descriptionKey: "compatibilityDetail.dragon.goat.detailed.caution.description"
+      },
+      dateRecommendation: {
+        summaryKey: "compatibilityDetail.dragon.goat.detailed.dateRecommendation.summary",
+        descriptionKey: "compatibilityDetail.dragon.goat.detailed.dateRecommendation.description"
+      }
     }
   },
   monkey: {
     wittyKey: "compatibilityDetail.dragon.monkey.witty",
     elaborationKey: "compatibilityDetail.dragon.monkey.elaboration",
     detailed: {
-      basicKey: "compatibilityDetail.dragon.monkey.detailed.basic",
-      cautionKey: "compatibilityDetail.dragon.monkey.detailed.caution",
-      dateRecommendationKey: "compatibilityDetail.dragon.monkey.detailed.dateRecommendation"
+      basic: {
+        summaryKey: "compatibilityDetail.dragon.monkey.detailed.basic.summary",
+        descriptionKey: "compatibilityDetail.dragon.monkey.detailed.basic.description"
+      },
+      caution: {
+        summaryKey: "compatibilityDetail.dragon.monkey.detailed.caution.summary",
+        descriptionKey: "compatibilityDetail.dragon.monkey.detailed.caution.description"
+      },
+      dateRecommendation: {
+        summaryKey: "compatibilityDetail.dragon.monkey.detailed.dateRecommendation.summary",
+        descriptionKey: "compatibilityDetail.dragon.monkey.detailed.dateRecommendation.description"
+      }
     }
   },
   rooster: {
     wittyKey: "compatibilityDetail.dragon.rooster.witty",
     elaborationKey: "compatibilityDetail.dragon.rooster.elaboration",
     detailed: {
-      basicKey: "compatibilityDetail.dragon.rooster.detailed.basic",
-      cautionKey: "compatibilityDetail.dragon.rooster.detailed.caution",
-      dateRecommendationKey: "compatibilityDetail.dragon.rooster.detailed.dateRecommendation"
+      basic: {
+        summaryKey: "compatibilityDetail.dragon.rooster.detailed.basic.summary",
+        descriptionKey: "compatibilityDetail.dragon.rooster.detailed.basic.description"
+      },
+      caution: {
+        summaryKey: "compatibilityDetail.dragon.rooster.detailed.caution.summary",
+        descriptionKey: "compatibilityDetail.dragon.rooster.detailed.caution.description"
+      },
+      dateRecommendation: {
+        summaryKey: "compatibilityDetail.dragon.rooster.detailed.dateRecommendation.summary",
+        descriptionKey: "compatibilityDetail.dragon.rooster.detailed.dateRecommendation.description"
+      }
     }
   },
   dog: {
     wittyKey: "compatibilityDetail.dragon.dog.witty",
     elaborationKey: "compatibilityDetail.dragon.dog.elaboration",
     detailed: {
-      basicKey: "compatibilityDetail.dragon.dog.detailed.basic",
-      cautionKey: "compatibilityDetail.dragon.dog.detailed.caution",
-      dateRecommendationKey: "compatibilityDetail.dragon.dog.detailed.dateRecommendation"
+      basic: {
+        summaryKey: "compatibilityDetail.dragon.dog.detailed.basic.summary",
+        descriptionKey: "compatibilityDetail.dragon.dog.detailed.basic.description"
+      },
+      caution: {
+        summaryKey: "compatibilityDetail.dragon.dog.detailed.caution.summary",
+        descriptionKey: "compatibilityDetail.dragon.dog.detailed.caution.description"
+      },
+      dateRecommendation: {
+        summaryKey: "compatibilityDetail.dragon.dog.detailed.dateRecommendation.summary",
+        descriptionKey: "compatibilityDetail.dragon.dog.detailed.dateRecommendation.description"
+      }
     }
   },
   pig: {
     wittyKey: "compatibilityDetail.dragon.pig.witty",
     elaborationKey: "compatibilityDetail.dragon.pig.elaboration",
     detailed: {
-      basicKey: "compatibilityDetail.dragon.pig.detailed.basic",
-      cautionKey: "compatibilityDetail.dragon.pig.detailed.caution",
-      dateRecommendationKey: "compatibilityDetail.dragon.pig.detailed.dateRecommendation"
+      basic: {
+        summaryKey: "compatibilityDetail.dragon.pig.detailed.basic.summary",
+        descriptionKey: "compatibilityDetail.dragon.pig.detailed.basic.description"
+      },
+      caution: {
+        summaryKey: "compatibilityDetail.dragon.pig.detailed.caution.summary",
+        descriptionKey: "compatibilityDetail.dragon.pig.detailed.caution.description"
+      },
+      dateRecommendation: {
+        summaryKey: "compatibilityDetail.dragon.pig.detailed.dateRecommendation.summary",
+        descriptionKey: "compatibilityDetail.dragon.pig.detailed.dateRecommendation.description"
+      }
     }
   }
 };
@@ -731,108 +1286,216 @@ export const snakeCompatibilityDetails: Record<string, CompatibilityDetail> = {
     wittyKey: "compatibilityDetail.snake.mouse.witty",
     elaborationKey: "compatibilityDetail.snake.mouse.elaboration",
     detailed: {
-      basicKey: "compatibilityDetail.snake.mouse.detailed.basic",
-      cautionKey: "compatibilityDetail.snake.mouse.detailed.caution",
-      dateRecommendationKey: "compatibilityDetail.snake.mouse.detailed.dateRecommendation"
+      basic: {
+        summaryKey: "compatibilityDetail.snake.mouse.detailed.basic.summary",
+        descriptionKey: "compatibilityDetail.snake.mouse.detailed.basic.description"
+      },
+      caution: {
+        summaryKey: "compatibilityDetail.snake.mouse.detailed.caution.summary",
+        descriptionKey: "compatibilityDetail.snake.mouse.detailed.caution.description"
+      },
+      dateRecommendation: {
+        summaryKey: "compatibilityDetail.snake.mouse.detailed.dateRecommendation.summary",
+        descriptionKey: "compatibilityDetail.snake.mouse.detailed.dateRecommendation.description"
+      }
     }
   },
   ox: {
     wittyKey: "compatibilityDetail.snake.ox.witty",
     elaborationKey: "compatibilityDetail.snake.ox.elaboration",
     detailed: {
-      basicKey: "compatibilityDetail.snake.ox.detailed.basic",
-      cautionKey: "compatibilityDetail.snake.ox.detailed.caution",
-      dateRecommendationKey: "compatibilityDetail.snake.ox.detailed.dateRecommendation"
+      basic: {
+        summaryKey: "compatibilityDetail.snake.ox.detailed.basic.summary",
+        descriptionKey: "compatibilityDetail.snake.ox.detailed.basic.description"
+      },
+      caution: {
+        summaryKey: "compatibilityDetail.snake.ox.detailed.caution.summary",
+        descriptionKey: "compatibilityDetail.snake.ox.detailed.caution.description"
+      },
+      dateRecommendation: {
+        summaryKey: "compatibilityDetail.snake.ox.detailed.dateRecommendation.summary",
+        descriptionKey: "compatibilityDetail.snake.ox.detailed.dateRecommendation.description"
+      }
     }
   },
   tiger: {
     wittyKey: "compatibilityDetail.snake.tiger.witty",
     elaborationKey: "compatibilityDetail.snake.tiger.elaboration",
     detailed: {
-      basicKey: "compatibilityDetail.snake.tiger.detailed.basic",
-      cautionKey: "compatibilityDetail.snake.tiger.detailed.caution",
-      dateRecommendationKey: "compatibilityDetail.snake.tiger.detailed.dateRecommendation"
+      basic: {
+        summaryKey: "compatibilityDetail.snake.tiger.detailed.basic.summary",
+        descriptionKey: "compatibilityDetail.snake.tiger.detailed.basic.description"
+      },
+      caution: {
+        summaryKey: "compatibilityDetail.snake.tiger.detailed.caution.summary",
+        descriptionKey: "compatibilityDetail.snake.tiger.detailed.caution.description"
+      },
+      dateRecommendation: {
+        summaryKey: "compatibilityDetail.snake.tiger.detailed.dateRecommendation.summary",
+        descriptionKey: "compatibilityDetail.snake.tiger.detailed.dateRecommendation.description"
+      }
     }
   },
   rabbit: {
     wittyKey: "compatibilityDetail.snake.rabbit.witty",
     elaborationKey: "compatibilityDetail.snake.rabbit.elaboration",
     detailed: {
-      basicKey: "compatibilityDetail.snake.rabbit.detailed.basic",
-      cautionKey: "compatibilityDetail.snake.rabbit.detailed.caution",
-      dateRecommendationKey: "compatibilityDetail.snake.rabbit.detailed.dateRecommendation"
+      basic: {
+        summaryKey: "compatibilityDetail.snake.rabbit.detailed.basic.summary",
+        descriptionKey: "compatibilityDetail.snake.rabbit.detailed.basic.description"
+      },
+      caution: {
+        summaryKey: "compatibilityDetail.snake.rabbit.detailed.caution.summary",
+        descriptionKey: "compatibilityDetail.snake.rabbit.detailed.caution.description"
+      },
+      dateRecommendation: {
+        summaryKey: "compatibilityDetail.snake.rabbit.detailed.dateRecommendation.summary",
+        descriptionKey: "compatibilityDetail.snake.rabbit.detailed.dateRecommendation.description"
+      }
     }
   },
   dragon: {
     wittyKey: "compatibilityDetail.snake.dragon.witty",
     elaborationKey: "compatibilityDetail.snake.dragon.elaboration",
     detailed: {
-      basicKey: "compatibilityDetail.snake.dragon.detailed.basic",
-      cautionKey: "compatibilityDetail.snake.dragon.detailed.caution",
-      dateRecommendationKey: "compatibilityDetail.snake.dragon.detailed.dateRecommendation"
+      basic: {
+        summaryKey: "compatibilityDetail.snake.dragon.detailed.basic.summary",
+        descriptionKey: "compatibilityDetail.snake.dragon.detailed.basic.description"
+      },
+      caution: {
+        summaryKey: "compatibilityDetail.snake.dragon.detailed.caution.summary",
+        descriptionKey: "compatibilityDetail.snake.dragon.detailed.caution.description"
+      },
+      dateRecommendation: {
+        summaryKey: "compatibilityDetail.snake.dragon.detailed.dateRecommendation.summary",
+        descriptionKey: "compatibilityDetail.snake.dragon.detailed.dateRecommendation.description"
+      }
     }
   },
   snake: {
     wittyKey: "compatibilityDetail.snake.snake.witty",
     elaborationKey: "compatibilityDetail.snake.snake.elaboration",
     detailed: {
-      basicKey: "compatibilityDetail.snake.snake.detailed.basic",
-      cautionKey: "compatibilityDetail.snake.snake.detailed.caution",
-      dateRecommendationKey: "compatibilityDetail.snake.snake.detailed.dateRecommendation"
+      basic: {
+        summaryKey: "compatibilityDetail.snake.snake.detailed.basic.summary",
+        descriptionKey: "compatibilityDetail.snake.snake.detailed.basic.description"
+      },
+      caution: {
+        summaryKey: "compatibilityDetail.snake.snake.detailed.caution.summary",
+        descriptionKey: "compatibilityDetail.snake.snake.detailed.caution.description"
+      },
+      dateRecommendation: {
+        summaryKey: "compatibilityDetail.snake.snake.detailed.dateRecommendation.summary",
+        descriptionKey: "compatibilityDetail.snake.snake.detailed.dateRecommendation.description"
+      }
     }
   },
   horse: {
     wittyKey: "compatibilityDetail.snake.horse.witty",
     elaborationKey: "compatibilityDetail.snake.horse.elaboration",
     detailed: {
-      basicKey: "compatibilityDetail.snake.horse.detailed.basic",
-      cautionKey: "compatibilityDetail.snake.horse.detailed.caution",
-      dateRecommendationKey: "compatibilityDetail.snake.horse.detailed.dateRecommendation"
+      basic: {
+        summaryKey: "compatibilityDetail.snake.horse.detailed.basic.summary",
+        descriptionKey: "compatibilityDetail.snake.horse.detailed.basic.description"
+      },
+      caution: {
+        summaryKey: "compatibilityDetail.snake.horse.detailed.caution.summary",
+        descriptionKey: "compatibilityDetail.snake.horse.detailed.caution.description"
+      },
+      dateRecommendation: {
+        summaryKey: "compatibilityDetail.snake.horse.detailed.dateRecommendation.summary",
+        descriptionKey: "compatibilityDetail.snake.horse.detailed.dateRecommendation.description"
+      }
     }
   },
   goat: {
     wittyKey: "compatibilityDetail.snake.goat.witty",
     elaborationKey: "compatibilityDetail.snake.goat.elaboration",
     detailed: {
-      basicKey: "compatibilityDetail.snake.goat.detailed.basic",
-      cautionKey: "compatibilityDetail.snake.goat.detailed.caution",
-      dateRecommendationKey: "compatibilityDetail.snake.goat.detailed.dateRecommendation"
+      basic: {
+        summaryKey: "compatibilityDetail.snake.goat.detailed.basic.summary",
+        descriptionKey: "compatibilityDetail.snake.goat.detailed.basic.description"
+      },
+      caution: {
+        summaryKey: "compatibilityDetail.snake.goat.detailed.caution.summary",
+        descriptionKey: "compatibilityDetail.snake.goat.detailed.caution.description"
+      },
+      dateRecommendation: {
+        summaryKey: "compatibilityDetail.snake.goat.detailed.dateRecommendation.summary",
+        descriptionKey: "compatibilityDetail.snake.goat.detailed.dateRecommendation.description"
+      }
     }
   },
   monkey: {
     wittyKey: "compatibilityDetail.snake.monkey.witty",
     elaborationKey: "compatibilityDetail.snake.monkey.elaboration",
     detailed: {
-      basicKey: "compatibilityDetail.snake.monkey.detailed.basic",
-      cautionKey: "compatibilityDetail.snake.monkey.detailed.caution",
-      dateRecommendationKey: "compatibilityDetail.snake.monkey.detailed.dateRecommendation"
+      basic: {
+        summaryKey: "compatibilityDetail.snake.monkey.detailed.basic.summary",
+        descriptionKey: "compatibilityDetail.snake.monkey.detailed.basic.description"
+      },
+      caution: {
+        summaryKey: "compatibilityDetail.snake.monkey.detailed.caution.summary",
+        descriptionKey: "compatibilityDetail.snake.monkey.detailed.caution.description"
+      },
+      dateRecommendation: {
+        summaryKey: "compatibilityDetail.snake.monkey.detailed.dateRecommendation.summary",
+        descriptionKey: "compatibilityDetail.snake.monkey.detailed.dateRecommendation.description"
+      }
     }
   },
   rooster: {
     wittyKey: "compatibilityDetail.snake.rooster.witty",
     elaborationKey: "compatibilityDetail.snake.rooster.elaboration",
     detailed: {
-      basicKey: "compatibilityDetail.snake.rooster.detailed.basic",
-      cautionKey: "compatibilityDetail.snake.rooster.detailed.caution",
-      dateRecommendationKey: "compatibilityDetail.snake.rooster.detailed.dateRecommendation"
+      basic: {
+        summaryKey: "compatibilityDetail.snake.rooster.detailed.basic.summary",
+        descriptionKey: "compatibilityDetail.snake.rooster.detailed.basic.description"
+      },
+      caution: {
+        summaryKey: "compatibilityDetail.snake.rooster.detailed.caution.summary",
+        descriptionKey: "compatibilityDetail.snake.rooster.detailed.caution.description"
+      },
+      dateRecommendation: {
+        summaryKey: "compatibilityDetail.snake.rooster.detailed.dateRecommendation.summary",
+        descriptionKey: "compatibilityDetail.snake.rooster.detailed.dateRecommendation.description"
+      }
     }
   },
   dog: {
     wittyKey: "compatibilityDetail.snake.dog.witty",
     elaborationKey: "compatibilityDetail.snake.dog.elaboration",
     detailed: {
-      basicKey: "compatibilityDetail.snake.dog.detailed.basic",
-      cautionKey: "compatibilityDetail.snake.dog.detailed.caution",
-      dateRecommendationKey: "compatibilityDetail.snake.dog.detailed.dateRecommendation"
+      basic: {
+        summaryKey: "compatibilityDetail.snake.dog.detailed.basic.summary",
+        descriptionKey: "compatibilityDetail.snake.dog.detailed.basic.description"
+      },
+      caution: {
+        summaryKey: "compatibilityDetail.snake.dog.detailed.caution.summary",
+        descriptionKey: "compatibilityDetail.snake.dog.detailed.caution.description"
+      },
+      dateRecommendation: {
+        summaryKey: "compatibilityDetail.snake.dog.detailed.dateRecommendation.summary",
+        descriptionKey: "compatibilityDetail.snake.dog.detailed.dateRecommendation.description"
+      }
     }
   },
   pig: {
     wittyKey: "compatibilityDetail.snake.pig.witty",
     elaborationKey: "compatibilityDetail.snake.pig.elaboration",
     detailed: {
-      basicKey: "compatibilityDetail.snake.pig.detailed.basic",
-      cautionKey: "compatibilityDetail.snake.pig.detailed.caution",
-      dateRecommendationKey: "compatibilityDetail.snake.pig.detailed.dateRecommendation"
+      basic: {
+        summaryKey: "compatibilityDetail.snake.pig.detailed.basic.summary",
+        descriptionKey: "compatibilityDetail.snake.pig.detailed.basic.description"
+      },
+      caution: {
+        summaryKey: "compatibilityDetail.snake.pig.detailed.caution.summary",
+        descriptionKey: "compatibilityDetail.snake.pig.detailed.caution.description"
+      },
+      dateRecommendation: {
+        summaryKey: "compatibilityDetail.snake.pig.detailed.dateRecommendation.summary",
+        descriptionKey: "compatibilityDetail.snake.pig.detailed.dateRecommendation.description"
+      }
     }
   }
 };
@@ -843,108 +1506,216 @@ export const horseCompatibilityDetails: Record<string, CompatibilityDetail> = {
     wittyKey: "compatibilityDetail.horse.mouse.witty",
     elaborationKey: "compatibilityDetail.horse.mouse.elaboration",
     detailed: {
-      basicKey: "compatibilityDetail.horse.mouse.detailed.basic",
-      cautionKey: "compatibilityDetail.horse.mouse.detailed.caution",
-      dateRecommendationKey: "compatibilityDetail.horse.mouse.detailed.dateRecommendation"
+      basic: {
+        summaryKey: "compatibilityDetail.horse.mouse.detailed.basic.summary",
+        descriptionKey: "compatibilityDetail.horse.mouse.detailed.basic.description"
+      },
+      caution: {
+        summaryKey: "compatibilityDetail.horse.mouse.detailed.caution.summary",
+        descriptionKey: "compatibilityDetail.horse.mouse.detailed.caution.description"
+      },
+      dateRecommendation: {
+        summaryKey: "compatibilityDetail.horse.mouse.detailed.dateRecommendation.summary",
+        descriptionKey: "compatibilityDetail.horse.mouse.detailed.dateRecommendation.description"
+      }
     }
   },
   ox: {
     wittyKey: "compatibilityDetail.horse.ox.witty",
     elaborationKey: "compatibilityDetail.horse.ox.elaboration",
     detailed: {
-      basicKey: "compatibilityDetail.horse.ox.detailed.basic",
-      cautionKey: "compatibilityDetail.horse.ox.detailed.caution",
-      dateRecommendationKey: "compatibilityDetail.horse.ox.detailed.dateRecommendation"
+      basic: {
+        summaryKey: "compatibilityDetail.horse.ox.detailed.basic.summary",
+        descriptionKey: "compatibilityDetail.horse.ox.detailed.basic.description"
+      },
+      caution: {
+        summaryKey: "compatibilityDetail.horse.ox.detailed.caution.summary",
+        descriptionKey: "compatibilityDetail.horse.ox.detailed.caution.description"
+      },
+      dateRecommendation: {
+        summaryKey: "compatibilityDetail.horse.ox.detailed.dateRecommendation.summary",
+        descriptionKey: "compatibilityDetail.horse.ox.detailed.dateRecommendation.description"
+      }
     }
   },
   tiger: {
     wittyKey: "compatibilityDetail.horse.tiger.witty",
     elaborationKey: "compatibilityDetail.horse.tiger.elaboration",
     detailed: {
-      basicKey: "compatibilityDetail.horse.tiger.detailed.basic",
-      cautionKey: "compatibilityDetail.horse.tiger.detailed.caution",
-      dateRecommendationKey: "compatibilityDetail.horse.tiger.detailed.dateRecommendation"
+      basic: {
+        summaryKey: "compatibilityDetail.horse.tiger.detailed.basic.summary",
+        descriptionKey: "compatibilityDetail.horse.tiger.detailed.basic.description"
+      },
+      caution: {
+        summaryKey: "compatibilityDetail.horse.tiger.detailed.caution.summary",
+        descriptionKey: "compatibilityDetail.horse.tiger.detailed.caution.description"
+      },
+      dateRecommendation: {
+        summaryKey: "compatibilityDetail.horse.tiger.detailed.dateRecommendation.summary",
+        descriptionKey: "compatibilityDetail.horse.tiger.detailed.dateRecommendation.description"
+      }
     }
   },
   rabbit: {
     wittyKey: "compatibilityDetail.horse.rabbit.witty",
     elaborationKey: "compatibilityDetail.horse.rabbit.elaboration",
     detailed: {
-      basicKey: "compatibilityDetail.horse.rabbit.detailed.basic",
-      cautionKey: "compatibilityDetail.horse.rabbit.detailed.caution",
-      dateRecommendationKey: "compatibilityDetail.horse.rabbit.detailed.dateRecommendation"
+      basic: {
+        summaryKey: "compatibilityDetail.horse.rabbit.detailed.basic.summary",
+        descriptionKey: "compatibilityDetail.horse.rabbit.detailed.basic.description"
+      },
+      caution: {
+        summaryKey: "compatibilityDetail.horse.rabbit.detailed.caution.summary",
+        descriptionKey: "compatibilityDetail.horse.rabbit.detailed.caution.description"
+      },
+      dateRecommendation: {
+        summaryKey: "compatibilityDetail.horse.rabbit.detailed.dateRecommendation.summary",
+        descriptionKey: "compatibilityDetail.horse.rabbit.detailed.dateRecommendation.description"
+      }
     }
   },
   dragon: {
     wittyKey: "compatibilityDetail.horse.dragon.witty",
     elaborationKey: "compatibilityDetail.horse.dragon.elaboration",
     detailed: {
-      basicKey: "compatibilityDetail.horse.dragon.detailed.basic",
-      cautionKey: "compatibilityDetail.horse.dragon.detailed.caution",
-      dateRecommendationKey: "compatibilityDetail.horse.dragon.detailed.dateRecommendation"
+      basic: {
+        summaryKey: "compatibilityDetail.horse.dragon.detailed.basic.summary",
+        descriptionKey: "compatibilityDetail.horse.dragon.detailed.basic.description"
+      },
+      caution: {
+        summaryKey: "compatibilityDetail.horse.dragon.detailed.caution.summary",
+        descriptionKey: "compatibilityDetail.horse.dragon.detailed.caution.description"
+      },
+      dateRecommendation: {
+        summaryKey: "compatibilityDetail.horse.dragon.detailed.dateRecommendation.summary",
+        descriptionKey: "compatibilityDetail.horse.dragon.detailed.dateRecommendation.description"
+      }
     }
   },
   snake: {
     wittyKey: "compatibilityDetail.horse.snake.witty",
     elaborationKey: "compatibilityDetail.horse.snake.elaboration",
     detailed: {
-      basicKey: "compatibilityDetail.horse.snake.detailed.basic",
-      cautionKey: "compatibilityDetail.horse.snake.detailed.caution",
-      dateRecommendationKey: "compatibilityDetail.horse.snake.detailed.dateRecommendation"
+      basic: {
+        summaryKey: "compatibilityDetail.horse.snake.detailed.basic.summary",
+        descriptionKey: "compatibilityDetail.horse.snake.detailed.basic.description"
+      },
+      caution: {
+        summaryKey: "compatibilityDetail.horse.snake.detailed.caution.summary",
+        descriptionKey: "compatibilityDetail.horse.snake.detailed.caution.description"
+      },
+      dateRecommendation: {
+        summaryKey: "compatibilityDetail.horse.snake.detailed.dateRecommendation.summary",
+        descriptionKey: "compatibilityDetail.horse.snake.detailed.dateRecommendation.description"
+      }
     }
   },
   horse: {
     wittyKey: "compatibilityDetail.horse.horse.witty",
     elaborationKey: "compatibilityDetail.horse.horse.elaboration",
     detailed: {
-      basicKey: "compatibilityDetail.horse.horse.detailed.basic",
-      cautionKey: "compatibilityDetail.horse.horse.detailed.caution",
-      dateRecommendationKey: "compatibilityDetail.horse.horse.detailed.dateRecommendation"
+      basic: {
+        summaryKey: "compatibilityDetail.horse.horse.detailed.basic.summary",
+        descriptionKey: "compatibilityDetail.horse.horse.detailed.basic.description"
+      },
+      caution: {
+        summaryKey: "compatibilityDetail.horse.horse.detailed.caution.summary",
+        descriptionKey: "compatibilityDetail.horse.horse.detailed.caution.description"
+      },
+      dateRecommendation: {
+        summaryKey: "compatibilityDetail.horse.horse.detailed.dateRecommendation.summary",
+        descriptionKey: "compatibilityDetail.horse.horse.detailed.dateRecommendation.description"
+      }
     }
   },
   goat: {
     wittyKey: "compatibilityDetail.horse.goat.witty",
     elaborationKey: "compatibilityDetail.horse.goat.elaboration",
     detailed: {
-      basicKey: "compatibilityDetail.horse.goat.detailed.basic",
-      cautionKey: "compatibilityDetail.horse.goat.detailed.caution",
-      dateRecommendationKey: "compatibilityDetail.horse.goat.detailed.dateRecommendation"
+      basic: {
+        summaryKey: "compatibilityDetail.horse.goat.detailed.basic.summary",
+        descriptionKey: "compatibilityDetail.horse.goat.detailed.basic.description"
+      },
+      caution: {
+        summaryKey: "compatibilityDetail.horse.goat.detailed.caution.summary",
+        descriptionKey: "compatibilityDetail.horse.goat.detailed.caution.description"
+      },
+      dateRecommendation: {
+        summaryKey: "compatibilityDetail.horse.goat.detailed.dateRecommendation.summary",
+        descriptionKey: "compatibilityDetail.horse.goat.detailed.dateRecommendation.description"
+      }
     }
   },
   monkey: {
     wittyKey: "compatibilityDetail.horse.monkey.witty",
     elaborationKey: "compatibilityDetail.horse.monkey.elaboration",
     detailed: {
-      basicKey: "compatibilityDetail.horse.monkey.detailed.basic",
-      cautionKey: "compatibilityDetail.horse.monkey.detailed.caution",
-      dateRecommendationKey: "compatibilityDetail.horse.monkey.detailed.dateRecommendation"
+      basic: {
+        summaryKey: "compatibilityDetail.horse.monkey.detailed.basic.summary",
+        descriptionKey: "compatibilityDetail.horse.monkey.detailed.basic.description"
+      },
+      caution: {
+        summaryKey: "compatibilityDetail.horse.monkey.detailed.caution.summary",
+        descriptionKey: "compatibilityDetail.horse.monkey.detailed.caution.description"
+      },
+      dateRecommendation: {
+        summaryKey: "compatibilityDetail.horse.monkey.detailed.dateRecommendation.summary",
+        descriptionKey: "compatibilityDetail.horse.monkey.detailed.dateRecommendation.description"
+      }
     }
   },
   rooster: {
     wittyKey: "compatibilityDetail.horse.rooster.witty",
     elaborationKey: "compatibilityDetail.horse.rooster.elaboration",
     detailed: {
-      basicKey: "compatibilityDetail.horse.rooster.detailed.basic",
-      cautionKey: "compatibilityDetail.horse.rooster.detailed.caution",
-      dateRecommendationKey: "compatibilityDetail.horse.rooster.detailed.dateRecommendation"
+      basic: {
+        summaryKey: "compatibilityDetail.horse.rooster.detailed.basic.summary",
+        descriptionKey: "compatibilityDetail.horse.rooster.detailed.basic.description"
+      },
+      caution: {
+        summaryKey: "compatibilityDetail.horse.rooster.detailed.caution.summary",
+        descriptionKey: "compatibilityDetail.horse.rooster.detailed.caution.description"
+      },
+      dateRecommendation: {
+        summaryKey: "compatibilityDetail.horse.rooster.detailed.dateRecommendation.summary",
+        descriptionKey: "compatibilityDetail.horse.rooster.detailed.dateRecommendation.description"
+      }
     }
   },
   dog: {
     wittyKey: "compatibilityDetail.horse.dog.witty",
     elaborationKey: "compatibilityDetail.horse.dog.elaboration",
     detailed: {
-      basicKey: "compatibilityDetail.horse.dog.detailed.basic",
-      cautionKey: "compatibilityDetail.horse.dog.detailed.caution",
-      dateRecommendationKey: "compatibilityDetail.horse.dog.detailed.dateRecommendation"
+      basic: {
+        summaryKey: "compatibilityDetail.horse.dog.detailed.basic.summary",
+        descriptionKey: "compatibilityDetail.horse.dog.detailed.basic.description"
+      },
+      caution: {
+        summaryKey: "compatibilityDetail.horse.dog.detailed.caution.summary",
+        descriptionKey: "compatibilityDetail.horse.dog.detailed.caution.description"
+      },
+      dateRecommendation: {
+        summaryKey: "compatibilityDetail.horse.dog.detailed.dateRecommendation.summary",
+        descriptionKey: "compatibilityDetail.horse.dog.detailed.dateRecommendation.description"
+      }
     }
   },
   pig: {
     wittyKey: "compatibilityDetail.horse.pig.witty",
     elaborationKey: "compatibilityDetail.horse.pig.elaboration",
     detailed: {
-      basicKey: "compatibilityDetail.horse.pig.detailed.basic",
-      cautionKey: "compatibilityDetail.horse.pig.detailed.caution",
-      dateRecommendationKey: "compatibilityDetail.horse.pig.detailed.dateRecommendation"
+      basic: {
+        summaryKey: "compatibilityDetail.horse.pig.detailed.basic.summary",
+        descriptionKey: "compatibilityDetail.horse.pig.detailed.basic.description"
+      },
+      caution: {
+        summaryKey: "compatibilityDetail.horse.pig.detailed.caution.summary",
+        descriptionKey: "compatibilityDetail.horse.pig.detailed.caution.description"
+      },
+      dateRecommendation: {
+        summaryKey: "compatibilityDetail.horse.pig.detailed.dateRecommendation.summary",
+        descriptionKey: "compatibilityDetail.horse.pig.detailed.dateRecommendation.description"
+      }
     }
   }
 };
@@ -955,108 +1726,216 @@ export const goatCompatibilityDetails: Record<string, CompatibilityDetail> = {
     wittyKey: "compatibilityDetail.goat.mouse.witty",
     elaborationKey: "compatibilityDetail.goat.mouse.elaboration",
     detailed: {
-      basicKey: "compatibilityDetail.goat.mouse.detailed.basic",
-      cautionKey: "compatibilityDetail.goat.mouse.detailed.caution",
-      dateRecommendationKey: "compatibilityDetail.goat.mouse.detailed.dateRecommendation"
+      basic: {
+        summaryKey: "compatibilityDetail.goat.mouse.detailed.basic.summary",
+        descriptionKey: "compatibilityDetail.goat.mouse.detailed.basic.description"
+      },
+      caution: {
+        summaryKey: "compatibilityDetail.goat.mouse.detailed.caution.summary",
+        descriptionKey: "compatibilityDetail.goat.mouse.detailed.caution.description"
+      },
+      dateRecommendation: {
+        summaryKey: "compatibilityDetail.goat.mouse.detailed.dateRecommendation.summary",
+        descriptionKey: "compatibilityDetail.goat.mouse.detailed.dateRecommendation.description"
+      }
     }
   },
   ox: {
     wittyKey: "compatibilityDetail.goat.ox.witty",
     elaborationKey: "compatibilityDetail.goat.ox.elaboration",
     detailed: {
-      basicKey: "compatibilityDetail.goat.ox.detailed.basic",
-      cautionKey: "compatibilityDetail.goat.ox.detailed.caution",
-      dateRecommendationKey: "compatibilityDetail.goat.ox.detailed.dateRecommendation"
+      basic: {
+        summaryKey: "compatibilityDetail.goat.ox.detailed.basic.summary",
+        descriptionKey: "compatibilityDetail.goat.ox.detailed.basic.description"
+      },
+      caution: {
+        summaryKey: "compatibilityDetail.goat.ox.detailed.caution.summary",
+        descriptionKey: "compatibilityDetail.goat.ox.detailed.caution.description"
+      },
+      dateRecommendation: {
+        summaryKey: "compatibilityDetail.goat.ox.detailed.dateRecommendation.summary",
+        descriptionKey: "compatibilityDetail.goat.ox.detailed.dateRecommendation.description"
+      }
     }
   },
   tiger: {
     wittyKey: "compatibilityDetail.goat.tiger.witty",
     elaborationKey: "compatibilityDetail.goat.tiger.elaboration",
     detailed: {
-      basicKey: "compatibilityDetail.goat.tiger.detailed.basic",
-      cautionKey: "compatibilityDetail.goat.tiger.detailed.caution",
-      dateRecommendationKey: "compatibilityDetail.goat.tiger.detailed.dateRecommendation"
+      basic: {
+        summaryKey: "compatibilityDetail.goat.tiger.detailed.basic.summary",
+        descriptionKey: "compatibilityDetail.goat.tiger.detailed.basic.description"
+      },
+      caution: {
+        summaryKey: "compatibilityDetail.goat.tiger.detailed.caution.summary",
+        descriptionKey: "compatibilityDetail.goat.tiger.detailed.caution.description"
+      },
+      dateRecommendation: {
+        summaryKey: "compatibilityDetail.goat.tiger.detailed.dateRecommendation.summary",
+        descriptionKey: "compatibilityDetail.goat.tiger.detailed.dateRecommendation.description"
+      }
     }
   },
   rabbit: {
     wittyKey: "compatibilityDetail.goat.rabbit.witty",
     elaborationKey: "compatibilityDetail.goat.rabbit.elaboration",
     detailed: {
-      basicKey: "compatibilityDetail.goat.rabbit.detailed.basic",
-      cautionKey: "compatibilityDetail.goat.rabbit.detailed.caution",
-      dateRecommendationKey: "compatibilityDetail.goat.rabbit.detailed.dateRecommendation"
+      basic: {
+        summaryKey: "compatibilityDetail.goat.rabbit.detailed.basic.summary",
+        descriptionKey: "compatibilityDetail.goat.rabbit.detailed.basic.description"
+      },
+      caution: {
+        summaryKey: "compatibilityDetail.goat.rabbit.detailed.caution.summary",
+        descriptionKey: "compatibilityDetail.goat.rabbit.detailed.caution.description"
+      },
+      dateRecommendation: {
+        summaryKey: "compatibilityDetail.goat.rabbit.detailed.dateRecommendation.summary",
+        descriptionKey: "compatibilityDetail.goat.rabbit.detailed.dateRecommendation.description"
+      }
     }
   },
   dragon: {
     wittyKey: "compatibilityDetail.goat.dragon.witty",
     elaborationKey: "compatibilityDetail.goat.dragon.elaboration",
     detailed: {
-      basicKey: "compatibilityDetail.goat.dragon.detailed.basic",
-      cautionKey: "compatibilityDetail.goat.dragon.detailed.caution",
-      dateRecommendationKey: "compatibilityDetail.goat.dragon.detailed.dateRecommendation"
+      basic: {
+        summaryKey: "compatibilityDetail.goat.dragon.detailed.basic.summary",
+        descriptionKey: "compatibilityDetail.goat.dragon.detailed.basic.description"
+      },
+      caution: {
+        summaryKey: "compatibilityDetail.goat.dragon.detailed.caution.summary",
+        descriptionKey: "compatibilityDetail.goat.dragon.detailed.caution.description"
+      },
+      dateRecommendation: {
+        summaryKey: "compatibilityDetail.goat.dragon.detailed.dateRecommendation.summary",
+        descriptionKey: "compatibilityDetail.goat.dragon.detailed.dateRecommendation.description"
+      }
     }
   },
   snake: {
     wittyKey: "compatibilityDetail.goat.snake.witty",
     elaborationKey: "compatibilityDetail.goat.snake.elaboration",
     detailed: {
-      basicKey: "compatibilityDetail.goat.snake.detailed.basic",
-      cautionKey: "compatibilityDetail.goat.snake.detailed.caution",
-      dateRecommendationKey: "compatibilityDetail.goat.snake.detailed.dateRecommendation"
+      basic: {
+        summaryKey: "compatibilityDetail.goat.snake.detailed.basic.summary",
+        descriptionKey: "compatibilityDetail.goat.snake.detailed.basic.description"
+      },
+      caution: {
+        summaryKey: "compatibilityDetail.goat.snake.detailed.caution.summary",
+        descriptionKey: "compatibilityDetail.goat.snake.detailed.caution.description"
+      },
+      dateRecommendation: {
+        summaryKey: "compatibilityDetail.goat.snake.detailed.dateRecommendation.summary",
+        descriptionKey: "compatibilityDetail.goat.snake.detailed.dateRecommendation.description"
+      }
     }
   },
   horse: {
     wittyKey: "compatibilityDetail.goat.horse.witty",
     elaborationKey: "compatibilityDetail.goat.horse.elaboration",
     detailed: {
-      basicKey: "compatibilityDetail.goat.horse.detailed.basic",
-      cautionKey: "compatibilityDetail.goat.horse.detailed.caution",
-      dateRecommendationKey: "compatibilityDetail.goat.horse.detailed.dateRecommendation"
+      basic: {
+        summaryKey: "compatibilityDetail.goat.horse.detailed.basic.summary",
+        descriptionKey: "compatibilityDetail.goat.horse.detailed.basic.description"
+      },
+      caution: {
+        summaryKey: "compatibilityDetail.goat.horse.detailed.caution.summary",
+        descriptionKey: "compatibilityDetail.goat.horse.detailed.caution.description"
+      },
+      dateRecommendation: {
+        summaryKey: "compatibilityDetail.goat.horse.detailed.dateRecommendation.summary",
+        descriptionKey: "compatibilityDetail.goat.horse.detailed.dateRecommendation.description"
+      }
     }
   },
   goat: {
     wittyKey: "compatibilityDetail.goat.goat.witty",
     elaborationKey: "compatibilityDetail.goat.goat.elaboration",
     detailed: {
-      basicKey: "compatibilityDetail.goat.goat.detailed.basic",
-      cautionKey: "compatibilityDetail.goat.goat.detailed.caution",
-      dateRecommendationKey: "compatibilityDetail.goat.goat.detailed.dateRecommendation"
+      basic: {
+        summaryKey: "compatibilityDetail.goat.goat.detailed.basic.summary",
+        descriptionKey: "compatibilityDetail.goat.goat.detailed.basic.description"
+      },
+      caution: {
+        summaryKey: "compatibilityDetail.goat.goat.detailed.caution.summary",
+        descriptionKey: "compatibilityDetail.goat.goat.detailed.caution.description"
+      },
+      dateRecommendation: {
+        summaryKey: "compatibilityDetail.goat.goat.detailed.dateRecommendation.summary",
+        descriptionKey: "compatibilityDetail.goat.goat.detailed.dateRecommendation.description"
+      }
     }
   },
   monkey: {
     wittyKey: "compatibilityDetail.goat.monkey.witty",
     elaborationKey: "compatibilityDetail.goat.monkey.elaboration",
     detailed: {
-      basicKey: "compatibilityDetail.goat.monkey.detailed.basic",
-      cautionKey: "compatibilityDetail.goat.monkey.detailed.caution",
-      dateRecommendationKey: "compatibilityDetail.goat.monkey.detailed.dateRecommendation"
+      basic: {
+        summaryKey: "compatibilityDetail.goat.monkey.detailed.basic.summary",
+        descriptionKey: "compatibilityDetail.goat.monkey.detailed.basic.description"
+      },
+      caution: {
+        summaryKey: "compatibilityDetail.goat.monkey.detailed.caution.summary",
+        descriptionKey: "compatibilityDetail.goat.monkey.detailed.caution.description"
+      },
+      dateRecommendation: {
+        summaryKey: "compatibilityDetail.goat.monkey.detailed.dateRecommendation.summary",
+        descriptionKey: "compatibilityDetail.goat.monkey.detailed.dateRecommendation.description"
+      }
     }
   },
   rooster: {
     wittyKey: "compatibilityDetail.goat.rooster.witty",
     elaborationKey: "compatibilityDetail.goat.rooster.elaboration",
     detailed: {
-      basicKey: "compatibilityDetail.goat.rooster.detailed.basic",
-      cautionKey: "compatibilityDetail.goat.rooster.detailed.caution",
-      dateRecommendationKey: "compatibilityDetail.goat.rooster.detailed.dateRecommendation"
+      basic: {
+        summaryKey: "compatibilityDetail.goat.rooster.detailed.basic.summary",
+        descriptionKey: "compatibilityDetail.goat.rooster.detailed.basic.description"
+      },
+      caution: {
+        summaryKey: "compatibilityDetail.goat.rooster.detailed.caution.summary",
+        descriptionKey: "compatibilityDetail.goat.rooster.detailed.caution.description"
+      },
+      dateRecommendation: {
+        summaryKey: "compatibilityDetail.goat.rooster.detailed.dateRecommendation.summary",
+        descriptionKey: "compatibilityDetail.goat.rooster.detailed.dateRecommendation.description"
+      }
     }
   },
   dog: {
     wittyKey: "compatibilityDetail.goat.dog.witty",
     elaborationKey: "compatibilityDetail.goat.dog.elaboration",
     detailed: {
-      basicKey: "compatibilityDetail.goat.dog.detailed.basic",
-      cautionKey: "compatibilityDetail.goat.dog.detailed.caution",
-      dateRecommendationKey: "compatibilityDetail.goat.dog.detailed.dateRecommendation"
+      basic: {
+        summaryKey: "compatibilityDetail.goat.dog.detailed.basic.summary",
+        descriptionKey: "compatibilityDetail.goat.dog.detailed.basic.description"
+      },
+      caution: {
+        summaryKey: "compatibilityDetail.goat.dog.detailed.caution.summary",
+        descriptionKey: "compatibilityDetail.goat.dog.detailed.caution.description"
+      },
+      dateRecommendation: {
+        summaryKey: "compatibilityDetail.goat.dog.detailed.dateRecommendation.summary",
+        descriptionKey: "compatibilityDetail.goat.dog.detailed.dateRecommendation.description"
+      }
     }
   },
   pig: {
     wittyKey: "compatibilityDetail.goat.pig.witty",
     elaborationKey: "compatibilityDetail.goat.pig.elaboration",
     detailed: {
-      basicKey: "compatibilityDetail.goat.pig.detailed.basic",
-      cautionKey: "compatibilityDetail.goat.pig.detailed.caution",
-      dateRecommendationKey: "compatibilityDetail.goat.pig.detailed.dateRecommendation"
+      basic: {
+        summaryKey: "compatibilityDetail.goat.pig.detailed.basic.summary",
+        descriptionKey: "compatibilityDetail.goat.pig.detailed.basic.description"
+      },
+      caution: {
+        summaryKey: "compatibilityDetail.goat.pig.detailed.caution.summary",
+        descriptionKey: "compatibilityDetail.goat.pig.detailed.caution.description"
+      },
+      dateRecommendation: {
+        summaryKey: "compatibilityDetail.goat.pig.detailed.dateRecommendation.summary",
+        descriptionKey: "compatibilityDetail.goat.pig.detailed.dateRecommendation.description"
+      }
     }
   }
 };
@@ -1067,108 +1946,216 @@ export const monkeyCompatibilityDetails: Record<string, CompatibilityDetail> = {
     wittyKey: "compatibilityDetail.monkey.mouse.witty",
     elaborationKey: "compatibilityDetail.monkey.mouse.elaboration",
     detailed: {
-      basicKey: "compatibilityDetail.monkey.mouse.detailed.basic",
-      cautionKey: "compatibilityDetail.monkey.mouse.detailed.caution",
-      dateRecommendationKey: "compatibilityDetail.monkey.mouse.detailed.dateRecommendation"
+      basic: {
+        summaryKey: "compatibilityDetail.monkey.mouse.detailed.basic.summary",
+        descriptionKey: "compatibilityDetail.monkey.mouse.detailed.basic.description"
+      },
+      caution: {
+        summaryKey: "compatibilityDetail.monkey.mouse.detailed.caution.summary",
+        descriptionKey: "compatibilityDetail.monkey.mouse.detailed.caution.description"
+      },
+      dateRecommendation: {
+        summaryKey: "compatibilityDetail.monkey.mouse.detailed.dateRecommendation.summary",
+        descriptionKey: "compatibilityDetail.monkey.mouse.detailed.dateRecommendation.description"
+      }
     }
   },
   ox: {
     wittyKey: "compatibilityDetail.monkey.ox.witty",
     elaborationKey: "compatibilityDetail.monkey.ox.elaboration",
     detailed: {
-      basicKey: "compatibilityDetail.monkey.ox.detailed.basic",
-      cautionKey: "compatibilityDetail.monkey.ox.detailed.caution",
-      dateRecommendationKey: "compatibilityDetail.monkey.ox.detailed.dateRecommendation"
+      basic: {
+        summaryKey: "compatibilityDetail.monkey.ox.detailed.basic.summary",
+        descriptionKey: "compatibilityDetail.monkey.ox.detailed.basic.description"
+      },
+      caution: {
+        summaryKey: "compatibilityDetail.monkey.ox.detailed.caution.summary",
+        descriptionKey: "compatibilityDetail.monkey.ox.detailed.caution.description"
+      },
+      dateRecommendation: {
+        summaryKey: "compatibilityDetail.monkey.ox.detailed.dateRecommendation.summary",
+        descriptionKey: "compatibilityDetail.monkey.ox.detailed.dateRecommendation.description"
+      }
     }
   },
   tiger: {
     wittyKey: "compatibilityDetail.monkey.tiger.witty",
     elaborationKey: "compatibilityDetail.monkey.tiger.elaboration",
     detailed: {
-      basicKey: "compatibilityDetail.monkey.tiger.detailed.basic",
-      cautionKey: "compatibilityDetail.monkey.tiger.detailed.caution",
-      dateRecommendationKey: "compatibilityDetail.monkey.tiger.detailed.dateRecommendation"
+      basic: {
+        summaryKey: "compatibilityDetail.monkey.tiger.detailed.basic.summary",
+        descriptionKey: "compatibilityDetail.monkey.tiger.detailed.basic.description"
+      },
+      caution: {
+        summaryKey: "compatibilityDetail.monkey.tiger.detailed.caution.summary",
+        descriptionKey: "compatibilityDetail.monkey.tiger.detailed.caution.description"
+      },
+      dateRecommendation: {
+        summaryKey: "compatibilityDetail.monkey.tiger.detailed.dateRecommendation.summary",
+        descriptionKey: "compatibilityDetail.monkey.tiger.detailed.dateRecommendation.description"
+      }
     }
   },
   rabbit: {
     wittyKey: "compatibilityDetail.monkey.rabbit.witty",
     elaborationKey: "compatibilityDetail.monkey.rabbit.elaboration",
     detailed: {
-      basicKey: "compatibilityDetail.monkey.rabbit.detailed.basic",
-      cautionKey: "compatibilityDetail.monkey.rabbit.detailed.caution",
-      dateRecommendationKey: "compatibilityDetail.monkey.rabbit.detailed.dateRecommendation"
+      basic: {
+        summaryKey: "compatibilityDetail.monkey.rabbit.detailed.basic.summary",
+        descriptionKey: "compatibilityDetail.monkey.rabbit.detailed.basic.description"
+      },
+      caution: {
+        summaryKey: "compatibilityDetail.monkey.rabbit.detailed.caution.summary",
+        descriptionKey: "compatibilityDetail.monkey.rabbit.detailed.caution.description"
+      },
+      dateRecommendation: {
+        summaryKey: "compatibilityDetail.monkey.rabbit.detailed.dateRecommendation.summary",
+        descriptionKey: "compatibilityDetail.monkey.rabbit.detailed.dateRecommendation.description"
+      }
     }
   },
   dragon: {
     wittyKey: "compatibilityDetail.monkey.dragon.witty",
     elaborationKey: "compatibilityDetail.monkey.dragon.elaboration",
     detailed: {
-      basicKey: "compatibilityDetail.monkey.dragon.detailed.basic",
-      cautionKey: "compatibilityDetail.monkey.dragon.detailed.caution",
-      dateRecommendationKey: "compatibilityDetail.monkey.dragon.detailed.dateRecommendation"
+      basic: {
+        summaryKey: "compatibilityDetail.monkey.dragon.detailed.basic.summary",
+        descriptionKey: "compatibilityDetail.monkey.dragon.detailed.basic.description"
+      },
+      caution: {
+        summaryKey: "compatibilityDetail.monkey.dragon.detailed.caution.summary",
+        descriptionKey: "compatibilityDetail.monkey.dragon.detailed.caution.description"
+      },
+      dateRecommendation: {
+        summaryKey: "compatibilityDetail.monkey.dragon.detailed.dateRecommendation.summary",
+        descriptionKey: "compatibilityDetail.monkey.dragon.detailed.dateRecommendation.description"
+      }
     }
   },
   snake: {
     wittyKey: "compatibilityDetail.monkey.snake.witty",
     elaborationKey: "compatibilityDetail.monkey.snake.elaboration",
     detailed: {
-      basicKey: "compatibilityDetail.monkey.snake.detailed.basic",
-      cautionKey: "compatibilityDetail.monkey.snake.detailed.caution",
-      dateRecommendationKey: "compatibilityDetail.monkey.snake.detailed.dateRecommendation"
+      basic: {
+        summaryKey: "compatibilityDetail.monkey.snake.detailed.basic.summary",
+        descriptionKey: "compatibilityDetail.monkey.snake.detailed.basic.description"
+      },
+      caution: {
+        summaryKey: "compatibilityDetail.monkey.snake.detailed.caution.summary",
+        descriptionKey: "compatibilityDetail.monkey.snake.detailed.caution.description"
+      },
+      dateRecommendation: {
+        summaryKey: "compatibilityDetail.monkey.snake.detailed.dateRecommendation.summary",
+        descriptionKey: "compatibilityDetail.monkey.snake.detailed.dateRecommendation.description"
+      }
     }
   },
   horse: {
     wittyKey: "compatibilityDetail.monkey.horse.witty",
     elaborationKey: "compatibilityDetail.monkey.horse.elaboration",
     detailed: {
-      basicKey: "compatibilityDetail.monkey.horse.detailed.basic",
-      cautionKey: "compatibilityDetail.monkey.horse.detailed.caution",
-      dateRecommendationKey: "compatibilityDetail.monkey.horse.detailed.dateRecommendation"
+      basic: {
+        summaryKey: "compatibilityDetail.monkey.horse.detailed.basic.summary",
+        descriptionKey: "compatibilityDetail.monkey.horse.detailed.basic.description"
+      },
+      caution: {
+        summaryKey: "compatibilityDetail.monkey.horse.detailed.caution.summary",
+        descriptionKey: "compatibilityDetail.monkey.horse.detailed.caution.description"
+      },
+      dateRecommendation: {
+        summaryKey: "compatibilityDetail.monkey.horse.detailed.dateRecommendation.summary",
+        descriptionKey: "compatibilityDetail.monkey.horse.detailed.dateRecommendation.description"
+      }
     }
   },
   goat: {
     wittyKey: "compatibilityDetail.monkey.goat.witty",
     elaborationKey: "compatibilityDetail.monkey.goat.elaboration",
     detailed: {
-      basicKey: "compatibilityDetail.monkey.goat.detailed.basic",
-      cautionKey: "compatibilityDetail.monkey.goat.detailed.caution",
-      dateRecommendationKey: "compatibilityDetail.monkey.goat.detailed.dateRecommendation"
+      basic: {
+        summaryKey: "compatibilityDetail.monkey.goat.detailed.basic.summary",
+        descriptionKey: "compatibilityDetail.monkey.goat.detailed.basic.description"
+      },
+      caution: {
+        summaryKey: "compatibilityDetail.monkey.goat.detailed.caution.summary",
+        descriptionKey: "compatibilityDetail.monkey.goat.detailed.caution.description"
+      },
+      dateRecommendation: {
+        summaryKey: "compatibilityDetail.monkey.goat.detailed.dateRecommendation.summary",
+        descriptionKey: "compatibilityDetail.monkey.goat.detailed.dateRecommendation.description"
+      }
     }
   },
   monkey: {
     wittyKey: "compatibilityDetail.monkey.monkey.witty",
     elaborationKey: "compatibilityDetail.monkey.monkey.elaboration",
     detailed: {
-      basicKey: "compatibilityDetail.monkey.monkey.detailed.basic",
-      cautionKey: "compatibilityDetail.monkey.monkey.detailed.caution",
-      dateRecommendationKey: "compatibilityDetail.monkey.monkey.detailed.dateRecommendation"
+      basic: {
+        summaryKey: "compatibilityDetail.monkey.monkey.detailed.basic.summary",
+        descriptionKey: "compatibilityDetail.monkey.monkey.detailed.basic.description"
+      },
+      caution: {
+        summaryKey: "compatibilityDetail.monkey.monkey.detailed.caution.summary",
+        descriptionKey: "compatibilityDetail.monkey.monkey.detailed.caution.description"
+      },
+      dateRecommendation: {
+        summaryKey: "compatibilityDetail.monkey.monkey.detailed.dateRecommendation.summary",
+        descriptionKey: "compatibilityDetail.monkey.monkey.detailed.dateRecommendation.description"
+      }
     }
   },
   rooster: {
     wittyKey: "compatibilityDetail.monkey.rooster.witty",
     elaborationKey: "compatibilityDetail.monkey.rooster.elaboration",
     detailed: {
-      basicKey: "compatibilityDetail.monkey.rooster.detailed.basic",
-      cautionKey: "compatibilityDetail.monkey.rooster.detailed.caution",
-      dateRecommendationKey: "compatibilityDetail.monkey.rooster.detailed.dateRecommendation"
+      basic: {
+        summaryKey: "compatibilityDetail.monkey.rooster.detailed.basic.summary",
+        descriptionKey: "compatibilityDetail.monkey.rooster.detailed.basic.description"
+      },
+      caution: {
+        summaryKey: "compatibilityDetail.monkey.rooster.detailed.caution.summary",
+        descriptionKey: "compatibilityDetail.monkey.rooster.detailed.caution.description"
+      },
+      dateRecommendation: {
+        summaryKey: "compatibilityDetail.monkey.rooster.detailed.dateRecommendation.summary",
+        descriptionKey: "compatibilityDetail.monkey.rooster.detailed.dateRecommendation.description"
+      }
     }
   },
   dog: {
     wittyKey: "compatibilityDetail.monkey.dog.witty",
     elaborationKey: "compatibilityDetail.monkey.dog.elaboration",
     detailed: {
-      basicKey: "compatibilityDetail.monkey.dog.detailed.basic",
-      cautionKey: "compatibilityDetail.monkey.dog.detailed.caution",
-      dateRecommendationKey: "compatibilityDetail.monkey.dog.detailed.dateRecommendation"
+      basic: {
+        summaryKey: "compatibilityDetail.monkey.dog.detailed.basic.summary",
+        descriptionKey: "compatibilityDetail.monkey.dog.detailed.basic.description"
+      },
+      caution: {
+        summaryKey: "compatibilityDetail.monkey.dog.detailed.caution.summary",
+        descriptionKey: "compatibilityDetail.monkey.dog.detailed.caution.description"
+      },
+      dateRecommendation: {
+        summaryKey: "compatibilityDetail.monkey.dog.detailed.dateRecommendation.summary",
+        descriptionKey: "compatibilityDetail.monkey.dog.detailed.dateRecommendation.description"
+      }
     }
   },
   pig: {
     wittyKey: "compatibilityDetail.monkey.pig.witty",
     elaborationKey: "compatibilityDetail.monkey.pig.elaboration",
     detailed: {
-      basicKey: "compatibilityDetail.monkey.pig.detailed.basic",
-      cautionKey: "compatibilityDetail.monkey.pig.detailed.caution",
-      dateRecommendationKey: "compatibilityDetail.monkey.pig.detailed.dateRecommendation"
+      basic: {
+        summaryKey: "compatibilityDetail.monkey.pig.detailed.basic.summary",
+        descriptionKey: "compatibilityDetail.monkey.pig.detailed.basic.description"
+      },
+      caution: {
+        summaryKey: "compatibilityDetail.monkey.pig.detailed.caution.summary",
+        descriptionKey: "compatibilityDetail.monkey.pig.detailed.caution.description"
+      },
+      dateRecommendation: {
+        summaryKey: "compatibilityDetail.monkey.pig.detailed.dateRecommendation.summary",
+        descriptionKey: "compatibilityDetail.monkey.pig.detailed.dateRecommendation.description"
+      }
     }
   }
 };
@@ -1179,108 +2166,216 @@ export const roosterCompatibilityDetails: Record<string, CompatibilityDetail> = 
     wittyKey: "compatibilityDetail.rooster.mouse.witty",
     elaborationKey: "compatibilityDetail.rooster.mouse.elaboration",
     detailed: {
-      basicKey: "compatibilityDetail.rooster.mouse.detailed.basic",
-      cautionKey: "compatibilityDetail.rooster.mouse.detailed.caution",
-      dateRecommendationKey: "compatibilityDetail.rooster.mouse.detailed.dateRecommendation"
+      basic: {
+        summaryKey: "compatibilityDetail.rooster.mouse.detailed.basic.summary",
+        descriptionKey: "compatibilityDetail.rooster.mouse.detailed.basic.description"
+      },
+      caution: {
+        summaryKey: "compatibilityDetail.rooster.mouse.detailed.caution.summary",
+        descriptionKey: "compatibilityDetail.rooster.mouse.detailed.caution.description"
+      },
+      dateRecommendation: {
+        summaryKey: "compatibilityDetail.rooster.mouse.detailed.dateRecommendation.summary",
+        descriptionKey: "compatibilityDetail.rooster.mouse.detailed.dateRecommendation.description"
+      }
     }
   },
   ox: {
     wittyKey: "compatibilityDetail.rooster.ox.witty",
     elaborationKey: "compatibilityDetail.rooster.ox.elaboration",
     detailed: {
-      basicKey: "compatibilityDetail.rooster.ox.detailed.basic",
-      cautionKey: "compatibilityDetail.rooster.ox.detailed.caution",
-      dateRecommendationKey: "compatibilityDetail.rooster.ox.detailed.dateRecommendation"
+      basic: {
+        summaryKey: "compatibilityDetail.rooster.ox.detailed.basic.summary",
+        descriptionKey: "compatibilityDetail.rooster.ox.detailed.basic.description"
+      },
+      caution: {
+        summaryKey: "compatibilityDetail.rooster.ox.detailed.caution.summary",
+        descriptionKey: "compatibilityDetail.rooster.ox.detailed.caution.description"
+      },
+      dateRecommendation: {
+        summaryKey: "compatibilityDetail.rooster.ox.detailed.dateRecommendation.summary",
+        descriptionKey: "compatibilityDetail.rooster.ox.detailed.dateRecommendation.description"
+      }
     }
   },
   tiger: {
     wittyKey: "compatibilityDetail.rooster.tiger.witty",
     elaborationKey: "compatibilityDetail.rooster.tiger.elaboration",
     detailed: {
-      basicKey: "compatibilityDetail.rooster.tiger.detailed.basic",
-      cautionKey: "compatibilityDetail.rooster.tiger.detailed.caution",
-      dateRecommendationKey: "compatibilityDetail.rooster.tiger.detailed.dateRecommendation"
+      basic: {
+        summaryKey: "compatibilityDetail.rooster.tiger.detailed.basic.summary",
+        descriptionKey: "compatibilityDetail.rooster.tiger.detailed.basic.description"
+      },
+      caution: {
+        summaryKey: "compatibilityDetail.rooster.tiger.detailed.caution.summary",
+        descriptionKey: "compatibilityDetail.rooster.tiger.detailed.caution.description"
+      },
+      dateRecommendation: {
+        summaryKey: "compatibilityDetail.rooster.tiger.detailed.dateRecommendation.summary",
+        descriptionKey: "compatibilityDetail.rooster.tiger.detailed.dateRecommendation.description"
+      }
     }
   },
   rabbit: {
     wittyKey: "compatibilityDetail.rooster.rabbit.witty",
     elaborationKey: "compatibilityDetail.rooster.rabbit.elaboration",
     detailed: {
-      basicKey: "compatibilityDetail.rooster.rabbit.detailed.basic",
-      cautionKey: "compatibilityDetail.rooster.rabbit.detailed.caution",
-      dateRecommendationKey: "compatibilityDetail.rooster.rabbit.detailed.dateRecommendation"
+      basic: {
+        summaryKey: "compatibilityDetail.rooster.rabbit.detailed.basic.summary",
+        descriptionKey: "compatibilityDetail.rooster.rabbit.detailed.basic.description"
+      },
+      caution: {
+        summaryKey: "compatibilityDetail.rooster.rabbit.detailed.caution.summary",
+        descriptionKey: "compatibilityDetail.rooster.rabbit.detailed.caution.description"
+      },
+      dateRecommendation: {
+        summaryKey: "compatibilityDetail.rooster.rabbit.detailed.dateRecommendation.summary",
+        descriptionKey: "compatibilityDetail.rooster.rabbit.detailed.dateRecommendation.description"
+      }
     }
   },
   dragon: {
     wittyKey: "compatibilityDetail.rooster.dragon.witty",
     elaborationKey: "compatibilityDetail.rooster.dragon.elaboration",
     detailed: {
-      basicKey: "compatibilityDetail.rooster.dragon.detailed.basic",
-      cautionKey: "compatibilityDetail.rooster.dragon.detailed.caution",
-      dateRecommendationKey: "compatibilityDetail.rooster.dragon.detailed.dateRecommendation"
+      basic: {
+        summaryKey: "compatibilityDetail.rooster.dragon.detailed.basic.summary",
+        descriptionKey: "compatibilityDetail.rooster.dragon.detailed.basic.description"
+      },
+      caution: {
+        summaryKey: "compatibilityDetail.rooster.dragon.detailed.caution.summary",
+        descriptionKey: "compatibilityDetail.rooster.dragon.detailed.caution.description"
+      },
+      dateRecommendation: {
+        summaryKey: "compatibilityDetail.rooster.dragon.detailed.dateRecommendation.summary",
+        descriptionKey: "compatibilityDetail.rooster.dragon.detailed.dateRecommendation.description"
+      }
     }
   },
   snake: {
     wittyKey: "compatibilityDetail.rooster.snake.witty",
     elaborationKey: "compatibilityDetail.rooster.snake.elaboration",
     detailed: {
-      basicKey: "compatibilityDetail.rooster.snake.detailed.basic",
-      cautionKey: "compatibilityDetail.rooster.snake.detailed.caution",
-      dateRecommendationKey: "compatibilityDetail.rooster.snake.detailed.dateRecommendation"
+      basic: {
+        summaryKey: "compatibilityDetail.rooster.snake.detailed.basic.summary",
+        descriptionKey: "compatibilityDetail.rooster.snake.detailed.basic.description"
+      },
+      caution: {
+        summaryKey: "compatibilityDetail.rooster.snake.detailed.caution.summary",
+        descriptionKey: "compatibilityDetail.rooster.snake.detailed.caution.description"
+      },
+      dateRecommendation: {
+        summaryKey: "compatibilityDetail.rooster.snake.detailed.dateRecommendation.summary",
+        descriptionKey: "compatibilityDetail.rooster.snake.detailed.dateRecommendation.description"
+      }
     }
   },
   horse: {
     wittyKey: "compatibilityDetail.rooster.horse.witty",
     elaborationKey: "compatibilityDetail.rooster.horse.elaboration",
     detailed: {
-      basicKey: "compatibilityDetail.rooster.horse.detailed.basic",
-      cautionKey: "compatibilityDetail.rooster.horse.detailed.caution",
-      dateRecommendationKey: "compatibilityDetail.rooster.horse.detailed.dateRecommendation"
+      basic: {
+        summaryKey: "compatibilityDetail.rooster.horse.detailed.basic.summary",
+        descriptionKey: "compatibilityDetail.rooster.horse.detailed.basic.description"
+      },
+      caution: {
+        summaryKey: "compatibilityDetail.rooster.horse.detailed.caution.summary",
+        descriptionKey: "compatibilityDetail.rooster.horse.detailed.caution.description"
+      },
+      dateRecommendation: {
+        summaryKey: "compatibilityDetail.rooster.horse.detailed.dateRecommendation.summary",
+        descriptionKey: "compatibilityDetail.rooster.horse.detailed.dateRecommendation.description"
+      }
     }
   },
   goat: {
     wittyKey: "compatibilityDetail.rooster.goat.witty",
     elaborationKey: "compatibilityDetail.rooster.goat.elaboration",
     detailed: {
-      basicKey: "compatibilityDetail.rooster.goat.detailed.basic",
-      cautionKey: "compatibilityDetail.rooster.goat.detailed.caution",
-      dateRecommendationKey: "compatibilityDetail.rooster.goat.detailed.dateRecommendation"
+      basic: {
+        summaryKey: "compatibilityDetail.rooster.goat.detailed.basic.summary",
+        descriptionKey: "compatibilityDetail.rooster.goat.detailed.basic.description"
+      },
+      caution: {
+        summaryKey: "compatibilityDetail.rooster.goat.detailed.caution.summary",
+        descriptionKey: "compatibilityDetail.rooster.goat.detailed.caution.description"
+      },
+      dateRecommendation: {
+        summaryKey: "compatibilityDetail.rooster.goat.detailed.dateRecommendation.summary",
+        descriptionKey: "compatibilityDetail.rooster.goat.detailed.dateRecommendation.description"
+      }
     }
   },
   monkey: {
     wittyKey: "compatibilityDetail.rooster.monkey.witty",
     elaborationKey: "compatibilityDetail.rooster.monkey.elaboration",
     detailed: {
-      basicKey: "compatibilityDetail.rooster.monkey.detailed.basic",
-      cautionKey: "compatibilityDetail.rooster.monkey.detailed.caution",
-      dateRecommendationKey: "compatibilityDetail.rooster.monkey.detailed.dateRecommendation"
+      basic: {
+        summaryKey: "compatibilityDetail.rooster.monkey.detailed.basic.summary",
+        descriptionKey: "compatibilityDetail.rooster.monkey.detailed.basic.description"
+      },
+      caution: {
+        summaryKey: "compatibilityDetail.rooster.monkey.detailed.caution.summary",
+        descriptionKey: "compatibilityDetail.rooster.monkey.detailed.caution.description"
+      },
+      dateRecommendation: {
+        summaryKey: "compatibilityDetail.rooster.monkey.detailed.dateRecommendation.summary",
+        descriptionKey: "compatibilityDetail.rooster.monkey.detailed.dateRecommendation.description"
+      }
     }
   },
   rooster: {
     wittyKey: "compatibilityDetail.rooster.rooster.witty",
     elaborationKey: "compatibilityDetail.rooster.rooster.elaboration",
     detailed: {
-      basicKey: "compatibilityDetail.rooster.rooster.detailed.basic",
-      cautionKey: "compatibilityDetail.rooster.rooster.detailed.caution",
-      dateRecommendationKey: "compatibilityDetail.rooster.rooster.detailed.dateRecommendation"
+      basic: {
+        summaryKey: "compatibilityDetail.rooster.rooster.detailed.basic.summary",
+        descriptionKey: "compatibilityDetail.rooster.rooster.detailed.basic.description"
+      },
+      caution: {
+        summaryKey: "compatibilityDetail.rooster.rooster.detailed.caution.summary",
+        descriptionKey: "compatibilityDetail.rooster.rooster.detailed.caution.description"
+      },
+      dateRecommendation: {
+        summaryKey: "compatibilityDetail.rooster.rooster.detailed.dateRecommendation.summary",
+        descriptionKey: "compatibilityDetail.rooster.rooster.detailed.dateRecommendation.description"
+      }
     }
   },
   dog: {
     wittyKey: "compatibilityDetail.rooster.dog.witty",
     elaborationKey: "compatibilityDetail.rooster.dog.elaboration",
     detailed: {
-      basicKey: "compatibilityDetail.rooster.dog.detailed.basic",
-      cautionKey: "compatibilityDetail.rooster.dog.detailed.caution",
-      dateRecommendationKey: "compatibilityDetail.rooster.dog.detailed.dateRecommendation"
+      basic: {
+        summaryKey: "compatibilityDetail.rooster.dog.detailed.basic.summary",
+        descriptionKey: "compatibilityDetail.rooster.dog.detailed.basic.description"
+      },
+      caution: {
+        summaryKey: "compatibilityDetail.rooster.dog.detailed.caution.summary",
+        descriptionKey: "compatibilityDetail.rooster.dog.detailed.caution.description"
+      },
+      dateRecommendation: {
+        summaryKey: "compatibilityDetail.rooster.dog.detailed.dateRecommendation.summary",
+        descriptionKey: "compatibilityDetail.rooster.dog.detailed.dateRecommendation.description"
+      }
     }
   },
   pig: {
     wittyKey: "compatibilityDetail.rooster.pig.witty",
     elaborationKey: "compatibilityDetail.rooster.pig.elaboration",
     detailed: {
-      basicKey: "compatibilityDetail.rooster.pig.detailed.basic",
-      cautionKey: "compatibilityDetail.rooster.pig.detailed.caution",
-      dateRecommendationKey: "compatibilityDetail.rooster.pig.detailed.dateRecommendation"
+      basic: {
+        summaryKey: "compatibilityDetail.rooster.pig.detailed.basic.summary",
+        descriptionKey: "compatibilityDetail.rooster.pig.detailed.basic.description"
+      },
+      caution: {
+        summaryKey: "compatibilityDetail.rooster.pig.detailed.caution.summary",
+        descriptionKey: "compatibilityDetail.rooster.pig.detailed.caution.description"
+      },
+      dateRecommendation: {
+        summaryKey: "compatibilityDetail.rooster.pig.detailed.dateRecommendation.summary",
+        descriptionKey: "compatibilityDetail.rooster.pig.detailed.dateRecommendation.description"
+      }
     }
   }
 };
@@ -1291,108 +2386,216 @@ export const dogCompatibilityDetails: Record<string, CompatibilityDetail> = {
     wittyKey: "compatibilityDetail.dog.mouse.witty",
     elaborationKey: "compatibilityDetail.dog.mouse.elaboration",
     detailed: {
-      basicKey: "compatibilityDetail.dog.mouse.detailed.basic",
-      cautionKey: "compatibilityDetail.dog.mouse.detailed.caution",
-      dateRecommendationKey: "compatibilityDetail.dog.mouse.detailed.dateRecommendation"
+      basic: {
+        summaryKey: "compatibilityDetail.dog.mouse.detailed.basic.summary",
+        descriptionKey: "compatibilityDetail.dog.mouse.detailed.basic.description"
+      },
+      caution: {
+        summaryKey: "compatibilityDetail.dog.mouse.detailed.caution.summary",
+        descriptionKey: "compatibilityDetail.dog.mouse.detailed.caution.description"
+      },
+      dateRecommendation: {
+        summaryKey: "compatibilityDetail.dog.mouse.detailed.dateRecommendation.summary",
+        descriptionKey: "compatibilityDetail.dog.mouse.detailed.dateRecommendation.description"
+      }
     }
   },
   ox: {
     wittyKey: "compatibilityDetail.dog.ox.witty",
     elaborationKey: "compatibilityDetail.dog.ox.elaboration",
     detailed: {
-      basicKey: "compatibilityDetail.dog.ox.detailed.basic",
-      cautionKey: "compatibilityDetail.dog.ox.detailed.caution",
-      dateRecommendationKey: "compatibilityDetail.dog.ox.detailed.dateRecommendation"
+      basic: {
+        summaryKey: "compatibilityDetail.dog.ox.detailed.basic.summary",
+        descriptionKey: "compatibilityDetail.dog.ox.detailed.basic.description"
+      },
+      caution: {
+        summaryKey: "compatibilityDetail.dog.ox.detailed.caution.summary",
+        descriptionKey: "compatibilityDetail.dog.ox.detailed.caution.description"
+      },
+      dateRecommendation: {
+        summaryKey: "compatibilityDetail.dog.ox.detailed.dateRecommendation.summary",
+        descriptionKey: "compatibilityDetail.dog.ox.detailed.dateRecommendation.description"
+      }
     }
   },
   tiger: {
     wittyKey: "compatibilityDetail.dog.tiger.witty",
     elaborationKey: "compatibilityDetail.dog.tiger.elaboration",
     detailed: {
-      basicKey: "compatibilityDetail.dog.tiger.detailed.basic",
-      cautionKey: "compatibilityDetail.dog.tiger.detailed.caution",
-      dateRecommendationKey: "compatibilityDetail.dog.tiger.detailed.dateRecommendation"
+      basic: {
+        summaryKey: "compatibilityDetail.dog.tiger.detailed.basic.summary",
+        descriptionKey: "compatibilityDetail.dog.tiger.detailed.basic.description"
+      },
+      caution: {
+        summaryKey: "compatibilityDetail.dog.tiger.detailed.caution.summary",
+        descriptionKey: "compatibilityDetail.dog.tiger.detailed.caution.description"
+      },
+      dateRecommendation: {
+        summaryKey: "compatibilityDetail.dog.tiger.detailed.dateRecommendation.summary",
+        descriptionKey: "compatibilityDetail.dog.tiger.detailed.dateRecommendation.description"
+      }
     }
   },
   rabbit: {
     wittyKey: "compatibilityDetail.dog.rabbit.witty",
     elaborationKey: "compatibilityDetail.dog.rabbit.elaboration",
     detailed: {
-      basicKey: "compatibilityDetail.dog.rabbit.detailed.basic",
-      cautionKey: "compatibilityDetail.dog.rabbit.detailed.caution",
-      dateRecommendationKey: "compatibilityDetail.dog.rabbit.detailed.dateRecommendation"
+      basic: {
+        summaryKey: "compatibilityDetail.dog.rabbit.detailed.basic.summary",
+        descriptionKey: "compatibilityDetail.dog.rabbit.detailed.basic.description"
+      },
+      caution: {
+        summaryKey: "compatibilityDetail.dog.rabbit.detailed.caution.summary",
+        descriptionKey: "compatibilityDetail.dog.rabbit.detailed.caution.description"
+      },
+      dateRecommendation: {
+        summaryKey: "compatibilityDetail.dog.rabbit.detailed.dateRecommendation.summary",
+        descriptionKey: "compatibilityDetail.dog.rabbit.detailed.dateRecommendation.description"
+      }
     }
   },
   dragon: {
     wittyKey: "compatibilityDetail.dog.dragon.witty",
     elaborationKey: "compatibilityDetail.dog.dragon.elaboration",
     detailed: {
-      basicKey: "compatibilityDetail.dog.dragon.detailed.basic",
-      cautionKey: "compatibilityDetail.dog.dragon.detailed.caution",
-      dateRecommendationKey: "compatibilityDetail.dog.dragon.detailed.dateRecommendation"
+      basic: {
+        summaryKey: "compatibilityDetail.dog.dragon.detailed.basic.summary",
+        descriptionKey: "compatibilityDetail.dog.dragon.detailed.basic.description"
+      },
+      caution: {
+        summaryKey: "compatibilityDetail.dog.dragon.detailed.caution.summary",
+        descriptionKey: "compatibilityDetail.dog.dragon.detailed.caution.description"
+      },
+      dateRecommendation: {
+        summaryKey: "compatibilityDetail.dog.dragon.detailed.dateRecommendation.summary",
+        descriptionKey: "compatibilityDetail.dog.dragon.detailed.dateRecommendation.description"
+      }
     }
   },
   snake: {
     wittyKey: "compatibilityDetail.dog.snake.witty",
     elaborationKey: "compatibilityDetail.dog.snake.elaboration",
     detailed: {
-      basicKey: "compatibilityDetail.dog.snake.detailed.basic",
-      cautionKey: "compatibilityDetail.dog.snake.detailed.caution",
-      dateRecommendationKey: "compatibilityDetail.dog.snake.detailed.dateRecommendation"
+      basic: {
+        summaryKey: "compatibilityDetail.dog.snake.detailed.basic.summary",
+        descriptionKey: "compatibilityDetail.dog.snake.detailed.basic.description"
+      },
+      caution: {
+        summaryKey: "compatibilityDetail.dog.snake.detailed.caution.summary",
+        descriptionKey: "compatibilityDetail.dog.snake.detailed.caution.description"
+      },
+      dateRecommendation: {
+        summaryKey: "compatibilityDetail.dog.snake.detailed.dateRecommendation.summary",
+        descriptionKey: "compatibilityDetail.dog.snake.detailed.dateRecommendation.description"
+      }
     }
   },
   horse: {
     wittyKey: "compatibilityDetail.dog.horse.witty",
     elaborationKey: "compatibilityDetail.dog.horse.elaboration",
     detailed: {
-      basicKey: "compatibilityDetail.dog.horse.detailed.basic",
-      cautionKey: "compatibilityDetail.dog.horse.detailed.caution",
-      dateRecommendationKey: "compatibilityDetail.dog.horse.detailed.dateRecommendation"
+      basic: {
+        summaryKey: "compatibilityDetail.dog.horse.detailed.basic.summary",
+        descriptionKey: "compatibilityDetail.dog.horse.detailed.basic.description"
+      },
+      caution: {
+        summaryKey: "compatibilityDetail.dog.horse.detailed.caution.summary",
+        descriptionKey: "compatibilityDetail.dog.horse.detailed.caution.description"
+      },
+      dateRecommendation: {
+        summaryKey: "compatibilityDetail.dog.horse.detailed.dateRecommendation.summary",
+        descriptionKey: "compatibilityDetail.dog.horse.detailed.dateRecommendation.description"
+      }
     }
   },
   goat: {
     wittyKey: "compatibilityDetail.dog.goat.witty",
     elaborationKey: "compatibilityDetail.dog.goat.elaboration",
     detailed: {
-      basicKey: "compatibilityDetail.dog.goat.detailed.basic",
-      cautionKey: "compatibilityDetail.dog.goat.detailed.caution",
-      dateRecommendationKey: "compatibilityDetail.dog.goat.detailed.dateRecommendation"
+      basic: {
+        summaryKey: "compatibilityDetail.dog.goat.detailed.basic.summary",
+        descriptionKey: "compatibilityDetail.dog.goat.detailed.basic.description"
+      },
+      caution: {
+        summaryKey: "compatibilityDetail.dog.goat.detailed.caution.summary",
+        descriptionKey: "compatibilityDetail.dog.goat.detailed.caution.description"
+      },
+      dateRecommendation: {
+        summaryKey: "compatibilityDetail.dog.goat.detailed.dateRecommendation.summary",
+        descriptionKey: "compatibilityDetail.dog.goat.detailed.dateRecommendation.description"
+      }
     }
   },
   monkey: {
     wittyKey: "compatibilityDetail.dog.monkey.witty",
     elaborationKey: "compatibilityDetail.dog.monkey.elaboration",
     detailed: {
-      basicKey: "compatibilityDetail.dog.monkey.detailed.basic",
-      cautionKey: "compatibilityDetail.dog.monkey.detailed.caution",
-      dateRecommendationKey: "compatibilityDetail.dog.monkey.detailed.dateRecommendation"
+      basic: {
+        summaryKey: "compatibilityDetail.dog.monkey.detailed.basic.summary",
+        descriptionKey: "compatibilityDetail.dog.monkey.detailed.basic.description"
+      },
+      caution: {
+        summaryKey: "compatibilityDetail.dog.monkey.detailed.caution.summary",
+        descriptionKey: "compatibilityDetail.dog.monkey.detailed.caution.description"
+      },
+      dateRecommendation: {
+        summaryKey: "compatibilityDetail.dog.monkey.detailed.dateRecommendation.summary",
+        descriptionKey: "compatibilityDetail.dog.monkey.detailed.dateRecommendation.description"
+      }
     }
   },
   rooster: {
     wittyKey: "compatibilityDetail.dog.rooster.witty",
     elaborationKey: "compatibilityDetail.dog.rooster.elaboration",
     detailed: {
-      basicKey: "compatibilityDetail.dog.rooster.detailed.basic",
-      cautionKey: "compatibilityDetail.dog.rooster.detailed.caution",
-      dateRecommendationKey: "compatibilityDetail.dog.rooster.detailed.dateRecommendation"
+      basic: {
+        summaryKey: "compatibilityDetail.dog.rooster.detailed.basic.summary",
+        descriptionKey: "compatibilityDetail.dog.rooster.detailed.basic.description"
+      },
+      caution: {
+        summaryKey: "compatibilityDetail.dog.rooster.detailed.caution.summary",
+        descriptionKey: "compatibilityDetail.dog.rooster.detailed.caution.description"
+      },
+      dateRecommendation: {
+        summaryKey: "compatibilityDetail.dog.rooster.detailed.dateRecommendation.summary",
+        descriptionKey: "compatibilityDetail.dog.rooster.detailed.dateRecommendation.description"
+      }
     }
   },
   dog: {
     wittyKey: "compatibilityDetail.dog.dog.witty",
     elaborationKey: "compatibilityDetail.dog.dog.elaboration",
     detailed: {
-      basicKey: "compatibilityDetail.dog.dog.detailed.basic",
-      cautionKey: "compatibilityDetail.dog.dog.detailed.caution",
-      dateRecommendationKey: "compatibilityDetail.dog.dog.detailed.dateRecommendation"
+      basic: {
+        summaryKey: "compatibilityDetail.dog.dog.detailed.basic.summary",
+        descriptionKey: "compatibilityDetail.dog.dog.detailed.basic.description"
+      },
+      caution: {
+        summaryKey: "compatibilityDetail.dog.dog.detailed.caution.summary",
+        descriptionKey: "compatibilityDetail.dog.dog.detailed.caution.description"
+      },
+      dateRecommendation: {
+        summaryKey: "compatibilityDetail.dog.dog.detailed.dateRecommendation.summary",
+        descriptionKey: "compatibilityDetail.dog.dog.detailed.dateRecommendation.description"
+      }
     }
   },
   pig: {
     wittyKey: "compatibilityDetail.dog.pig.witty",
     elaborationKey: "compatibilityDetail.dog.pig.elaboration",
     detailed: {
-      basicKey: "compatibilityDetail.dog.pig.detailed.basic",
-      cautionKey: "compatibilityDetail.dog.pig.detailed.caution",
-      dateRecommendationKey: "compatibilityDetail.dog.pig.detailed.dateRecommendation"
+      basic: {
+        summaryKey: "compatibilityDetail.dog.pig.detailed.basic.summary",
+        descriptionKey: "compatibilityDetail.dog.pig.detailed.basic.description"
+      },
+      caution: {
+        summaryKey: "compatibilityDetail.dog.pig.detailed.caution.summary",
+        descriptionKey: "compatibilityDetail.dog.pig.detailed.caution.description"
+      },
+      dateRecommendation: {
+        summaryKey: "compatibilityDetail.dog.pig.detailed.dateRecommendation.summary",
+        descriptionKey: "compatibilityDetail.dog.pig.detailed.dateRecommendation.description"
+      }
     }
   }
 };
@@ -1403,164 +2606,278 @@ export const pigCompatibilityDetails: Record<string, CompatibilityDetail> = {
     wittyKey: "compatibilityDetail.pig.mouse.witty",
     elaborationKey: "compatibilityDetail.pig.mouse.elaboration",
     detailed: {
-      basicKey: "compatibilityDetail.pig.mouse.detailed.basic",
-      cautionKey: "compatibilityDetail.pig.mouse.detailed.caution",
-      dateRecommendationKey: "compatibilityDetail.pig.mouse.detailed.dateRecommendation"
+      basic: {
+        summaryKey: "compatibilityDetail.pig.mouse.detailed.basic.summary",
+        descriptionKey: "compatibilityDetail.pig.mouse.detailed.basic.description"
+      },
+      caution: {
+        summaryKey: "compatibilityDetail.pig.mouse.detailed.caution.summary",
+        descriptionKey: "compatibilityDetail.pig.mouse.detailed.caution.description"
+      },
+      dateRecommendation: {
+        summaryKey: "compatibilityDetail.pig.mouse.detailed.dateRecommendation.summary",
+        descriptionKey: "compatibilityDetail.pig.mouse.detailed.dateRecommendation.description"
+      }
     }
   },
   ox: {
     wittyKey: "compatibilityDetail.pig.ox.witty",
     elaborationKey: "compatibilityDetail.pig.ox.elaboration",
     detailed: {
-      basicKey: "compatibilityDetail.pig.ox.detailed.basic",
-      cautionKey: "compatibilityDetail.pig.ox.detailed.caution",
-      dateRecommendationKey: "compatibilityDetail.pig.ox.detailed.dateRecommendation"
+      basic: {
+        summaryKey: "compatibilityDetail.pig.ox.detailed.basic.summary",
+        descriptionKey: "compatibilityDetail.pig.ox.detailed.basic.description"
+      },
+      caution: {
+        summaryKey: "compatibilityDetail.pig.ox.detailed.caution.summary",
+        descriptionKey: "compatibilityDetail.pig.ox.detailed.caution.description"
+      },
+      dateRecommendation: {
+        summaryKey: "compatibilityDetail.pig.ox.detailed.dateRecommendation.summary",
+        descriptionKey: "compatibilityDetail.pig.ox.detailed.dateRecommendation.description"
+      }
     }
   },
   tiger: {
     wittyKey: "compatibilityDetail.pig.tiger.witty",
     elaborationKey: "compatibilityDetail.pig.tiger.elaboration",
     detailed: {
-      basicKey: "compatibilityDetail.pig.tiger.detailed.basic",
-      cautionKey: "compatibilityDetail.pig.tiger.detailed.caution",
-      dateRecommendationKey: "compatibilityDetail.pig.tiger.detailed.dateRecommendation"
+      basic: {
+        summaryKey: "compatibilityDetail.pig.tiger.detailed.basic.summary",
+        descriptionKey: "compatibilityDetail.pig.tiger.detailed.basic.description"
+      },
+      caution: {
+        summaryKey: "compatibilityDetail.pig.tiger.detailed.caution.summary",
+        descriptionKey: "compatibilityDetail.pig.tiger.detailed.caution.description"
+      },
+      dateRecommendation: {
+        summaryKey: "compatibilityDetail.pig.tiger.detailed.dateRecommendation.summary",
+        descriptionKey: "compatibilityDetail.pig.tiger.detailed.dateRecommendation.description"
+      }
     }
   },
   rabbit: {
     wittyKey: "compatibilityDetail.pig.rabbit.witty",
     elaborationKey: "compatibilityDetail.pig.rabbit.elaboration",
     detailed: {
-      basicKey: "compatibilityDetail.pig.rabbit.detailed.basic",
-      cautionKey: "compatibilityDetail.pig.rabbit.detailed.caution",
-      dateRecommendationKey: "compatibilityDetail.pig.rabbit.detailed.dateRecommendation"
+      basic: {
+        summaryKey: "compatibilityDetail.pig.rabbit.detailed.basic.summary",
+        descriptionKey: "compatibilityDetail.pig.rabbit.detailed.basic.description"
+      },
+      caution: {
+        summaryKey: "compatibilityDetail.pig.rabbit.detailed.caution.summary",
+        descriptionKey: "compatibilityDetail.pig.rabbit.detailed.caution.description"
+      },
+      dateRecommendation: {
+        summaryKey: "compatibilityDetail.pig.rabbit.detailed.dateRecommendation.summary",
+        descriptionKey: "compatibilityDetail.pig.rabbit.detailed.dateRecommendation.description"
+      }
     }
   },
   dragon: {
     wittyKey: "compatibilityDetail.pig.dragon.witty",
     elaborationKey: "compatibilityDetail.pig.dragon.elaboration",
     detailed: {
-      basicKey: "compatibilityDetail.pig.dragon.detailed.basic",
-      cautionKey: "compatibilityDetail.pig.dragon.detailed.caution",
-      dateRecommendationKey: "compatibilityDetail.pig.dragon.detailed.dateRecommendation"
+      basic: {
+        summaryKey: "compatibilityDetail.pig.dragon.detailed.basic.summary",
+        descriptionKey: "compatibilityDetail.pig.dragon.detailed.basic.description"
+      },
+      caution: {
+        summaryKey: "compatibilityDetail.pig.dragon.detailed.caution.summary",
+        descriptionKey: "compatibilityDetail.pig.dragon.detailed.caution.description"
+      },
+      dateRecommendation: {
+        summaryKey: "compatibilityDetail.pig.dragon.detailed.dateRecommendation.summary",
+        descriptionKey: "compatibilityDetail.pig.dragon.detailed.dateRecommendation.description"
+      }
     }
   },
   snake: {
     wittyKey: "compatibilityDetail.pig.snake.witty",
     elaborationKey: "compatibilityDetail.pig.snake.elaboration",
     detailed: {
-      basicKey: "compatibilityDetail.pig.snake.detailed.basic",
-      cautionKey: "compatibilityDetail.pig.snake.detailed.caution",
-      dateRecommendationKey: "compatibilityDetail.pig.snake.detailed.dateRecommendation"
+      basic: {
+        summaryKey: "compatibilityDetail.pig.snake.detailed.basic.summary",
+        descriptionKey: "compatibilityDetail.pig.snake.detailed.basic.description"
+      },
+      caution: {
+        summaryKey: "compatibilityDetail.pig.snake.detailed.caution.summary",
+        descriptionKey: "compatibilityDetail.pig.snake.detailed.caution.description"
+      },
+      dateRecommendation: {
+        summaryKey: "compatibilityDetail.pig.snake.detailed.dateRecommendation.summary",
+        descriptionKey: "compatibilityDetail.pig.snake.detailed.dateRecommendation.description"
+      }
     }
   },
   horse: {
     wittyKey: "compatibilityDetail.pig.horse.witty",
     elaborationKey: "compatibilityDetail.pig.horse.elaboration",
     detailed: {
-      basicKey: "compatibilityDetail.pig.horse.detailed.basic",
-      cautionKey: "compatibilityDetail.pig.horse.detailed.caution",
-      dateRecommendationKey: "compatibilityDetail.pig.horse.detailed.dateRecommendation"
+      basic: {
+        summaryKey: "compatibilityDetail.pig.horse.detailed.basic.summary",
+        descriptionKey: "compatibilityDetail.pig.horse.detailed.basic.description"
+      },
+      caution: {
+        summaryKey: "compatibilityDetail.pig.horse.detailed.caution.summary",
+        descriptionKey: "compatibilityDetail.pig.horse.detailed.caution.description"
+      },
+      dateRecommendation: {
+        summaryKey: "compatibilityDetail.pig.horse.detailed.dateRecommendation.summary",
+        descriptionKey: "compatibilityDetail.pig.horse.detailed.dateRecommendation.description"
+      }
     }
   },
   goat: {
     wittyKey: "compatibilityDetail.pig.goat.witty",
     elaborationKey: "compatibilityDetail.pig.goat.elaboration",
     detailed: {
-      basicKey: "compatibilityDetail.pig.goat.detailed.basic",
-      cautionKey: "compatibilityDetail.pig.goat.detailed.caution",
-      dateRecommendationKey: "compatibilityDetail.pig.goat.detailed.dateRecommendation"
+      basic: {
+        summaryKey: "compatibilityDetail.pig.goat.detailed.basic.summary",
+        descriptionKey: "compatibilityDetail.pig.goat.detailed.basic.description"
+      },
+      caution: {
+        summaryKey: "compatibilityDetail.pig.goat.detailed.caution.summary",
+        descriptionKey: "compatibilityDetail.pig.goat.detailed.caution.description"
+      },
+      dateRecommendation: {
+        summaryKey: "compatibilityDetail.pig.goat.detailed.dateRecommendation.summary",
+        descriptionKey: "compatibilityDetail.pig.goat.detailed.dateRecommendation.description"
+      }
     }
   },
   monkey: {
     wittyKey: "compatibilityDetail.pig.monkey.witty",
     elaborationKey: "compatibilityDetail.pig.monkey.elaboration",
     detailed: {
-      basicKey: "compatibilityDetail.pig.monkey.detailed.basic",
-      cautionKey: "compatibilityDetail.pig.monkey.detailed.caution",
-      dateRecommendationKey: "compatibilityDetail.pig.monkey.detailed.dateRecommendation"
+      basic: {
+        summaryKey: "compatibilityDetail.pig.monkey.detailed.basic.summary",
+        descriptionKey: "compatibilityDetail.pig.monkey.detailed.basic.description"
+      },
+      caution: {
+        summaryKey: "compatibilityDetail.pig.monkey.detailed.caution.summary",
+        descriptionKey: "compatibilityDetail.pig.monkey.detailed.caution.description"
+      },
+      dateRecommendation: {
+        summaryKey: "compatibilityDetail.pig.monkey.detailed.dateRecommendation.summary",
+        descriptionKey: "compatibilityDetail.pig.monkey.detailed.dateRecommendation.description"
+      }
     }
   },
   rooster: {
     wittyKey: "compatibilityDetail.pig.rooster.witty",
     elaborationKey: "compatibilityDetail.pig.rooster.elaboration",
     detailed: {
-      basicKey: "compatibilityDetail.pig.rooster.detailed.basic",
-      cautionKey: "compatibilityDetail.pig.rooster.detailed.caution",
-      dateRecommendationKey: "compatibilityDetail.pig.rooster.detailed.dateRecommendation"
+      basic: {
+        summaryKey: "compatibilityDetail.pig.rooster.detailed.basic.summary",
+        descriptionKey: "compatibilityDetail.pig.rooster.detailed.basic.description"
+      },
+      caution: {
+        summaryKey: "compatibilityDetail.pig.rooster.detailed.caution.summary",
+        descriptionKey: "compatibilityDetail.pig.rooster.detailed.caution.description"
+      },
+      dateRecommendation: {
+        summaryKey: "compatibilityDetail.pig.rooster.detailed.dateRecommendation.summary",
+        descriptionKey: "compatibilityDetail.pig.rooster.detailed.dateRecommendation.description"
+      }
     }
   },
   dog: {
     wittyKey: "compatibilityDetail.pig.dog.witty",
     elaborationKey: "compatibilityDetail.pig.dog.elaboration",
     detailed: {
-      basicKey: "compatibilityDetail.pig.dog.detailed.basic",
-      cautionKey: "compatibilityDetail.pig.dog.detailed.caution",
-      dateRecommendationKey: "compatibilityDetail.pig.dog.detailed.dateRecommendation"
+      basic: {
+        summaryKey: "compatibilityDetail.pig.dog.detailed.basic.summary",
+        descriptionKey: "compatibilityDetail.pig.dog.detailed.basic.description"
+      },
+      caution: {
+        summaryKey: "compatibilityDetail.pig.dog.detailed.caution.summary",
+        descriptionKey: "compatibilityDetail.pig.dog.detailed.caution.description"
+      },
+      dateRecommendation: {
+        summaryKey: "compatibilityDetail.pig.dog.detailed.dateRecommendation.summary",
+        descriptionKey: "compatibilityDetail.pig.dog.detailed.dateRecommendation.description"
+      }
     }
   },
   pig: {
     wittyKey: "compatibilityDetail.pig.pig.witty",
     elaborationKey: "compatibilityDetail.pig.pig.elaboration",
     detailed: {
-      basicKey: "compatibilityDetail.pig.pig.detailed.basic",
-      cautionKey: "compatibilityDetail.pig.pig.detailed.caution",
-      dateRecommendationKey: "compatibilityDetail.pig.pig.detailed.dateRecommendation"
+      basic: {
+        summaryKey: "compatibilityDetail.pig.pig.detailed.basic.summary",
+        descriptionKey: "compatibilityDetail.pig.pig.detailed.basic.description"
+      },
+      caution: {
+        summaryKey: "compatibilityDetail.pig.pig.detailed.caution.summary",
+        descriptionKey: "compatibilityDetail.pig.pig.detailed.caution.description"
+      },
+      dateRecommendation: {
+        summaryKey: "compatibilityDetail.pig.pig.detailed.dateRecommendation.summary",
+        descriptionKey: "compatibilityDetail.pig.pig.detailed.dateRecommendation.description"
+      }
     }
   }
 };
 
 // 두 띠의 궁합 상세 정보 가져오기
+// 12간지 순서 정의
+const zodiacOrder = ["mouse", "ox", "tiger", "rabbit", "dragon", "snake", "horse", "goat", "monkey", "rooster", "dog", "pig"];
+
+// 궁합 키 생성 함수 (12간지 순으로 정렬)
+export function getCompatibilityKey(id1: string, id2: string): string {
+  const order1 = zodiacOrder.indexOf(id1);
+  const order2 = zodiacOrder.indexOf(id2);
+  return order1 < order2 ? `${id1}-${id2}` : `${id2}-${id1}`;
+}
+
+// 궁합 상세 정보 조회 (Flat Key 방식)
+// 항상 12간지 순으로 정렬된 첫 번째 띠 기준으로 데이터를 찾습니다.
 export function getCompatibilityDetail(
   zodiac1: ZodiacAnimal,
   zodiac2: ZodiacAnimal
 ): CompatibilityDetail | null {
-  // 쥐띠 기준
-  if (zodiac1.id === "mouse") {
-    return mouseCompatibilityDetails[zodiac2.id] || null;
+  // 12간지 순으로 정렬하여 항상 같은 키로 접근
+  const order1 = zodiacOrder.indexOf(zodiac1.id);
+  const order2 = zodiacOrder.indexOf(zodiac2.id);
+  const [firstId, secondId] = order1 < order2 ? [zodiac1.id, zodiac2.id] : [zodiac2.id, zodiac1.id];
+  
+  // 정렬된 첫 번째 띠의 데이터에서 두 번째 띠 정보를 찾음
+  if (firstId === "dog") {
+    return dogCompatibilityDetails[secondId] || null;
   }
-  // 소띠 기준
-  if (zodiac1.id === "ox") {
-    return oxCompatibilityDetails[zodiac2.id] || null;
+  if (firstId === "dragon") {
+    return dragonCompatibilityDetails[secondId] || null;
   }
-  // 호랑이띠 기준
-  if (zodiac1.id === "tiger") {
-    return tigerCompatibilityDetails[zodiac2.id] || null;
+  if (firstId === "goat") {
+    return goatCompatibilityDetails[secondId] || null;
   }
-  // 토끼띠 기준
-  if (zodiac1.id === "rabbit") {
-    return rabbitCompatibilityDetails[zodiac2.id] || null;
+  if (firstId === "horse") {
+    return horseCompatibilityDetails[secondId] || null;
   }
-  // 용띠 기준
-  if (zodiac1.id === "dragon") {
-    return dragonCompatibilityDetails[zodiac2.id] || null;
+  if (firstId === "monkey") {
+    return monkeyCompatibilityDetails[secondId] || null;
   }
-  // 뱀띠 기준
-  if (zodiac1.id === "snake") {
-    return snakeCompatibilityDetails[zodiac2.id] || null;
+  if (firstId === "mouse") {
+    return mouseCompatibilityDetails[secondId] || null;
   }
-  // 말띠 기준
-  if (zodiac1.id === "horse") {
-    return horseCompatibilityDetails[zodiac2.id] || null;
+  if (firstId === "ox") {
+    return oxCompatibilityDetails[secondId] || null;
   }
-  // 양띠 기준
-  if (zodiac1.id === "goat") {
-    return goatCompatibilityDetails[zodiac2.id] || null;
+  if (firstId === "pig") {
+    return pigCompatibilityDetails[secondId] || null;
   }
-  // 원숭이띠 기준
-  if (zodiac1.id === "monkey") {
-    return monkeyCompatibilityDetails[zodiac2.id] || null;
+  if (firstId === "rabbit") {
+    return rabbitCompatibilityDetails[secondId] || null;
   }
-  // 닭띠 기준
-  if (zodiac1.id === "rooster") {
-    return roosterCompatibilityDetails[zodiac2.id] || null;
+  if (firstId === "rooster") {
+    return roosterCompatibilityDetails[secondId] || null;
   }
-  // 개띠 기준
-  if (zodiac1.id === "dog") {
-    return dogCompatibilityDetails[zodiac2.id] || null;
+  if (firstId === "snake") {
+    return snakeCompatibilityDetails[secondId] || null;
   }
-  // 돼지띠 기준
-  if (zodiac1.id === "pig") {
-    return pigCompatibilityDetails[zodiac2.id] || null;
+  if (firstId === "tiger") {
+    return tigerCompatibilityDetails[secondId] || null;
   }
   return null;
 }

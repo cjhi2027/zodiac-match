@@ -45,8 +45,11 @@
           <span>📋 {{ $t("compatibilityDetail.basicDescription") }}</span>
           <span class="toggle-icon">{{ sections.basic ? '▲' : '▼' }}</span>
         </h2>
+        <div class="section-summary">
+          {{ compatibilityDetail ? $t(compatibilityDetail.detailed.basic.summaryKey) : "" }}
+        </div>
         <div v-show="sections.basic" class="section-content">
-          {{ compatibilityDetail ? $t(compatibilityDetail.detailed.basicKey) : "" }}
+          {{ compatibilityDetail ? $t(compatibilityDetail.detailed.basic.descriptionKey) : "" }}
         </div>
       </div>
 
@@ -56,8 +59,11 @@
           <span>⚠️ {{ $t("compatibilityDetail.cautionPoints") }}</span>
           <span class="toggle-icon">{{ sections.caution ? '▲' : '▼' }}</span>
         </h2>
+        <div class="section-summary">
+          {{ compatibilityDetail ? $t(compatibilityDetail.detailed.caution.summaryKey) : "" }}
+        </div>
         <div v-show="sections.caution" class="section-content">
-          {{ compatibilityDetail ? $t(compatibilityDetail.detailed.cautionKey) : "" }}
+          {{ compatibilityDetail ? $t(compatibilityDetail.detailed.caution.descriptionKey) : "" }}
         </div>
       </div>
 
@@ -67,8 +73,35 @@
           <span>💕 {{ $t("compatibilityDetail.dateRecommendation") }}</span>
           <span class="toggle-icon">{{ sections.date ? '▲' : '▼' }}</span>
         </h2>
+        <div class="section-summary">
+          {{ compatibilityDetail ? $t(compatibilityDetail.detailed.dateRecommendation.summaryKey) : "" }}
+        </div>
         <div v-show="sections.date" class="section-content">
-          {{ compatibilityDetail ? $t(compatibilityDetail.detailed.dateRecommendationKey) : "" }}
+          {{ compatibilityDetail ? $t(compatibilityDetail.detailed.dateRecommendation.descriptionKey) : "" }}
+        </div>
+      </div>
+
+      <!-- 선물 추천 (내 띠) -->
+      <div class="detail-section">
+        <h2 class="section-title" @click="toggleSection('myGift')" :class="{ active: sections.myGift }">
+          <span>🎁 {{ $t(`zodiac.${myZodiac.id}`) }}에게 좋은 선물</span>
+          <span class="toggle-icon">{{ sections.myGift ? '▲' : '▼' }}</span>
+        </h2>
+        <div v-show="sections.myGift" class="section-content">
+          <div class="gift-items">{{ $t(myZodiac.giftKey) }}</div>
+          <div class="gift-detail">{{ $t(myZodiac.giftDetailKey) }}</div>
+        </div>
+      </div>
+
+      <!-- 선물 추천 (상대 띠) -->
+      <div class="detail-section">
+        <h2 class="section-title" @click="toggleSection('partnerGift')" :class="{ active: sections.partnerGift }">
+          <span>🎁 {{ $t(`zodiac.${partnerZodiac.id}`) }}에게 좋은 선물</span>
+          <span class="toggle-icon">{{ sections.partnerGift ? '▲' : '▼' }}</span>
+        </h2>
+        <div v-show="sections.partnerGift" class="section-content">
+          <div class="gift-items">{{ $t(partnerZodiac.giftKey) }}</div>
+          <div class="gift-detail">{{ $t(partnerZodiac.giftDetailKey) }}</div>
         </div>
       </div>
     </div>
@@ -159,11 +192,13 @@ const { t, locale } = useI18n();
 const sections = ref({
   basic: true,
   caution: false,
-  date: false
+  date: false,
+  myGift: false,
+  partnerGift: false
 });
 
 // 섹션 토글 함수
-const toggleSection = (section: 'basic' | 'caution' | 'date') => {
+const toggleSection = (section: 'basic' | 'caution' | 'date' | 'myGift' | 'partnerGift') => {
   sections.value[section] = !sections.value[section];
 };
 

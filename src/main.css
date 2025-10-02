@@ -1182,6 +1182,18 @@ body.body-home {
   transition: transform 0.2s ease;
 }
 
+/* 섹션 요약 (항상 표시) */
+.section-summary {
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.6;
+  padding: 0.8rem 0.5rem;
+  background: #f8f9fa;
+  border-radius: 0.5rem;
+  margin-bottom: 0.5rem;
+  font-style: italic;
+}
+
 /* 섹션 내용 */
 .section-content {
   font-size: 1rem;
@@ -1192,6 +1204,20 @@ body.body-home {
   background: none;
   border-radius: 0.5rem;
   border: none;
+}
+
+/* 선물 아이템 목록 */
+.gift-items {
+  font-weight: 700;
+  color: #e91e63;
+  margin-bottom: 0.8rem;
+  font-size: 1.05rem;
+}
+
+/* 선물 상세 설명 */
+.gift-detail {
+  color: #555;
+  line-height: 1.8;
 }
 
 
