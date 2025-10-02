@@ -1642,24 +1642,14 @@ body.body-home {
     gap: 0.25rem;
     overflow-x: auto; /* 가로 스크롤 허용 */
     overflow-y: hidden;
-    scroll-behavior: smooth;
+    scroll-behavior: auto; /* smooth 제거로 끊김 방지 */
     -webkit-overflow-scrolling: touch;
-    scrollbar-width: thin;
-    scrollbar-color: #ccc transparent;
+    scrollbar-width: none; /* Firefox 스크롤바 숨김 */
   }
 
-  /* 웹킷 브라우저 스크롤바 (모바일) */
+  /* 웹킷 브라우저 스크롤바 숨김 (모바일) */
   .animal-grid::-webkit-scrollbar {
-    height: 6px;
-  }
-
-  .animal-grid::-webkit-scrollbar-track {
-    background: transparent;
-  }
-
-  .animal-grid::-webkit-scrollbar-thumb {
-    background: #ccc;
-    border-radius: 3px;
+    display: none; /* 스크롤바 완전히 숨김 */
   }
 
   /* 동물 아이템 (모바일) */
