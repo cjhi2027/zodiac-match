@@ -10,9 +10,15 @@ import "./main.css";
 import router from "./router";
 
 // 다국어 설정
+// 브라우저 언어 감지 + 지원 언어 확인
+const supportedLocales = ['ko', 'en']; // 지원 언어 목록 (추후 확장 가능)
+const browserLang = navigator.language.split('-')[0];
+const savedLocale = localStorage.getItem('zodiac-locale') || 
+  (supportedLocales.includes(browserLang) ? browserLang : 'en');
+
 const i18n = createI18n({
   legacy: false,
-  locale: "ko",
+  locale: savedLocale,
   fallbackLocale: "en",
   messages: {
     ko: {
@@ -144,6 +150,7 @@ const i18n = createI18n({
         cautionPoints: "주의할 점",
         dateRecommendation: "추천 데이트",
         shareTitle: "결과 공유하기",
+        goodGiftFor: "에게 좋은 선물",
         
         mouse: {            
           mouse: {
@@ -1742,6 +1749,7 @@ const i18n = createI18n({
         cautionPoints: "Points to Note",
         dateRecommendation: "Recommended Dates",
         shareTitle: "Share Results",
+        goodGiftFor: "Good Gifts for",
 
         mouse: {
           mouse: {

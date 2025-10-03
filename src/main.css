@@ -139,13 +139,13 @@ body.body-home {
 .main-home {
   max-width: 50rem; /* 800px 최대 너비 */
   margin: 0 auto; /* 가운데 정렬 */
-  padding: 1.25rem;
+  padding: 1rem;
   background-color: none;
 }
 
 /* 홈 헤더 영역 */
 .main-header {
-  margin-top: 1rem;
+  margin-top: 0;
   margin-bottom: 4rem;
 }
 
@@ -160,7 +160,7 @@ body.body-home {
 
 /* 메인 서브타이틀 */
 .main-subtitle {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   text-align: center;
   color: #666;
   margin-bottom: 1.5rem;
@@ -170,7 +170,7 @@ body.body-home {
 .language-selector-container {
   display: flex;
   justify-content: right; /* 오른쪽 정렬 */
-  margin-bottom: 1.5rem; /* 타이틀과 간격 */
+  margin-bottom: 2rem; /* 타이틀과 간격 */
 }
 
 /* 메뉴 카드 그리드 */
@@ -185,7 +185,7 @@ body.body-home {
   background: white;
   border-radius: 0.75rem;
   padding: 1rem;
-  box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.1); /* 부드러운 그림자 */
+  box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.1); /* 부드러운 그림자 */
   border: 2px solid transparent;
   cursor: pointer;
   transition: all 0.2s; /* 부드러운 전환 효과 */
@@ -196,7 +196,7 @@ body.body-home {
 .menu-card.active {
   border-color: #e91e63; /* 핑크색 테두리 */
   transform: translateY(-2px); /* 살짝 위로 이동 */
-  box-shadow: 0 0.25rem 1rem rgba(233, 30, 99, 0.2);
+  box-shadow: 0 0.25rem 1rem rgba(233, 30, 99, 0.1);
 }
 
 /* 비활성화된 메뉴 카드 (준비중) */
@@ -207,8 +207,8 @@ body.body-home {
 
 /* 메뉴 카드 호버 효과 */
 .menu-card:hover:not(.disabled) {
-  transform: translateY(-2px);
-  box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.15);
+  transform: translateY(-0.125rem);
+  box-shadow: 0 0.25rem 1rem rgba(0, 0, 0, 0.2);
 }
 
 /* 메뉴 카드 내용 레이아웃 */
@@ -239,10 +239,10 @@ body.body-home {
 
 /* 메뉴 설명 (부제목) */
 .menu-subtitle {
-  font-size: 0.85rem;
-  color: #718096;
+  font-size: 1rem;
+  color: #666;
   margin-top: 0.25rem;
-  line-height: 1.4;
+  line-height: 1.6;
 }
 
 /* 준비중 배지 */
@@ -376,14 +376,16 @@ body.body-home {
    ======================================== */
 
 /* 페이지 컨테이너 (PC) */
+
 .my-info-container,
 .partner-info-container,
 .result-container,
 .detail-container {
   max-width: 50rem; /* 800px 최대 너비 */
-  margin: 0 auto 5rem auto; /* 하단 여백 추가 */
-  padding: 1rem 0.5rem;
+  margin: 0 auto; /* 하단 여백 추가 */
+  padding: 1rem;
   background-color: none;
+  margin-bottom: 4rem; /* 하단 여백 추가 */ 
 }
 
 /* 페이지 제목 */
@@ -414,7 +416,7 @@ body.body-home {
   background: linear-gradient(135deg, #ff6b9d 0%, #c94b7e 100%); /* 핑크-레드 그라데이션 */
   border-radius: 0.75rem;
   padding: 1rem;
-  margin-top: 0;
+  margin-top: 0.5rem;
   margin-bottom: 1.5rem;
   color: white;
   display: flex;
@@ -480,7 +482,7 @@ body.body-home {
   border-radius: 0;
   padding: 0;
   margin-top: 1rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   position: relative;
   overflow: visible; /* 그림자가 잘리지 않도록 */
 }
@@ -587,8 +589,8 @@ body.body-home {
 
 /* 띠 캐릭터 카드 섹션 */
 .zodiac-character-section {
-  margin-top: 1.5rem;
-  margin-bottom: 1.5rem;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
   padding: 0;
   display: flex;
   justify-content: center;
@@ -735,7 +737,7 @@ body.body-home {
 
 /* 카드 뒷면 물음표 */
 .card-question {
-  font-size: 8rem;
+  font-size: 10rem;
   font-weight: bold;
   color: white;
   text-shadow: 2px 2px 8px rgba(220, 53, 69, 0.3);
@@ -782,33 +784,66 @@ body.body-home {
   gap: 0; /* 간격 없음 - 두 박스가 붙어있음 */
 }
 
-/* 재치있는 설명 (핵심 문장) - 기본 (내 정보) */
-.zodiac-description-section .witty-description {
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: #e91e63; /* 핑크색 */
+/* 통합 간략 설명 스타일 */
+.brief-description {
+  font-size: 1.2rem;
+  font-weight: bold;
   text-align: left;
-  padding: 0.75rem 1rem;
-  background: #fff3e0; /* 연한 주황색 배경 */
-  border: 1px solid #ffcc80;
-  border-radius: 0.5rem;
-  line-height: 1.5;
+  margin-bottom: 0.5rem;
+  padding: 0.5rem 1rem;
+  line-height: 1.6;
 }
 
-/* 상대방 정보 페이지 - 재치있는 설명 (푸른 톤) */
-.partner-info-container .zodiac-description-section .witty-description {
+/* 모바일용 간략 설명 */
+@media (max-width: 768px) {
+  .brief-description {
+    font-size: 1.1rem;
+  }
+}
+
+/* 내 정보 컨테이너의 간략 설명 */
+.my-info-container .brief-description {
+  color: #e91e63;
+  background: #fff3e0;
+  border: 1px solid #ffcc80;
+  border-radius: 0.75rem;
+}
+
+/* 상대방 정보 컨테이너의 간략 설명 */
+.partner-info-container .brief-description {
   color: #4a90e2; /* 파란색 */
   background: #e3f2fd; /* 연한 하늘색 배경 */
   border: 1px solid #90caf9; /* 하늘색 테두리 */
+  border-radius: 0.75rem;
 }
 
-/* 부연 설명 */
-.zodiac-description-section .elaboration-description {
-  font-size: 1rem;
-  color: #666;
-  background: none; /* 연한 회색 배경 */
+/* 결과 컨테이너의 간략 설명 */
+.result-container .brief-description {
+  color: #e91e63;
+  background: #fff3e0;
+  border: 1px solid #ffcc80;
+  border-radius: 0.75rem;
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+/* 상세 컨테이너의 간략 설명 */
+.detail-container .brief-description {
+  color: #444;
+  background: none;
   border: none;
-  border-radius: 0.5rem;
+  border-radius: 0;
+  font-size: 1.1rem;
+  padding: 0.5rem 0.5rem;
+  margin-bottom: 0;
+}
+
+/* 부연 설명 통합 스타일 */
+.detail-description {
+  font-size: 1rem;
+  color: #444;
+  background: none;
+  border: none;
   padding: 0.5rem 0.5rem;
   line-height: 1.6;
   text-align: left;
@@ -835,13 +870,6 @@ body.body-home {
     margin: 0;
     will-change: transform; /* 성능 최적화 */
   }
-  
-  /* PC에서 컨텐츠 하단 여백 추가 */
-  .my-info-container.content-with-header,
-  .partner-info-container.content-with-header,
-  .result-container.content-with-header {
-    padding-bottom: 120px; /* 버튼 공간 확보 */
-  }
 }
 
 /* 네비게이션 버튼 공통 스타일 */
@@ -849,7 +877,7 @@ body.body-home {
   flex: 1;
   padding: 1rem;
   border: none;
-  border-radius: 1.5rem;
+  border-radius: 2rem;
   font-size: 1.1rem;
   font-weight: 500;
   cursor: pointer;
@@ -1041,50 +1069,38 @@ body.body-home {
 
 /* 결과 설명 영역 */
 .result-description {
-  margin-top: 2.25rem;
-  margin-bottom: 2.25rem;
-}
-
-/* 재치있는 설명 (결과 화면만) */
-.result-container .witty-description {
-  font-size: 1.2rem;
-  font-weight: 600;
-  color: #e91e63;
-  text-align: left;
-  margin-bottom: 0.5rem;
-  padding: 0.75rem 1rem;
-  background: #fff3e0;
-  border: 1px solid #ffcc80;
-  border-radius: 0.5rem;
-  line-height: 1.5;
-  opacity: 0; /* 초기 숨김 */
-  transform: translateY(-10px);
-  transition: none; /* 기본 전환 제거 */
+  margin-top: 2rem;
+  margin-bottom: 0;
 }
 
 /* 재치있는 설명 표시 (결과 화면) */
-.result-container .witty-description.visible {
+.result-container .brief-description.visible {
   animation: fadeIn 0.5s ease-in forwards;
 }
 
-/* 부연 설명 (결과 화면만) */
-.result-container .elaboration-description {
-  font-size: 1rem;
-  color: #666;
-  background: none;
-  border: none;
-  border-radius: 0.5rem;
-  padding: 0.5rem 0.5rem;
-  line-height: 1.6;
-  text-align: left;
+/* 결과 화면 부연 설명 (애니메이션 포함) */
+.result-container .detail-description {
   opacity: 0; /* 초기 숨김 */
   transform: translateY(-10px);
   transition: none; /* 기본 전환 제거 */
 }
 
 /* 부연 설명 표시 (결과 화면) */
-.result-container .elaboration-description.visible {
+.result-container .detail-description.visible {
   animation: fadeIn 0.5s ease-in forwards;
+}
+
+/* 모바일용 부연 설명 */
+@media (max-width: 768px) {
+  .detail-description {
+    font-size: 1rem;
+    color: #444;
+    background: none;
+    border: none;
+    padding: 0.5rem 0.5rem;
+    line-height: 1.6;
+    text-align: left;
+  }
 }
 
 /* 버튼 영역 */
@@ -1182,44 +1198,6 @@ body.body-home {
   transition: transform 0.2s ease;
 }
 
-/* 섹션 요약 (항상 표시) */
-.section-summary {
-  font-size: 0.95rem;
-  color: #666;
-  line-height: 1.6;
-  padding: 0.8rem 0.5rem;
-  background: #f8f9fa;
-  border-radius: 0.5rem;
-  margin-bottom: 0.5rem;
-  font-style: italic;
-}
-
-/* 섹션 내용 */
-.section-content {
-  font-size: 1rem;
-  color: #333;
-  line-height: 1.7;
-  text-align: justify; /* 양쪽 정렬 */
-  padding: 0.5rem 0.5rem;
-  background: none;
-  border-radius: 0.5rem;
-  border: none;
-}
-
-/* 선물 아이템 목록 */
-.gift-items {
-  font-weight: 700;
-  color: #e91e63;
-  margin-bottom: 0.8rem;
-  font-size: 1.05rem;
-}
-
-/* 선물 상세 설명 */
-.gift-detail {
-  color: #555;
-  line-height: 1.8;
-}
-
 
 /* ========================================
    언어 선택기 (LanguageSelector)
@@ -1305,8 +1283,8 @@ body.body-home {
 /* 모달 헤더 제목 */
 .modal-header h3 {
   margin: 0;
-  font-size: 1.3rem;
-  color: #333;
+  font-size: 1.2rem;
+  color: #444;
 }
 
 /* 모달 닫기 버튼 */
@@ -1379,9 +1357,9 @@ body.body-home {
   padding: 0.75rem 1rem;
   font-size: 1rem;
   font-weight: 500;
-  color: #333;
+  color: #888;
   background: linear-gradient(to bottom, #ffffff, #f8f9fa);
-  border: 2px solid #ddd;
+  border: 1px solid #ddd;
   border-radius: 0.5rem;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -1391,7 +1369,7 @@ body.body-home {
   background-position: right 1rem center;
   background-size: 1.2rem;
   padding-right: 3rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* 생년 선택 드롭다운 포커스 */
@@ -1526,7 +1504,7 @@ body.body-home {
 
   /* 홈 헤더 (모바일) */
   .main-header {
-    margin-top: 1rem;
+    margin-top: 0;
     margin-bottom: 4rem;
   }
 
@@ -1537,7 +1515,7 @@ body.body-home {
 
   /* 메인 서브타이틀 (모바일) */
   .main-subtitle {
-    font-size: 1rem;
+    font-size: 1.1rem;
   }
 
   /* 메뉴 카드 간격 (모바일) */
@@ -1562,12 +1540,12 @@ body.body-home {
 
   /* 메뉴 제목 (모바일) */
   .menu-title {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   }
 
   /* 메뉴 설명 (모바일) */
   .menu-subtitle {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
   }
 
   /* 공유 버튼 행 (모바일) */
@@ -1626,12 +1604,12 @@ body.body-home {
   .result-container,
   .detail-container {
     padding: 0.5rem 0.5rem;
-    margin-bottom: 2rem; /* 하단 여백 추가 */
+    margin-bottom: 4rem; /* 하단 여백 추가 */
   }
 
   /* 페이지 제목 (모바일) */
   .page-title {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     margin-bottom: 1rem;
     padding: 0.75rem 0;
   }
@@ -1714,7 +1692,7 @@ body.body-home {
 
   /* 카드 물음표 (모바일) */
   .card-question {
-    font-size: 6rem;
+    font-size: 8rem;
   }
 
   /* 띠 설명 섹션 (모바일) */
@@ -1743,7 +1721,7 @@ body.body-home {
     padding: 1rem;
     font-size: 1rem;
     font-weight: 600;
-    border-radius: 0.75rem;
+    border-radius: 1.5rem;
     min-width: 0;
     flex: 1;
   }
@@ -1777,7 +1755,7 @@ body.body-home {
   /* ===== 상세 화면 (모바일) ===== */
   /* 섹션 제목 (모바일) */
   .section-title {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     padding: 0.6rem;
   }
 
@@ -1786,11 +1764,6 @@ body.body-home {
     font-size: 0.8rem;
   }
 
-  /* 섹션 내용 (모바일) */
-  .section-content {
-    font-size: 1rem;
-    padding: 0.5rem 0.5rem;
-  }
 
 
   /* ===== 토스트 메시지 (모바일) ===== */

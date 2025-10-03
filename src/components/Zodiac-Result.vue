@@ -54,7 +54,7 @@
         <!-- 재치있고 간단한 설명 -->
         <div
           v-if="compatibilityDetail?.wittyKey"
-          class="witty-description"
+          class="brief-description"
           :class="{ 'visible': showWitty }"
         >
           {{ $t(compatibilityDetail.wittyKey) }}
@@ -63,7 +63,7 @@
         <!-- 부연설명 -->
         <div
           v-if="compatibilityDetail?.elaborationKey"
-          class="elaboration-description"
+          class="detail-description"
           :class="{ 'visible': showElaboration }"
         >
           {{ $t(compatibilityDetail.elaborationKey) }}

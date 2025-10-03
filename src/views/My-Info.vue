@@ -68,12 +68,12 @@
       <!-- 선택된 띠 특징 설명 -->
       <div v-if="selectedZodiac" v-show="showDescription" class="zodiac-description-section" :class="{ 'fade-in': animateDescription }">
         <!-- 핵심 문장 -->
-        <div class="witty-description">
+        <div class="brief-description">
           {{ $t(selectedZodiac.wittyKey) }}
         </div>
         
         <!-- 부연 설명 -->
-        <div class="elaboration-description">
+        <div class="detail-description">
           {{ $t(selectedZodiac.elaborationKey) }}
         </div>
       </div>
