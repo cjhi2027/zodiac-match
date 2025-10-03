@@ -26,6 +26,134 @@ const i18n = createI18n({
         title: "띠별 궁합",
         subtitle: "12간지로 알아보는 커플 궁합 매칭 서비스",
       },
+      footer: {
+        about: "소개",
+        privacy: "개인정보처리방침",
+        terms: "이용약관",
+        contact: "문의",
+        rights: "모든 권리 보유",
+      },
+      about: {
+        title: "LoveIndex 소개",
+        whatIs: "LoveIndex란?",
+        description: "LoveIndex는 별자리, 띠, 혈액형, MBTI 등 다양한 요소를 활용해 연인과의 궁합을 재미있게 확인할 수 있는 무료 웹서비스입니다. 저희 서비스는 과학적 근거보다는 가볍게 즐기는 엔터테인먼트에 목적을 두고 있으며, 사용자들이 서로의 성격과 취향을 이해하는 데 작은 재미와 대화를 제공하기 위해 만들어졌습니다.",
+        features: "주요 기능",
+        feature1: "12간지 띠별 궁합 분석",
+        feature2: "상세한 궁합 설명 및 조언",
+        feature3: "데이트 추천 및 선물 아이디어",
+        feature4: "다국어 지원 (한국어, 영어)",
+        purpose: "서비스 목적",
+        purposeDescription: "LoveIndex는 연인들이 서로를 더 잘 이해하고, 재미있는 대화의 소재를 제공하며, 관계를 더욱 돈독하게 만드는 것을 목표로 합니다. 모든 결과는 참고용이며, 진지한 관계 판단의 기준이 아닙니다.",
+        future: "향후 계획",
+        futureDescription: "앞으로도 더 다양한 콘텐츠와 기능을 지속적으로 추가하여 많은 분들께 즐거움과 유익한 경험을 드리겠습니다. 별자리 궁합, 혈액형 궁합, MBTI 궁합 등 다양한 매칭 서비스를 준비 중입니다.",
+        contact: "문의하기",
+        contactDescription: "LoveIndex에 대한 문의사항이나 개선 의견이 있으시면 언제든 연락해주세요. 여러분의 소중한 의견은 서비스 품질 개선에 적극 반영하겠습니다.",
+        email: "support@loveindex.com",
+      },
+      privacy: {
+        title: "개인정보 처리방침",
+        intro: "LoveIndex(이하 '본 사이트')는 사용자의 개인정보를 존중하며, 안전하게 보호하기 위해 최선을 다하고 있습니다.",
+        lastUpdated: "최종 업데이트: 2025년 1월 3일",
+        collection: {
+          title: "1. 수집하는 정보",
+          description: "본 사이트는 사용자가 직접 입력하는 정보에 한해서만 사용합니다.",
+          item1: "띠, 별자리, 혈액형, MBTI 등 궁합 분석을 위한 기본 정보",
+          item2: "브라우저 쿠키 및 세션 데이터",
+          item3: "Google Analytics를 통한 익명화된 사용 통계",
+        },
+        usage: {
+          title: "2. 정보 사용 목적",
+          description: "수집된 정보는 다음 목적으로만 사용됩니다.",
+          item1: "궁합 분석 결과 제공",
+          item2: "서비스 개선 및 사용자 경험 향상",
+          item3: "광고 제공 및 서비스 운영",
+        },
+        cookies: {
+          title: "3. 쿠키 및 로그 데이터",
+          description: "본 사이트는 Google Analytics, Google AdSense 등 제3자 서비스를 사용할 수 있으며, 이 과정에서 쿠키와 로그 데이터가 수집될 수 있습니다.",
+          thirdParty: "이는 서비스 개선과 광고 제공을 위한 목적으로만 사용됩니다.",
+        },
+        sharing: {
+          title: "4. 개인정보 제3자 제공",
+          description: "본 사이트는 법률상 요구되는 경우를 제외하고, 개인정보를 제3자에게 판매, 공유, 임대하지 않습니다.",
+          exceptions: "단, Google AdSense 등 광고 서비스 제공을 위해 익명화된 데이터가 사용될 수 있습니다.",
+        },
+        security: {
+          title: "5. 보안",
+          description: "사용자의 개인정보 보호를 위해 적절한 보안 조치를 적용하고 있습니다. 모든 데이터 전송은 HTTPS를 통해 암호화됩니다.",
+        },
+        rights: {
+          title: "6. 사용자 권리",
+          description: "사용자는 자신의 개인정보에 대해 다음 권리를 가집니다.",
+          item1: "개인정보 처리 현황에 대한 열람 요구",
+          item2: "개인정보 처리 정지 요구",
+          item3: "개인정보 삭제 요구",
+        },
+        changes: {
+          title: "7. 정책 변경",
+          description: "본 개인정보 처리방침은 필요에 따라 변경될 수 있으며, 변경 시 사이트에 공지 후 즉시 효력이 발생합니다.",
+        },
+        contact: {
+          title: "8. 문의",
+          description: "개인정보와 관련한 문의는 아래 연락처를 통해 가능합니다.",
+          email: "support@loveindex.com",
+        },
+      },
+      terms: {
+        title: "이용약관",
+        intro: "본 약관은 LoveIndex 웹사이트(이하 '본 사이트')의 이용에 관한 조건과 절차를 규정합니다.",
+        lastUpdated: "최종 업데이트: 2025년 1월 3일",
+        service: {
+          title: "1. 서비스 성격",
+          description: "본 사이트는 궁합 및 성격 테스트를 재미로 제공하는 엔터테인먼트 서비스입니다.",
+          nature: "제공되는 콘텐츠는 과학적 사실을 기반으로 하지 않으며, 참고용으로만 사용되어야 합니다.",
+          disclaimer: "법적·의학적·재정적 조언으로 해석될 수 없으며, 중요한 인생 결정의 근거로 사용해서는 안 됩니다.",
+        },
+        acceptance: {
+          title: "2. 약관 동의",
+          description: "본 사이트를 이용함으로써 본 약관에 동의한 것으로 간주됩니다.",
+          conditions: "본 약관에 동의하지 않을 경우 서비스 이용을 중단해주세요.",
+        },
+        user: {
+          title: "3. 사용자의 책임",
+          description: "사용자는 본 사이트를 합법적이고 건전한 목적으로만 이용해야 합니다.",
+          item1: "서비스 이용으로 인해 발생하는 모든 결과에 대해 스스로 책임을 집니다",
+          item2: "타인의 권리를 침해하거나 불법적인 행위를 하지 않습니다",
+          item3: "서비스의 정상적인 운영을 방해하는 행위를 하지 않습니다",
+          item4: "본 약관을 준수하며 서비스를 이용합니다",
+        },
+        content: {
+          title: "4. 콘텐츠 및 정보",
+          description: "본 사이트에서 제공되는 모든 정보와 콘텐츠는 참고용입니다.",
+          accuracy: "정보의 정확성이나 완전성을 보장하지 않으며, 언제든 변경될 수 있습니다.",
+          liability: "제공되는 정보로 인한 손해에 대해 책임을 지지 않습니다.",
+        },
+        advertising: {
+          title: "5. 광고 및 제휴",
+          description: "본 사이트는 Google AdSense 및 제휴 광고를 게재할 수 있습니다.",
+          consent: "사용자는 사이트 이용 시 광고가 노출될 수 있음을 동의합니다.",
+        },
+        privacy: {
+          title: "6. 개인정보 보호",
+          description: "개인정보의 수집, 사용, 보호에 대해서는 별도의 개인정보 처리방침을 따릅니다.",
+          policy: "개인정보 처리방침은 본 약관과 함께 적용됩니다.",
+        },
+        liability: {
+          title: "7. 면책 조항",
+          description: "본 사이트에서 제공되는 정보는 참고용이며, 서비스 이용으로 인한 손해에 대해 책임을 지지 않습니다.",
+          limitation: "간접적, 부수적, 특별한 손해에 대해서는 일체 책임을 지지 않습니다.",
+        },
+        modification: {
+          title: "8. 약관 변경",
+          description: "본 사이트는 필요 시 본 약관을 수정할 수 있습니다.",
+          notice: "변경 시 사이트에 공지 후 즉시 효력이 발생합니다.",
+        },
+        contact: {
+          title: "9. 문의",
+          description: "본 약관에 대한 문의는 아래 연락처로 가능합니다.",
+          email: "support@loveindex.com",
+        },
+      },
       ui: {
         myInfo: "내 정보",
         partnerInfo: "상대방 정보",
@@ -65,10 +193,6 @@ const i18n = createI18n({
           subtitle: "MBTI로 보는 커플 케미"
         },
         comingSoon: "준비중",
-        privacyPolicy: "개인정보보호방침",
-        privacyTitle: "개인정보보호방침",
-        privacyContent: "본 서비스는 사용자의 개인정보를 일체 수집하거나 저장하지 않습니다.\n궁합 분석 과정은 모두 사용자의 브라우저 내에서 안전하게 처리되며, 어떠한 정보도 서버로 전송되거나 외부와 공유되지 않습니다.\n따라서 이용 과정에서 개인정보 유출이나 기록 저장에 대한 우려가 전혀 없으며, 사용자는 안심하고 서비스를 이용하실 수 있습니다.",
-        confirm: "확인"
       },
       clickToEdit: "변경",
       headerTitle: "12간지 띠 궁합",
@@ -142,16 +266,15 @@ const i18n = createI18n({
           pig: "여유로운 돼지띠에게는 맛있는 음식이나 편안함 관련 선물이 최고입니다. 디저트 세트나 맛집 쿠폰, 편안한 홈웨어를 선물하면 아주 좋아합니다. 힐링과 휴식을 주는 아이템이면 완벽합니다.",
         },
       },
+
       compatibilityDetail: {
         title: "상세 궁합",
         viewDetail: "상세설명 보기",
-        backToResult: "궁합 결과로 돌아가기",
         basicDescription: "기본 설명",
         cautionPoints: "주의할 점",
         dateRecommendation: "추천 데이트",
         shareTitle: "결과 공유하기",
         goodGiftFor: "에게 좋은 선물",
-        
         mouse: {            
           mouse: {
             witty: "두 뇌회전 챔피언이 만나면, 정보와 센스가 폭발하지만, 누가 먼저 번뜩일지 기싸움도 치열합니다!",
@@ -380,7 +503,7 @@ const i18n = createI18n({
                 summary: "꾸준한 축적의 표본으로, 성실함과 책임감이 조화를 이루는 장거리 주행형 파트너십.",
                 description: "이 조합은 ‘꾸준한 축적’의 표본입니다. 집안일은 영역별 담당을 정해 SOP로 문서화하고, 청소·세탁·정리 같은 루틴은 주간 타임블록으로 습관화합니다. 재무는 자동이체, 카테고리 예산, 월말 결산이 정착되어 누수가 적고, 건강 관리도 수면·운동·식단 기록으로 안정적으로 유지됩니다. 가족 행사나 지인 모임처럼 책임이 필요한 자리에서 둘은 시간을 지키고 약속을 끝까지 이행해 신뢰를 얻습니다. 여행조차 ‘휴식과 컨디션’에 초점을 두어 무리하지 않고, 복귀 후 업무 리듬까지 고려해 일정을 조절합니다. 오늘보다 내일이 단단해지는 손맛을 아는, 장거리 주행형 파트너십입니다."
               },
-              "caution": {
+              caution: {
                 summary: "보수성과 완벽주의로 인한 지연을 줄이려면 마감 있는 선택 프레임과 실험 데이를 도입하세요.",
                 description: "보수성과 관성이 중첩되면 의사결정이 늦고, 완벽주의는 불필요한 피로를 만듭니다. 새 가전을 사는 데도 한 달이 걸리거나, 여행 일정을 지나치게 단순화해 재미가 빠질 수 있죠. 이를 막으려면 ‘마감 있는 선택 프레임’을 도입하세요. 정보 수집 48시간, 옵션 3개, 기준표 점수화 후 즉시 결정—이렇게 절차를 정하면 미루기가 줄어듭니다. 월 1회 ‘실험 데이’를 정해 새로운 식당·수업·산책 루트에 도전하고, 실패해도 서로를 탓하지 않기로 합의해 자유도를 확보하세요. 갈등 시에는 목소리보다 ‘메모 5줄’로 의견을 교환하면 감정 소모 없이 합의점에 닿습니다."
               },
@@ -398,7 +521,7 @@ const i18n = createI18n({
                 summary: "호랑이의 추진력과 소의 안정성이 만나 장기 과업에서 강력한 완주력을 발휘하는 조합.",
                 description: "이 커플은 ‘전진 기어’와 ‘토크’의 만남입니다. 창업·이직·이사처럼 에너지가 필요한 의사결정에서 호랑이는 과감한 선택으로 길을 열고, 소는 허들을 하나씩 치워 실현 가능성을 높입니다. 캠핑만 가도 호랑이는 코스를 넓히고 액티비티를 제안하며 분위기를 살리고, 소는 장비·안전·식사 준비로 베이스캠프를 안정화합니다. 프로젝트에서는 호랑이가 미션을 선언하고 외부 협업을 이끌며, 소는 일정·품질·비용을 관리해 후반부 성과를 담보합니다. 둘이 함께 움직이면 추진과 유지가 동시에 확보되어 장기 과업에서 압도적인 안정성과 완주력을 보입니다."
               },
-              "caution": {
+              caution: {
                 summary: "속도 불일치와 자존심 충돌을 줄이려면 작전명 시스템과 명확한 역할 분담이 필요합니다.",
                 description: "리스크는 ‘속도 불일치’와 ‘자존심’입니다. 호랑이가 질러놓은 약속을 소가 뒤처리하며 피로를 느끼거나, 소가 만든 규칙을 호랑이가 답답하다며 무시하면 감정이 쌓입니다. 해결책은 ‘작전명 시스템’입니다. 과제마다 리더를 명시하고 상대는 참모로 보조하며, 예산·시간의 임계치(예: 10% 초과 시 중지·재협상)를 미리 합의하세요. 갈등이 올라오면 10분 타임아웃 후 문자로 핵심 3줄만 교환하면 상처 없이 정리됩니다. 칭찬은 공개석상에서, 수정 제안은 일대일과 데이터로—이 룰만 지켜도 자존심 충돌이 협력 에너지로 바뀝니다."
               },
@@ -416,7 +539,7 @@ const i18n = createI18n({
                 summary: "소의 현실적 기반과 토끼의 감성적 디테일이 조화를 이뤄 지속 가능한 일상을 만드는 궁합.",
                 description: "두 사람은 ‘뼈대와 질감’을 나누어 맡습니다. 소띠가 청소·수납·예산·식단 같은 기반을 만들면, 토끼띠는 조명·패브릭·향·음악으로 공간의 온도를 올립니다. 문제 상황에서도 소는 절차와 역할을 정리해 실행을 이끌고, 토끼는 관계자의 감정과 분위기를 조율해 마찰을 줄입니다. 주말에는 작은 갤러리·북카페·플리마켓 같은 잔잔한 장소에서 대화가 가장 잘 흐르며, 집에서는 식물 돌보기·홈쿠킹으로 ‘살아 있는 성취’를 함께 쌓습니다. 함께 지내면 ‘살기 좋은 일상’이 자연스럽게 완성되는, 지속 가능한 궁합입니다."
               },
-              "caution": {
+              caution: {
                 summary: "표현 방식 차이를 줄이려면 공감 우선 대화와 산책 루틴으로 감정 균형을 맞추세요.",
                 description: "갈등의 씨앗은 ‘표현 방식’입니다. 소의 직설과 침묵은 토끼에게 차갑게 느껴지고, 토끼의 미묘한 신호는 소에게 피곤하게 다가옵니다. 대화는 ‘공감 한 문장→사실→옵션 3개→결정’의 고정 포맷으로, 피드백은 I-메시지로 바꾸세요. 예민한 날엔 결정을 미루고 20분 산책으로 속도를 낮추면 회복이 빠릅니다. 소는 공감 표현을 의식적으로 늘리고, 토끼는 감정만 말하고 선택을 미루지 않겠다는 약속을 지키면 누적 피로가 크게 줄어듭니다. 주간 회고에 감사 1가지와 불편 1가지를 기록하면 균형이 좋아집니다."
               },
@@ -434,7 +557,7 @@ const i18n = createI18n({
                 summary: "용의 비전과 소의 실행력이 만나 큰 목표에서 기하급수적 성과를 내는 가속형 파트너십.",
                 description: "이 궁합은 ‘비전 설계자(용)’와 ‘현장 감독(소)’의 강력한 분업입니다. 신사업·프로젝트에서 용은 스토리, 네트워크, 외부 설득을 맡고, 소는 일정·예산·품질을 관리해 실제 성과를 만듭니다. 발표 자리에서도 용이 메시지를, 소가 수치와 마일스톤을 챙겨 설득력을 높입니다. 여행에서는 용이 하이라이트 장면과 사진 스폿을, 소가 교통·숙소·안전을 책임져 기억과 휴식의 균형을 맞춥니다. 둘은 ‘스케일과 안정’을 동시에 확보해, 목표가 클수록 시너지가 커지는 가속형 파트너십을 완성합니다."
               },
-              "caution": {
+              caution: {
                 summary: "속도와 자존심 충돌을 막으려면 역할 분담과 파일럿→검증→확대 프레임을 표준화하세요.",
                 description: "충돌 포인트는 ‘속도와 자존심’입니다. 용은 ‘지금 가자’를 외치고, 소는 근거와 안전장치를 먼저 찾습니다. 반복되면 용은 소를 소극적이라, 소는 용을 무모하다고 규정할 수 있죠. 해결은 회의 프레임의 표준화입니다. 용은 목적·파급효과·승리 조건을 3문장으로, 소는 비용·리스크·마일스톤을 3항목으로 제시하고, 논쟁은 ‘파일럿→데이터 검증→확대’로 귀결시키세요. 칭찬은 공개석상에서, 수정 제안은 데이터와 함께 일대일로—이 룰만 지켜도 프라이드 손상을 최소화할 수 있습니다."
               },
@@ -452,7 +575,7 @@ const i18n = createI18n({
                 summary: "뱀의 통찰과 소의 실행이 조화를 이뤄 정밀하고 안정적인 성과를 내는 궁합.",
                 description: "소띠와 뱀띠는 ‘사실·해석·실행’의 3박자를 정확히 맞춥니다. 이사·투자·건강처럼 장기 변수가 많은 의제에서 뱀은 장기 리스크, 관계, 심리 비용까지 고려한 통찰을 내고, 소는 그 통찰을 일정·예산·체크리스트로 바꿔 착실히 실천합니다. 집에서는 미니멀 살림과 기록 습관이 자리 잡아 마찰이 줄고, 주말엔 북서점 투어·다큐 감상처럼 조용하지만 밀도 높은 활동으로 대화의 깊이를 더합니다. 말이 많지 않아도 습관과 결과로 신뢰를 증명하는 ‘정밀·성실형’ 궁합으로, 바깥 소음이 커질수록 내적 안정감이 돋보입니다."
               },
-              "caution": {
+              caution: {
                 summary: "침묵의 오해와 속도 차를 줄이려면 감정 공유와 결정 데드라인을 정례화하세요.",
                 description: "문제는 ‘침묵의 오해’와 ‘속도 차’입니다. 뱀의 심사숙고가 길어지면 소는 기회를 놓친다고 느끼고, 소의 실행이 빠르면 뱀은 깊이가 부족하다고 생각합니다. 해결책은 ①결정 데드라인·최소 정보 기준 합의, ②회의는 ‘사실→해석→감정’ 3단 구조로, ③주 1회 ‘노 분석 데이’로 감각 활동만 하는 것입니다. 피드백은 ‘칭찬 1→수정 1’ 페어로 전달하고, 피곤한 날엔 텍스트보다 음성 메모로 감정을 먼저 공유하면 불필요한 오해가 줄어듭니다. 중요한 합의는 메모로 남겨 재논쟁을 방지하세요."
               },
@@ -470,7 +593,7 @@ const i18n = createI18n({
                 summary: "소의 안정성과 말의 즉흥성이 만나 활력과 완급이 조화를 이루는 장거리 팀.",
                 description: "둘은 ‘가드레일(소)’과 ‘엑셀(말)’의 조합입니다. 당일 여행에서도 소는 교통, 간식, 안전을 챙기고 말은 현장 즉흥력으로 페스티벌·버스킹·플리마켓 같은 콘텐트를 얹어 하루를 살아 있게 만듭니다. 캠핑에서는 소가 장비·식사·정리 루틴을, 말이 텐트 설치·불멍·액티비티 진행을 맡아 완급이 조화됩니다. 취미·업무에서도 소는 운영과 품질, 말은 아이디어와 네트워킹으로 역할을 나눌 때 성과가 극대화됩니다. 서로의 다름을 브레이크와 액셀로 받아들이면 장거리 주행에 강한 든든한 팀이 됩니다."
               },
-              "caution": {
+              caution: {
                 summary: "자유와 관리의 갈등을 줄이려면 자유 시간 고정과 느슨한 규칙을 합의하세요.",
                 description: "말에게 과한 관리감은 족쇄, 소에게 무계획은 스트레스입니다. 월 1회 ‘버킷리스트 vs 안전리스트’를 교환해 욕구를 가시화하고, 일정에는 20~30% 자유 시간을 고정하세요. 지출은 카테고리 한도만 정하고 세부는 각자 재량으로 두면 분쟁이 줄어듭니다. 갈등이 오르면 장소를 바꿔 걷기 대화로 전환하고, 결정은 ‘빠른 시범→리뷰→확대’ 순서를 합의하세요. 연락 빈도·SNS 같은 민감 영역은 쓰기 계약처럼 문서화해 오해를 최소화하면 장기 만족도가 유지됩니다."
               },
@@ -488,7 +611,7 @@ const i18n = createI18n({
                 summary: "소의 실용성과 양의 감성이 만나 잔잔한 성취로 일상을 채우는 안정적 궁합.",
                 description: "이 조합은 ‘현실의 뼈대(소)’에 ‘감성의 질감(양)’을 입히는 팀플입니다. 집에서는 소가 수납 동선, 가전 루틴, 가계부 자동화를 구축하고 양이 조명 색온도, 텍스타일, 향, 음악으로 집을 쉼터로 바꿉니다. 갈등 상황에서도 소는 해결책과 절차를, 양은 주변 감정과 분위기 조율을 맡아 마찰을 줄입니다. 주말엔 공방 체험·소규모 공연·플리마켓 같은 잔잔한 활동에서 서로의 장점이 잘 드러나고, 함께 있을수록 ‘살기 좋은 일상’이 자연스럽게 쌓입니다."
               },
-              "caution": {
+              caution: {
                 summary: "결정 속도와 표현 차이를 줄이려면 3단계 의사결정과 I-메시지 대화를 습관화하세요.",
                 description: "양의 공감은 자산이지만 결정이 늦어지면 소가 답답해합니다. 소의 직설이 이어지면 양은 마음을 닫기 쉽죠. 의사결정은 ①감정 확인, ②현실 옵션 3개 정리, ③마감 시간 설정의 3단계를 습관화하세요. 표현은 I-메시지로 전환하고, 양은 감정만 말하고 선택을 미루지 않기, 소는 해결책 전에 공감 한 문장을 넣기 규칙을 지키면 충돌이 크게 줄어듭니다. 민감한 주제는 20분 타이머로 제한하고, 결론은 메모로 남겨 재논쟁을 방지하세요."
               },
@@ -506,7 +629,7 @@ const i18n = createI18n({
                 summary: "원숭이의 창의성과 소의 실행력이 만나 재미와 완성도를 동시에 잡는 팀.",
                 description: "둘은 리서치·센스·실행이 삼박자로 굴러갑니다. 신상 맛집 공략도 프로젝트가 되어 원숭이는 SNS 리서치, 사진 콘셉트, 리뷰 포인트를, 소는 예약·예산·대기 전략을 맡아 ‘가이드 카드’를 만듭니다. 사이드 프로젝트(뉴스레터·플리마켓·소규모 창업)에서도 원숭이가 트렌드와 콘셉트를, 소가 공급망·원가·품질을 책임지면 실패 확률이 낮아집니다. 서로의 장점 덕에 ‘재미있는데 완성도가 높은’ 결과가 나오고, 반복될수록 팀의 자신감이 커집니다."
               },
-              "caution": {
+              caution: {
                 summary: "재미 추구와 주도권 다툼을 줄이려면 월간 목표와 짧은 회의 루틴을 정례화하세요.",
                 description: "위험은 ‘재미의 관성’과 ‘주도권 게임’입니다. 토론이 길어져 결론이 흐려지거나 실행이 분산되기 쉽습니다. 월간 목표 하나를 정하고 마감·역할·보상을 명확히 합의하세요. 회의는 25분 포모도로 2세트로 제한하고 마지막 5분은 산출물에만 집중합니다. 논쟁이 길어지면 ‘농담 1개→핵심 1문장→결론 1개’로 리셋하면 공기가 즉시 바뀝니다. ‘노폰 데이트’를 정례화해 과몰입을 막으면 집중도와 만족도가 회복됩니다."
               },
@@ -524,7 +647,7 @@ const i18n = createI18n({
                 summary: "소의 지속성과 닭의 정밀함이 만나 품질과 효율을 극대화하는 조합.",
                 description: "이 궁합은 ‘현장 감독(소)’과 ‘감사관(닭)’의 조합입니다. 집 수리만 해도 소가 예산·일정·업체 조율을, 닭이 체크리스트·하자 기록·검수 기준을 맡아 결과물의 신뢰도를 끌어올립니다. 재무 관리에서는 월말 결산·영수증 스캔·카테고리 규칙이 정착되어 누수 지출이 줄어듭니다. 프로젝트성 업무에서도 소는 일정·의사소통을, 닭은 준수 사항·리스크 포인트를 챙겨 ‘품질 보증’ 라벨을 붙입니다. 함께할수록 생활이 단정해지고 목표 달성률이 상승하는 조합입니다."
               },
-              "caution": {
+              caution: {
                 summary: "완벽주의 피로를 줄이려면 칭찬 우선과 80점 합의, 역할 교대를 실천하세요.",
                 description: "완벽주의의 그림자가 피로로 이어질 수 있습니다. 작은 실수에도 지적이 오가면 의도와 무관하게 잔소리로 들립니다. ‘칭찬 먼저 20초’ 규칙을 도입하고, ‘오늘은 80점이면 OK’ 합의를 세우세요. 역할은 ‘현장(소)·검수(닭)’로 구분하되, 월 1회는 영역을 일부 교대해 관점을 체험하면 고집이 누그러집니다. 감정이 올라가면 체크리스트를 잠시 접고 산책으로 전환, 돌아와 핵심 3가지만 합의하는 루틴을 만들면 빠르게 정리됩니다."
               },
@@ -542,7 +665,7 @@ const i18n = createI18n({
                 summary: "소의 책임감과 개의 신뢰가 만나 안정적이고 단단한 파트너십을 형성.",
                 description: "소와 개는 ‘합리의 설계자’와 ‘의리의 수호자’가 팀을 이룬 모습입니다. 집안 일은 소가 계획표를 만들고 개가 꾸준히 지켜 신뢰를 쌓습니다. 위기에도 개는 먼저 옆을 지키고, 소는 해결책을 내어 실질적 돌파구를 만듭니다. 여행·여가에서도 소가 루트와 예산을, 개가 준비물·안전·시간 약속을 책임져 일정이 부드럽게 흘러갑니다. 장기 프로젝트(저축·집 마련·건강 루틴)에서 특히 강점을 보이는 ‘성실·책임형’ 커플로, 묵묵한 일관성이 관계의 기반이 됩니다."
               },
-              "caution": {
+              caution: {
                 summary: "감정 메마름을 막으려면 고마움 공유와 서프라이즈 데이, 문서화된 규칙이 필요.",
                 description: "현실과 원칙만 강조하면 감정의 윤활유가 마릅니다. ‘오늘의 고마움 한 줄’을 잠들기 전 메시지로 주고받고, 월 1회 ‘서프라이즈 데이’를 지정해 작은 편지·간식·산책 루트를 준비해 보세요. 갈등 시에는 ‘사실→느낌→요청’ 포맷으로 이야기하면 상처 없이 합의점에 도달합니다. 재정·가사·여가 규칙은 문서화해 해석의 여지를 줄이고, 명절·가족 이벤트처럼 민감한 사안은 사전 합의 체크리스트로 감정 프레임을 보호하세요. 칭찬은 즉시, 지적은 데이터와 함께—이 두 가지만 지켜도 신뢰가 더 단단해집니다."
               },
@@ -560,7 +683,7 @@ const i18n = createI18n({
                 summary: "소의 실속과 돼지의 포용이 만나 편안하면서도 발전하는 일상을 완성.",
                 description: "둘은 ‘실속의 감독(소)’과 ‘포용의 연출가(돼지)’입니다. 장보기는 소가 전단·앱·동선을 최적화해 비용과 시간을 줄이고, 돼지는 재료를 따뜻한 식탁으로 바꾸는 재주가 있습니다. 손님이 오면 소는 좌석 배치·타임라인을, 돼지는 메뉴·음악·분위기를 맡아 집을 편안한 라운지로 만듭니다. 스트레스 많은 날엔 돼지가 먼저 품어주고, 다음 날 소가 해결책을 제시해 균형을 찾습니다. 일상의 작은 성취(정리정돈, 건강 루틴, 주간 미션)가 차곡차곡 쌓이며 ‘편안한데 발전하는’ 관계가 완성됩니다."
               },
-              "caution": {
+              caution: {
                 summary: "속도와 주도권 불균형을 줄이려면 주도권 로테이션과 부드러운 요청이 필요.",
                 description: "속도와 관성의 차이가 마찰을 만듭니다. 돼지가 과하게 양보하면 주도권이 한쪽으로 쏠리고, 소가 조급하면 피로가 커집니다. 해결책은 ①‘주도권 로테이션’으로 주말 일정·지출·집안일 책임자를 번갈아 맡기, ②일정에 휴식 블록을 고정해 여유를 보호하기, ③칭찬은 즉시·요청은 부드럽게 전달하기입니다. 재정은 한도와 목적을 합의하고, 감정은 ‘지금 내 속도는 ~’처럼 상태를 수시로 선언해 오해를 줄이세요. 주간 회고에서 만족도·개선 아이디어를 1개씩만 내면 변화가 부담 없이 이어집니다."
               },
@@ -1596,12 +1719,138 @@ const i18n = createI18n({
 
 
 
-
-
     en: {
       app: {
         title: "Zodiac Compatibility",
         subtitle: "Couple matching service based on 12 zodiac animals",
+      },
+      footer: {
+        about: "About",
+        privacy: "Privacy Policy",
+        terms: "Terms of Service",
+        contact: "Contact",
+        rights: "All rights reserved",
+      },
+      about: {
+        title: "About LoveIndex",
+        whatIs: "What is LoveIndex?",
+        description: "LoveIndex is a free web service that allows you to check compatibility with your partner using various elements such as zodiac signs, Chinese zodiac, blood type, and MBTI. Our service focuses on entertainment for fun rather than scientific evidence, and is designed to provide users with small joys and conversations to understand each other's personalities and preferences.",
+        features: "Key Features",
+        feature1: "12 Chinese Zodiac Compatibility Analysis",
+        feature2: "Detailed Compatibility Descriptions and Advice",
+        feature3: "Date Recommendations and Gift Ideas",
+        feature4: "Multi-language Support (Korean, English)",
+        purpose: "Service Purpose",
+        purposeDescription: "LoveIndex aims to help couples understand each other better, provide fun conversation topics, and strengthen their relationships. All results are for reference only and should not be used as criteria for serious relationship decisions.",
+        future: "Future Plans",
+        futureDescription: "We will continue to add more diverse content and features to provide many people with enjoyable and beneficial experiences. We are preparing various matching services such as zodiac compatibility, blood type compatibility, and MBTI compatibility.",
+        contact: "Contact Us",
+        contactDescription: "If you have any questions or suggestions about LoveIndex, please feel free to contact us anytime. Your valuable opinions will be actively reflected in service quality improvements.",
+        email: "support@loveindex.com",
+      },
+      privacy: {
+        title: "Privacy Policy",
+        intro: "LoveIndex (hereinafter referred to as 'this site') respects users' personal information and strives to protect it safely.",
+        lastUpdated: "Last updated: January 3, 2025",
+        collection: {
+          title: "1. Information We Collect",
+          description: "This site only uses information that users directly input.",
+          item1: "Basic information for compatibility analysis such as zodiac, blood type, MBTI",
+          item2: "Browser cookies and session data",
+          item3: "Anonymous usage statistics through Google Analytics",
+        },
+        usage: {
+          title: "2. Purpose of Information Use",
+          description: "Collected information is used only for the following purposes.",
+          item1: "Providing compatibility analysis results",
+          item2: "Service improvement and user experience enhancement",
+          item3: "Advertising provision and service operation",
+        },
+        cookies: {
+          title: "3. Cookies and Log Data",
+          description: "This site may use third-party services such as Google Analytics and Google AdSense, and cookies and log data may be collected in this process.",
+          thirdParty: "This is used only for service improvement and advertising purposes.",
+        },
+        sharing: {
+          title: "4. Third-Party Sharing of Personal Information",
+          description: "This site does not sell, share, or rent personal information to third parties except when required by law.",
+          exceptions: "However, anonymized data may be used for advertising services such as Google AdSense.",
+        },
+        security: {
+          title: "5. Security",
+          description: "We apply appropriate security measures to protect users' personal information. All data transmission is encrypted through HTTPS.",
+        },
+        rights: {
+          title: "6. User Rights",
+          description: "Users have the following rights regarding their personal information.",
+          item1: "Request to view personal information processing status",
+          item2: "Request to suspend personal information processing",
+          item3: "Request to delete personal information",
+        },
+        changes: {
+          title: "7. Policy Changes",
+          description: "This privacy policy may be changed as needed, and changes will take effect immediately upon notice on the site.",
+        },
+        contact: {
+          title: "8. Contact",
+          description: "Inquiries regarding personal information can be made through the contact information below.",
+          email: "support@loveindex.com",
+        },
+      },
+      terms: {
+        title: "Terms of Service",
+        intro: "These terms govern the conditions and procedures for using the LoveIndex website (hereinafter referred to as 'this site').",
+        lastUpdated: "Last updated: January 3, 2025",
+        service: {
+          title: "1. Nature of Service",
+          description: "This site is an entertainment service that provides compatibility and personality tests for fun.",
+          nature: "The content provided is not based on scientific facts and should be used for reference only.",
+          disclaimer: "It cannot be interpreted as legal, medical, or financial advice and should not be used as a basis for important life decisions.",
+        },
+        acceptance: {
+          title: "2. Agreement to Terms",
+          description: "By using this site, you are deemed to have agreed to these terms.",
+          conditions: "If you do not agree to these terms, please discontinue use of the service.",
+        },
+        user: {
+          title: "3. User Responsibilities",
+          description: "Users must use this site only for legal and healthy purposes.",
+          item1: "Take responsibility for all consequences arising from service use",
+          item2: "Do not infringe on others' rights or engage in illegal activities",
+          item3: "Do not engage in activities that interfere with normal service operation",
+          item4: "Use the service in compliance with these terms",
+        },
+        content: {
+          title: "4. Content and Information",
+          description: "All information and content provided on this site is for reference only.",
+          accuracy: "We do not guarantee the accuracy or completeness of information and it may be changed at any time.",
+          liability: "We are not responsible for damages caused by the information provided.",
+        },
+        advertising: {
+          title: "5. Advertising and Partnerships",
+          description: "This site may display Google AdSense and partnership advertisements.",
+          consent: "Users agree that advertisements may be displayed when using the site.",
+        },
+        privacy: {
+          title: "6. Privacy Protection",
+          description: "The collection, use, and protection of personal information follows a separate privacy policy.",
+          policy: "The privacy policy applies together with these terms.",
+        },
+        liability: {
+          title: "7. Disclaimer",
+          description: "The information provided on this site is for reference only, and we are not responsible for damages caused by service use.",
+          limitation: "We are not responsible for any indirect, incidental, or special damages.",
+        },
+        modification: {
+          title: "8. Terms Modification",
+          description: "This site may modify these terms as needed.",
+          notice: "Changes will take effect immediately upon notice on the site.",
+        },
+        contact: {
+          title: "9. Contact",
+          description: "Inquiries about these terms can be made through the contact information below.",
+          email: "support@loveindex.com",
+        },
       },
       ui: {
         myInfo: "My Info",
@@ -1642,10 +1891,6 @@ const i18n = createI18n({
           subtitle: "Love match by 16 personalities"
         },
         comingSoon: "Coming Soon",
-        privacyPolicy: "Privacy Policy",
-        privacyTitle: "Privacy Policy",
-        privacyContent: "This service does not collect, store, or track any personal information from users.\nAll compatibility analysis is processed securely within your browser, and no data is ever transmitted to a server or shared externally.\nYou can use the service with full confidence, knowing that there is no risk of personal data leakage or record keeping.",
-        confirm: "Confirm"
       },
       clickToEdit: "Edit",
       headerTitle: "Zodiac Animals",
@@ -1662,20 +1907,6 @@ const i18n = createI18n({
         rooster: "Rooster",
         dog: "Dog",
         pig: "Pig",
-        features: {
-          mouse: "Faster than a calculator, master of perfect preparation!",
-          ox: "Achieves everything with persistence and sincerity!",
-          tiger: "Brave and bold personality!",
-          rabbit: "Gentle and artistically gifted!",
-          dragon: "Powerful leadership and charisma!",
-          snake: "Mysterious and wise!",
-          horse: "Free-spirited and active personality!",
-          goat: "Gentle and artistic sensibility!",
-          monkey: "Clever and witty!",
-          rooster: "Accurate and systematic!",
-          dog: "Loyal and just!",
-          pig: "Pure and generous!",
-        },
         witty: {
           mouse: "With a mind faster than a calculator, the rat is the master of preparation!",
           ox: "Steadfast and persistent, the ox is the king of endurance and reliability!",
@@ -1733,24 +1964,15 @@ const i18n = createI18n({
           pig: "Easygoing Pigs love delicious or comfort-driven gifts. Dessert sets, gourmet coupons, or cozy loungewear will make them happy. Anything that brings healing and relaxation is perfect."
         },
       },
-      compatibility: {
-        excellent: "Perfect match! You are made for each other.",
-        veryGood:
-          "Very good match! You understand and complement each other well.",
-        good: "Good match! With effort, it can become even better.",
-        fair: "Average match! Accept and understand each other's differences.",
-        poor: "Challenging match! But with love, you can overcome anything.",
-      },
+
       compatibilityDetail: {
         title: "Detailed Compatibility",
         viewDetail: "View Details",
-        backToResult: "Back to Compatibility Result",
         basicDescription: "Basic Description",
         cautionPoints: "Points to Note",
         dateRecommendation: "Recommended Dates",
         shareTitle: "Share Results",
         goodGiftFor: "Good Gifts for",
-
         mouse: {
           mouse: {
             witty: "When two brain champions meet, sparks of wit and information fly, though the battle for who shines first is fierce!",
@@ -1824,6 +2046,150 @@ const i18n = createI18n({
               }
             }
           },
+          dragon: {
+            witty: "Cunning meets charisma master! A dream team where plans shine and execution explodes!",
+            elaboration: "When the Rat's information power joins the Dragon's vision, ideas become plans and plans turn into results at unique speed. The Rat relentlessly validates evidence and timing, while the Dragon opens new roads and breakthroughs through network and charisma. However, pride and leadership clashes can quickly freeze progress. Clearly assign roles like 'big picture = Dragon, details = Rat,' and agree on experiment→feedback→scaling routines for much farther, steadier progress in entrepreneurship, investing, or projects.",
+            detailed: {
+              basic: {
+                summary: "An acceleration partnership where the Rat's precise strategy and the Dragon's vision drive both speed and scale of goal achievement.",
+                description: "The Rat and Dragon are a mutual complement between the 'precise strategist' and the 'visionary leader.' When reviewing new business, the Rat prepares research files on TAM, competitors, cost structures; the Dragon intuitively captures market timing and positioning for higher goals. In presentations, the Rat does numbers and processes, and the Dragon does messaging and storytelling to boost persuasion. Travel, too: the Rat plans transport, budget, route; the Dragon handles local networking, photo spots, highlight direction. A duo that guarantees both planning solidity and bold scale, the bigger the goals, the more their results multiply."
+              },
+              caution: {
+                summary: "To avoid pride and speed conflicts, standardize role division and a pilot→data validation→expansion structure.",
+                description: "The chief risk is 'pride clash' and 'the difference in risk appetite.' The Dragon likes fast decisions and external expansion ('go now!'), the Rat wants to slow down, citing lack of basis and risk in execution. Left unchecked, the Dragon sees the Rat as 'too passive,' the Rat sees the Dragon as 'reckless.' The fix is standardizing the meeting frame: before decisions, the Dragon offers goal, impact, win condition in three lines; the Rat presents cost, risk, milestone in three; all debates conclude with 'pilot→data validate→expand.' Give praise instantly and publicly, and send correction proposals 1:1 based on data to avoid hurting pride."
+              },
+              dateRecommendation: {
+                summary: "Enjoy scale and strategy with big exhibitions and fine dining, and connect vision to reality with social contribution.",
+                description: "Choose dates that combine scale and strategy: visit big exhibitions or industrial fairs for future tech during the day, discuss each section with scores for value/feasibility/impact. In the evening, move through rooftop, observatory, fine dining, and leave three learnings in a voice memo on your way home. On weekends, try social contribution activities (plogging, environmental campaign staffing) to connect 'our vision' to realism. For overnight trips, use a 'core schedule 70% + free time 30%' structure. At night, intellectual intimacy deepens with board games like 'Diplomacy' or other strategy contests."
+              }
+            }
+          },
+          snake: {
+            witty: "A brain combo where calculations fly! Wisdom, coolness, and leadership mesh like cogs.",
+            elaboration: "With the Rat’s sharp data skills and the Snake’s calm, deep insight, complex decisions stay impressively steady. The Rat builds foundations with data and cases, while the Snake refines the final choice by reading context, long-term variables, and psychology. Since their expressions are restrained, emotions can get hidden; regular emotional check routines keep things stable and boost mutual closeness. The clearer the 'caution plus speed' balance, the better their synergy.",
+            detailed: {
+              basic: {
+                summary: "Combining Rat’s data-driven design and Snake’s insight maximizes complex decision-making and everyday efficiency.",
+                description: "This is a team where the 'fact-strong Rat' and the 'interpretation-strong Snake' split roles to find the best solution. For big, variable choices like moving, job change, or investment, the Rat rapidly collects data (price trends, interest rates, commute times, scenario alternatives), while the Snake uses that info to weigh long-term risk, relationship, health, and psychological costs, perfecting the result. On weekends, gift each other books from the bookstore and extend talks with classical concerts or documentaries. At home, minimalism and record-keeping are natural, cutting down friction. They value meaning over emotion, which gives 'quiet elite' compatibility, translating to crisis resilience."
+              },
+              caution: {
+                summary: "Regularize decision deadlines and emotion-sharing routines to reduce misunderstandings from restraint and speed gaps.",
+                description: "Both partners are so restrained that they may be mistaken for being uncaring, and speed gaps cause friction. If the Snake’s deliberation drags, the Rat fears 'missed chances;' when the Rat rushes, the Snake calls it 'shallow.' Solutions: ①Agree to decision deadlines and minimum info standards in advance, ②Structure discussions as fact→interpretation→emotion, ③Make one weekly 'no analysis day' for just sensory activities. Always give feedback as a pair: 1 praise→1 correction proposal. On tired days, swap voice memos for feelings first to avoid unnecessary misinterpretation."
+              },
+              dateRecommendation: {
+                summary: "Fuel thoughtful, dense talks with bookstores, art shows, and city history tours. Boost efficiency via decluttering projects.",
+                description: "Choose quiet but dense activities. After bookstore rallies, gift each other 'one book to read in 3 months,' and at a wine bar, swap today’s best quote on an index card. See art exhibitions without audio guides and discuss a single work after 20 minutes for deeper talks. On weekends, take historical city walks and run chess, crosswords, or a mystery novel club at night. Quarterly, run a 'decluttering project' (discard, organize, automate) together to boost both living efficiency and life satisfaction."
+              }
+            }
+          },
+          horse: {
+            witty: "Rat the calculator, Horse the improvisor! A dynamic duo, alternating speed and tension with laughs!",
+            elaboration: "When the Rat’s safety rails combine with the Horse’s drive, you get a picture of 'going far, safely.' The Rat handles budget, timing, and risk, and the Horse enlivens the scene in the moment through energy and spontaneity. Priorities on freedom and safety differ, so you need fixed 'free blocks' in the schedule and only agree to limits on spending. Find this balance and you can enjoy both freshness and practicality for the long haul.",
+            detailed: {
+              basic: {
+                summary: "Rat’s stability planning and Horse’s spontaneous energy combine for long-distance teams that balance speed with safety.",
+                description: "This duo is the 'one who sets the guardrail (Rat)' and the 'one who runs on it (Horse).' When camping, the Rat does checklists, weather checks, and supplies; the Horse handles tent-building, campfire, and activities for liveliness. In city dating, Rat plans route, booking, and budget; Horse adds flea market, busking, festival for an exciting day. At work and hobbies, Rat runs operations/quality, Horse does ideas and execution; together, they secure both speed and safety. See their difference as 'brake and accelerator'—it makes for an unbreakable long-distance team."
+              },
+              caution: {
+                summary: "To reduce freedom-management clashes, set fixed free time and agree on category spending limits.",
+                description: "Too much control is shackles for Horse, lack of planning is stress for Rat. Exchange 'bucket list vs. safety list' monthly to put needs on the table, and lock 20–30% of schedules as free time. Set category caps for spending but leave detail up to each. If you argue, switch locations and walk while talking to cool off. Make decisions by 'quick pilot→review→expand,' and for sensitive issues like SNS or contact frequency, formalize in writing to minimize misunderstanding."
+              },
+              dateRecommendation: {
+                summary: "Channel energy with hands-on activities and spontaneous content. Strengthen bonds with sunset sharing and regular no-phone dates.",
+                description: "Let the Horse use energy on riding, SUP, and climbing, while Rat secures stability with advance booking and checks. At sunset, share three top moments on a rooftop to connect. For overnight trips, a '60% plan + 40% freedom' mix is best. Recap memories while sorting photos/expenses on return. Schedule one 'no-phone date' a quarter to curb digital fatigue for lasting satisfaction."
+              }
+            }
+          },
+          goat: {
+            witty: "Meticulous + gentle! Practicality meets sentimentality in this warm balance.",
+            elaboration: "Combine Rat’s practical foundation with Goat’s emotional detail for a 'livable daily life.' The Rat does storage, cleaning, budgeting; Goat fills the space with lighting, fabric, scents, and music. Decision speed and style differences create occasional frustration, so always structure decisions as 'emotion check→3 options→deadline' and use I-messages for dialogue. Do this and you'll be a long-lasting couple with balanced reality and heart.",
+            detailed: {
+              basic: {
+                summary: "Combining the Rat’s pragmatic design with the Goat’s emotional touch, resulting in sustainable happiness.",
+                description: "This duo is about 'realism bones (Rat)' layered with 'emotional texture (Goat).' At home, the Rat makes storage paths, automates finances, and routines; Goat picks lighting color, textiles, and scents to make a sanctuary. When there’s conflict, Rat gives solutions and steps while Goat senses feelings and smooths implementation. On weekends, their complementary strengths shine in quiet activities like flea markets, crafts workshops, or small concerts. Rat minds reality, Goat cares for the heart, building 'sustainable happiness.'"
+              },
+              caution: {
+                summary: "Habitualize 3-step decision making and I-message dialogue to bridge speed and expression gaps.",
+                description: "Goat's empathy is a plus, but slow decisions frustrate Rat; Rat’s bluntness can shut Goat down. Build habits: ①start with emotion check, ②list three practical options, ③set deadlines. Change blaming language to I-messages ('I felt…'), and make Goat avoid only expressing emotion without deciding, while Rat must add an empathy line before solutions. Limit tense issues with 20-min timers. Take notes for decisions to prevent relitigation."
+              },
+              dateRecommendation: {
+                summary: "Satisfy sentiment and utility via small exhibits, craft workshops, beach picnics. Boost bonds through home refresh days.",
+                description: "After a small exhibit, share 'today’s feeling' in a Polaroid line, or try making things together in a flower, pottery, or baking class. Quiet beach walks and picnics mix Goat’s sensitivity and Rat’s practicality. At home, cook pasta together and swap playlists under candlelight. Each quarter, ‘home refresh days’ updating bedding, rugs, and plants lift life satisfaction and affection."
+              }
+            }
+          },
+          monkey: {
+            witty: "When Cunning and Cleverness Meet—Endless Ideas and Fun from This Witty Brain Couple!",
+            elaboration: "Rat and Monkey have similar speed and wit, making 'brainy dating' the norm. New restaurant hunts become projects, side projects flow endlessly with memes and humor. Both are sensitive to leadership, so debates may drag; and chasing fun can dilute execution. Set one monthly goal and agree on deadlines, roles, rewards; keep meetings short, but always record outcomes. Use humor to diffuse tension, but always confirm one core sentence. That way, growth and fun roll together.",
+            detailed: {
+              basic: {
+                summary: "A match where the Rat and Monkey’s quick wit and sense turn every small task into a project.",
+                description: "They're both so fast at research and sensing trends that every little thing becomes a 'mini project.' Finding a new cafe? Rat books, plans the route and budget, Monkey does the SNS research, photo concepts, and review. Work and hobby synergy easily produces side ventures and business tests. Even after setbacks, jokes and support boost their resilience. Conversation topics endlessly multiply—tech, content, trends—and time flies when they're together in this immersive match."
+              },
+              caution: {
+                summary: "Regularize monthly goal setting and short meetings to minimize fun-seeking inertia and leadership struggle.",
+                description: "The issue is 'fun inertia' and 'control contests.' Lots to say leads to endless debates, blurry outcomes, or sidetracked execution. One monthly goal only, clear agreement on deadline, role, and reward. Limit meetings to two 25-min pomodoros, last 5 minutes only for output. If debates drag, reset with 'one joke→one key phrase→one conclusion.' Schedule 'no-phone dates' regularly to keep over-immersion at bay."
+              },
+              dateRecommendation: {
+                summary: "Stimulate brains/fun with quizzes, escape rooms, spontaneous content; upgrade the next date with a 3-line summary.",
+                description: "Alternate teamwork and competition at quiz nights and board game cafes; try hard-mode escape rooms to perfect your cooperation. Enjoy light play with impromptu street performances or short-form video challenges while walking through the city at night. For day trips, Rat manages tickets/routes, Monkey handles on-site content and photo spots—short trips become packed with satisfaction. Afterward, share a 3-line summary each to upgrade your next date."
+              }
+            }
+          },
+          rooster: {
+            witty: "Perfectionism meets perfectionism! With no gaps left, both nagging and praise overflow.",
+            elaboration: "When the Rat’s master plan meets the Rooster’s detail check, overall living quality jumps. Even moving prep, Rat makes the budget and vendor comparison, Rooster perfects the checklist for packing, labels, and route. Perfectionism can tire both, so introduce a 'today, 80% is OK' rule and 'praise for 20s first.' Swapping roles shows new perspectives, softening stubbornness.",
+            detailed: {
+              basic: {
+                summary: "A combo where Rat’s planning and Rooster’s detail check maximize quality at home and work.",
+                description: "This match is the meeting of 'planner (Rat)' and 'auditor (Rooster).' For home repairs, Rat prepares vendor estimates and schedules, Rooster details site checks and defect logs. Finances see monthly closing, receipt scans, category rules cutting leakage. In project activities, strengths become clearer: Rat runs the schedule and stakeholder side, Rooster tracks compliance and risk for trustworthy results. Joint life becomes tidier, completion rates climb consistently—this is the 'quality assurance' coupling."
+              },
+              caution: {
+                summary: "Reduce perfectionist fatigue with '80% OK' rule, praise first, regular role swaps.",
+                description: "Perfectionism’s shadow leads to fatigue. Critiques, however justified, sound like nagging if too frequent. Adopt a '20s praise first' rule and agree 'today, 80% is OK' in both work and home. Roles distinguish 'planner (Rat), auditor (Rooster),' but monthly swap some roles to broaden views. If emotions run high, put the checklist aside and walk, returning to agree only the top 3 points—stubbornness will quickly soften."
+              },
+              dateRecommendation: {
+                summary: "Boost completeness with cooking classes, tech exhibitions, checklist challenges; regulate with spontaneous walks.",
+                description: "Organize recipes as SOPs in cooking class, rotate chef/assistant duties to test quality. After science fairs or tech shows, vote best practical item; at the library, each pick a self-help title. For overnight trips, use checklist challenges to see who can plan most simply and focus, but in the evenings, switch to spontaneous walks and talks to recalibrate perfectionist stress."
+              }
+            }
+          },
+          dog: {
+            witty: "The Rational Meets the Loyal—A Best-Duo of Trust and Responsibility!",
+            elaboration: "When Rat logic meets Dog loyalty, you get a 'trustworthy companion.' Rat is strong at structuring and solving problems; Dog endures to the end, maintaining relational warmth. If life is too reality/principle-focused, emotions may dry up; implement a routine of 'one line of thanks per day' message and a monthly surprise day. Put finances/household rules in writing for clarity—trust strengthens even more.",
+            detailed: {
+              basic: {
+                summary: "A diligent partnership where the Rat’s rational plan and Dog’s loyalty build trust and achievement.",
+                description: "The combination is 'planner (Rat)' and 'guardian (Dog).' For chores, Rat builds the schedule, Dog sticks to it for trust. In crisis, Dog stands strong, Rat finds breakthroughs. Even hobbies/flings flow safely: Rat manages info and budget, Dog does supplies, safety, punctuality for smooth sailing. The comfort of friendship and partnership blend, and this diligent couple excels at long projects (saving for a home, bucket list travel, etc)."
+              },
+              caution: {
+                summary: "Prevent emotion dryness with 'thanks message,' surprise days, and documented rules.",
+                description: "If life focuses only on reality/principles, emotional lubricant runs dry. Share a line of thanks before sleep, schedule monthly ‘surprise days’ with small letters/snacks/walks. When arguing, have 'fact→feeling→request' talks for painless consensus. Set rules for finances, chores, leisure in writing, and use pre-agreed checklists for sensitive family events to protect the emotional frame."
+              },
+              dateRecommendation: {
+                summary: "Share rest and accomplishment with forest walks, camping, volunteering; strengthen bonding with a signature dish.",
+                description: "Scenic walks, camping, dog cafes—simple but fulfilling. After a movie, swap three reflections; cook together weekly for a shared signature menu. Overnight forest glamping brings stargazing and morning runs—strong shared routines. Each season, do volunteering together to deepen shared values and meaning."
+              }
+            }
+          },
+          pig: {
+            witty: "Meticulous Rat and generous Pig! Practicality plus warmth—always a cozy, solid couple!",
+            elaboration: "When the Rat’s calculation meets the Pig’s embrace, everyday life becomes 'comfortable but substantial.' Rat optimizes shopping, budget, routing; Pig brings warmth with cooking, tidying, hospitality. Leadership can tilt with different speeds—rotate responsibility for weekends, spending, chores, and fix slack blocks into the schedule. Praise instantly, request gently—do just this, and friction drops, satisfaction grows.",
+            detailed: {
+              basic: {
+                summary: "The Rat’s practical design and Pig’s embrace meet to form a comfortable but growing daily life.",
+                description: "They're 'designer of practicality (Rat)' and 'producer of cozy ambiance (Pig).' Shopping, Rat uses flyers/apps/routes to optimize cost and time; Pig makes warm meals. When guests visit, Rat does the seating and timetable, Pig handles menu, music, and vibe—home turns lounge. On tough days, Pig comforts first, Rat solves after for natural balance. Daily mini-successes—weekly missions, cleaning, health routines—stack up for a 'comfortable yet advancing' couple."
+              },
+              caution: {
+                summary: "To reduce speed/leadership imbalance, set up leadership rotation, rest blocks, and gentle requests.",
+                description: "Differences in speed/momentum cause friction. Too much Pig yielding tilts leadership, Rat rushing leads to fatigue. Fixes: ①rotate leadership for weekends/spending/chores, ②fix rest blocks in schedule to save slack, ③praise instantly, phrase requests gently. Agree on budget limits and purposes, and share emotion states often—'my pace today is…' cuts misunderstandings. In weekly review, just one shared point on satisfaction and improvement keeps progress light and steady."
+              },
+              dateRecommendation: {
+                summary: "Replenish with food tours, home parties, hot spring trips; build achievement with gourmet weeks.",
+                description: "After food tours, rate satisfaction, value, repeat plans; host home parties to co-create signature menus. Spa, hot spring, resort trips offer Pig’s luxury, Rat’s practicality. Markets, farm visits add daily substance, and evenings wrap with wine and playlist. Every quarter, set a 'home gourmet week'—each takes charge of a dish for both achievement and fun."
+              }
+            }
+          }
         },
 
         ox: {
@@ -2269,108 +2635,108 @@ const i18n = createI18n({
             witty: "Add wind to peaceful journey! Rabbit and horse blend gentle momentum.",
             elaboration: "Horse values freedom and speed, rabbit values peace and equilibrium. When rabbit sets the rhythm and horse supplies wind, they go the distance. Fix free-time blocks in schedules and cap spending for fewer conflicts and lasting fun.",
             detailed: {
-                basic: {
-                    summary: "Horse's excitement and rabbit's balance combine for fun and stability.",
-                    description: "They’re 'wind and sail.' On a short trip, horse designs spontaneous plans and on-site content, while rabbit adds rest stops, parks, and cafés to reduce energy drain. Project-wise, horse expands ideas and networks, rabbit nurtures trust with tone and aftercare. At home, rabbit warms routines and vibe, horse injects novelty—together creating un-boring peace."
-                },
-                caution: {
-                    summary: "Fix freedom and pilot-test routines to offset burnout and delays.",
-                    description: "Risks are burnout and stalling. Horse accelerates, rabbit can delay decisions. Fix 20–30% free time; agree on 'rapid pilot → review → scale-up' decision steps. Use I-messages on sensitive topics and cool off extended debates with 10-minute walks. Log weekly gratitude & discomfort for balance."
-                },
-                dateRecommendation: {
-                    summary: "Balance activities and walks for pace, turn wishes into plans for motivation.",
-                    description: "Do light experiences like cycling or SUP by day; chill out at a book café or garden walk after. Over dinner, turn one monthly wish into a practical plan for simultaneous motivation and safety. Overnight stays at garden/lakeview hotels are recommended."
-                }
+              basic: {
+                summary: "Horse's excitement and rabbit's balance combine for fun and stability.",
+                description: "They’re 'wind and sail.' On a short trip, horse designs spontaneous plans and on-site content, while rabbit adds rest stops, parks, and cafés to reduce energy drain. Project-wise, horse expands ideas and networks, rabbit nurtures trust with tone and aftercare. At home, rabbit warms routines and vibe, horse injects novelty—together creating un-boring peace."
+              },
+              caution: {
+                summary: "Fix freedom and pilot-test routines to offset burnout and delays.",
+                description: "Risks are burnout and stalling. Horse accelerates, rabbit can delay decisions. Fix 20–30% free time; agree on 'rapid pilot → review → scale-up' decision steps. Use I-messages on sensitive topics and cool off extended debates with 10-minute walks. Log weekly gratitude & discomfort for balance."
+              },
+              dateRecommendation: {
+                summary: "Balance activities and walks for pace, turn wishes into plans for motivation.",
+                description: "Do light experiences like cycling or SUP by day; chill out at a book café or garden walk after. Over dinner, turn one monthly wish into a practical plan for simultaneous motivation and safety. Overnight stays at garden/lakeview hotels are recommended."
+              }
             }
           },
           goat: {
             witty: "A duet of gentle hearts! Rabbit and goat preserve emotional warmth.",
             elaboration: "Both excel at empathy and care, resulting in few conflicts and a soft, well-blended routine. Yet delaying decisions risks quiet detachment. Use 'emotion check → three options → deadline' for decisions, and ongoing experiment routines for calm but steady progress.",
             detailed: {
-                basic: {
-                    summary: "Rabbit and goat empathy shape a soft, warm everyday pairing.",
-                    description: "They’re 'home-life masters.' At home, they create cozy space with array, plants, décor, music. Daily life grounds psychological safety through calm chats and micro-routines. In projects, rabbit governs coordination/messaging, goat manages mood/care for rapid community trust. Travel suits quiet towns, gardens, bookstores, or cafés—slower-paced courses."
-                },
-                caution: {
-                    summary: "Reduce inertia from delays with formal emotion checks and experiment days.",
-                    description: "Conflict stems from delayed silence. Soften edges by starting decisions with an emotion check line, three options, clear deadlines. Hold a quarterly 'experiment day' for trying new places, classes, or hobbies, breaking inertia and adding vibrancy."
-                },
-                dateRecommendation: {
-                    summary: "Workshops and home parties create warmth, emotional conversations reinforce bonds.",
-                    description: "Swap three daily highlights after a small exhibit or workshop at the café, cook and record polaroids at home in the evening. Opt for hanok or garden stays overnight; use playlists and card-based emotional talks to keep the warmth flowing."
-                }
+              basic: {
+                summary: "Rabbit and goat empathy shape a soft, warm everyday pairing.",
+                description: "They’re 'home-life masters.' At home, they create cozy space with array, plants, décor, music. Daily life grounds psychological safety through calm chats and micro-routines. In projects, rabbit governs coordination/messaging, goat manages mood/care for rapid community trust. Travel suits quiet towns, gardens, bookstores, or cafés—slower-paced courses."
+              },
+              caution: {
+                summary: "Reduce inertia from delays with formal emotion checks and experiment days.",
+                description: "Conflict stems from delayed silence. Soften edges by starting decisions with an emotion check line, three options, clear deadlines. Hold a quarterly 'experiment day' for trying new places, classes, or hobbies, breaking inertia and adding vibrancy."
+              },
+              dateRecommendation: {
+                summary: "Workshops and home parties create warmth, emotional conversations reinforce bonds.",
+                description: "Swap three daily highlights after a small exhibit or workshop at the café, cook and record polaroids at home in the evening. Opt for hanok or garden stays overnight; use playlists and card-based emotional talks to keep the warmth flowing."
+              }
             }
           },
           monkey: {
             witty: "Chemistry of wit and empathy! Rabbit and monkey are cheerful problem-solvers.",
             elaboration: "Monkey brings ideas and humor, rabbit balances with empathy and steadiness for a light team atmosphere. To prevent chaotic overload, agree on one goal, deadline, and reward each month; then enjoy playful but productive teamwork.",
             detailed: {
-                basic: {
-                    summary: "Monkey’s humor with rabbit’s empathy builds both fun and trust.",
-                    description: "'Meme-maker and mood-maker.' On side projects, monkey pours creativity and content, rabbit manages tone and stakeholder care for fast team support. During travel, monkey finds hot spots and photo ideas, rabbit covers rest stops, cafés, and gardens for energy balance. Daily life is full of jokes, comfort, and ongoing achievements."
-                },
-                caution: {
-                    summary: "Prevent scatter with monthly goals and brief meetings.",
-                    description: "Risks are scattered focus. Playing with too many ideas delays outcomes and fragments schedules. Agree on one monthly goal, assign roles, deadline, and rewards. Use two 25-min pomodoro meeting runs, final 5 minutes for concrete outputs. Reset debates with ‘joke → main point → one conclusion’ for immediate atmosphere control."
-                },
-                dateRecommendation: {
-                    summary: "Quiz games and escape rooms for teamwork, shared summaries for ongoing growth.",
-                    description: "Enjoy quiz nights, board games, or escape rooms for collaborative play. On day trips, division of labor—monkey runs content, rabbit handles rest spots—ensures satisfaction. Trade three-line recaps at night in a café, and set a mini-goal for next time to keep progress light."
-                }
+              basic: {
+                summary: "Monkey’s humor with rabbit’s empathy builds both fun and trust.",
+                description: "'Meme-maker and mood-maker.' On side projects, monkey pours creativity and content, rabbit manages tone and stakeholder care for fast team support. During travel, monkey finds hot spots and photo ideas, rabbit covers rest stops, cafés, and gardens for energy balance. Daily life is full of jokes, comfort, and ongoing achievements."
+              },
+              caution: {
+                summary: "Prevent scatter with monthly goals and brief meetings.",
+                description: "Risks are scattered focus. Playing with too many ideas delays outcomes and fragments schedules. Agree on one monthly goal, assign roles, deadline, and rewards. Use two 25-min pomodoro meeting runs, final 5 minutes for concrete outputs. Reset debates with ‘joke → main point → one conclusion’ for immediate atmosphere control."
+              },
+              dateRecommendation: {
+                summary: "Quiz games and escape rooms for teamwork, shared summaries for ongoing growth.",
+                description: "Enjoy quiz nights, board games, or escape rooms for collaborative play. On day trips, division of labor—monkey runs content, rabbit handles rest spots—ensures satisfaction. Trade three-line recaps at night in a café, and set a mini-goal for next time to keep progress light."
+              }
             }
           },
           rooster: {
             witty: "Class meets precision! Rabbit’s aesthetic, rooster’s standards complete the outcome.",
             elaboration: "Rooster handles standards, checks, precision; rabbit covers aesthetic, care, tone. Together, both the outcome and the experience become more refined. Guard against critique fatigue by enforcing '20s praise-before-correction' and '80% is OK' rules for a gentle relationship.",
             detailed: {
-                basic: {
-                    summary: "Rabbit’s taste and rooster’s accuracy combine for class and completeness.",
-                    description: "'Art director (rabbit)' plus 'QA director (rooster).' In campaigns, rabbit ensures user experience and aesthetics, rooster locks compliance and checklists for a trusted, classy result. At home, rabbit directs space and ambiance, rooster manages cleaning, organizing, labeling for domestic artistry. Travel blends landmark highlights and elegant details."
-                },
-                caution: {
-                    summary: "Minimize critique fatigue with praise first and regular role swaps.",
-                    description: "Be wary of critique fatigue. Rooster's accuracy is a strength but can sound cold to rabbit. Use 20 seconds praise, then add improvement proposals as short reason–deadline–responsibility. Swap roles monthly for perspective and soften habits. On sensitive days, switch to a walk, then settle only on top three essentials."
-                },
-                dateRecommendation: {
-                    summary: "Cooking and exhibitions for class, emotional talks for warmth.",
-                    description: "Compose plates as art in cooking classes; optimize prep with checklists. After museum/tech show, vote for most beautiful and practical item. Overnight, pick garden or art hotels; at night, emotion cards maintain classy warmth."
-                }
+              basic: {
+                summary: "Rabbit’s taste and rooster’s accuracy combine for class and completeness.",
+                description: "'Art director (rabbit)' plus 'QA director (rooster).' In campaigns, rabbit ensures user experience and aesthetics, rooster locks compliance and checklists for a trusted, classy result. At home, rabbit directs space and ambiance, rooster manages cleaning, organizing, labeling for domestic artistry. Travel blends landmark highlights and elegant details."
+              },
+              caution: {
+                summary: "Minimize critique fatigue with praise first and regular role swaps.",
+                description: "Be wary of critique fatigue. Rooster's accuracy is a strength but can sound cold to rabbit. Use 20 seconds praise, then add improvement proposals as short reason–deadline–responsibility. Swap roles monthly for perspective and soften habits. On sensitive days, switch to a walk, then settle only on top three essentials."
+              },
+              dateRecommendation: {
+                summary: "Cooking and exhibitions for class, emotional talks for warmth.",
+                description: "Compose plates as art in cooking classes; optimize prep with checklists. After museum/tech show, vote for most beautiful and practical item. Overnight, pick garden or art hotels; at night, emotion cards maintain classy warmth."
+              }
             }
           },
           dog: {
             witty: "Warm reassurance care! Rabbit and dog are heart-guarding duos.",
             elaboration: "Dog brings trust, safety, and principle; rabbit counters with empathy, mediation, and peace. Prioritize people over structures for lasting, stable bonds. Prevent emotional dryness by daily gratitude and periodic surprises.",
             detailed: {
-                basic: {
-                    summary: "Dog's trust and rabbit's empathy create a secure and warm relationship.",
-                    description: "They're the 'emotional safety net.' Dog keeps promises and presence; rabbit stabilizes tone with empathy and mediation. Pet care, tidying, and light cooking cement small daily achievements, while walks, picnics, and camping outside bring cozy bonding. In projects, dog covers principle and safety, rabbit manages tone and relations for less friction."
-                },
-                caution: {
-                    summary: "Combat dryness with gratitude sharing and regular surprises.",
-                    description: "Too much focus on reality or principle can dry emotions. Swap 'one gratitude line' at bedtime; designate monthly surprise days for letters, snacks, walk routes. For conflicts, use fact → feeling → request for painless agreement. For sensitive issues, use checklist pre-agreements."
-                },
-                dateRecommendation: {
-                    summary: "Bonding through walks and cooking, build meaning with volunteering.",
-                    description: "Trail walks, camping, or dog cafés build steady affection. After movies, swap three reflection points; home cooking together creates 'our menu' with warmth. Overnight forest-view glamping means stargazing and runs to reinforce routine and bonds."
-                }
+              basic: {
+                summary: "Dog's trust and rabbit's empathy create a secure and warm relationship.",
+                description: "They're the 'emotional safety net.' Dog keeps promises and presence; rabbit stabilizes tone with empathy and mediation. Pet care, tidying, and light cooking cement small daily achievements, while walks, picnics, and camping outside bring cozy bonding. In projects, dog covers principle and safety, rabbit manages tone and relations for less friction."
+              },
+              caution: {
+                summary: "Combat dryness with gratitude sharing and regular surprises.",
+                description: "Too much focus on reality or principle can dry emotions. Swap 'one gratitude line' at bedtime; designate monthly surprise days for letters, snacks, walk routes. For conflicts, use fact → feeling → request for painless agreement. For sensitive issues, use checklist pre-agreements."
+              },
+              dateRecommendation: {
+                summary: "Bonding through walks and cooking, build meaning with volunteering.",
+                description: "Trail walks, camping, or dog cafés build steady affection. After movies, swap three reflection points; home cooking together creates 'our menu' with warmth. Overnight forest-view glamping means stargazing and runs to reinforce routine and bonds."
+              }
             }
           },
           pig: {
             witty: "Ultimate warmth and consideration! Rabbit and pig are masters of rest.",
             elaboration: "Pig brings acceptance, rest, hospitality; rabbit offers empathy, taste, peace. Together, daily life and home become a haven. To prevent decision inertia, set one mini-goal, agree on deadlines and rewards, and regularize experiment days for gentle but steady progress.",
             detailed: {
-                basic: {
-                    summary: "Pig’s acceptance and rabbit’s empathy complete a nurturing, restorative daily routine.",
-                    description: "'Wellness curators.' At home, warm lighting, scents, music, and tidy tables form recovery rituals. On weekends, choose market, garden, or hot spring activities for managing condition. For guests, pig hosts, rabbit handles aesthetics for a natural lounge effect. On projects, pig leads team care and follow-up, rabbit directs messaging and experience design, building trust."
-                },
-                caution: {
-                    summary: "Reduce inertia with regular goals and experiment days.",
-                    description: "Risk is inertia from delays. So much consideration can mean missed chances. Set one monthly goal, agree deadline and rewards. Structure decisions as 'emotion check → three options → selection.' Set a quarterly experiment day for new places or hobbies, preserving vibrancy. Share one gratitude and one discomfort weekly so small misunderstandings never grow big."
-                },
-                dateRecommendation: {
-                    summary: "Restorative trips and home parties for recovery, playlists for warmth.",
-                    description: "Restorative travel—hot springs, spas, resorts—fits best; mix day density with markets, flea markets, or farm tours. In the evening, host home parties to make signature dishes and share playlists, swapping 'three best moments today' for lasting warmth."
-                }
+              basic: {
+                summary: "Pig’s acceptance and rabbit’s empathy complete a nurturing, restorative daily routine.",
+                description: "'Wellness curators.' At home, warm lighting, scents, music, and tidy tables form recovery rituals. On weekends, choose market, garden, or hot spring activities for managing condition. For guests, pig hosts, rabbit handles aesthetics for a natural lounge effect. On projects, pig leads team care and follow-up, rabbit directs messaging and experience design, building trust."
+              },
+              caution: {
+                summary: "Reduce inertia with regular goals and experiment days.",
+                description: "Risk is inertia from delays. So much consideration can mean missed chances. Set one monthly goal, agree deadline and rewards. Structure decisions as 'emotion check → three options → selection.' Set a quarterly experiment day for new places or hobbies, preserving vibrancy. Share one gratitude and one discomfort weekly so small misunderstandings never grow big."
+              },
+              dateRecommendation: {
+                summary: "Restorative trips and home parties for recovery, playlists for warmth.",
+                description: "Restorative travel—hot springs, spas, resorts—fits best; mix day density with markets, flea markets, or farm tours. In the evening, host home parties to make signature dishes and share playlists, swapping 'three best moments today' for lasting warmth."
+              }
             }
           }
         },
@@ -2545,108 +2911,108 @@ const i18n = createI18n({
             witty: "Deep calculation meets freedom’s sprint! Snake’s brakes send the horse’s wind far.",
             elaboration: "Horse brings freedom, vitality, spontaneity; snake brings insight, risk, timing. Horse whips up fresh winds; snake guides direction and pacing for 'endless fun without burnout.' But weak management or too-tight brakes can cause overload or lost drive. Use a loose 60/40 plan, agree on spending caps and rest blocks.",
             detailed: {
-                basic: {
-                    summary: "Horse’s vitality and snake’s insight combine for both fun and stability.",
-                    description: "In side projects, horse delivers ideas, networking, and early spread; snake sets core hypotheses, risks, and MVP limits to minimize trial costs. On trips, horse leads on-site content, festivals, and night views, snake ensures crowd avoidance, safety, and recovery points for next-day condition. In daily life, horse energizes, snake brings order—accepting difference as 'accelerator and brake' amasses strength for long travels."
-                },
-                caution: {
-                    summary: "Prevent overload and lost drive with free blocks and routine pilot checks.",
-                    description: "Conflict emerges from unfilled organization or blocked freedom. Over-empty schedules/budgets/rest trigger burnout; snake's slow brakes can frustrate horse. Mitigate by ①locking 20–30% of schedule for free blocks, ②setting spending caps by category but leaving field control loose, ③documenting sensitive things (SNS/contact frequency). Switch to walking talks in disputes; agree on fast pilot → review → expansion for decisions. Praise instantly, give corrections as one reason, one solution—these two points alone sharply reduce friction."
-                },
-                dateRecommendation: {
-                    summary: "Balance with activities and gardens, maintain drive by sharing highlights.",
-                    description: "Do immersive sports like riding, paddleboard, or dance classes by day; drop the pace with garden or book café time in the afternoon. Snake covers safety/recovery, horse runs spontaneous content for higher satisfaction. Overnight, a sea or national park course split 60/40 between plan and spontaneity fits, and on return, recompile highlights by sorting photos and expenses. At night, recap three best moments plus a new experiment on a rooftop for next meeting’s motivation."
-                }
+              basic: {        
+                summary: "Horse’s vitality and snake’s insight combine for both fun and stability.",
+                description: "In side projects, horse delivers ideas, networking, and early spread; snake sets core hypotheses, risks, and MVP limits to minimize trial costs. On trips, horse leads on-site content, festivals, and night views, snake ensures crowd avoidance, safety, and recovery points for next-day condition. In daily life, horse energizes, snake brings order—accepting difference as 'accelerator and brake' amasses strength for long travels."
+              },
+              caution: {
+                summary: "Prevent overload and lost drive with free blocks and routine pilot checks.",
+                description: "Conflict emerges from unfilled organization or blocked freedom. Over-empty schedules/budgets/rest trigger burnout; snake's slow brakes can frustrate horse. Mitigate by ①locking 20–30% of schedule for free blocks, ②setting spending caps by category but leaving field control loose, ③documenting sensitive things (SNS/contact frequency). Switch to walking talks in disputes; agree on fast pilot → review → expansion for decisions. Praise instantly, give corrections as one reason, one solution—these two points alone sharply reduce friction."
+              },
+              dateRecommendation: {
+                summary: "Balance with activities and gardens, maintain drive by sharing highlights.",
+                description: "Do immersive sports like riding, paddleboard, or dance classes by day; drop the pace with garden or book café time in the afternoon. Snake covers safety/recovery, horse runs spontaneous content for higher satisfaction. Overnight, a sea or national park course split 60/40 between plan and spontaneity fits, and on return, recompile highlights by sorting photos and expenses. At night, recap three best moments plus a new experiment on a rooftop for next meeting’s motivation."
+              }
             }
           },
           goat: {
             witty: "Delicate comfort and cool guidance! Snake attaches direction to goat’s warmth.",
             elaboration: "Goat brings care, aesthetics, recovery; snake excels at context, decision, risk control. Goat covers the heart, snake charts the path for 'warm efficiency.' Delayed decisions risk inertia—standardize on 'emotion check → three options → deadline' and experiment routines for calm, steady progress.",
             detailed: {
-                basic: {
-                    summary: "Goat’s care with snake’s insight produces warm and efficient everyday routines.",
-                    description: "At home, goat lifts space with light, fabric, plants, music; snake manages routes, organization, and sustainability for a 'livable house.' In projects, goat steers team care, tone, and energy; snake handles data, risk, and sequences to reduce clashes. Travel mixes soft courses—gardens, bookstores, galleries—with snake adding crowd avoidance and recovery for rich but fatigue-free memories. Decision-making is quick and gentle: goat’s empathy, snake’s facts/options, together seal easy agreements."
-                },
-                caution: {
-                    summary: "Reduce delays and misunderstandings by formalizing emotion checks and experiment routines.",
-                    description: "Risks: silent delay, misread feelings. Goat’s indirectness may seem evasive to snake, snake’s bluntness may sound cold to goat. Fixes: ①start every talk with an empathy line, ②require three options and a deadline, ③small decisions made inside 48 hours. Swap some roles quarterly for perspective; log one gratitude and one discomfort in weekly recaps for lubricant. On tired days, pause analysis, just walk or have tea together to lower tempo."
-                },
-                dateRecommendation: {
-                    summary: "Workshops and picnics for warmth, wish planning for stronger bonds.",
-                    description: "After small exhibits/workshops, swap sketchbook scenes and jot a polaroid review. Calm forest walks and picnics blend goat sensitivity with snake’s recovery plans. Overnight at garden/lakeview hotels; at night, swap playlists and candles while turning one wish into an actionable monthly plan—leaving warmth and efficiency hand in hand."
-                }
+              basic: {        
+                summary: "Goat’s care with snake’s insight produces warm and efficient everyday routines.",
+                description: "At home, goat lifts space with light, fabric, plants, music; snake manages routes, organization, and sustainability for a 'livable house.' In projects, goat steers team care, tone, and energy; snake handles data, risk, and sequences to reduce clashes. Travel mixes soft courses—gardens, bookstores, galleries—with snake adding crowd avoidance and recovery for rich but fatigue-free memories. Decision-making is quick and gentle: goat’s empathy, snake’s facts/options, together seal easy agreements."
+              },
+              caution: {
+                summary: "Reduce delays and misunderstandings by formalizing emotion checks and experiment routines.",
+                description: "Risks: silent delay, misread feelings. Goat’s indirectness may seem evasive to snake, snake’s bluntness may sound cold to goat. Fixes: ①start every talk with an empathy line, ②require three options and a deadline, ③small decisions made inside 48 hours. Swap some roles quarterly for perspective; log one gratitude and one discomfort in weekly recaps for lubricant. On tired days, pause analysis, just walk or have tea together to lower tempo."
+              },
+              dateRecommendation: {
+                summary: "Workshops and picnics for warmth, wish planning for stronger bonds.",
+                description: "After small exhibits/workshops, swap sketchbook scenes and jot a polaroid review. Calm forest walks and picnics blend goat sensitivity with snake’s recovery plans. Overnight at garden/lakeview hotels; at night, swap playlists and candles while turning one wish into an actionable monthly plan—leaving warmth and efficiency hand in hand."
+              }
             }
           },
           monkey: {
             witty: "Ping-pong of wit and insight! Monkey ideas take flight with snake interpretations.",
             elaboration: "Monkey brings ideas, humor, trend sense; snake brings context, logic, risk. Their combo raises both fun and density, but too much passion leads to chaos and burnout. Fix one monthly goal, deadline, and reward, and keep meetings brief and output clear for 'work-play with results.'",
             detailed: {
-                basic: {
-                    summary: "Monkey’s wit and snake’s reasoning deliver rapid, high-quality results.",
-                    description: "In side projects, monkey pours out concepts, content, viral tactics, while snake crisply defines MVP with key hypothesis, data, and risk map. Even restaurant or city tours are approached as mini-projects—monkey running SNS research, photos, memes, snake handling routes, avoidance, and recovery for packed satisfaction. At work, monkey rapid-prototypes, snake thoroughly validates, linking speed and quality. With strengths that complement, growth accelerates in steps."
-                },
-                caution: {
-                    summary: "Cut scatter and fatigue with goal agreements and short meetings.",
-                    description: "Risks: collapsed priorities and leadership games. Too many ideas delay conclusions, and mutual attempts at leading extend debates. Fix: ①one monthly goal only, ②documented assignment/deadline/reward, ③meetings: two 25-min pomodoro sets, last 5 min for output. Reset debates with 'joke → main point → conclusion.' Hold quarterly 'no-phone dates' to keep creativity/focus running long."
-                },
-                dateRecommendation: {
-                    summary: "Quiz and escape games for teamwork, shared recaps for ongoing growth.",
-                    description: "Quiz nights, board games, escape rooms are perfect for joint play. On day trips, monkey manages content/photo spots, snake handles route/avoidance/café buffer for high satisfaction. At night, confirm three highlights and one next experiment on the rooftop, exchange three-line summaries to raise next meeting’s quality."
-                }
+              basic: {        
+                summary: "Monkey’s wit and snake’s reasoning deliver rapid, high-quality results.",
+                description: "In side projects, monkey pours out concepts, content, viral tactics, while snake crisply defines MVP with key hypothesis, data, and risk map. Even restaurant or city tours are approached as mini-projects—monkey running SNS research, photos, memes, snake handling routes, avoidance, and recovery for packed satisfaction. At work, monkey rapid-prototypes, snake thoroughly validates, linking speed and quality. With strengths that complement, growth accelerates in steps."
+              },
+              caution: {
+                summary: "Cut scatter and fatigue with goal agreements and short meetings.",
+                description: "Risks: collapsed priorities and leadership games. Too many ideas delay conclusions, and mutual attempts at leading extend debates. Fix: ①one monthly goal only, ②documented assignment/deadline/reward, ③meetings: two 25-min pomodoro sets, last 5 min for output. Reset debates with 'joke → main point → conclusion.' Hold quarterly 'no-phone dates' to keep creativity/focus running long."
+              },
+              dateRecommendation: {
+                summary: "Quiz and escape games for teamwork, shared recaps for ongoing growth.",
+                description: "Quiz nights, board games, escape rooms are perfect for joint play. On day trips, monkey manages content/photo spots, snake handles route/avoidance/café buffer for high satisfaction. At night, confirm three highlights and one next experiment on the rooftop, exchange three-line summaries to raise next meeting’s quality."
+              }
             }
           },
           rooster: {
             witty: "Precision x precision! Snake’s context meets rooster’s standards—quality as default.",
             elaboration: "Rooster gives standards, checks, detail; snake brings context, interpretation, risk. Plans and execution leave few gaps, and trust in output rises sharply. To block critique fatigue, agree on '20s praise-before-correction,' '80% OK' rules, and monthly role swaps.",
             detailed: {
-                basic: {
-                    summary: "Snake insight and rooster precision craft systematic quality with no gaps.",
-                    description: "In campaigns, snake covers risk scenarios, legal issues, and Q&A lists, rooster manages checklists, defect records, quality standards ensuring 'safe and accurate' action. In home repairs or moves, snake sets routes, maintenance costs, priorities, rooster handles packing, labelling, and checks for ease. In presentations, snake supplements logic and counterpoints, rooster polishes data and formatting, boosting persuasion. Their results come from systematic rigor, not luck."
-                },
-                caution: {
-                    summary: "Lower correction fatigue with praise first and regular role swaps.",
-                    description: "Issue: excessive critique and face. Truth repeated can sound like nagging. Mitigate by ①20s praise before correction, ②proposals brief—reason, deadline, responsibility, ③quarterly partial role swaps for cross-view. Meetings run in 20-min blocks, last 3 min for decisions. On rough days, drop the checklist, walk 10 min, agree on just three essentials."
-                },
-                dateRecommendation: {
-                    summary: "Cooking and exhibits for quality, walking for tension relief.",
-                    description: "Treat recipes as SOPs in cooking class; rotate chef/QA roles to compete on polish. After science/tech show, vote best practical item, pick one useful library book for one another. Overnight, do a checklist challenge for simple smart scheduling, unwind at night by walking/talking to ease perfectionist tensions."
-                }
+              basic: {        
+                summary: "Snake insight and rooster precision craft systematic quality with no gaps.",
+                description: "In campaigns, snake covers risk scenarios, legal issues, and Q&A lists, rooster manages checklists, defect records, quality standards ensuring 'safe and accurate' action. In home repairs or moves, snake sets routes, maintenance costs, priorities, rooster handles packing, labelling, and checks for ease. In presentations, snake supplements logic and counterpoints, rooster polishes data and formatting, boosting persuasion. Their results come from systematic rigor, not luck."
+              },
+              caution: {
+                summary: "Lower correction fatigue with praise first and regular role swaps.",
+                description: "Issue: excessive critique and face. Truth repeated can sound like nagging. Mitigate by ①20s praise before correction, ②proposals brief—reason, deadline, responsibility, ③quarterly partial role swaps for cross-view. Meetings run in 20-min blocks, last 3 min for decisions. On rough days, drop the checklist, walk 10 min, agree on just three essentials."
+              },
+              dateRecommendation: {
+                summary: "Cooking and exhibits for quality, walking for tension relief.",
+                description: "Treat recipes as SOPs in cooking class; rotate chef/QA roles to compete on polish. After science/tech show, vote best practical item, pick one useful library book for one another. Overnight, do a checklist challenge for simple smart scheduling, unwind at night by walking/talking to ease perfectionist tensions."
+              }
             }
           },
           dog: {
             witty: "Guardian of loyalty meets designer of insight! Dog trust plus snake standards deliver results.",
             elaboration: "Dog offers principle, protection, duty; snake excels at context, risk, and decision standards. In crisis, dog guards the line, snake defines next steps to minimize losses. But reality- and principle-first talk may cool emotions; share gratitude and set up regular surprises, document rules to minimize confusion.",
             detailed: {
-                basic: {
-                    summary: "Dog’s trust with snake’s insight produces sturdy, precise outcomes.",
-                    description: "In projects, dog secures safety, legal compliance, deadlines; snake reduces uncertainty with risk maps, priorities, and backup scenarios. At home, dog keeps presence, snake outlines next moves to help recovery. On trips, dog manages supplies, emergency kits, time; snake secures avoidance, rest density, quiet spots, lowering stress. Together, they calmly structure solutions even for slight uncertainty."
-                },
-                caution: {
-                    summary: "Cut emotional dryness by sharing gratitude and formalizing rules.",
-                    description: "Risk: emotional dryness by over-solving problems. Trade a gratitude line before sleep; do monthly surprise days rotating notes, snacks, walks. For disputes, use fact → feeling → request for painless consensus. Document financial, chore, and leisure rules, and pre-agree on sensitive family events with checklists for emotional safety."
-                },
-                dateRecommendation: {
-                    summary: "Bond by walking and cooking, strengthen ties through volunteering.",
-                    description: "Forest trail walks, camping, dog cafes are simple but affection-building picks. After movies, swap three highlight points to expand conversations; weekly joint cooking creates 'our menu' and warmth. Overnight forest-view glamping means stargazing and runs for deeper routine ties. Quarterly volunteer work builds 'our protected values' for deeper connection."
-                }
+              basic: {        
+                summary: "Dog’s trust with snake’s insight produces sturdy, precise outcomes.",
+                description: "In projects, dog secures safety, legal compliance, deadlines; snake reduces uncertainty with risk maps, priorities, and backup scenarios. At home, dog keeps presence, snake outlines next moves to help recovery. On trips, dog manages supplies, emergency kits, time; snake secures avoidance, rest density, quiet spots, lowering stress. Together, they calmly structure solutions even for slight uncertainty."
+              },
+              caution: {
+                summary: "Cut emotional dryness by sharing gratitude and formalizing rules.",
+                description: "Risk: emotional dryness by over-solving problems. Trade a gratitude line before sleep; do monthly surprise days rotating notes, snacks, walks. For disputes, use fact → feeling → request for painless consensus. Document financial, chore, and leisure rules, and pre-agree on sensitive family events with checklists for emotional safety."
+              },
+              dateRecommendation: {
+                summary: "Bond by walking and cooking, strengthen ties through volunteering.",
+                description: "Forest trail walks, camping, dog cafes are simple but affection-building picks. After movies, swap three highlight points to expand conversations; weekly joint cooking creates 'our menu' and warmth. Overnight forest-view glamping means stargazing and runs for deeper routine ties. Quarterly volunteer work builds 'our protected values' for deeper connection."
+              }
             }
           },
           pig: {
             witty: "Balance of warmth and cool! Pig’s generosity maps in snake’s standards.",
             elaboration: "Pig gives acceptance, rest, hospitality; snake supplies insight, risk, reference for decision. Pig makes space for breathing, snake safeguards quality so progress happens comfortably. Prevent leadership imbalances from speed gap by fixing rotation and rest blocks.",
             detailed: {
-                basic: {
-                    summary: "Pig’s acceptance with snake’s insight builds comfortable, efficient routines.",
-                    description: "At home, pig lifts warmth with meals, tidying, hospitality, snake organizes flows, discarding standards, and maintenance costs to prevent friction. In projects, pig leads team care and client experience, snake covers data, risk, priorities for joint satisfaction and productivity. Travel: pig covers spas/hot springs/cafés for recovery, snake manages avoidance, quiet spots, spare time for 'non-fatiguing fun.' Weekly, pig shares satisfaction/gratitude, snake shares learning/improvement for light rhythm."
-                },
-                caution: {
-                    summary: "Reduce leadership imbalances with rotations and regular rest blocks.",
-                    description: "Clash comes when 'leisure vs urgency' are misread. Pig guards ease, snake fears missing chances; snake sets standards, pig risks fatigue. Solve by ①rotating weekend leaders for plans/expenses/chores, ②fixing rest blocks into plans, ③instant praise, gentle requests. Express emotions via 'current speed,' start agreements with two-week pilots for less stress."
-                },
-                dateRecommendation: {
-                    summary: "Food tours and home parties for warmth, hot springs for recovery.",
-                    description: "After good eats, swap ratings for satisfaction, value, revisit intentions; host home parties for joint signature meals. Overnight: recover at spa/hot spring/resort; by day, take light walks, visit gardens or local markets for balanced density. At night, swap playlists, share three best moments, and fix one new mini-goal for next month—keeping warmth and growth together."
-                }
+              basic: {        
+                summary: "Pig’s acceptance with snake’s insight builds comfortable, efficient routines.",
+                description: "At home, pig lifts warmth with meals, tidying, hospitality, snake organizes flows, discarding standards, and maintenance costs to prevent friction. In projects, pig leads team care and client experience, snake covers data, risk, priorities for joint satisfaction and productivity. Travel: pig covers spas/hot springs/cafés for recovery, snake manages avoidance, quiet spots, spare time for 'non-fatiguing fun.' Weekly, pig shares satisfaction/gratitude, snake shares learning/improvement for light rhythm."
+              },
+              caution: {
+                summary: "Reduce leadership imbalances with rotations and regular rest blocks.",
+                description: "Clash comes when 'leisure vs urgency' are misread. Pig guards ease, snake fears missing chances; snake sets standards, pig risks fatigue. Solve by ①rotating weekend leaders for plans/expenses/chores, ②fixing rest blocks into plans, ③instant praise, gentle requests. Express emotions via 'current speed,' start agreements with two-week pilots for less stress."
+              },
+              dateRecommendation: {
+                summary: "Food tours and home parties for warmth, hot springs for recovery.",
+                description: "After good eats, swap ratings for satisfaction, value, revisit intentions; host home parties for joint signature meals. Overnight: recover at spa/hot spring/resort; by day, take light walks, visit gardens or local markets for balanced density. At night, swap playlists, share three best moments, and fix one new mini-goal for next month—keeping warmth and growth together."
+              }
             }
           }
         },
@@ -3046,7 +3412,6 @@ const i18n = createI18n({
             }
           }
         }
-
       }
     }
   }

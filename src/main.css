@@ -344,30 +344,6 @@ body.body-home {
   font-size: 0.9rem;
 }
 
-/* 개인정보보호방침 섹션 */
-.privacy-section {
-  text-align: center;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-  padding-top: 1.5rem;
-  border-top: 1px solid #f0f0f0; /* 구분선 */
-}
-
-/* 개인정보보호방침 버튼 */
-.privacy-btn {
-  background: transparent;
-  border: none;
-  color: #666;
-  font-size: 0.9rem;
-  text-decoration: underline; /* 밑줄 */
-  cursor: pointer;
-  transition: color 0.2s;
-}
-
-/* 개인정보보호방침 버튼 호버 효과 */
-.privacy-btn:hover {
-  color: #e91e63; /* 핑크색으로 변경 */
-}
 
 
 /* ========================================
@@ -1243,7 +1219,7 @@ body.body-home {
 
 /* ========================================
    모달 (Modal)
-   개인정보보호방침, 생년 선택 등
+   생년 선택 등
    ======================================== */
 
 /* 모달 오버레이 (어두운 배경) */

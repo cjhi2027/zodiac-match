@@ -84,7 +84,7 @@
       <!-- 선물 추천 (내 띠) -->
       <div class="detail-section">
         <h2 class="section-title" @click="toggleSection('myGift')" :class="{ active: sections.myGift }">
-          <span>🎁 {{ $t("compatibilityDetail.goodGiftFor") }} {{ $t(`zodiac.${myZodiac.id}`) }}</span>
+          <span>🎁 {{ $i18n.locale === 'ko' ? `${$t(`zodiac.${myZodiac.id}`)}에게 좋은 선물` : `${$t("compatibilityDetail.goodGiftFor")} ${$t(`zodiac.${myZodiac.id}`)}` }}</span>
           <span class="toggle-icon">{{ sections.myGift ? '▲' : '▼' }}</span>
         </h2>
         <div>
@@ -96,7 +96,7 @@
       <!-- 선물 추천 (상대 띠) -->
       <div class="detail-section">
         <h2 class="section-title" @click="toggleSection('partnerGift')" :class="{ active: sections.partnerGift }">
-          <span>🎁 {{ $t("compatibilityDetail.goodGiftFor") }} {{ $t(`zodiac.${partnerZodiac.id}`) }}</span>
+          <span>🎁 {{ $i18n.locale === 'ko' ? `${$t(`zodiac.${partnerZodiac.id}`)}에게 좋은 선물` : `${$t("compatibilityDetail.goodGiftFor")} ${$t(`zodiac.${partnerZodiac.id}`)}` }}</span>
           <span class="toggle-icon">{{ sections.partnerGift ? '▲' : '▼' }}</span>
         </h2>
         <div>

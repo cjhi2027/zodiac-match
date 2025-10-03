@@ -84,30 +84,6 @@
       </div>
     </div>
 
-    <!-- 개인정보보호방침 -->
-    <div class="privacy-section">
-      <button @click="showPrivacyPolicy" class="privacy-btn">
-        {{ $t("mainHome.privacyPolicy") }}
-      </button>
-    </div>
-
-    <!-- 개인정보보호방침 모달 -->
-    <div v-if="showPrivacyModal" class="modal-overlay" @click="closePrivacyModal">
-      <div class="modal-content" @click.stop>
-        <div class="modal-header">
-          <h3>{{ $t("mainHome.privacyTitle") }}</h3>
-          <button @click="closePrivacyModal" class="close-btn">×</button>
-        </div>
-        <div class="modal-body">
-          <p>{{ $t("mainHome.privacyContent") }}</p>
-        </div>
-        <div class="modal-footer">
-          <button @click="closePrivacyModal" class="confirm-btn">
-            {{ $t("mainHome.confirm") }}
-          </button>
-        </div>
-      </div>
-    </div>
 
     <!-- 토스트 메시지 -->
     <div v-if="toastMessage" class="toast-message">
@@ -130,7 +106,6 @@ interface ShareOption {
 
 const router = useRouter();
 const { t, locale } = useI18n();
-const showPrivacyModal = ref(false);
 
 // 토스트 메시지
 const toastMessage = ref('');
@@ -171,15 +146,6 @@ const goToZodiac = () => {
   router.push("/zodiac/my-info");
 };
 
-// 개인정보보호방침 표시
-const showPrivacyPolicy = () => {
-  showPrivacyModal.value = true;
-};
-
-// 개인정보보호방침 닫기
-const closePrivacyModal = () => {
-  showPrivacyModal.value = false;
-};
 
 // 언어별 공유 옵션
 const shareOptions = computed<ShareOption[]>(() => {
