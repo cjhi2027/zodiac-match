@@ -31,100 +31,26 @@
       <div class="content-section">
         <h2>{{ $t("about.contact") }}</h2>
         <p>{{ $t("about.contactDescription") }}</p>
-        <p class="contact-email">{{ $t("about.email") }}</p>
+        <p class="contact-email">
+          <a href="mailto:support@loveindex.com">{{ $t("about.email") }}</a>
+        </p>
       </div>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
+import { onMounted, onUnmounted } from 'vue';
+
 // About 페이지 컴포넌트
+onMounted(() => {
+  // 페이지 진입 시 body에 body-home 클래스 추가
+  document.body.classList.add('body-home');
+});
+
+onUnmounted(() => {
+  // 페이지 떠날 때 body-home 클래스 제거
+  document.body.classList.remove('body-home');
+});
 </script>
 
-<style scoped>
-.about-page {
-  min-height: calc(100vh - 4rem);
-  padding: 2rem 1rem;
-  background-color: #fffef5;
-}
-
-.container {
-  max-width: 800px;
-  margin: 0 auto;
-  line-height: 1.7;
-}
-
-.page-title {
-  font-size: 2.5rem;
-  font-weight: bold;
-  color: #e91e63;
-  text-align: center;
-  margin-bottom: 2rem;
-}
-
-.content-section {
-  margin-bottom: 2.5rem;
-  padding: 1.5rem;
-  background: white;
-  border-radius: 1rem;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-.content-section h2 {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #e91e63;
-  margin-bottom: 1rem;
-}
-
-.content-section p {
-  font-size: 1.1rem;
-  color: #333;
-  margin-bottom: 1rem;
-}
-
-.feature-list {
-  list-style: none;
-  padding: 0;
-}
-
-.feature-list li {
-  font-size: 1.1rem;
-  color: #333;
-  margin-bottom: 0.8rem;
-  padding-left: 1.5rem;
-  position: relative;
-}
-
-.feature-list li::before {
-  content: "✨";
-  position: absolute;
-  left: 0;
-  top: 0;
-}
-
-.contact-email {
-  font-weight: bold;
-  color: #e91e63;
-  font-size: 1.2rem;
-}
-
-@media (max-width: 768px) {
-  .page-title {
-    font-size: 2rem;
-  }
-  
-  .content-section {
-    padding: 1rem;
-    margin-bottom: 1.5rem;
-  }
-  
-  .content-section h2 {
-    font-size: 1.3rem;
-  }
-  
-  .content-section p {
-    font-size: 1rem;
-  }
-}
-</style>

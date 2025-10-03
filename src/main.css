@@ -23,7 +23,10 @@ body {
 }
 
 /* 홈 화면 전용 Body 스타일 - 고정 헤더 없음 */
-body.body-home {
+body.body-home,
+body.body-home-about,
+body.body-home-privacy,
+body.body-home-terms {
   margin-top: 0; /* 헤더 여백 제거 */
   min-height: 100vh; /* 전체 화면 높이 */
   padding: 0;
@@ -1748,5 +1751,348 @@ body.body-home {
     bottom: 3rem; /* 하단에서 3rem 위 */
     padding: 0.875rem 1.25rem;
     font-size: 0.9rem;
+  }
+}
+
+/* ===== 푸터 스타일 ===== */
+/* 사이트 하단 푸터 영역 */
+.site-footer {
+  background-color: none;
+  border-top: 1px solid #ddd;
+  padding: 2rem 1rem;
+  margin-top: auto;
+}
+
+/* 푸터 내용 컨테이너 */
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* 푸터 링크 영역 */
+.footer-links {
+  margin-bottom: 1rem;
+}
+
+/* 푸터 링크 스타일 */
+.footer-links a {
+  font-size: 1.1rem;
+  color: #666;
+  text-decoration: none;
+  margin: 0 2rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+/* 푸터 링크 호버 효과 */
+.footer-links a:hover {
+  color: #0645ad;
+  text-decoration: underline;
+}
+
+/* 푸터 연락처 영역 */
+.footer-contact {
+  margin-bottom: 1rem;
+}
+
+/* 푸터 연락처 텍스트 */
+.footer-contact p {
+  color: #666;
+  font-size: 1rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+/* 푸터 이메일 링크 */
+.footer-contact a {
+  color: #0645ad;
+  text-decoration: underline;
+  transition: color 0.3s ease;
+}
+
+.footer-contact a:hover {
+  color: #003d82;
+  text-decoration: underline;
+}
+
+/* 푸터 저작권 영역 */
+.footer-copyright p {
+  color: #666;
+  font-size: 0.8rem;
+  margin: 0;
+}
+
+/* 푸터 모바일 반응형 */
+@media (max-width: 768px) {
+  .site-footer {
+    padding: 1rem 0.5rem 2rem 0.5rem;
+  }
+  
+  .footer-links {
+    text-align: left;
+  }
+  
+  .footer-links a {
+    font-size: 1rem;
+    display: block;
+    margin: 0.5rem 1rem;
+  }
+  
+  .footer-contact p {
+    font-size: 0.9rem;
+  }
+  
+  .footer-copyright p {
+    font-size: 0.8rem;
+  }
+}
+
+/* ===== About 페이지 스타일 ===== */
+/* About 페이지 전체 컨테이너 */
+.about-page {
+  min-height: 100vh;
+  padding: 0 1rem 2rem 1rem;
+  background-color: #fffef5;
+}
+
+/* About 페이지 내용 컨테이너 */
+.about-page .container {
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* About 페이지 제목 */
+.about-page .page-title {
+  font-size: 2.2rem;
+  font-weight: bold;
+  color: #e91e63;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/* 공통 콘텐츠 섹션 스타일 */
+.content-section {
+  margin-bottom: 2rem;
+  padding: 1rem;
+  background: white;
+  border-radius: 0.75rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* 공통 섹션 제목 스타일 */
+.content-section h2 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #444;
+  margin-bottom: 1rem;
+}
+
+/* 공통 섹션 텍스트 스타일 */
+.content-section p {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+/* 공통 콘텐츠 섹션 모바일 반응형 */
+@media (max-width: 768px) {
+  .content-section {
+    padding: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .content-section h2 {
+    font-size: 1.1rem;
+  }
+  
+  .content-section p {
+    font-size: 0.9rem;
+  }
+}
+
+/* About 페이지 기능 목록 */
+.about-page .feature-list {
+  list-style: none;
+  padding: 0;
+}
+
+/* About 페이지 기능 목록 항목 */
+.about-page .feature-list li {
+  font-size: 0.9rem;
+  color: #333;
+  margin-bottom: 0.8rem;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+/* About 페이지 기능 목록 아이콘 */
+.about-page .feature-list li::before {
+  content: "✨";
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+/* About 페이지 연락처 이메일 */
+.about-page .contact-email a {
+  color: #0645ad;
+  font-size: 0.9rem;
+  text-decoration: underline;
+  transition: color 0.3s ease;
+}
+
+.about-page .contact-email a:hover {
+  color: #003d82;
+  text-decoration: none;
+}
+
+/* About 페이지 모바일 반응형 */
+@media (max-width: 768px) {
+  .about-page .page-title {
+    font-size: 1.6rem;
+  }
+}
+
+/* ===== Privacy 페이지 스타일 ===== */
+/* Privacy 페이지 전체 컨테이너 */
+.privacy-page {
+  min-height: 100vh;
+  padding: 0 1rem 2rem 1rem;
+  background-color: #fffef5;
+}
+
+/* Privacy 페이지 내용 컨테이너 */
+.privacy-page .container {
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* Privacy 페이지 제목 */
+.privacy-page .page-title {
+  font-size: 2.2rem;
+  font-weight: bold;
+  color: #e91e63;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+
+/* Privacy 페이지 소개 텍스트 */
+.privacy-page .intro {
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+/* Privacy 페이지 마지막 업데이트 */
+.privacy-page .last-updated {
+  font-style: italic;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+/* Privacy 페이지 목록 */
+.privacy-page .content-section ul {
+  margin: 1rem 0;
+  padding-left: 1.5rem;
+}
+
+/* Privacy 페이지 목록 항목 */
+.privacy-page .content-section li {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+/* Privacy 페이지 연락처 이메일 */
+.privacy-page .contact-email a {
+  color: #0645ad;
+  font-size: 1rem;
+  text-decoration: underline;
+  transition: color 0.3s ease;
+}
+
+.privacy-page .contact-email a:hover {
+  color: #003d82;
+  text-decoration: none;
+}
+
+/* Privacy 페이지 모바일 반응형 */
+@media (max-width: 768px) {
+  .privacy-page .page-title {
+    font-size: 1.6rem;
+  }
+}
+
+/* ===== Terms 페이지 스타일 ===== */
+/* Terms 페이지 전체 컨테이너 */
+.terms-page {
+  min-height: 100vh;
+  padding: 0 1rem 2rem 1rem;
+  background-color: #fffef5;
+}
+
+/* Terms 페이지 내용 컨테이너 */
+.terms-page .container {
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* Terms 페이지 제목 */
+.terms-page .page-title {
+  font-size: 2.2rem;
+  font-weight: bold;
+  color: #e91e63;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+
+/* Terms 페이지 소개 텍스트 */
+.terms-page .intro {
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+/* Terms 페이지 마지막 업데이트 */
+.terms-page .last-updated {
+  font-style: italic;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+/* Terms 페이지 목록 */
+.terms-page .content-section ul {
+  margin: 1rem 0;
+  padding-left: 1.5rem;
+}
+
+/* Terms 페이지 목록 항목 */
+.terms-page .content-section li {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+/* Terms 페이지 연락처 이메일 */
+.terms-page .contact-email a {
+  color: #0645ad;
+  font-size: 1rem;
+  text-decoration: underline;
+  transition: color 0.3s ease;
+}
+
+.terms-page .contact-email a:hover {
+  color: #003d82;
+  text-decoration: none;
+}
+
+/* Terms 페이지 모바일 반응형 */
+@media (max-width: 768px) {
+  .terms-page .page-title {
+    font-size: 1.6rem;
   }
 }
