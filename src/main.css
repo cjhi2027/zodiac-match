@@ -1875,7 +1875,7 @@ body.body-home-terms {
 /* 공통 콘텐츠 섹션 스타일 */
 .content-section {
   margin-bottom: 2rem;
-  padding: 1rem;
+  padding: 1rem 2rem;
   background: white;
   border-radius: 0.75rem;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
@@ -1982,7 +1982,7 @@ body.body-home-terms {
 
 /* Privacy 페이지 소개 텍스트 */
 .privacy-page .intro {
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: 500;
 }
 
@@ -2094,5 +2094,57 @@ body.body-home-terms {
 @media (max-width: 768px) {
   .terms-page .page-title {
     font-size: 1.6rem;
+  }
+}
+
+/* ===== 돌아가기 버튼 스타일 ===== */
+/* About, Privacy, Terms 페이지의 navigation-buttons - 애니메이션 제거 (버튼 자체 애니메이션만 사용) */
+.about-page > .navigation-buttons,
+.privacy-page > .navigation-buttons,
+.terms-page > .navigation-buttons {
+  /* 컨테이너 애니메이션 제거 - 버튼 자체 애니메이션만 사용 */
+}
+
+/* About, Privacy, Terms 페이지의 nav-btn에 slide-up-button 애니메이션 적용 */
+.about-page .nav-btn,
+.privacy-page .nav-btn,
+.terms-page .nav-btn {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+/* slide-up 클래스가 추가되면 애니메이션 실행 */
+.about-page .nav-btn.slide-up,
+.privacy-page .nav-btn.slide-up,
+.terms-page .nav-btn.slide-up {
+  animation: slide-up-button 0.2s ease-out forwards;
+}
+
+/* 돌아가기 버튼 애니메이션 */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+/* 모바일에서도 돌아가기 버튼 표시 - 하단 고정 */
+@media (max-width: 768px) {
+  .about-page > .navigation-buttons,
+  .privacy-page > .navigation-buttons,
+  .terms-page > .navigation-buttons {
+    /* 컨테이너 애니메이션 제거 - 버튼 자체 애니메이션만 사용 */
+    position: fixed;
+    bottom: 0;
+    left: 0.5rem;
+    right: 0.5rem;
+    padding: 0.75rem;
+    z-index: 200;
+    background: #fffef5;
+    box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
   }
 }
