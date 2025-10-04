@@ -73,10 +73,10 @@
           {{
             myActiveIndex === 0
               ? myZodiac
-                ? $t(myZodiac.featureKey)
+                ? $t(myZodiac.wittyKey)
                 : ""
               : getMyFinalZodiac()
-              ? $t(getMyFinalZodiac()?.featureKey || "")
+              ? $t(getMyFinalZodiac()?.wittyKey || "")
               : ""
           }}
         </div>
@@ -142,10 +142,10 @@
           {{
             partnerActiveIndex === 0
               ? partnerZodiac
-                ? $t(partnerZodiac.featureKey)
+                ? $t(partnerZodiac.wittyKey)
                 : ""
               : getPartnerFinalZodiac()
-              ? $t(getPartnerFinalZodiac()?.featureKey || "")
+              ? $t(getPartnerFinalZodiac()?.wittyKey || "")
               : ""
           }}
         </div>
