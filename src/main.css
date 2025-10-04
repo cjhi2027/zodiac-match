@@ -2099,12 +2099,6 @@ body.body-home-terms {
 }
 
 /* ===== 돌아가기 버튼 스타일 ===== */
-/* About, Privacy, Terms 페이지의 navigation-buttons - 애니메이션 제거 (버튼 자체 애니메이션만 사용) */
-.about-page > .navigation-buttons,
-.privacy-page > .navigation-buttons,
-.terms-page > .navigation-buttons {
-  /* 컨테이너 애니메이션 제거 - 버튼 자체 애니메이션만 사용 */
-}
 
 /* About, Privacy, Terms 페이지의 nav-btn에 slide-up-button 애니메이션 적용 */
 .about-page .nav-btn,

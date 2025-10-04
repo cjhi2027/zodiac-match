@@ -16,8 +16,13 @@ export default {
     zodiacSelect: "Zodiac Select",
     birthYearSelect: "Birth Year",
     checkCompatibility: "Check Compatibility",
-    result: "Result",
-    detail: "Detail",
+    checkAgain: "Check Again",
+    selectBirthYear: "Please select birth year",
+    yearSuffix: "Year",
+    zodiacSuffix: "Zodiac",
+    inputRequired: "Please enter both your information and partner information",
+    resultTitle: "Compatibility Result",
+    language: "Language",
     korean: "한국어",
     english: "English",
     goHome: "Go Home",
@@ -32,18 +37,34 @@ export default {
       subtitle: "Love match by Chinese Zodiac signs"
     },
     constellation: {
-      title: "Constellation Match",
-      subtitle: "Love index by zodiac signs"
+      title: "Western Zodiac",
+      subtitle: "Love match by star signs"
     },
     bloodType: {
-      title: "Blood Type Match",
-      subtitle: "Dating style by blood type"
+      title: "Blood Type",
+      subtitle: "Love match by blood type"
     },
     mbti: {
-      title: "MBTI Match",
+      title: "MBTI",
       subtitle: "Couple chemistry by MBTI"
     },
     comingSoon: "Coming Soon",
+  },
+  clickToEdit: "Edit",
+  headerTitle: "Zodiac Animals",
+  zodiac: {
+    mouse: "Rat",
+    ox: "Ox",
+    tiger: "Tiger",
+    rabbit: "Rabbit",
+    dragon: "Dragon",
+    snake: "Snake",
+    horse: "Horse",
+    goat: "Goat",
+    monkey: "Monkey",
+    rooster: "Rooster",
+    dog: "Dog",
+    pig: "Pig",
   },
   about: {
     title: "About LoveIndex",
