@@ -17,21 +17,6 @@ export default defineConfig({
     },
   },
   build: {
-    chunkSizeWarningLimit: 1000,
-    rollupOptions: {
-      output: {
-        manualChunks: (id) => {
-          if (id.includes('node_modules')) {
-            if (id.includes('vue')) {
-              return 'vue-vendor';
-            }
-            if (id.includes('primevue')) {
-              return 'prime-vendor';
-            }
-            return 'vendor';
-          }
-        }
-      }
-    }
+    chunkSizeWarningLimit: 1000
   }
 })
