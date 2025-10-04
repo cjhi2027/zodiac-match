@@ -1,7 +1,144 @@
 /* ========================================
+   ZodiacMatch Vue.js 애플리케이션 메인 스타일시트
+   ========================================
+   
+   📋 파일 구조:
+   1. 유틸리티 클래스 - 자주 사용되는 공통 스타일
+   2. 글로벌 스타일 - HTML, Body, App 기본 설정
+   3. 고정 헤더 - 모든 페이지 상단 헤더
+   4. 홈페이지 - 메인 랜딩 페이지
+   5. 정보 입력 - 내 정보/상대방 정보 입력 페이지
+   6. 결과 화면 - 궁합 결과 표시
+   7. 정적 페이지 - About, Privacy, Terms
+   8. 푸터 - 사이트 하단 정보
+   9. 통합된 미디어 쿼리 - 반응형 디자인
+   
+   🎨 디자인 시스템:
+   - 메인 컬러: #dc3545 (빨간색 그라데이션)
+   - 배경색: #fffef5 (크림색)
+   - 텍스트: #333 (진한 회색)
+   - 폰트: 시스템 기본 폰트 스택
+   
+   📱 반응형 브레이크포인트:
+   - 모바일: 768px 이하
+   - 데스크톱: 769px 이상
+   
+   ======================================== */
+
+/* ========================================
    글로벌 스타일 (Global Styles)
    모든 페이지에 공통으로 적용되는 기본 스타일
    ======================================== */
+
+/* ========================================
+   유틸리티 클래스 (Utility Classes)
+   자주 사용되는 공통 스타일을 위한 유틸리티 클래스
+   
+   💡 사용법:
+   - 기존 중복된 CSS 속성들을 이 클래스들로 대체 가능
+   - 예: display: flex; justify-content: center; align-items: center; → .flex-center
+   - 예: margin: 0; → .margin-0
+   - 예: cursor: pointer; → .cursor-pointer
+   
+   🔄 리팩토링 가이드:
+   - 기존 스타일에서 주석으로 "유틸리티 클래스로 대체 가능" 표시
+   - 점진적으로 HTML에서 클래스 적용 후 CSS에서 제거
+   ======================================== */
+
+/* 플렉스박스 유틸리티 - 자주 사용되는 플렉스 레이아웃 */
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-column-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 여백 유틸리티 - 자주 사용되는 여백 값들 */
+.margin-0 {
+  margin: 0;
+}
+
+.margin-auto {
+  margin: 0 auto;
+}
+
+.padding-0 {
+  padding: 0;
+}
+
+/* 텍스트 정렬 유틸리티 */
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+/* 커서 유틸리티 */
+.cursor-pointer {
+  cursor: pointer;
+}
+
+/* 전환 효과 유틸리티 */
+.transition-all {
+  transition: all 0.2s ease;
+}
+
+.transition-colors {
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+/* 버튼 유틸리티 - 공통 버튼 스타일 */
+.btn-base {
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  padding: 0.75rem 1.5rem;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #dc3545 0%, #c82333 50%, #bd2130 100%);
+  color: white;
+  box-shadow: 0 2px 8px rgba(220, 53, 69, 0.3);
+}
+
+.btn-secondary {
+  background-color: #f8f9fa;
+  color: #495057;
+  border: 1px solid #e9ecef;
+}
+
+.btn-disabled {
+  background: linear-gradient(135deg, #f8d7da 0%, #f5c6cb 100%);
+  color: #721c24;
+  cursor: not-allowed;
+  border: 1px solid #f1b0b7;
+}
 
 /* HTML 기본 폰트 크기 설정 - rem 단위 계산 기준 */
 html {
@@ -59,16 +196,18 @@ body.body-home-terms {
   box-shadow: 0 2px 12px rgba(220, 53, 69, 0.3); /* 부드러운 그림자 */
   z-index: 1000; /* 다른 요소 위에 표시 */
   height: 4rem; /* 64px 고정 높이 */
+  will-change: transform; /* 성능 최적화 */
+  /* 플렉스박스 유틸리티 클래스로 대체 가능: .flex-center */
   display: flex;
   justify-content: center;
   align-items: center;
-  will-change: transform; /* 성능 최적화 */
 }
 
 /* 헤더 내부 컨텐츠 영역 - 최대 너비 제한 */
 .header-content-wrapper {
   max-width: 768px; /* PC에서 최대 너비 제한 */
   width: 100%;
+  /* 플렉스박스 유틸리티 클래스로 대체 가능: .flex-between, .padding-0 */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -280,20 +419,22 @@ body.body-home-terms {
 
 /* 공유 버튼 행 */
 .share-buttons-row {
+  gap: 2rem; /* 버튼 간격 */
+  /* 플렉스박스 유틸리티 클래스로 대체 가능: .flex-center */
   display: flex;
   justify-content: center; /* 가운데 정렬 */
   align-items: center;
-  gap: 2rem; /* 버튼 간격 */
 }
 
 /* SNS 공유 버튼 */
 .share-btn {
   background: transparent;
   border: none;
+  flex-shrink: 0; /* 줄어들지 않음 */
+  /* 유틸리티 클래스로 대체 가능: .padding-0, .cursor-pointer, .transition-all */
   padding: 0;
   cursor: pointer;
   transition: all 0.2s;
-  flex-shrink: 0; /* 줄어들지 않음 */
 }
 
 /* SNS 공유 버튼 호버 효과 */
@@ -570,11 +711,12 @@ body.body-home-terms {
 .zodiac-character-section {
   margin-top: 1rem;
   margin-bottom: 2rem;
+  perspective: 1200px; /* 3D 효과를 위한 원근법 */
+  /* 플렉스박스 유틸리티 클래스로 대체 가능: .flex-center, .padding-0 */
   padding: 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  perspective: 1200px; /* 3D 효과를 위한 원근법 */
 }
 
 /* 카드 래퍼 (뒤집기 애니메이션용) */
@@ -773,7 +915,7 @@ body.body-home-terms {
   line-height: 1.6;
 }
 
-/* 모바일용 간략 설명 */
+/* 모바일용 간략 설명 - 미디어 쿼리 통합 예정 */
 @media (max-width: 768px) {
   .brief-description {
     font-size: 1.1rem;
@@ -830,6 +972,7 @@ body.body-home-terms {
 
 /* 네비게이션 버튼 컨테이너 */
 .navigation-buttons {
+  /* 플렉스박스 유틸리티 클래스로 대체 가능: .flex-center (gap은 별도 설정 필요) */
   display: flex;
   gap: 0.75rem;
 }
@@ -848,6 +991,10 @@ body.body-home-terms {
     z-index: 200; /* 다른 요소 위에 표시 */
     margin: 0;
     will-change: transform; /* 성능 최적화 */
+    
+    /* 페이드아웃 효과 - 버튼 위쪽에 자연스러운 그라데이션 */
+    mask: linear-gradient(to bottom, transparent 0%, rgba(255,255,255,1) 1rem);
+    -webkit-mask: linear-gradient(to bottom, transparent 0%, rgba(255,255,255,1) 1rem);
   }
 }
 
@@ -859,9 +1006,10 @@ body.body-home-terms {
   border-radius: 2rem;
   font-size: 1.1rem;
   font-weight: 500;
+  text-align: center;
+  /* 유틸리티 클래스로 대체 가능: .cursor-pointer, .transition-all */
   cursor: pointer;
   transition: all 0.2s ease;
-  text-align: center;
 }
 
 /* 네비게이션 버튼 (My-Info, Partner-Info 화면) */
@@ -896,6 +1044,7 @@ body.body-home-terms {
 /* 홈/뒤로가기 버튼 스타일 */
 .home-btn,
 .back-btn {
+  /* 유틸리티 클래스로 대체 가능: .btn-base, .btn-secondary */
   background-color: #f8f9fa; /* 연한 회색 */
   color: #495057;
   border: 1px solid #e9ecef;
@@ -912,6 +1061,7 @@ body.body-home-terms {
 /* 다음/결과 버튼 스타일 */
 .next-btn,
 .result-btn {
+  /* 유틸리티 클래스로 대체 가능: .btn-base, .btn-primary */
   background: linear-gradient(135deg, #dc3545 0%, #c82333 50%, #bd2130 100%); /* 빨간색 그라데이션 */
   color: white;
   border: none;
@@ -928,6 +1078,7 @@ body.body-home-terms {
 /* 비활성화된 다음/결과 버튼 */
 .next-btn.disabled,
 .result-btn.disabled {
+  /* 유틸리티 클래스로 대체 가능: .btn-disabled */
   background: linear-gradient(135deg, #f8d7da 0%, #f5c6cb 100%); /* 연한 빨간색 */
   color: #721c24;
   cursor: not-allowed;
@@ -960,20 +1111,23 @@ body.body-home-terms {
 .result-card {
   background: none;
   border-radius: 0;
+  /* 유틸리티 클래스로 대체 가능: .padding-0, .text-center */
   padding: 0;
   text-align: center;
 }
 
 /* 결과 내용 영역 (동물 + 점수) */
 .result-content {
+  gap: 2rem;
+  /* 플렉스박스 유틸리티 클래스로 대체 가능: .flex-center */
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 2rem;
 }
 
 /* 결과 동물 표시 */
 .result-animal {
+  /* 플렉스박스 유틸리티 클래스로 대체 가능: .flex-column-center */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1085,13 +1239,14 @@ body.body-home-terms {
 
 /* 버튼 영역 */
 .button-area {
-  display: flex;
   gap: 1rem;
-  justify-content: center;
-  align-items: center;
   flex-wrap: wrap;
   transition: opacity 0.2s ease;
   animation: slide-up-button 0.2s ease-out; /* 슬라이드 업 애니메이션 추가 */
+  /* 플렉스박스 유틸리티 클래스로 대체 가능: .flex-center */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* 상세보기 버튼 */
@@ -1103,8 +1258,9 @@ body.body-home-terms {
   font-size: 1rem;
   font-weight: 500;
   border-radius: 0.5rem;
-  cursor: pointer;
   transition: background 0.2s, opacity 0.2s ease;
+  /* 유틸리티 클래스로 대체 가능: .cursor-pointer */
+  cursor: pointer;
 }
 
 /* 상세보기 버튼 호버 효과 */
@@ -1629,6 +1785,10 @@ body.body-home-terms {
     scroll-behavior: auto; /* smooth 제거로 끊김 방지 */
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none; /* Firefox 스크롤바 숨김 */
+    
+    /* 좌우 페이드아웃 효과 - 스크롤 시작/끝에서 자연스럽게 페이드 */
+    mask: linear-gradient(to right, transparent 0%, rgba(255,255,255,1) 1rem, rgba(255,255,255,1) calc(100% - 1rem), transparent 100%);
+    -webkit-mask: linear-gradient(to right, transparent 0%, rgba(255,255,255,1) 1rem, rgba(255,255,255,1) calc(100% - 1rem), transparent 100%);
   }
 
   /* 웹킷 브라우저 스크롤바 숨김 (모바일) */
@@ -1693,6 +1853,10 @@ body.body-home-terms {
     gap: 0.5rem;
     flex-wrap: wrap;
     background: #fffef5;
+    
+    /* 페이드아웃 효과 - 버튼 위쪽에 자연스러운 그라데이션 */
+    mask: linear-gradient(to bottom, transparent 0%, rgba(255,255,255,1) 1rem);
+    -webkit-mask: linear-gradient(to bottom, transparent 0%, rgba(255,255,255,1) 1rem);
   }
 
   /* 네비게이션 버튼 (모바일) */
@@ -1760,7 +1924,7 @@ body.body-home-terms {
 .site-footer {
   background-color: none;
   border-top: 1px solid #ddd;
-  padding: 2rem 1rem;
+  padding: 2rem 1rem 1rem 1rem;
   margin-top: auto;
 }
 
@@ -1801,8 +1965,8 @@ body.body-home-terms {
 .footer-contact p {
   color: #666;
   font-size: 1rem;
-  margin-top: 2rem;
-  margin-bottom: 1rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
 }
 
 /* 푸터 이메일 링크 */
@@ -1820,34 +1984,11 @@ body.body-home-terms {
 /* 푸터 저작권 영역 */
 .footer-copyright p {
   color: #666;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   margin: 0;
 }
 
-/* 푸터 모바일 반응형 */
-@media (max-width: 768px) {
-  .site-footer {
-    padding: 1rem 0.5rem 2rem 0.5rem;
-  }
-  
-  .footer-links {
-    text-align: left;
-  }
-  
-  .footer-links a {
-    font-size: 1rem;
-    display: block;
-    margin: 0.5rem 1rem;
-  }
-  
-  .footer-contact p {
-    font-size: 0.9rem;
-  }
-  
-  .footer-copyright p {
-    font-size: 0.8rem;
-  }
-}
+/* 푸터 모바일 반응형 - 통합된 미디어 쿼리 섹션으로 이동됨 */
 
 /* ===== About 페이지 스타일 ===== */
 /* About 페이지 전체 컨테이너 */
@@ -1855,13 +1996,14 @@ body.body-home-terms {
   min-height: 100vh;
   padding: 0 1rem 2rem 1rem;
   background-color: #fffef5;
+  margin-bottom: 3rem;
 }
 
 /* About 페이지 내용 컨테이너 */
 .about-page .container {
   max-width: 800px;
   margin: 0 auto;
-  line-height: 1.7;
+  line-height: 1.6;
 }
 
 /* About 페이지 제목 */
@@ -1905,11 +2047,11 @@ body.body-home-terms {
   }
   
   .content-section h2 {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
   }
   
   .content-section p {
-    font-size: 0.9rem;
+    font-size: 1rem;
   }
 }
 
@@ -1921,7 +2063,7 @@ body.body-home-terms {
 
 /* About 페이지 기능 목록 항목 */
 .about-page .feature-list li {
-  font-size: 0.9rem;
+  font-size: 1rem;
   color: #333;
   margin-bottom: 0.8rem;
   padding-left: 1.5rem;
@@ -1939,7 +2081,7 @@ body.body-home-terms {
 /* About 페이지 연락처 이메일 */
 .about-page .contact-email a {
   color: #0645ad;
-  font-size: 0.9rem;
+  font-size: 1rem;
   text-decoration: underline;
   transition: color 0.3s ease;
 }
@@ -1962,13 +2104,14 @@ body.body-home-terms {
   min-height: 100vh;
   padding: 0 1rem 2rem 1rem;
   background-color: #fffef5;
+  margin-bottom: 3rem;
 }
 
 /* Privacy 페이지 내용 컨테이너 */
 .privacy-page .container {
   max-width: 800px;
   margin: 0 auto;
-  line-height: 1.7;
+  line-height: 1.6;
 }
 
 /* Privacy 페이지 제목 */
@@ -2033,13 +2176,14 @@ body.body-home-terms {
   min-height: 100vh;
   padding: 0 1rem 2rem 1rem;
   background-color: #fffef5;
+  margin-bottom: 3rem;
 }
 
 /* Terms 페이지 내용 컨테이너 */
 .terms-page .container {
   max-width: 800px;
   margin: 0 auto;
-  line-height: 1.7;
+  line-height: 1.6;
 }
 
 /* Terms 페이지 제목 */
@@ -2140,6 +2284,94 @@ body.body-home-terms {
     padding: 0.75rem;
     z-index: 200;
     background: #fffef5;
+  }
+}
+
+/* ========================================
+   통합된 미디어 쿼리 (Consolidated Media Queries)
+   모든 모바일 반응형 스타일을 한 곳에 정리
+   ======================================== */
+
+/* 모바일 반응형 - 768px 이하 */
+@media (max-width: 768px) {
+  /* 간략 설명 모바일 스타일 */
+  .brief-description {
+    font-size: 1.1rem;
+  }
+  
+  /* 네비게이션 버튼 모바일 스타일 */
+  .navigation-buttons {
+    position: fixed;
+    bottom: 0;
+    left: 0.5rem;
+    right: 0.5rem;
+    padding: 0.75rem;
+    z-index: 200;
+    background: #fffef5;
     box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
+    
+    /* 페이드아웃 효과 - 버튼 위쪽에 자연스러운 그라데이션 */
+    mask: linear-gradient(to bottom, transparent 0%, rgba(255,255,255,1) 1rem);
+    -webkit-mask: linear-gradient(to bottom, transparent 0%, rgba(255,255,255,1) 1rem);
+  }
+  
+  /* 푸터 모바일 스타일 */
+  .site-footer {
+    padding: 1rem 0.5rem 1rem 0.5rem;
+  }
+  
+  .footer-links {
+    text-align: left;
+  }
+  
+  .footer-links a {
+    font-size: 1rem;
+    display: block;
+    margin: 0.5rem 1rem;
+  }
+  
+  .footer-contact p {
+    font-size: 0.9rem;
+  }
+  
+  .footer-copyright p {
+    font-size: 0.9rem;
+  }
+  
+  /* Privacy 페이지 모바일 스타일 */
+  .privacy-page .page-title {
+    font-size: 1.6rem;
+  }
+  
+  /* Terms 페이지 모바일 스타일 */
+  .terms-page .page-title {
+    font-size: 1.6rem;
+  }
+  
+  /* About 페이지 모바일 스타일 */
+  .about-page .page-title {
+    font-size: 1.6rem;
+  }
+}
+
+/* 데스크톱 반응형 - 769px 이상 */
+@media (min-width: 769px) {
+  /* 네비게이션 버튼 데스크톱 스타일 */
+  .navigation-buttons {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 50rem;
+    width: 100%;
+    background: #fffef5;
+    padding: 1rem 1rem 1.5rem 1rem;
+    z-index: 200;
+    margin: 0;
+    will-change: transform;
+    
+    /* 페이드아웃 효과 - 버튼 위쪽에 자연스러운 그라데이션 */
+    mask: linear-gradient(to bottom, transparent 0%, rgba(255,255,255,1) 1rem);
+    -webkit-mask: linear-gradient(to bottom, transparent 0%, rgba(255,255,255,1) 1rem);
   }
 }
