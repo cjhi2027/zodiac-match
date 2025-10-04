@@ -10,9 +10,21 @@ export default defineConfig({
     vue(),
     vueDevTools(),
   ],
+  base: '/',
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
     },
   },
+  build: {
+    chunkSizeWarningLimit: 1000,
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          'vue-vendor': ['vue', 'vue-router', 'vue-i18n'],
+          'prime-vendor': ['primevue']
+        }
+      }
+    }
+  }
 })
