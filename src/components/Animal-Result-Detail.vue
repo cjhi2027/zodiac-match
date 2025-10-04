@@ -151,7 +151,7 @@
 </template>
 
 <script setup lang="ts">
-import { getCompatibilityDetail, getCompatibilityScore, type ZodiacAnimal } from "@/lib/zodiac";
+import { getCompatibilityDetail, getCompatibilityScore, type ZodiacAnimal } from "@/lib/animal";
 import { computed, ref, onMounted } from "vue";
 import { useI18n } from "vue-i18n";
 
@@ -252,7 +252,7 @@ const shareOptions = computed<ShareOption[]>(() => {
 
 // 현재 페이지 URL (detail을 result로 변경)
 const currentUrl = computed(() => {
-  return window.location.href.replace('/zodiac/detail', '/zodiac/result');
+  return window.location.href.replace('/animal/result-detail', '/animal/result-brief');
 });
 
 // 공유 메시지 생성
@@ -350,7 +350,7 @@ const goToHome = () => {
 
 // 내 정보 화면으로 이동 (미선택 상태)
 const goToMyInfo = () => {
-  window.location.href = "/zodiac/my-info";
+  window.location.href = "/animal/info-my";
 };
 
 // 언어 변경

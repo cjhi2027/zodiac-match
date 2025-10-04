@@ -14,7 +14,7 @@
 </template>
 
 <script setup lang="ts">
-import { zodiacAnimals, type ZodiacAnimal } from "@/lib/zodiac";
+import { animalData, type ZodiacAnimal } from "@/lib/animal";
 import { computed, ref, onMounted, onUnmounted } from "vue";
 import { useI18n } from "vue-i18n";
 
@@ -29,7 +29,7 @@ const { t } = useI18n();
 
 // 모바일에서 스크롤을 위한 동물 배열 (반복 없음)
 const displayAnimals = computed(() => {
-  return zodiacAnimals;
+  return animalData;
 });
 
 const handleSelect = (animal: ZodiacAnimal) => {

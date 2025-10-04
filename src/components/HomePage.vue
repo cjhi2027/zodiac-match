@@ -38,14 +38,14 @@
         </div>
 
         <div v-if="myActiveIndex === 0">
-          <ZodiacSelector
+          <AnimalSelector
             :selected-zodiac="myZodiac"
             :on-select="setMyZodiac"
             title=""
           />
         </div>
         <div v-else>
-          <ZodiacBirthYear
+          <AnimalBirthYear
             :value="myBirthYear"
             :on-change="setMyBirthYear"
             title=""
@@ -104,14 +104,14 @@
         </div>
 
         <div v-if="partnerActiveIndex === 0">
-          <ZodiacSelector
+          <AnimalSelector
             :selected-zodiac="partnerZodiac"
             :on-select="setPartnerZodiac"
             title=""
           />
         </div>
         <div v-else>
-          <ZodiacBirthYear
+          <AnimalBirthYear
             :value="partnerBirthYear"
             :on-change="setPartnerBirthYear"
             title=""
@@ -170,21 +170,15 @@
 </template>
 
 <script setup lang="ts">
-import { getZodiacByYear, type ZodiacAnimal } from "@/lib/zodiac";
+import { getAnimalByYear, type ZodiacAnimal } from "@/lib/animal";
 import { computed, ref } from "vue";
 import { useI18n } from "vue-i18n";
-import ZodiacBirthYear from "./Zodiac-BirthYear.vue";
+import { useRouter } from "vue-router";
+import AnimalBirthYear from "./Animal-BirthYear.vue";
 import LanguageSelector from "./LanguageSelector.vue";
-import ZodiacSelector from "./Zodiac-Selector.vue";
+import AnimalSelector from "./Animal-Selector.vue";
 
-interface Props {
-  onCheckCompatibility: (
-    myZodiac: ZodiacAnimal,
-    partnerZodiac: ZodiacAnimal
-  ) => void;
-}
-
-const props = defineProps<Props>();
+const router = useRouter();
 const { t } = useI18n();
 
 // 내 정보
@@ -205,7 +199,7 @@ const getMyFinalZodiac = (): ZodiacAnimal | undefined => {
     myBirthYear.value &&
     parseInt(myBirthYear.value)
   ) {
-    return getZodiacByYear(parseInt(myBirthYear.value));
+    return getAnimalByYear(parseInt(myBirthYear.value));
   }
   return undefined;
 };
@@ -218,7 +212,7 @@ const getPartnerFinalZodiac = (): ZodiacAnimal | undefined => {
     partnerBirthYear.value &&
     parseInt(partnerBirthYear.value)
   ) {
-    return getZodiacByYear(parseInt(partnerBirthYear.value));
+    return getAnimalByYear(parseInt(partnerBirthYear.value));
   }
   return undefined;
 };
@@ -242,7 +236,14 @@ const handleCheckCompatibility = () => {
       "vs",
       partnerFinal.name
     );
-    props.onCheckCompatibility(myFinal, partnerFinal);
+    // 내 정보와 상대방 정보를 URL 파라미터로 전달하여 my-info 페이지로 이동
+    const params = new URLSearchParams({
+      my: myFinal.id,
+      partner: partnerFinal.id,
+      myYear: myBirthYear.value || "",
+      partnerYear: partnerBirthYear.value || ""
+    });
+    router.push(`/animal/info-my?${params.toString()}`);
   }
 };
 

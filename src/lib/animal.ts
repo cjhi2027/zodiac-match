@@ -1,11 +1,10 @@
 // 12간지 동물 정보
-export const zodiacAnimals = [
+export const animalData = [
   {
     id: "mouse",
     name: "쥐",
     image: "/attached_assets/animal/animal_01.png",
     characterImage: "/attached_assets/animal_character/animal_character_01.png",
-    featureKey: "zodiac.features.mouse",
     wittyKey: "zodiac.witty.mouse",
     elaborationKey: "zodiac.elaboration.mouse",
     giftKey: "zodiac.gift.mouse",
@@ -16,7 +15,6 @@ export const zodiacAnimals = [
     name: "소",
     image: "/attached_assets/animal/animal_02.png",
     characterImage: "/attached_assets/animal_character/animal_character_02.png",
-    featureKey: "zodiac.features.ox",
     wittyKey: "zodiac.witty.ox",
     elaborationKey: "zodiac.elaboration.ox",
     giftKey: "zodiac.gift.ox",
@@ -27,7 +25,6 @@ export const zodiacAnimals = [
     name: "호랑이",
     image: "/attached_assets/animal/animal_03.png",
     characterImage: "/attached_assets/animal_character/animal_character_03.png",
-    featureKey: "zodiac.features.tiger",
     wittyKey: "zodiac.witty.tiger",
     elaborationKey: "zodiac.elaboration.tiger",
     giftKey: "zodiac.gift.tiger",
@@ -38,7 +35,6 @@ export const zodiacAnimals = [
     name: "토끼",
     image: "/attached_assets/animal/animal_04.png",
     characterImage: "/attached_assets/animal_character/animal_character_04.png",
-    featureKey: "zodiac.features.rabbit",
     wittyKey: "zodiac.witty.rabbit",
     elaborationKey: "zodiac.elaboration.rabbit",
     giftKey: "zodiac.gift.rabbit",
@@ -49,7 +45,6 @@ export const zodiacAnimals = [
     name: "용",
     image: "/attached_assets/animal/animal_05.png",
     characterImage: "/attached_assets/animal_character/animal_character_05.png",
-    featureKey: "zodiac.features.dragon",
     wittyKey: "zodiac.witty.dragon",
     elaborationKey: "zodiac.elaboration.dragon",
     giftKey: "zodiac.gift.dragon",
@@ -60,7 +55,6 @@ export const zodiacAnimals = [
     name: "뱀",
     image: "/attached_assets/animal/animal_06.png",
     characterImage: "/attached_assets/animal_character/animal_character_06.png",
-    featureKey: "zodiac.features.snake",
     wittyKey: "zodiac.witty.snake",
     elaborationKey: "zodiac.elaboration.snake",
     giftKey: "zodiac.gift.snake",
@@ -71,7 +65,6 @@ export const zodiacAnimals = [
     name: "말",
     image: "/attached_assets/animal/animal_07.png",
     characterImage: "/attached_assets/animal_character/animal_character_07.png",
-    featureKey: "zodiac.features.horse",
     wittyKey: "zodiac.witty.horse",
     elaborationKey: "zodiac.elaboration.horse",
     giftKey: "zodiac.gift.horse",
@@ -82,7 +75,6 @@ export const zodiacAnimals = [
     name: "양",
     image: "/attached_assets/animal/animal_08.png",
     characterImage: "/attached_assets/animal_character/animal_character_08.png",
-    featureKey: "zodiac.features.goat",
     wittyKey: "zodiac.witty.goat",
     elaborationKey: "zodiac.elaboration.goat",
     giftKey: "zodiac.gift.goat",
@@ -93,7 +85,6 @@ export const zodiacAnimals = [
     name: "원숭이",
     image: "/attached_assets/animal/animal_09.png",
     characterImage: "/attached_assets/animal_character/animal_character_09.png",
-    featureKey: "zodiac.features.monkey",
     wittyKey: "zodiac.witty.monkey",
     elaborationKey: "zodiac.elaboration.monkey",
     giftKey: "zodiac.gift.monkey",
@@ -104,7 +95,6 @@ export const zodiacAnimals = [
     name: "닭",
     image: "/attached_assets/animal/animal_10.png",
     characterImage: "/attached_assets/animal_character/animal_character_10.png",
-    featureKey: "zodiac.features.rooster",
     wittyKey: "zodiac.witty.rooster",
     elaborationKey: "zodiac.elaboration.rooster",
     giftKey: "zodiac.gift.rooster",
@@ -115,7 +105,6 @@ export const zodiacAnimals = [
     name: "개",
     image: "/attached_assets/animal/animal_11.png",
     characterImage: "/attached_assets/animal_character/animal_character_11.png",
-    featureKey: "zodiac.features.dog",
     wittyKey: "zodiac.witty.dog",
     elaborationKey: "zodiac.elaboration.dog",
     giftKey: "zodiac.gift.dog",
@@ -126,7 +115,6 @@ export const zodiacAnimals = [
     name: "돼지",
     image: "/attached_assets/animal/animal_12.png",
     characterImage: "/attached_assets/animal_character/animal_character_12.png",
-    featureKey: "zodiac.features.pig",
     wittyKey: "zodiac.witty.pig",
     elaborationKey: "zodiac.elaboration.pig",
     giftKey: "zodiac.gift.pig",
@@ -134,7 +122,7 @@ export const zodiacAnimals = [
   },
 ] as const;
 
-export type ZodiacAnimal = (typeof zodiacAnimals)[number];
+export type ZodiacAnimal = (typeof animalData)[number];
 
 // 궁합 매트릭스 (첨부된 데이터)
 const compatibilityMatrix = [
@@ -153,10 +141,10 @@ const compatibilityMatrix = [
 ];
 
 // 생년으로 띠 계산 (기본 기준: 1900년이 쥐띠)
-export function getZodiacByYear(year: number): ZodiacAnimal {
+export function getAnimalByYear(year: number): ZodiacAnimal {
   const index = (year - 1900) % 12;
   const adjustedIndex = index < 0 ? index + 12 : index;
-  return zodiacAnimals[adjustedIndex];
+  return animalData[adjustedIndex];
 }
 
 // 두 띠의 궁합 점수 계산
@@ -164,8 +152,8 @@ export function getCompatibilityScore(
   zodiac1: ZodiacAnimal,
   zodiac2: ZodiacAnimal
 ): number {
-  const index1 = zodiacAnimals.findIndex(z => z.id === zodiac1.id);
-  const index2 = zodiacAnimals.findIndex(z => z.id === zodiac2.id);
+  const index1 = animalData.findIndex(z => z.id === zodiac1.id);
+  const index2 = animalData.findIndex(z => z.id === zodiac2.id);
   return compatibilityMatrix[index1][index2];
 }
 

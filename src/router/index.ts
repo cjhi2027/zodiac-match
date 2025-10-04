@@ -1,12 +1,12 @@
-import MainHome from "@/views/MainHome.vue";
-import ZodiacHome from "@/views/Zodiac-Home.vue";
-import MyInfo from "@/views/My-Info.vue";
-import PartnerInfo from "@/views/Partner-Info.vue";
-import Result from "@/views/Result.vue";
-import Detail from "@/views/Detail.vue";
-import About from "@/views/About.vue";
-import Privacy from "@/views/Privacy.vue";
-import Terms from "@/views/Terms.vue";
+import Home from "@/views/Home.vue";
+import HomePage from "@/components/HomePage.vue";
+import InfoMy from "@/views/Info-My.vue";
+import InfoPartner from "@/views/Info-Partner.vue";
+import ResultBrief from "@/views/Result-Brief.vue";
+import ResultDetail from "@/views/Result-Detail.vue";
+import HomeAbout from "@/views/Home-About.vue";
+import HomePrivacy from "@/views/Home-Privacy.vue";
+import HomeTerms from "@/views/Home-Terms.vue";
 import { createRouter, createWebHistory } from "vue-router";
 
 const router = createRouter({
@@ -14,48 +14,48 @@ const router = createRouter({
   routes: [
     {
       path: "/",
-      name: "mainHome",
-      component: MainHome,
+      name: "home",
+      component: Home,
     },
     {
-      path: "/zodiac",
-      name: "zodiacHome",
-      component: ZodiacHome,
+      path: "/animal",
+      name: "animalHome",
+      component: HomePage,
     },
     {
-      path: "/zodiac/my-info",
-      name: "zodiacMyInfo",
-      component: MyInfo,
+      path: "/animal/info-my",
+      name: "animalInfoMy",
+      component: InfoMy,
     },
     {
-      path: "/zodiac/partner-info",
-      name: "zodiacPartnerInfo",
-      component: PartnerInfo,
+      path: "/animal/info-partner",
+      name: "animalInfoPartner",
+      component: InfoPartner,
     },
     {
-      path: "/zodiac/result",
-      name: "zodiacResult",
-      component: Result,
+      path: "/animal/result-brief",
+      name: "animalResultBrief",
+      component: ResultBrief,
     },
     {
-      path: "/zodiac/detail",
-      name: "zodiacDetail",
-      component: Detail,
+      path: "/animal/result-detail",
+      name: "animalResultDetail",
+      component: ResultDetail,
     },
     {
       path: "/about",
       name: "about",
-      component: About,
+      component: HomeAbout,
     },
     {
       path: "/privacy",
       name: "privacy",
-      component: Privacy,
+      component: HomePrivacy,
     },
     {
       path: "/terms",
       name: "terms",
-      component: Terms,
+      component: HomeTerms,
     },
   ],
   scrollBehavior(to, from, savedPosition) {

@@ -42,7 +42,7 @@
 
       <!-- 띠 선택 (항상 표시) -->
       <div class="selection-content">
-        <ZodiacSelector
+        <AnimalSelector
           :selected-zodiac="selectedZodiac"
           :on-select="setSelectedZodiac"
           title=""
@@ -101,7 +101,7 @@
           <button @click="showBirthYearModal = false" class="close-btn">×</button>
         </div>
         <div class="modal-body">
-          <ZodiacBirthYear
+          <AnimalBirthYear
             :value="selectedBirthYear"
             :on-change="handleBirthYearSelect"
             title=""
@@ -129,9 +129,9 @@
 import { ref, computed, onMounted } from "vue";
 import { useRouter } from "vue-router";
 import { useI18n } from "vue-i18n";
-import { getZodiacByYear, zodiacAnimals, type ZodiacAnimal } from "@/lib/zodiac";
-import ZodiacSelector from "@/components/Zodiac-Selector.vue";
-import ZodiacBirthYear from "@/components/Zodiac-BirthYear.vue";
+import { getAnimalByYear, animalData, type ZodiacAnimal } from "@/lib/animal";
+import AnimalSelector from "@/components/Animal-Selector.vue";
+import AnimalBirthYear from "@/components/Animal-BirthYear.vue";
 
 const router = useRouter();
 const { t, locale } = useI18n();
@@ -170,22 +170,22 @@ onMounted(() => {
   myYear.value = urlParams.get("myYear") || "";
   
   if (myZodiacId) {
-    const zodiacData = zodiacAnimals.find(z => z.id === myZodiacId);
+    const zodiacData = animalData.find(z => z.id === myZodiacId);
     if (zodiacData) {
       myZodiac.value = zodiacData;
     } else {
       // 잘못된 내 정보인 경우 내 정보 선택으로 이동
-      router.push("/zodiac/my-info");
+      router.push("/animal/info-my");
     }
   } else {
     // 내 정보가 없는 경우 내 정보 선택으로 이동
-    router.push("/zodiac/my-info");
+    router.push("/animal/info-my");
   }
   
   // URL 파라미터에서 상대방 정보 복원
   const partnerZodiacId = urlParams.get("partner");
   if (partnerZodiacId) {
-    const partnerData = zodiacAnimals.find(z => z.id === partnerZodiacId);
+    const partnerData = animalData.find(z => z.id === partnerZodiacId);
     if (partnerData) {
       selectedZodiac.value = partnerData;
       displayedZodiac.value = partnerData; // 초기 로드 시 애니메이션 없이 표시
@@ -251,7 +251,7 @@ const handleBirthYearSelect = (year: string) => {
   
   // 생년으로 띠 계산하여 자동 선택
   if (year && parseInt(year)) {
-    const zodiac = getZodiacByYear(parseInt(year));
+    const zodiac = getAnimalByYear(parseInt(year));
     if (zodiac) {
       // 카드 뒤집기 효과와 함께 선택
       setSelectedZodiac(zodiac);
@@ -280,7 +280,7 @@ const checkCompatibility = () => {
       my: myZodiac.value.id,
       partner: selectedZodiac.value.id
     });
-    router.push(`/zodiac/result?${params.toString()}`);
+    router.push(`/animal/result-brief?${params.toString()}`);
   }
 };
 
@@ -293,7 +293,7 @@ const goToMyInfo = () => {
     });
     router.push(`/zodiac/my-info?${params.toString()}`);
   } else {
-    router.push("/zodiac/my-info");
+    router.push("/animal/info-my");
   }
 };
 

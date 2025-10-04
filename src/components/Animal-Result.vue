@@ -88,7 +88,7 @@
 </template>
 
 <script setup lang="ts">
-import { getCompatibilityDetail, getCompatibilityScore, type ZodiacAnimal } from "@/lib/zodiac";
+import { getCompatibilityDetail, getCompatibilityScore, type ZodiacAnimal } from "@/lib/animal";
 import { computed, onMounted, ref } from "vue";
 import { useI18n } from "vue-i18n";
 

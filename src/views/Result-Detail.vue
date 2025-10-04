@@ -1,18 +1,17 @@
 <template>
   <div>
-    <ZodiacResult
+    <AnimalResultDetail
       v-if="myZodiac && partnerZodiac"
       :my-zodiac="myZodiac"
       :partner-zodiac="partnerZodiac"
       @back="handleBack"
-      @view-detail="handleViewDetail"
     />
   </div>
 </template>
 
 <script setup lang="ts">
-import ZodiacResult from "@/components/Zodiac-Result.vue";
-import { getZodiacByYear, zodiacAnimals, type ZodiacAnimal } from "@/lib/zodiac";
+import AnimalResultDetail from "@/components/Animal-Result-Detail.vue";
+import { getAnimalByYear, animalData, type ZodiacAnimal } from "@/lib/animal";
 import { onMounted, ref } from "vue";
 import { useRouter } from "vue-router";
 
@@ -22,32 +21,14 @@ const router = useRouter();
 const myZodiac = ref<ZodiacAnimal | null>(null);
 const partnerZodiac = ref<ZodiacAnimal | null>(null);
 
-// 뒤로가기 처리 (상대방 정보 선택으로)
+// 뒤로가기 처리 (전체 홈으로)
 const handleBack = () => {
-  if (myZodiac.value) {
-    const params = new URLSearchParams({
-      my: myZodiac.value.id,
-      myTab: "zodiac", // 기본값
-      myYear: ""
-    });
-    router.push(`/zodiac/partner-info?${params.toString()}`);
-  } else {
-    router.push("/zodiac/partner-info");
-  }
-};
-
-// 상세 보기 처리
-const handleViewDetail = (my: ZodiacAnimal, partner: ZodiacAnimal) => {
-  const params = new URLSearchParams({
-    my: my.id,
-    partner: partner.id
-  });
-  router.push(`/zodiac/detail?${params.toString()}`);
+  router.push("/");
 };
 
 // 띠 ID로 띠 정보 찾기
 const findZodiacById = (id: string): ZodiacAnimal | null => {
-  return zodiacAnimals.find(z => z.id === id) || null;
+  return animalData.find(z => z.id === id) || null;
 };
 
 // 컴포넌트 마운트 시 URL 파라미터에서 띠 정보 가져오기
@@ -73,3 +54,7 @@ onMounted(() => {
   }
 });
 </script>
+
+<style scoped>
+/* 추가 스타일이 필요한 경우 여기에 작성 */
+</style>

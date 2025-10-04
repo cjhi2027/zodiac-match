@@ -143,7 +143,7 @@ onUnmounted(() => {
 
 // 12간지 내 정보 선택으로 이동
 const goToZodiac = () => {
-  router.push("/zodiac/my-info");
+  router.push("/animal/info-my");
 };
 
 
