@@ -20,9 +20,16 @@ export default defineConfig({
     chunkSizeWarningLimit: 1000,
     rollupOptions: {
       output: {
-        manualChunks: {
-          'vue-vendor': ['vue', 'vue-router', 'vue-i18n'],
-          'prime-vendor': ['primevue']
+        manualChunks: (id) => {
+          if (id.includes('node_modules')) {
+            if (id.includes('vue')) {
+              return 'vue-vendor';
+            }
+            if (id.includes('primevue')) {
+              return 'prime-vendor';
+            }
+            return 'vendor';
+          }
         }
       }
     }

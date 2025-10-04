@@ -1,24 +1,7 @@
 export default {
-  common: {
-    loading: "Loading...",
-    error: "An error occurred",
-    success: "Success",
-    cancel: "Cancel",
-    confirm: "Confirm",
-    back: "Back",
-    next: "Next",
-    previous: "Previous",
-    save: "Save",
-    delete: "Delete",
-    edit: "Edit",
-    close: "Close",
-  },
-  navigation: {
-    home: "Home",
-    zodiac: "Zodiac Compatibility",
-    about: "About",
-    privacy: "Privacy Policy",
-    terms: "Terms of Service",
+  app: {
+    title: "Zodiac Compatibility",
+    subtitle: "Couple matching service using 12 Chinese zodiac signs",
   },
   footer: {
     about: "About",
@@ -26,6 +9,41 @@ export default {
     terms: "Terms of Service",
     contact: "Contact",
     rights: "All rights reserved",
+  },
+  ui: {
+    myInfo: "My Info",
+    partnerInfo: "Partner Info",
+    zodiacSelect: "Zodiac Select",
+    birthYearSelect: "Birth Year",
+    checkCompatibility: "Check Compatibility",
+    result: "Result",
+    detail: "Detail",
+    korean: "한국어",
+    english: "English",
+    goHome: "Go Home",
+    selectPartnerInfoBtn: "Select Partner Info",
+    checkCompatibilityBtn: "Check Compatibility",
+  },
+  mainHome: {
+    title: "Are We a Match?",
+    subtitle: "Check with Zodiac, Stars, Blood Type, & MBTI!",
+    zodiac: {
+      title: "Zodiac Animals",
+      subtitle: "Love match by Chinese Zodiac signs"
+    },
+    constellation: {
+      title: "Constellation Match",
+      subtitle: "Love index by zodiac signs"
+    },
+    bloodType: {
+      title: "Blood Type Match",
+      subtitle: "Dating style by blood type"
+    },
+    mbti: {
+      title: "MBTI Match",
+      subtitle: "Couple chemistry by MBTI"
+    },
+    comingSoon: "Coming Soon",
   },
   about: {
     title: "About LoveIndex",

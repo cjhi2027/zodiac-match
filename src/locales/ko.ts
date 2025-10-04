@@ -1,24 +1,7 @@
 export default {
-  common: {
-    loading: "로딩 중...",
-    error: "오류가 발생했습니다",
-    success: "성공했습니다",
-    cancel: "취소",
-    confirm: "확인",
-    back: "돌아가기",
-    next: "다음",
-    previous: "이전",
-    save: "저장",
-    delete: "삭제",
-    edit: "수정",
-    close: "닫기",
-  },
-  navigation: {
-    home: "홈",
-    zodiac: "띠별 궁합",
-    about: "소개",
-    privacy: "개인정보처리방침",
-    terms: "이용약관",
+  app: {
+    title: "띠별 궁합",
+    subtitle: "12간지로 알아보는 커플 궁합 매칭 서비스",
   },
   footer: {
     about: "소개",
@@ -26,6 +9,41 @@ export default {
     terms: "이용약관",
     contact: "문의",
     rights: "모든 권리 보유",
+  },
+  ui: {
+    myInfo: "내 정보",
+    partnerInfo: "상대방 정보",
+    zodiacSelect: "띠 선택",
+    birthYearSelect: "생년 선택",
+    checkCompatibility: "궁합 확인하기",
+    result: "결과",
+    detail: "상세",
+    korean: "한국어",
+    english: "English",
+    goHome: "홈으로 가기",
+    selectPartnerInfoBtn: "상대방 정보 선택",
+    checkCompatibilityBtn: "궁합 확인하기",
+  },
+  mainHome: {
+    title: "우리 어울릴까요?",
+    subtitle: " 띠, 별자리, 혈액형, MBTI로 확인해보세요!",
+    zodiac: {
+      title: "띠 궁합",
+      subtitle: "12띠로 보는 연애 궁합"
+    },
+    constellation: {
+      title: "별자리 궁합",
+      subtitle: "별자리로 알아보는 사랑 지수"
+    },
+    bloodType: {
+      title: "혈액형 궁합",
+      subtitle: "혈액형별 연애 스타일"
+    },
+    mbti: {
+      title: "MBTI 궁합",
+      subtitle: "MBTI로 보는 커플 케미"
+    },
+    comingSoon: "준비중",
   },
   about: {
     title: "LoveIndex 소개",
