@@ -53,20 +53,20 @@
       <div class="result-description">
         <!-- 재치있고 간단한 설명 -->
         <div
-          v-if="compatibilityDetail?.wittyKey"
+          v-if="compatibilityDetail?.result?.summary"
           class="brief-description"
           :class="{ 'visible': showWitty }"
         >
-          {{ $t(compatibilityDetail.wittyKey) }}
+          {{ $t(compatibilityDetail.result.summary) }}
         </div>
 
         <!-- 부연설명 -->
         <div
-          v-if="compatibilityDetail?.elaborationKey"
+          v-if="compatibilityDetail?.result?.description"
           class="detail-description"
           :class="{ 'visible': showElaboration }"
         >
-          {{ $t(compatibilityDetail.elaborationKey) }}
+          {{ $t(compatibilityDetail.result.description) }}
         </div>
       </div>
 

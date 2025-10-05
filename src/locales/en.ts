@@ -66,61 +66,105 @@ export default {
     rooster: "Rooster",
     dog: "Dog",
     pig: "Pig",
-    witty: {
-      mouse: "Smart and adaptable Rat",
-      ox: "Honest and persistent Ox",
-      tiger: "Brave and strong leadership Tiger",
-      rabbit: "Gentle and artistic Rabbit",
-      dragon: "Powerful and lucky Dragon",
-      snake: "Wise and mysterious Snake",
-      horse: "Free and active Horse",
-      goat: "Creative and artistic Goat",
-      monkey: "Clever and witty Monkey",
-      rooster: "Precise and perfectionist Rooster",
-      dog: "Loyal and just Dog",
-      pig: "Pure and generous Pig",
+    feature: {
+      mouse: {
+        summary: "With a mind faster than a calculator, the rat is the master of preparation!",
+        description: "Always ready for anything, the rat zodiac is obsessively precise and can't tolerate even a small mistake. Their swift mental agility lets them solve unexpected problems with ease, and their preparation skills are so impressive, people often marvel at how smoothly things turn out around them."
+      },
+      ox: {
+        summary: "Steadfast and persistent, the ox is the king of endurance and reliability!",
+        description: "While others give up, the ox quietly pushes through, relying on patience and hard work to achieve any goal. Once they set their mind to something, they see it to perfection, like a strong rock that inspires trust. They commit to everything they do with an earnest heart, winning admiration for their determination."
+      },
+      tiger: {
+        summary: "Courageous and endlessly bold, the tiger dominates with unique charisma!",
+        description: "Ready for any risk or challenge, the tiger confronts life head-on with confidence and determination. Leading the pack with strength, they maintain warmth and humor even in tough moments, uplifting those around them. Their daring spirit isn't just for show—friends know them as natural leaders who bring excitement wherever they go."
+      },
+      rabbit: {
+        summary: "Gentle smiles and creative energy—rabbit embodies graceful strength!",
+        description: "With artistic flair and a soft but powerful drive, rabbits create harmony in groups and comfort others through tough times. Their quiet nature hides a deep kindness, always encouraging those in need and infusing every space with warmth. Rabbits have a knack for bringing out the best in others, blending sensitivity with subtle resilience."
+      },
+      dragon: {
+        summary: "Born to lead, the dragon's ambition soars among the stars!",
+        description: "Dragons dream big and never hesitate, cutting obstacles down with unmatched charisma and willpower. Their commanding presence and relentless drive make others follow naturally, and even in crisis, they remain cool and decisive. The dragon zodiac channels energy and excitement into any project, becoming an inspiration for everyone involved."
+      },
+      snake: {
+        summary: "A master of depth and insight, the snake is strategic and mysterious!",
+        description: "With piercing analysis and smooth planning, snakes handle challenges calmly and flexibly. They may be quiet, but their advice is sharp and trustworthy. The snake zodiac blends mystery, wisdom, and intuition, helping those around them find clarity in confusing times. Their presence is captivating, and their counsel always leaves a mark."
+      },
+      horse: {
+        summary: "Infinite energy and a spirit of adventure, the horse runs free and wild!",
+        description: "Horses never tire of new challenges, passionately jumping into opportunities and lighting up any gathering with enthusiasm. Rather than follow rules, they chase freedom and change, constantly revitalizing those around them with fresh ideas. Always ready to gallop ahead, the horse is the life of any party, spreading positive vibes everywhere."
+      },
+      goat: {
+        summary: "Full of warmth and sensitivity, the goat is a gentle healer in disguise!",
+        description: "Appearing quiet on the surface, goats harbor deep empathy and refined taste, supporting and comforting others in every situation. Their subtle caring actions create a cozy atmosphere and help those struggling to regain hope. Behind their soft image is a sturdy strength that makes goats the unsung heroes in tough times."
+      },
+      monkey: {
+        summary: "Witty and clever, the monkey is a treasure trove of ideas!",
+        description: "Whether dealing with surprises or solving problems, monkeys use humor and quick thinking to keep spirits high. They help energize every group, turning weakness into strength with their lively personality. Known for their inventiveness and positive approach, the monkey zodiac brings fun and flexibility into any situation."
+      },
+      rooster: {
+        summary: "Meticulous and responsible, the rooster sets clear standards for success!",
+        description: "Always organized, roosters plan and execute tasks thoroughly, correcting mistakes and carrying all responsibilities to the end. Their principled approach earns trust and dependability, helping teams stay stable under pressure. Roosters are keen observers, making sure things run smoothly and everyone stays on track."
+      },
+      dog: {
+        summary: "Loyal and just, the dog is everyone's dependable guardian!",
+        description: "Focused on fairness, dogs hold tightly to their beliefs and care for those around them with warmth and understanding. Their boldness is balanced by a heart of gold, and they build lasting trust through their sense of duty. The dog zodiac stands firmly in the face of adversity, fiercely protecting what matters to them."
+      },
+      pig: {
+        summary: "Pure-hearted and generous, the pig spreads comfort and joy everywhere!",
+        description: "Pigs don't stress about minor details and welcome others' flaws with open arms, bringing peace to every environment. Sharing happiness comes naturally, and their soothing presence lifts moods and eases tension. The pig zodiac's relaxed spirit makes them natural mood-makers, always ready to pass around a bit of bliss to friends and family."
+      }
     },
-    elaboration: {
-      mouse: "Rat people are smart and adaptable, able to quickly adjust to new environments. They have excellent economic sense and can handle crisis situations calmly.",
-      ox: "Ox people are honest and persistent, with strong mental strength to complete what they start. They are trustworthy and have a strong sense of responsibility.",
-      tiger: "Tiger people are brave and have strong leadership, with courage to face challenges. They are confident and have the charm to inspire others.",
-      rabbit: "Rabbit people are gentle and have excellent artistic sense, loving beautiful things. They are considerate and value relationships with others.",
-      dragon: "Dragon people are powerful and lucky, with big dreams. They are confident and have charisma that positively influences others.",
-      snake: "Snake people are wise and mysterious, with deep thinking. They have excellent intuition and sharp observation skills to accurately understand situations.",
-      horse: "Horse people are free and active, loving adventure. They are energetic and passionate about pursuing new experiences.",
-      goat: "Goat people are creative and artistic, pursuing beautiful things. They are emotional and empathetic, understanding others' hearts well.",
-      monkey: "Monkey people are clever and witty, with excellent problem-solving skills. They have a sense of humor and the ability to make others happy.",
-      rooster: "Rooster people are precise and perfectionist, good at detailed management. They excel at time management and handle tasks systematically.",
-      dog: "Dog people are loyal and just, valuing friends. They are truthful and honest, earning trust from others.",
-      pig: "Pig people are pure and generous, wanting to help others. They have an optimistic and positive mindset, bringing joy to those around them.",
-    },
-    gift: {
-      mouse: "Practical gifts",
-      ox: "Quality gifts",
-      tiger: "Unique and special gifts",
-      rabbit: "Pretty and beautiful gifts",
-      dragon: "Luxurious and splendid gifts",
-      snake: "Mysterious and deep gifts",
-      horse: "Active and practical gifts",
-      goat: "Artistic and creative gifts",
-      monkey: "Fun and unique gifts",
-      rooster: "Precise and practical gifts",
-      dog: "Heartfelt gifts",
-      pig: "Warm and cozy gifts",
-    },
-    giftDetail: {
-      mouse: "For Rat people, practical and economical gifts are good. Premium stationery, smartphone accessories, and practical bags are recommended.",
-      ox: "For Ox people, high-quality and durable gifts are good. Luxury watches, premium leather products, and high-quality kitchenware are recommended.",
-      tiger: "For Tiger people, unique and special gifts are good. Limited edition items, special experiences, and uniquely designed products are recommended.",
-      rabbit: "For Rabbit people, pretty and beautiful gifts are good. Flower bouquets, pretty accessories, and beautiful interior items are recommended.",
-      dragon: "For Dragon people, luxurious and splendid gifts are good. Luxury accessories, premium wine, and splendid jewelry are recommended.",
-      snake: "For Snake people, mysterious and deep gifts are good. Premium perfume, art works, and deep books are recommended.",
-      horse: "For Horse people, active and practical gifts are good. Sports equipment, travel items, and practical appliances are recommended.",
-      goat: "For Goat people, artistic and creative gifts are good. Art works, creative tools, and beautiful music albums are recommended.",
-      monkey: "For Monkey people, fun and unique gifts are good. Puzzle games, unique toys, and fun books are recommended.",
-      rooster: "For Rooster people, precise and practical gifts are good. Precision watches, organizers, and practical tools are recommended.",
-      dog: "For Dog people, heartfelt gifts are good. Handmade gifts, memorable photos, and sincere letters are recommended.",
-      pig: "For Pig people, warm and cozy gifts are good. Soft blankets, warm drinks, and cozy interior items are recommended.",
+    giftRecommended: {
+      mouse: {
+        item: "Premium planner, brain puzzle set, elegant fountain pen",
+        description: "Rats thrive on meticulous planning and organization, so a premium planner helps them streamline busy schedules and track personal goals in detail. A collection of brain puzzles channels their instinctive need for mental challenges, while competitive and focused fun boosts their concentration. An elegant fountain pen reflects the rat's affinity for preparation and quick thinking, providing a stylish, practical way to jot down inventive ideas—both at the office and on the go."
+      },
+      ox: {
+        item: "Wireless hand massager, luxury blanket, plant cultivation kit",
+        description: "The dependable and hardworking ox often pushes through long hours, making a wireless hand massager the perfect pick-me-up for sore muscles and well-deserved relaxation. A luxury blanket, with its comforting warmth, symbolizes the ox's steadfast and reliable nature, offering cozy reassurance on chilly days. Finally, a plant cultivation kit is a meaningful gift, teaching the ox the satisfaction of nurturing life with patience and consistent effort."
+      },
+      tiger: {
+        item: "Extreme sports pass, jumbo tumbler, leadership book",
+        description: "Bold and energetic, tigers crave new experiences that test their mettle—an extreme sports pass invites exciting challenges and renewed confidence. A jumbo tumbler is a practical companion, constantly refueling their high-spirited lifestyle wherever they roam. Leadership books further nurture their natural charisma, giving insight and structure as they continue to grow into their inspiring role as a team motivator and creative force."
+      },
+      rabbit: {
+        item: "Art supply kit, floral fragrance diffuser, designer lamp",
+        description: "Rabbits delight in creative expression, so an art supply kit gives them endless scope to showcase their imagination and unwind. A floral diffuser brings gentle ambiance and tranquility to their favorite space, reflecting their soft character and perceptive sensitivity. A designer lamp rounds off the set, illuminating their living environment with subtle beauty while adding comfort and aesthetic joy."
+      },
+      dragon: {
+        item: "Engraved card holder, leadership workshop voucher, classic timepiece",
+        description: "Charismatic and ambitious dragons benefit from a personalized card holder that highlights their commanding presence in professional circles. A voucher for a leadership workshop fuels their personal growth, satisfying their desire to excel and guide others with wisdom. A classic wristwatch underscores their disciplined nature and flair for striking appearances, tying together confidence and time-consciousness."
+      },
+      snake: {
+        item: "Meaningful bookmark, miniature plant pot, silver chain bracelet",
+        description: "For clever, insightful snakes, a symbolic bookmark enriches their love for deep, thoughtful reading. A miniature plant pot elevates their serene environment and subtly complements their quiet sophistication with natural greens. A silver chain bracelet reflects their stylish, enigmatic vibe and intelligent charm—perfect for adding a refined accent to any look."
+      },
+      horse: {
+        item: "Fitness tracker, athletic sneakers, portable fast charger",
+        description: "Horses thrive in dynamic and liberated settings, and a fitness tracker enables them to monitor their boundless energy every day. Athletic sneakers deliver both speed and comfort for relentless activity, while a portable fast charger keeps them powered up for spontaneous adventures and wide-ranging travel, matching their always-ready approach to life."
+      },
+      goat: {
+        item: "Wooden candles, floral print pouch, soft knit scarf",
+        description: "Gentle and caring goats find a sense of belonging in the subtle glow of wooden candles, which lend warmth and serenity to any room. A floral print pouch blends practicality and beauty for those drawn to delicate aesthetics. A soft knit scarf imparts gentle coziness, mirroring the goat's nurturing soul and inspiring affection from friends and family."
+      },
+      monkey: {
+        item: "Multi-tool set, board game, smartphone gimbal",
+        description: "Resourceful and witty, monkeys appreciate a versatile multi-tool that can tackle unexpected problems and creative DIY moments. Board games tap into their sociable nature, bringing people together for laughter and friendly competition. With a smartphone gimbal, they can record life's quirky moments, turning everyday scenes into entertaining and memorable content."
+      },
+      rooster: {
+        item: "Custom laptop sleeve, deluxe stationery set, glass clock",
+        description: "Pragmatic and detail-oriented roosters keep order with a custom laptop sleeve that quietly advertises their professionalism. Deluxe stationery provides the organized tools for every precise task, and a glass clock is a daily reminder of their strong sense of time and reliability. Each item adds polish to their workspace and routine."
+      },
+      dog: {
+        item: "Personalized keychain, dual mug set, wrist support",
+        description: "Steadfast and loyal, dogs cherish personalized keychains—especially those that represent loved ones or meaningful memories. Dual mug sets encourage heartfelt conversations and quality time, strengthening close bonds. Wrist supports help take care of their physical well-being, showing appreciation for their caring and selfless tendencies in daily life."
+      },
+      pig: {
+        item: "Soft cushion, dessert voucher, oversized blanket",
+        description: "Pigs value genuine comfort and togetherness, making a soft cushion the ideal retreat for relaxation at home. Dessert vouchers promise sweet treats and joyful moments, reflecting the pig's infectious warmth and cheerful disposition. An oversized blanket offers enveloping coziness, echoing their generous heart and desire to share peaceful, happy times with everyone."
+      }
     },
   },
   compatibilityDetail: {
@@ -134,8 +178,10 @@ export default {
     
     mouse: {
       mouse: {
-        witty: "Two smart rats meeting, perfect understanding compatibility",
-        elaboration: "Rat and Rat understand each other's thoughts perfectly, and together they become even smarter. With excellent economic sense, they can accumulate wealth together, making this the best compatibility.",
+        result: {
+          summary: "Two smart rats meeting, perfect understanding compatibility",
+          description: "Rat and Rat understand each other's thoughts perfectly, and together they become even smarter. With excellent economic sense, they can accumulate wealth together, making this the best compatibility."
+        },
         detailed: {
           basic: {
             summary: "Perfect understanding and harmony",
@@ -152,8 +198,10 @@ export default {
         }
       },
       ox: {
-        witty: "Smart rat and honest ox meeting, complementary compatibility",
-        elaboration: "The rat's cleverness and the ox's honesty create perfect harmony. The rat comes up with ideas and the ox executes them, showing excellent teamwork.",
+        result: {
+          summary: "Smart rat and honest ox meeting, complementary compatibility",
+          description: "The rat's cleverness and the ox's honesty create perfect harmony. The rat comes up with ideas and the ox executes them, showing excellent teamwork."
+        },
         detailed: {
           basic: {
             summary: "Perfect complementary relationship",
@@ -170,8 +218,10 @@ export default {
         }
       },
       snake: {
-        witty: "Smart rat and mysterious snake meeting, deep compatibility",
-        elaboration: "The rat's practicality and the snake's mystery create a deep relationship. They can understand each other's inner selves and share true love.",
+        result: {
+          summary: "Smart rat and mysterious snake meeting, deep compatibility",
+          description: "The rat's practicality and the snake's mystery create a deep relationship. They can understand each other's inner selves and share true love."
+        },
         detailed: {
           basic: {
             summary: "Deep understanding",
@@ -190,8 +240,10 @@ export default {
     },
     ox: {
       mouse: {
-        witty: "Smart rat and honest ox meeting, complementary compatibility",
-        elaboration: "The rat's cleverness and the ox's honesty create perfect harmony. The rat comes up with ideas and the ox executes them, showing excellent teamwork.",
+        result: {
+          summary: "Smart rat and honest ox meeting, complementary compatibility",
+          description: "The rat's cleverness and the ox's honesty create perfect harmony. The rat comes up with ideas and the ox executes them, showing excellent teamwork."
+        },
         detailed: {
           basic: {
             summary: "Perfect complementary relationship",
@@ -208,8 +260,10 @@ export default {
         }
       },
       ox: {
-        witty: "Two honest oxen meeting, solid compatibility",
-        elaboration: "Ox and Ox recognize each other's honesty and create a solid relationship. Together, they can overcome any difficulty, making this a strong combination.",
+        result: {
+          summary: "Two honest oxen meeting, solid compatibility",
+          description: "Ox and Ox recognize each other's honesty and create a solid relationship. Together, they can overcome any difficulty, making this a strong combination."
+        },
         detailed: {
           basic: {
             summary: "Solid trust relationship",
