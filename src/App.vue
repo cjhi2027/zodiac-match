@@ -6,14 +6,10 @@ import { useI18n } from "vue-i18n";
 const route = useRoute();
 const { t } = useI18n();
 
-// 푸터를 표시할 라우트들 (메인홈, 상세페이지, 정적 페이지들)
+// 푸터를 표시할 라우트들 (메인홈과 상세페이지만)
 const showFooter = computed(() => {
   const routeName = route.name as string;
-  return routeName === 'home' || 
-         routeName === 'animalResultDetail' ||
-         routeName === 'about' ||
-         routeName === 'privacy' ||
-         routeName === 'terms';
+  return routeName === 'home' || routeName === 'animalResultDetail';
 });
 </script>
 
