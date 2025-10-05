@@ -5,7 +5,7 @@ export default {
   },
   mainHome: {
     title: "우리 어울릴까요?",
-    subtitle: "띠, 별자리, 혈액형, MBTI로\n우리의 궁합을 확인해보세요.",
+    subtitle: "띠, 별자리, 혈액형, MBTI로\\n우리의 궁합을 확인해보세요.",
     zodiac: {
       title: "띠 궁합",
       subtitle: "12띠로 보는 연애 궁합"
