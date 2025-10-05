@@ -35,7 +35,7 @@ export default {
   about: {
     title: "LoveIndex 소개",
     whatIs: "LoveIndex란?",
-    description: "LoveIndex는 별자리, 띠, 혈액형, MBTI 등 다양한 요소를 활용해 연인과의 궁합을 재미있게 확인할 수 있는 무료 웹서비스입니다.",
+    description: "LoveIndex는 별자리, 띠, 혈액형, MBTI 등 다양한 요소를 활용해 연인과의 궁합을 확인할 수 있는 무료 웹서비스입니다.",
     features: "주요 기능",
     feature1: "12간지 띠별 궁합 분석",
     feature2: "상세한 궁합 설명 및 조언",

@@ -5,7 +5,7 @@
       
       <div class="content-section">
         <h2>{{ t("about.whatIs") }}</h2>
-        <p>{{ t("about.description") }}</p>
+        <p>테스트 텍스트입니다.</p>
       </div>
 
       <div class="content-section">
