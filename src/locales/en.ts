@@ -170,8 +170,8 @@ export default {
     goHome: "Go Home",
     selectPartnerInfoBtn: "Select Partner Info",
     checkCompatibilityBtn: "Check Compatibility",
+    clickToEdit: "Edit",
   },
-  clickToEdit: "Edit",
   headerTitle: "Zodiac Animals",
   zodiac: {
     mouse: "Rat",

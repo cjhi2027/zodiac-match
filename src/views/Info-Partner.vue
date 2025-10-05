@@ -26,7 +26,7 @@
           class="summary-image"
         />
         <span class="summary-name">{{ $t(`zodiac.${myZodiac?.id}`) }}{{ $t("ui.zodiacSuffix") }}</span>
-        <span class="summary-edit-hint">{{ $t("clickToEdit") }}</span>
+        <span class="summary-edit-hint">{{ $t("ui.clickToEdit") }}</span>
       </div>
     </div>
 

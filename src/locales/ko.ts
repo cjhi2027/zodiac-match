@@ -170,8 +170,8 @@ export default {
     goHome: "홈으로 가기",
     selectPartnerInfoBtn: "상대방 정보 선택",
     checkCompatibilityBtn: "궁합 확인하기",
+    clickToEdit: "변경",
   },
-  clickToEdit: "변경",
   headerTitle: "12간지 띠 궁합",
   zodiac: {
     mouse: "쥐",
