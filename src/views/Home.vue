@@ -22,18 +22,6 @@
         </div>
       </div>
 
-      <!-- 별자리로 보기 (준비중) -->
-      <div class="menu-card disabled">
-        <div class="menu-content">
-          <div class="menu-icon">⭐</div>
-          <div class="menu-text">
-            <div class="menu-title">{{ $t("mainHome.constellation.title") }}</div>
-            <div class="menu-subtitle">{{ $t("mainHome.constellation.subtitle") }}</div>
-          </div>
-        </div>
-        <div class="coming-soon">{{ $t("mainHome.comingSoon") }}</div>
-      </div>
-
       <!-- 혈액형으로 보기 (준비중) -->
       <div class="menu-card disabled">
         <div class="menu-content">
@@ -41,6 +29,18 @@
           <div class="menu-text">
             <div class="menu-title">{{ $t("mainHome.bloodType.title") }}</div>
             <div class="menu-subtitle">{{ $t("mainHome.bloodType.subtitle") }}</div>
+          </div>
+        </div>
+        <div class="coming-soon">{{ $t("mainHome.comingSoon") }}</div>
+      </div>
+
+      <!-- 별자리로 보기 (준비중) -->
+      <div class="menu-card disabled">
+        <div class="menu-content">
+          <div class="menu-icon">⭐</div>
+          <div class="menu-text">
+            <div class="menu-title">{{ $t("mainHome.constellation.title") }}</div>
+            <div class="menu-subtitle">{{ $t("mainHome.constellation.subtitle") }}</div>
           </div>
         </div>
         <div class="coming-soon">{{ $t("mainHome.comingSoon") }}</div>
