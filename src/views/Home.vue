@@ -6,7 +6,7 @@
         <LanguageSelector />
       </div>
       <div class="main-title">{{ $t("mainHome.title") }}</div>
-      <div class="main-subtitle">{{ $t("mainHome.subtitle") }}</div>
+      <div class="main-subtitle">{{ $t("mainHome.subtitle") }}<br>{{ $t("mainHome.subtitle2") }}</div>
     </div>
 
     <!-- 메뉴 카드들 -->

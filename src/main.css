@@ -306,7 +306,6 @@ body.body-home-terms {
   text-align: center;
   color: #666;
   margin-bottom: 1rem;
-  white-space: pre-line; /* \n 문자를 줄바꿈으로 처리 */
 }
 
 /* 언어 선택기 컨테이너 */
@@ -1649,7 +1648,6 @@ body.body-home-terms {
   /* 메인 서브타이틀 (모바일) */
   .main-subtitle {
     font-size: 1.1rem;
-    white-space: pre-line; /* \n 문자를 줄바꿈으로 처리 */
   }
 
   /* 메뉴 카드 간격 (모바일) */

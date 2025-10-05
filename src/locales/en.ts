@@ -5,7 +5,8 @@ export default {
   },
   mainHome: {
     title: "Are We a Match?",
-    subtitle: "Check your love index\\nby Zodiac, Stars, Blood Type, and MBTI.",
+    subtitle: "Check your love index",
+    subtitle2: "by Zodiac, Stars, Blood Type, and MBTI.",
     zodiac: {
       title: "Zodiac Animals",
       subtitle: "Love match by Chinese Zodiac signs"
