@@ -53,8 +53,8 @@
           <!-- 내 생년 띠 표시 -->
           <div class="selected-zodiac-display">
             <img
-              :src="getMyFinalZodiac()?.image || '/attached_assets/animal/animal_unknown.png'"
-              :alt="getMyFinalZodiac()?.id ? $t(`zodiac.${getMyFinalZodiac()?.id}`) : 'Unknown'"
+              :src="getMyFinalZodiac()?.image"
+              :alt="$t(`zodiac.${getMyFinalZodiac()?.id}`)"
               class="selected-zodiac-image"
             />
             <h3 v-if="getMyFinalZodiac()?.id" class="selected-zodiac-name">
@@ -119,8 +119,8 @@
           <!-- 상대방 생년 띠 표시 -->
           <div class="selected-zodiac-display">
             <img
-              :src="getPartnerFinalZodiac()?.image || '/attached_assets/animal/animal_unknown.png'"
-              :alt="getPartnerFinalZodiac()?.id ? $t(`zodiac.${getPartnerFinalZodiac()?.id}`) : 'Unknown'"
+              :src="getPartnerFinalZodiac()?.image"
+              :alt="$t(`zodiac.${getPartnerFinalZodiac()?.id}`)"
               class="selected-zodiac-image"
             />
             <h3 v-if="getPartnerFinalZodiac()?.id" class="selected-zodiac-name">
