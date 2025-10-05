@@ -5,8 +5,11 @@ import InfoPartner from "@/views/Info-Partner.vue";
 import ResultBrief from "@/views/Result-Brief.vue";
 import ResultDetail from "@/views/Result-Detail.vue";
 import HomeAbout from "@/views/Home-About.vue";
+import HomeAboutEn from "@/views/Home-About-en.vue";
 import HomePrivacy from "@/views/Home-Privacy.vue";
+import HomePrivacyEn from "@/views/Home-Privacy-en.vue";
 import HomeTerms from "@/views/Home-Terms.vue";
+import HomeTermsEn from "@/views/Home-Terms-en.vue";
 import { createRouter, createWebHistory } from "vue-router";
 
 const router = createRouter({
@@ -48,14 +51,29 @@ const router = createRouter({
       component: HomeAbout,
     },
     {
+      path: "/about-en",
+      name: "aboutEn",
+      component: HomeAboutEn,
+    },
+    {
       path: "/privacy",
       name: "privacy",
       component: HomePrivacy,
     },
     {
+      path: "/privacy-en",
+      name: "privacyEn",
+      component: HomePrivacyEn,
+    },
+    {
       path: "/terms",
       name: "terms",
       component: HomeTerms,
+    },
+    {
+      path: "/terms-en",
+      name: "termsEn",
+      component: HomeTermsEn,
     },
   ],
   scrollBehavior(to, from, savedPosition) {

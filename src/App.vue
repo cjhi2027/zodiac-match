@@ -4,7 +4,7 @@ import { computed } from "vue";
 import { useI18n } from "vue-i18n";
 
 const route = useRoute();
-const { t } = useI18n();
+const { t, locale } = useI18n();
 
 // 푸터를 표시할 라우트들 (메인홈과 상세페이지만)
 const showFooter = computed(() => {
@@ -19,9 +19,9 @@ const showFooter = computed(() => {
     <footer v-if="showFooter" class="site-footer">
       <div class="footer-content">
         <div class="footer-links">
-          <router-link to="/about">{{ t("footer.about") }}</router-link>
-          <router-link to="/privacy">{{ t("footer.privacy") }}</router-link>
-          <router-link to="/terms">{{ t("footer.terms") }}</router-link>
+          <router-link :to="locale === 'en' ? '/about-en' : '/about'">{{ t("footer.about") }}</router-link>
+          <router-link :to="locale === 'en' ? '/privacy-en' : '/privacy'">{{ t("footer.privacy") }}</router-link>
+          <router-link :to="locale === 'en' ? '/terms-en' : '/terms'">{{ t("footer.terms") }}</router-link>
         </div>
                <div class="footer-contact">
                  <p>{{ t("footer.contact") }}: <a href="mailto:syhi5093@gmail.com">syhi5093@gmail.com</a></p>

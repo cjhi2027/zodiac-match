@@ -1,17 +1,17 @@
 <template>
   <div class="about-page">
     <div class="container">
-      <h1 class="page-title">LoveIndex 소개</h1>
+      <h1 class="page-title">Love Index 소개</h1>
       
       <div class="content-section">
-        <h2>LoveIndex란?</h2>
-        <p>LoveIndex는 별자리, 띠, 혈액형, MBTI 등 다양한 요소를 활용해 연인과의 궁합을 확인할 수 있는 무료 웹서비스입니다.</p>
+        <h2>Love Index란?</h2>
+        <p>Love Index는 별자리, 띠, 혈액형, MBTI 등 다양한 요소를 활용해 연인과의 궁합을 확인할 수 있는 무료 웹서비스입니다.</p>
       </div>
 
       <div class="content-section">
         <h2>주요 기능</h2>
         <ul class="feature-list">
-          <li>12간지 띠별 궁합 분석</li>
+          <li>띠, 혈액형, 별자리, MBTI 등 궁합 분석</li>
           <li>상세한 궁합 설명 및 조언</li>
           <li>데이트 추천 및 선물 아이디어</li>
           <li>다국어 지원 (한국어, 영어)</li>
@@ -20,7 +20,7 @@
 
       <div class="content-section">
         <h2>서비스 목적</h2>
-        <p>LoveIndex는 연인들이 서로를 더 잘 이해하고, 재미있는 대화의 소재를 제공하며, 관계를 더욱 돈독하게 만드는 것을 목표로 합니다.</p>
+        <p>Love Index는 연인들이 서로를 더 잘 이해하고, 재미있는 대화의 소재를 제공하며, 관계를 더욱 돈독하게 만드는 것을 목표로 합니다.</p>
       </div>
 
       <div class="content-section">

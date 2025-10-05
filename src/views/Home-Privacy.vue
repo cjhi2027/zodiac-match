@@ -4,7 +4,7 @@
       <h1 class="page-title">개인정보 처리방침</h1>
       
       <div class="content-section">
-        <p class="intro">LoveIndex(이하 "본 사이트")는 사용자의 개인정보를 존중하며, 안전하게 보호하기 위해 최선을 다하고 있습니다.</p>
+        <p class="intro">Love Index(이하 "본 사이트")는 사용자의 개인정보를 존중하며, 안전하게 보호하기 위해 최선을 다하고 있습니다.</p>
         <p class="last-updated">최종 업데이트: 2025년 1월 3일</p>
       </div>
 

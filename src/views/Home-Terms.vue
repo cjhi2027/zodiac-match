@@ -4,7 +4,7 @@
       <h1 class="page-title">이용약관</h1>
       
       <div class="content-section">
-        <p class="intro">본 약관은 LoveIndex 웹사이트(이하 "본 사이트")의 이용에 관한 조건과 절차를 규정합니다.</p>
+        <p class="intro">본 약관은 Love Index 웹사이트(이하 "본 사이트")의 이용에 관한 조건과 절차를 규정합니다.</p>
         <p class="last-updated">최종 업데이트: 2025년 1월 3일</p>
       </div>
 
