@@ -114,7 +114,7 @@
     <div v-if="showButton" class="navigation-buttons slide-up">
       <button 
         @click="checkCompatibility" 
-        class="nav-btn result-btn"
+        class="nav-btn bottom-btn"
         :disabled="!hasSelection"
         :class="{ disabled: !hasSelection }"
       >
@@ -291,7 +291,7 @@ const goToMyInfo = () => {
       my: myZodiac.value.id,
       myYear: myYear.value || ""
     });
-    router.push(`/zodiac/my-info?${params.toString()}`);
+    router.push(`/animal/info-my?${params.toString()}`);
   } else {
     router.push("/animal/info-my");
   }

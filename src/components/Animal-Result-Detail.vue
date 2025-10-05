@@ -136,7 +136,7 @@
       <button @click="goToMyInfo" class="nav-btn back-btn">
         {{ locale === 'ko' ? '다시 하기' : 'Try Again' }}
       </button>
-      <button @click="goToHome" class="nav-btn result-btn">
+      <button @click="goToHome" class="nav-btn bottom-btn">
         {{ locale === 'ko' ? '다른 궁합 보기' : 'Other Matches' }}
       </button>
     </div>

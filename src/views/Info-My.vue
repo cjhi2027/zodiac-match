@@ -100,7 +100,7 @@
     <div v-if="showButton" class="navigation-buttons slide-up">
       <button 
         @click="goToPartnerInfo" 
-        class="nav-btn next-btn"
+        class="nav-btn bottom-btn"
         :disabled="!hasSelection"
         :class="{ disabled: !hasSelection }"
       >

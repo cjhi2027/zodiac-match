@@ -32,7 +32,7 @@
         <h2>{{ t("about.contact") }}</h2>
         <p>{{ t("about.contactDescription") }}</p>
         <p class="contact-email">
-          <a href="mailto:support@loveindex.com">{{ t("about.email") }}</a>
+          <a href="mailto:syhi5093@gmail.com">{{ t("about.email") }}</a>
         </p>
       </div>
     </div>
@@ -40,7 +40,7 @@
   
   <!-- 돌아가기 버튼 - 페이지 컨테이너 밖으로 이동 -->
   <div v-if="showButton" class="navigation-buttons">
-    <button @click="goBack" class="nav-btn result-btn slide-up">
+    <button @click="goBack" class="nav-btn bottom-btn slide-up">
       돌아가기
     </button>
   </div>

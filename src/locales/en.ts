@@ -5,7 +5,7 @@ export default {
   },
   mainHome: {
     title: "Are We a Match?",
-    subtitle: "Check with Zodiac, Stars, Blood Type, & MBTI!",
+    subtitle: "Check your love index\nby Zodiac, Stars, Blood Type, and MBTI.",
     zodiac: {
       title: "Zodiac Animals",
       subtitle: "Love match by Chinese Zodiac signs"
@@ -46,7 +46,7 @@ export default {
     futureDescription: "We plan to add more compatibility elements and analysis methods to provide users with a richer experience.",
     contact: "Contact Us",
     contactDescription: "If you have any inquiries or suggestions about our service, please feel free to contact us.",
-    email: "support@loveindex.com",
+    email: "syhi5093@gmail.com",
   },
   privacy: {
     title: "Privacy Policy",
@@ -94,7 +94,7 @@ export default {
     contact: {
       title: "8. Contact",
       description: "If you have any inquiries about personal information, please contact us below.",
-      email: "support@loveindex.com",
+      email: "syhi5093@gmail.com",
     },
   },
   terms: {
@@ -149,7 +149,7 @@ export default {
     contact: {
       title: "9. Contact",
       description: "If you have any inquiries about the terms, please contact us below.",
-      email: "support@loveindex.com",
+      email: "syhi5093@gmail.com",
     },
   },
   ui: {

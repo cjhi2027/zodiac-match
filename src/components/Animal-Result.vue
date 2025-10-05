@@ -75,7 +75,7 @@
         <button
           v-if="compatibilityDetail?.detailed"
           @click="() => onViewDetail(myZodiac, partnerZodiac)"
-          class="nav-btn result-btn fade-in"
+          class="nav-btn bottom-btn fade-in"
           :class="{ 'visible': showButton }"
           :disabled="!showButton"
         >

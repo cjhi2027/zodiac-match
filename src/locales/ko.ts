@@ -5,7 +5,7 @@ export default {
   },
   mainHome: {
     title: "우리 어울릴까요?",
-    subtitle: " 띠, 별자리, 혈액형, MBTI로 확인해보세요!",
+    subtitle: "띠, 별자리, 혈액형, MBTI로\n우리의 궁합을 확인해보세요.",
     zodiac: {
       title: "띠 궁합",
       subtitle: "12띠로 보는 연애 궁합"
@@ -29,7 +29,7 @@ export default {
     privacy: "개인정보처리방침",
     terms: "이용약관",
     contact: "문의",
-    rights: "모든 권리 보유",
+    rights: "All rights reserved",
   },
   about: {
     title: "LoveIndex 소개",
@@ -46,7 +46,7 @@ export default {
     futureDescription: "더 많은 궁합 요소와 분석 방법을 추가하여 사용자들에게 더욱 풍부한 경험을 제공할 예정입니다.",
     contact: "문의하기",
     contactDescription: "서비스에 대한 문의사항이나 제안사항이 있으시면 언제든지 연락주세요.",
-    email: "support@loveindex.com",
+    email: "syhi5093@gmail.com",
   },
   privacy: {
     title: "개인정보 처리방침",
@@ -94,7 +94,7 @@ export default {
     contact: {
       title: "8. 문의",
       description: "개인정보와 관련한 문의는 아래 연락처를 통해 가능합니다.",
-      email: "support@loveindex.com",
+      email: "syhi5093@gmail.com",
     },
   },
   terms: {
@@ -149,7 +149,7 @@ export default {
     contact: {
       title: "9. 문의",
       description: "본 약관에 대한 문의는 아래 연락처로 가능합니다.",
-      email: "support@loveindex.com",
+      email: "syhi5093@gmail.com",
     },
   },
   ui: {

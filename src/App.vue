@@ -6,10 +6,14 @@ import { useI18n } from "vue-i18n";
 const route = useRoute();
 const { t } = useI18n();
 
-// 푸터를 표시할 라우트들 (메인홈과 상세페이지만)
+// 푸터를 표시할 라우트들 (메인홈, 상세페이지, 정적 페이지들)
 const showFooter = computed(() => {
   const routeName = route.name as string;
-  return routeName === 'home' || routeName === 'animalResultDetail';
+  return routeName === 'home' || 
+         routeName === 'animalResultDetail' ||
+         routeName === 'about' ||
+         routeName === 'privacy' ||
+         routeName === 'terms';
 });
 </script>
 
@@ -24,7 +28,7 @@ const showFooter = computed(() => {
           <router-link to="/terms">{{ t("footer.terms") }}</router-link>
         </div>
                <div class="footer-contact">
-                 <p>{{ t("footer.contact") }}: <a href="mailto:support@loveindex.com">support@loveindex.com</a></p>
+                 <p>{{ t("footer.contact") }}: <a href="mailto:syhi5093@gmail.com">syhi5093@gmail.com</a></p>
                </div>
         <div class="footer-copyright">
           <p>&copy; 2025 LoveIndex. {{ t("footer.rights") }}</p>

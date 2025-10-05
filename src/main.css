@@ -297,7 +297,7 @@ body.body-home-terms {
   font-weight: bold;
   color: #333;
   text-align: center;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
 }
 
 /* 메인 서브타이틀 */
@@ -305,7 +305,8 @@ body.body-home-terms {
   font-size: 1.3rem;
   text-align: center;
   color: #666;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
+  white-space: pre-line; /* \n 문자를 줄바꿈으로 처리 */
 }
 
 /* 언어 선택기 컨테이너 */
@@ -651,10 +652,10 @@ body.body-home-terms {
   display: grid;
   grid-template-columns: repeat(12, 1fr); /* 12열 x 1행 */
   gap: 0;
-  padding: 0.5rem 0;
+  padding: 0.5rem 0.5rem;
   justify-items: center; /* 가운데 정렬 */
   max-width: 760px; /* 최대 너비 760px */
-  margin: 0 auto; /* 가운데 정렬 */
+  margin: 0; /* 가운데 정렬 */
 }
 
 /* 동물 선택 아이템 */
@@ -1012,9 +1013,8 @@ body.body-home-terms {
   transition: all 0.2s ease;
 }
 
-/* 네비게이션 버튼 (My-Info, Partner-Info 화면) */
-.my-info-container .nav-btn,
-.partner-info-container .nav-btn {
+/* 하단 고정 버튼 애니메이션 (통일) - 기본 애니메이션 */
+.bottom-btn {
   animation: slide-up-button 0.2s ease-out; /* 슬라이드 업 애니메이션 */
 }
 
@@ -1024,8 +1024,8 @@ body.body-home-terms {
   transform: translateY(30px);
 }
 
-/* 결과 화면 버튼 (표시) */
-.result-container .nav-btn.visible {
+/* 결과 화면 버튼 (표시) - bottom-btn으로 통일됨 */
+.result-container .bottom-btn.visible {
   animation: slide-up-button 0.2s ease-out forwards;
 }
 
@@ -1058,9 +1058,8 @@ body.body-home-terms {
   border-color: #dee2e6;
 }
 
-/* 다음/결과 버튼 스타일 */
-.next-btn,
-.result-btn {
+/* 하단 고정 버튼 스타일 (통일) */
+.bottom-btn {
   /* 유틸리티 클래스로 대체 가능: .btn-base, .btn-primary */
   background: linear-gradient(135deg, #dc3545 0%, #c82333 50%, #bd2130 100%); /* 빨간색 그라데이션 */
   color: white;
@@ -1068,16 +1067,14 @@ body.body-home-terms {
   box-shadow: 0 2px 8px rgba(220, 53, 69, 0.3);
 }
 
-/* 다음/결과 버튼 호버 효과 */
-.next-btn:hover:not(.disabled),
-.result-btn:hover:not(.disabled) {
+/* 하단 고정 버튼 호버 효과 */
+.bottom-btn:hover:not(.disabled) {
   box-shadow: 0 4px 16px rgba(220, 53, 69, 0.4);
   background: linear-gradient(135deg, #c82333 0%, #bd2130 50%, #a71e2a 100%);
 }
 
-/* 비활성화된 다음/결과 버튼 */
-.next-btn.disabled,
-.result-btn.disabled {
+/* 비활성화된 하단 고정 버튼 */
+.bottom-btn.disabled {
   /* 유틸리티 클래스로 대체 가능: .btn-disabled */
   background: linear-gradient(135deg, #f8d7da 0%, #f5c6cb 100%); /* 연한 빨간색 */
   color: #721c24;
@@ -1641,7 +1638,7 @@ body.body-home-terms {
   /* 홈 헤더 (모바일) */
   .main-header {
     margin-top: 0;
-    margin-bottom: 4rem;
+    margin-bottom: 3rem;
   }
 
   /* 메인 타이틀 (모바일) */
@@ -1652,6 +1649,7 @@ body.body-home-terms {
   /* 메인 서브타이틀 (모바일) */
   .main-subtitle {
     font-size: 1.1rem;
+    white-space: pre-line; /* \n 문자를 줄바꿈으로 처리 */
   }
 
   /* 메뉴 카드 간격 (모바일) */
@@ -1785,6 +1783,7 @@ body.body-home-terms {
     scroll-behavior: auto; /* smooth 제거로 끊김 방지 */
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none; /* Firefox 스크롤바 숨김 */
+    padding: 0, 10rem;
     
     /* 좌우 페이드아웃 효과 - 스크롤 시작/끝에서 자연스럽게 페이드 */
     mask: linear-gradient(to right, transparent 0%, rgba(255,255,255,1) 1rem, rgba(255,255,255,1) calc(100% - 1rem), transparent 100%);
@@ -2244,18 +2243,18 @@ body.body-home-terms {
 
 /* ===== 돌아가기 버튼 스타일 ===== */
 
-/* About, Privacy, Terms 페이지의 nav-btn에 slide-up-button 애니메이션 적용 */
-.about-page .nav-btn,
-.privacy-page .nav-btn,
-.terms-page .nav-btn {
+/* About, Privacy, Terms 페이지의 bottom-btn 애니메이션 */
+.about-page .bottom-btn,
+.privacy-page .bottom-btn,
+.terms-page .bottom-btn {
   opacity: 0;
   transform: translateY(30px);
 }
 
 /* slide-up 클래스가 추가되면 애니메이션 실행 */
-.about-page .nav-btn.slide-up,
-.privacy-page .nav-btn.slide-up,
-.terms-page .nav-btn.slide-up {
+.about-page .bottom-btn.slide-up,
+.privacy-page .bottom-btn.slide-up,
+.terms-page .bottom-btn.slide-up {
   animation: slide-up-button 0.2s ease-out forwards;
 }
 
