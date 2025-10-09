@@ -2,7 +2,7 @@
 
 ## 📋 프로젝트 개요
 
-**프로젝트명**: 12간지 띠별 궁합 웹 애플리케이션 (ZodiacMatch)  
+**프로젝트명**: 12간지 띠별 궁합 웹 애플리케이션 (LoveIndex)  
 **목적**: 생년월일 또는 띠 선택을 통한 커플 궁합 확인 서비스  
 **타겟**: 한국 및 글로벌 사용자  
 **개발 기간**: 2024년 9월 24일 ~ 15일  
@@ -58,7 +58,7 @@
 ## 📁 프로젝트 구조
 
 ```
-ZodiacMatch_VueJS/
+loveindex/
 ├── public/                    # 정적 파일
 │   ├── attached_assets/       # 동물 이미지 리소스
 │   │   ├── animal/           # 12간지 동물 이미지 (원본)
@@ -104,7 +104,7 @@ ZodiacMatch_VueJS/
 │   ├── main.css             # 메인 스타일시트
 │   └── style.css            # 추가 스타일
 ├── docs/                     # 문서
-│   ├── dev_doc_zodiac_match.md # 개발 문서
+│   ├── dev_doc_love-index.md # 개발 문서
 │   ├── 12animal_character.txt  # 12간지 캐릭터 설명
 │   ├── 12x12_2.xlsx         # 궁합 매트릭스 데이터
 │   ├── 12x12_simple.txt     # 간단한 궁합 데이터
