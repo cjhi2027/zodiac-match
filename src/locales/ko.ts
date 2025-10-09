@@ -169,7 +169,7 @@ export default {
   },
   compatibilityDetail: {
     title: "궁합 상세",
-    basicDescription: "기본 설명",
+    chemistryPoint: "우리의 케미포인트",
     cautionPoints: "주의할 점",
     dateRecommendation: "데이트 추천",
     goodGiftFor: "에게 좋은 선물",

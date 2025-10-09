@@ -42,7 +42,7 @@
       <!-- 기본 설명 -->
       <div class="detail-section">
         <h2 class="section-title" @click="toggleSection('basic')" :class="{ active: sections.basic }">
-          <span>📋 {{ $t("compatibilityDetail.basicDescription") }}</span>
+          <span>📋 {{ $t("compatibilityDetail.chemistryPoint") }}</span>
           <span class="toggle-icon">{{ sections.basic ? '▲' : '▼' }}</span>
         </h2>
         <div class="brief-description">

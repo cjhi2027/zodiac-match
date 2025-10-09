@@ -169,7 +169,7 @@ export default {
   },
   compatibilityDetail: {
     title: "Compatibility Details",
-    basicDescription: "Basic Description",
+    chemistryPoint: "Our Chemistry Point",
     cautionPoints: "Caution Points",
     dateRecommendation: "Date Recommendation",
     goodGiftFor: "Good Gifts for",
